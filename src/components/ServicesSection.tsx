@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 const services = [
   {
     title: "Brand Strategy",
@@ -21,19 +23,33 @@ const ServicesSection = () => {
   return (
     <section id="services" className="section-dark" style={{ padding: "140px 0" }}>
       <div className="container-site">
-        <h2 className="text-heading-lg mb-20">Services</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <motion.h2
+          className="text-heading-lg mb-20"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+        >
+          Services
+        </motion.h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
           {services.map((service, i) => (
-            <div
+            <motion.div
               key={service.title}
-              className="border-t border-foreground-light/15 pt-8"
+              className="border-t border-foreground-light/15 pt-10 group"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
             >
-              <span className="text-small text-foreground-light/40 mb-4 block">
+              <span className="text-small text-accent-gold mb-4 block font-medium tracking-widest">
                 0{i + 1}
               </span>
-              <h3 className="text-subheading font-semibold mb-3">{service.title}</h3>
-              <p className="text-body text-foreground-light/60">{service.description}</p>
-            </div>
+              <h3 className="text-subheading font-bold mb-4 transition-colors duration-300 group-hover:text-accent-gold">
+                {service.title}
+              </h3>
+              <p className="text-body" style={{ color: "hsl(0,0%,50%)" }}>{service.description}</p>
+            </motion.div>
           ))}
         </div>
       </div>
