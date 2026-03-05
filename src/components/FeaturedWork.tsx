@@ -30,80 +30,85 @@ const projects = [
 
 const FeaturedWork = () => {
   return (
-    <section id="work" className="section-dark" style={{ padding: "160px 0" }}>
+    <section id="work" className="section-dark" style={{ padding: "180px 0" }}>
       <div className="container-site">
-        <div className="flex items-end justify-between mb-24">
+        <div className="flex items-end justify-between mb-8">
           <div>
-            <motion.div
-              className="flex items-center gap-4 mb-6"
+            <motion.span
+              className="text-label text-accent-gold block mb-6"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
             >
-              <div className="w-12 h-px bg-accent-gold" />
-              <span className="text-small tracking-[0.3em] uppercase text-accent-gold font-medium">
-                Selected Work
-              </span>
-            </motion.div>
+              Selected Work
+            </motion.span>
             <motion.h2
               className="text-heading-lg"
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             >
               Featured <span className="font-display italic text-accent-gold">Projects</span>
             </motion.h2>
           </div>
+          <motion.a
+            href="#work"
+            className="hidden md:flex items-center gap-2 text-label text-accent-gold border-b border-accent-gold/30 pb-1 hover:border-accent-gold transition-colors"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+          >
+            All Projects <ArrowUpRight size={12} />
+          </motion.a>
         </div>
+      </div>
 
-        <div className="space-y-32">
+      {/* Full-width project cards */}
+      <div className="container-wide mt-20">
+        <div className="space-y-6">
           {projects.map((project, i) => (
             <motion.div
               key={project.title}
-              className="group cursor-pointer"
-              initial={{ opacity: 0, y: 80 }}
+              className="group cursor-pointer relative"
+              initial={{ opacity: 0, y: 100 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.9, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 1, delay: i * 0.15, ease: [0.22, 1, 0.36, 1] }}
             >
-              <div className="overflow-hidden rounded-sm mb-10 relative">
+              <div className="relative overflow-hidden rounded-lg">
                 <motion.img
                   src={project.image}
                   alt={project.title}
-                  className="w-full aspect-[16/9] object-cover"
+                  className="w-full aspect-[21/9] object-cover"
                   loading="lazy"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                  whileHover={{ scale: 1.04 }}
+                  transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                 />
-                {/* Hover overlay */}
-                <div className="absolute inset-0 bg-background-dark/0 group-hover:bg-background-dark/30 transition-colors duration-500 flex items-center justify-center">
-                  <motion.div
-                    className="opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                  >
-                    <div className="w-20 h-20 rounded-full border border-primary-foreground/50 flex items-center justify-center">
-                      <ArrowUpRight size={28} className="text-primary-foreground" />
+                {/* Dark overlay that lifts on hover */}
+                <div className="absolute inset-0 bg-background-dark/40 group-hover:bg-background-dark/20 transition-colors duration-700" />
+
+                {/* Project info overlay */}
+                <div className="absolute inset-0 flex items-end p-8 md:p-12">
+                  <div className="flex items-end justify-between w-full">
+                    <div>
+                      <div className="flex items-center gap-4 mb-3">
+                        <span className="text-label" style={{ color: "hsl(0 0% 60%)" }}>{project.category}</span>
+                        <span className="w-1 h-1 rounded-full bg-accent-gold" />
+                        <span className="text-label" style={{ color: "hsl(0 0% 40%)" }}>{project.year}</span>
+                      </div>
+                      <h3 className="text-heading font-display italic group-hover:text-accent-gold transition-colors duration-500" style={{ color: "hsl(40 7% 92%)" }}>
+                        {project.title}
+                      </h3>
+                      <p className="text-body mt-2 max-w-md" style={{ color: "hsl(0 0% 55%)" }}>
+                        {project.description}
+                      </p>
                     </div>
-                  </motion.div>
-                </div>
-              </div>
-              <div className="flex items-start justify-between gap-8">
-                <div>
-                  <h3 className="text-heading font-bold transition-colors duration-300 group-hover:text-accent-gold">
-                    {project.title}
-                  </h3>
-                  <p className="text-body mt-3" style={{ color: "hsl(0,0%,50%)" }}>
-                    {project.description}
-                  </p>
-                </div>
-                <div className="flex gap-6 flex-shrink-0 pt-2">
-                  <span className="text-small tracking-widest uppercase" style={{ color: "hsl(0,0%,40%)" }}>
-                    {project.category}
-                  </span>
-                  <span className="text-small" style={{ color: "hsl(0,0%,30%)" }}>
-                    {project.year}
-                  </span>
+                    <div className="hidden md:flex w-16 h-16 rounded-full border border-primary-foreground/20 items-center justify-center group-hover:border-accent-gold group-hover:bg-accent-gold/10 transition-all duration-500 flex-shrink-0">
+                      <ArrowUpRight size={22} className="text-primary-foreground group-hover:text-accent-gold transition-colors duration-500" />
+                    </div>
+                  </div>
                 </div>
               </div>
             </motion.div>

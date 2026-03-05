@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
@@ -25,7 +24,7 @@ const Navbar = () => {
     <motion.nav
       className={`fixed top-0 left-0 right-0 z-50 h-20 flex items-center transition-all duration-500 ${
         scrolled
-          ? "bg-background-dark/95 backdrop-blur-md border-b border-primary-foreground/5"
+          ? "bg-background-dark/95 backdrop-blur-xl border-b border-primary-foreground/5"
           : "bg-transparent"
       }`}
       initial={{ y: -80 }}
@@ -33,8 +32,8 @@ const Navbar = () => {
       transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
     >
       <div className="container-site w-full flex items-center justify-between">
-        <a href="#" className="font-bold text-lg tracking-[0.1em] uppercase" style={{ color: "hsl(40, 7%, 95%)" }}>
-          Plus<span className="text-accent-gold">Minus</span>
+        <a href="#" className="font-display text-2xl tracking-tight" style={{ color: "hsl(40 7% 92%)" }}>
+          Plus<span className="italic text-accent-gold">Minus</span>
         </a>
 
         <div className="hidden md:flex items-center gap-10">
@@ -42,8 +41,8 @@ const Navbar = () => {
             <a
               key={link.label}
               href={link.href}
-              className="text-[13px] font-medium tracking-[0.15em] uppercase transition-colors duration-300 hover:text-accent-gold"
-              style={{ color: "hsl(40, 7%, 60%)" }}
+              className="text-label hover:text-accent-gold transition-colors duration-300"
+              style={{ color: "hsl(40 7% 50%)" }}
             >
               {link.label}
             </a>
@@ -51,15 +50,19 @@ const Navbar = () => {
         </div>
 
         <div className="hidden md:block">
-          <Button variant="hero-outline" size="default" className="text-[13px] tracking-[0.1em] uppercase px-6">
+          <a
+            href="#cta"
+            className="text-label px-6 py-3 border rounded-full transition-all duration-300 hover:bg-accent-gold hover:border-accent-gold hover:text-background-dark"
+            style={{ color: "hsl(40 7% 70%)", borderColor: "hsl(40 7% 20%)" }}
+          >
             Start Project
-          </Button>
+          </a>
         </div>
 
         <button
           className="md:hidden p-2"
           onClick={() => setMobileOpen(!mobileOpen)}
-          style={{ color: "hsl(40, 7%, 95%)" }}
+          style={{ color: "hsl(40 7% 92%)" }}
         >
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -68,7 +71,7 @@ const Navbar = () => {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            className="absolute top-20 left-0 right-0 bg-background-dark/98 backdrop-blur-md border-b border-primary-foreground/5 md:hidden"
+            className="absolute top-20 left-0 right-0 bg-background-dark/98 backdrop-blur-xl border-b border-primary-foreground/5 md:hidden"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
@@ -80,11 +83,11 @@ const Navbar = () => {
                   key={link.label}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="text-2xl font-bold transition-colors duration-200 hover:text-accent-gold"
-                  style={{ color: "hsl(40, 7%, 85%)" }}
-                  initial={{ opacity: 0, x: -20 }}
+                  className="font-display text-4xl italic hover:text-accent-gold transition-colors"
+                  style={{ color: "hsl(40 7% 85%)" }}
+                  initial={{ opacity: 0, x: -30 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.05 }}
+                  transition={{ delay: i * 0.06 }}
                 >
                   {link.label}
                 </motion.a>

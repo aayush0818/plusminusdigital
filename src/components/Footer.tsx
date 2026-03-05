@@ -9,54 +9,56 @@ const footerLinks = [
 
 const Footer = () => {
   return (
-    <footer className="section-dark" style={{ padding: "80px 0 40px" }}>
+    <footer className="section-dark border-t border-primary-foreground/8" style={{ padding: "100px 0 40px" }}>
       <div className="container-site">
-        {/* Large brand statement */}
+        {/* Giant tagline */}
         <motion.div
-          className="mb-20 border-b border-primary-foreground/10 pb-20"
-          initial={{ opacity: 0, y: 30 }}
+          className="mb-24"
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.8 }}
         >
-          <p className="text-heading-lg font-display italic max-w-3xl" style={{ color: "hsl(0,0%,25%)" }}>
+          <p className="text-hero font-display italic leading-none" style={{ color: "hsl(0 0% 12%)" }}>
             Minus the Noise.
             <br />
-            <span className="text-accent-gold">Plus the Results.</span>
+            <span className="text-accent-gold" style={{ opacity: 0.4 }}>Plus the Results.</span>
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
           <div>
-            <h3 className="font-bold text-lg tracking-[0.1em] uppercase mb-4">
-              Plus<span className="text-accent-gold">Minus</span>
-            </h3>
-            <p className="text-small" style={{ color: "hsl(0,0%,40%)" }}>
-              Brand-led websites built to perform.
+            <span className="font-display text-2xl block mb-4" style={{ color: "hsl(40 7% 80%)" }}>
+              Plus<span className="italic text-accent-gold">Minus</span>
+            </span>
+            <p className="text-small" style={{ color: "hsl(0 0% 35%)" }}>
+              Brand-led websites<br />built to perform.
             </p>
           </div>
+
           <div>
-            <h4 className="text-small font-semibold tracking-[0.2em] uppercase mb-6 text-accent-gold">Navigation</h4>
-            <nav className="flex flex-col gap-3">
+            <h4 className="text-label text-accent-gold mb-8">Navigation</h4>
+            <nav className="flex flex-col gap-4">
               {footerLinks.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
-                  className="text-small transition-colors duration-200 hover:text-accent-gold"
-                  style={{ color: "hsl(0,0%,50%)" }}
+                  className="text-small hover:text-accent-gold transition-colors duration-300"
+                  style={{ color: "hsl(0 0% 45%)" }}
                 >
                   {link.label}
                 </a>
               ))}
             </nav>
           </div>
+
           <div>
-            <h4 className="text-small font-semibold tracking-[0.2em] uppercase mb-6 text-accent-gold">Contact</h4>
-            <div className="flex flex-col gap-3">
+            <h4 className="text-label text-accent-gold mb-8">Contact</h4>
+            <div className="flex flex-col gap-4">
               <a
                 href="mailto:hello@plusminusdigital.com"
-                className="text-small transition-colors duration-200 hover:text-accent-gold"
-                style={{ color: "hsl(0,0%,50%)" }}
+                className="text-small hover:text-accent-gold transition-colors duration-300"
+                style={{ color: "hsl(0 0% 45%)" }}
               >
                 hello@plusminusdigital.com
               </a>
@@ -64,28 +66,27 @@ const Footer = () => {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-small transition-colors duration-200 hover:text-accent-gold"
-                style={{ color: "hsl(0,0%,50%)" }}
+                className="text-small hover:text-accent-gold transition-colors duration-300"
+                style={{ color: "hsl(0 0% 45%)" }}
               >
                 Instagram
               </a>
             </div>
           </div>
+
           <div>
-            <h4 className="text-small font-semibold tracking-[0.2em] uppercase mb-6 text-accent-gold">Location</h4>
-            <p className="text-small" style={{ color: "hsl(0,0%,50%)" }}>
-              Amsterdam, NL
-              <br />
-              Available worldwide
+            <h4 className="text-label text-accent-gold mb-8">Location</h4>
+            <p className="text-small" style={{ color: "hsl(0 0% 45%)" }}>
+              Amsterdam, NL<br />Available worldwide
             </p>
           </div>
         </div>
 
-        <div className="border-t border-primary-foreground/10 pt-8 flex items-center justify-between flex-wrap gap-4">
-          <p className="text-small" style={{ color: "hsl(0,0%,30%)" }}>
+        <div className="border-t border-primary-foreground/8 pt-8 flex items-center justify-between flex-wrap gap-4">
+          <p className="text-label" style={{ color: "hsl(0 0% 20%)" }}>
             © 2026 PlusMinus Digital
           </p>
-          <p className="text-small" style={{ color: "hsl(0,0%,25%)" }}>
+          <p className="text-label" style={{ color: "hsl(0 0% 15%)" }}>
             Designed & Built by PlusMinus
           </p>
         </div>
