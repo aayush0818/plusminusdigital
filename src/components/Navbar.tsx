@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
@@ -21,26 +22,28 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 h-20 flex items-center transition-all duration-300 ${
+    <motion.nav
+      className={`fixed top-0 left-0 right-0 z-50 h-20 flex items-center transition-all duration-500 ${
         scrolled
-          ? "bg-background-dark/95 backdrop-blur-md border-b border-foreground-light/10"
+          ? "bg-background-dark/95 backdrop-blur-md border-b border-primary-foreground/5"
           : "bg-transparent"
       }`}
+      initial={{ y: -80 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
     >
       <div className="container-site w-full flex items-center justify-between">
-        <a href="#" className="text-primary-foreground font-bold text-xl tracking-tight" style={{ color: "hsl(40, 7%, 95%)" }}>
-          PlusMinus
+        <a href="#" className="font-bold text-lg tracking-[0.1em] uppercase" style={{ color: "hsl(40, 7%, 95%)" }}>
+          Plus<span className="text-accent-gold">Minus</span>
         </a>
 
-        {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-10">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className="text-sm font-medium tracking-wide transition-colors duration-200 hover:text-accent-gold"
-              style={{ color: "hsl(40, 7%, 75%)" }}
+              className="text-[13px] font-medium tracking-[0.15em] uppercase transition-colors duration-300 hover:text-accent-gold"
+              style={{ color: "hsl(40, 7%, 60%)" }}
             >
               {link.label}
             </a>
@@ -48,12 +51,11 @@ const Navbar = () => {
         </div>
 
         <div className="hidden md:block">
-          <Button variant="hero" size="default">
+          <Button variant="hero-outline" size="default" className="text-[13px] tracking-[0.1em] uppercase px-6">
             Start Project
           </Button>
         </div>
 
-        {/* Mobile hamburger */}
         <button
           className="md:hidden p-2"
           onClick={() => setMobileOpen(!mobileOpen)}
@@ -63,28 +65,35 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile menu */}
-      {mobileOpen && (
-        <div className="absolute top-20 left-0 right-0 bg-background-dark/98 backdrop-blur-md border-b border-foreground-light/10 md:hidden">
-          <div className="container-site py-8 flex flex-col gap-6">
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                onClick={() => setMobileOpen(false)}
-                className="text-lg font-medium transition-colors duration-200 hover:text-accent-gold"
-                style={{ color: "hsl(40, 7%, 85%)" }}
-              >
-                {link.label}
-              </a>
-            ))}
-            <Button variant="hero" size="default" className="w-fit mt-2">
-              Start Project
-            </Button>
-          </div>
-        </div>
-      )}
-    </nav>
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            className="absolute top-20 left-0 right-0 bg-background-dark/98 backdrop-blur-md border-b border-primary-foreground/5 md:hidden"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.3 }}
+          >
+            <div className="container-site py-10 flex flex-col gap-6">
+              {navLinks.map((link, i) => (
+                <motion.a
+                  key={link.label}
+                  href={link.href}
+                  onClick={() => setMobileOpen(false)}
+                  className="text-2xl font-bold transition-colors duration-200 hover:text-accent-gold"
+                  style={{ color: "hsl(40, 7%, 85%)" }}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.05 }}
+                >
+                  {link.label}
+                </motion.a>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.nav>
   );
 };
 

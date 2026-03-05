@@ -21,36 +21,60 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="section-dark" style={{ padding: "140px 0" }}>
+    <section id="services" className="section-light" style={{ padding: "160px 0" }}>
       <div className="container-site">
+        <motion.div
+          className="flex items-center gap-4 mb-6"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="w-12 h-px bg-accent-gold" />
+          <span className="text-small tracking-[0.3em] uppercase text-accent-gold font-medium">
+            What We Do
+          </span>
+        </motion.div>
+
         <motion.h2
-          className="text-heading-lg mb-20"
-          initial={{ opacity: 0, y: 30 }}
+          className="text-heading-lg mb-24"
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
           Services
         </motion.h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+
+        <div className="space-y-0">
           {services.map((service, i) => (
             <motion.div
               key={service.title}
-              className="border-t border-foreground-light/15 pt-10 group"
+              className="group border-t border-border py-12 flex items-start justify-between gap-8 cursor-pointer hover:pl-4 transition-all duration-500"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
             >
-              <span className="text-small text-accent-gold mb-4 block font-medium tracking-widest">
-                0{i + 1}
-              </span>
-              <h3 className="text-subheading font-bold mb-4 transition-colors duration-300 group-hover:text-accent-gold">
-                {service.title}
-              </h3>
-              <p className="text-body" style={{ color: "hsl(0,0%,50%)" }}>{service.description}</p>
+              <div className="flex items-start gap-8">
+                <span className="text-small text-accent-gold font-medium tracking-widest pt-2 flex-shrink-0">
+                  0{i + 1}
+                </span>
+                <div>
+                  <h3 className="text-heading font-bold transition-colors duration-300 group-hover:text-accent-gold">
+                    {service.title}
+                  </h3>
+                  <p className="text-body text-foreground-light mt-3 max-w-md">{service.description}</p>
+                </div>
+              </div>
+              <motion.div
+                className="w-8 h-8 rounded-full border border-foreground/20 flex items-center justify-center flex-shrink-0 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              >
+                <span className="text-foreground text-lg">→</span>
+              </motion.div>
             </motion.div>
           ))}
+          <div className="border-t border-border" />
         </div>
       </div>
     </section>
