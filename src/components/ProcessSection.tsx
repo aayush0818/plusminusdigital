@@ -1,69 +1,71 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 
 const steps = [
-  { num: "01", title: "Discovery", desc: "Understanding your business, audience, and goals through research and deep conversation." },
-  { num: "02", title: "Strategy", desc: "Defining the structure, messaging, and positioning that will drive results." },
-  { num: "03", title: "Design", desc: "Crafting a brand-led visual system that feels premium and converts." },
-  { num: "04", title: "Development", desc: "Building a fast, scalable, and meticulously coded website." },
-  { num: "05", title: "Launch", desc: "Deployment, optimization, and ongoing performance refinement." },
+  { num: "01", title: "Discovery", desc: "Understanding your business, audience, and goals." },
+  { num: "02", title: "Strategy", desc: "Defining structure, messaging, and positioning." },
+  { num: "03", title: "Design", desc: "Crafting a visual system that converts." },
+  { num: "04", title: "Development", desc: "Building fast, scalable, and clean." },
+  { num: "05", title: "Launch", desc: "Deployment and ongoing optimization." },
 ];
 
 const ProcessSection = () => {
+  const [hovered, setHovered] = useState<number | null>(null);
+
   return (
-    <section id="process" className="section-dark relative overflow-hidden grain-overlay" style={{ padding: "180px 0" }}>
-      <div className="container-site relative z-10">
-        <motion.span
-          className="text-label text-accent-gold block mb-6"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-        >
-          How We Work
-        </motion.span>
-
-        <motion.h2
-          className="text-heading-lg mb-8"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        >
-          A proven <span className="font-display italic text-accent-gold">process</span>
-        </motion.h2>
-
-        <motion.p
-          className="text-body-lg max-w-xl mb-24"
-          style={{ color: "hsl(0 0% 45%)" }}
-          initial={{ opacity: 0, y: 20 }}
+    <section id="process" className="section-light border-t border-border" style={{ padding: "160px 0" }}>
+      <div className="container-site">
+        <motion.div
+          className="mb-20"
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.2, duration: 0.6 }}
+          transition={{ duration: 0.7 }}
         >
-          Every project follows five deliberate phases. No shortcuts. No guesswork.
-        </motion.p>
+          <p className="text-[13px] font-semibold tracking-[0.2em] uppercase text-foreground-muted mb-4">
+            How We Work
+          </p>
+          <h2 style={{ fontSize: "clamp(36px, 5vw, 64px)", lineHeight: 1.05, letterSpacing: "-0.03em" }} className="font-bold text-foreground">
+            Our Process
+          </h2>
+        </motion.div>
 
-        <div className="space-y-0">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-4">
           {steps.map((step, i) => (
             <motion.div
               key={step.num}
-              className="group border-t border-primary-foreground/8 py-10 md:py-14 grid grid-cols-12 gap-4 md:gap-8 items-baseline cursor-pointer"
-              initial={{ opacity: 0, y: 40 }}
+              className="cursor-pointer group"
+              onMouseEnter={() => setHovered(i)}
+              onMouseLeave={() => setHovered(null)}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
+              transition={{ duration: 0.5, delay: i * 0.08 }}
             >
-              <span className="col-span-2 md:col-span-1 text-label text-accent-gold">
+              <div
+                className="text-5xl md:text-6xl font-bold tracking-tight transition-colors duration-300 mb-4"
+                style={{
+                  color: hovered === i ? "hsl(var(--foreground))" : "hsl(var(--border))",
+                }}
+              >
                 {step.num}
-              </span>
-              <h3 className="col-span-10 md:col-span-3 text-subheading font-display italic group-hover:text-accent-gold transition-colors duration-400" style={{ color: "hsl(40 7% 85%)" }}>
+              </div>
+              <div className="text-base font-semibold text-foreground mb-2">
                 {step.title}
-              </h3>
-              <p className="col-span-12 md:col-span-8 text-body mt-2 md:mt-0" style={{ color: "hsl(0 0% 40%)" }}>
+              </div>
+              <motion.div
+                className="text-sm text-foreground-muted leading-relaxed overflow-hidden"
+                initial={false}
+                animate={{
+                  height: hovered === i ? "auto" : 0,
+                  opacity: hovered === i ? 1 : 0,
+                }}
+                transition={{ duration: 0.3 }}
+              >
                 {step.desc}
-              </p>
+              </motion.div>
             </motion.div>
           ))}
-          <div className="border-t border-primary-foreground/8" />
         </div>
       </div>
     </section>
