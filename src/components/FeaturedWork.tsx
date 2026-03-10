@@ -1,118 +1,109 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import work1 from "@/assets/work-1.jpg";
-import work2 from "@/assets/work-2.jpg";
-import work3 from "@/assets/work-3.jpg";
 
 const projects = [
   {
-    image: work1,
     title: "Trots Architects",
-    description: "A digital presence designed to match architectural precision.",
     category: "Architecture",
     year: "2025",
+    gradient: "linear-gradient(135deg, hsl(220 25% 18%), hsl(200 30% 25%), hsl(180 20% 15%))",
+    size: "large",
   },
   {
-    image: work2,
     title: "Refinnd Restaurant",
-    description: "An elegant web experience that elevates a premium dining brand.",
     category: "Hospitality",
     year: "2025",
+    gradient: "linear-gradient(135deg, hsl(25 40% 22%), hsl(15 35% 18%), hsl(35 30% 12%))",
+    size: "small",
   },
   {
-    image: work3,
     title: "Overchends Real Estate",
-    description: "A luxury property platform built for trust and conversion.",
     category: "Real Estate",
     year: "2024",
+    gradient: "linear-gradient(135deg, hsl(150 15% 15%), hsl(170 20% 20%), hsl(140 15% 12%))",
+    size: "small",
+  },
+  {
+    title: "Velora Finance",
+    category: "Fintech",
+    year: "2024",
+    gradient: "linear-gradient(135deg, hsl(260 25% 18%), hsl(280 20% 22%), hsl(250 20% 14%))",
+    size: "large",
   },
 ];
 
 const FeaturedWork = () => {
   return (
-    <section id="work" className="section-dark" style={{ padding: "180px 0" }}>
+    <section id="work" className="section-light" style={{ padding: "160px 0" }}>
       <div className="container-site">
-        <div className="flex items-end justify-between mb-8">
+        <motion.div
+          className="flex items-end justify-between mb-20"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+        >
           <div>
-            <motion.span
-              className="text-label text-accent-gold block mb-6"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-            >
+            <p className="text-[13px] font-semibold tracking-[0.2em] uppercase text-foreground-muted mb-4">
               Selected Work
-            </motion.span>
-            <motion.h2
-              className="text-heading-lg"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            >
-              Featured <span className="font-display italic text-accent-gold">Projects</span>
-            </motion.h2>
+            </p>
+            <h2 style={{ fontSize: "clamp(36px, 5vw, 64px)", lineHeight: 1.05, letterSpacing: "-0.03em" }} className="font-bold text-foreground">
+              Featured{" "}
+              <span className="font-display italic font-normal">Projects</span>
+            </h2>
           </div>
-          <motion.a
+          <a
             href="#work"
-            className="hidden md:flex items-center gap-2 text-label text-accent-gold border-b border-accent-gold/30 pb-1 hover:border-accent-gold transition-colors"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
+            className="hidden md:flex items-center gap-2 text-[13px] font-semibold text-foreground-muted hover:text-foreground transition-colors"
           >
-            All Projects <ArrowUpRight size={12} />
-          </motion.a>
-        </div>
-      </div>
+            All Projects <ArrowUpRight size={14} />
+          </a>
+        </motion.div>
 
-      {/* Full-width project cards */}
-      <div className="container-wide mt-20">
-        <div className="space-y-6">
-          {projects.map((project, i) => (
-            <motion.div
-              key={project.title}
-              className="group cursor-pointer relative"
-              initial={{ opacity: 0, y: 100 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 1, delay: i * 0.15, ease: [0.22, 1, 0.36, 1] }}
-            >
-              <div className="relative overflow-hidden rounded-lg">
-                <motion.img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full aspect-[21/9] object-cover"
-                  loading="lazy"
-                  whileHover={{ scale: 1.04 }}
-                  transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                />
-                {/* Dark overlay that lifts on hover */}
-                <div className="absolute inset-0 bg-background-dark/40 group-hover:bg-background-dark/20 transition-colors duration-700" />
-
-                {/* Project info overlay */}
-                <div className="absolute inset-0 flex items-end p-8 md:p-12">
-                  <div className="flex items-end justify-between w-full">
-                    <div>
-                      <div className="flex items-center gap-4 mb-3">
-                        <span className="text-label" style={{ color: "hsl(0 0% 60%)" }}>{project.category}</span>
-                        <span className="w-1 h-1 rounded-full bg-accent-gold" />
-                        <span className="text-label" style={{ color: "hsl(0 0% 40%)" }}>{project.year}</span>
-                      </div>
-                      <h3 className="text-heading font-display italic group-hover:text-accent-gold transition-colors duration-500" style={{ color: "hsl(40 7% 92%)" }}>
-                        {project.title}
-                      </h3>
-                      <p className="text-body mt-2 max-w-md" style={{ color: "hsl(0 0% 55%)" }}>
-                        {project.description}
-                      </p>
-                    </div>
-                    <div className="hidden md:flex w-16 h-16 rounded-full border border-primary-foreground/20 items-center justify-center group-hover:border-accent-gold group-hover:bg-accent-gold/10 transition-all duration-500 flex-shrink-0">
-                      <ArrowUpRight size={22} className="text-primary-foreground group-hover:text-accent-gold transition-colors duration-500" />
-                    </div>
+        {/* Asymmetric grid */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+          {projects.map((project, i) => {
+            const isLarge = project.size === "large";
+            return (
+              <motion.a
+                key={project.title}
+                href="#"
+                className={`group block ${isLarge ? "md:col-span-7" : "md:col-span-5"}`}
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.8, delay: i * 0.1 }}
+              >
+                <div
+                  className="relative overflow-hidden rounded-lg"
+                  style={{
+                    background: project.gradient,
+                    aspectRatio: isLarge ? "16/10" : "4/3",
+                  }}
+                >
+                  <motion.div
+                    className="absolute inset-0"
+                    style={{ background: project.gradient }}
+                    whileHover={{ scale: 1.03 }}
+                    transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                  />
+                  <div className="absolute top-6 right-6 w-10 h-10 rounded-full border border-white/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <ArrowUpRight size={16} style={{ color: "hsl(0 0% 80%)" }} />
                   </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+                <div className="mt-5 flex items-baseline justify-between">
+                  <h3 className="text-lg font-semibold text-foreground group-hover:text-foreground-muted transition-colors">
+                    {project.title}
+                  </h3>
+                  <div className="flex items-center gap-3 text-[13px] text-foreground-muted">
+                    <span>{project.category}</span>
+                    <span className="w-1 h-1 rounded-full bg-border" />
+                    <span>{project.year}</span>
+                  </div>
+                </div>
+              </motion.a>
+            );
+          })}
         </div>
       </div>
     </section>
