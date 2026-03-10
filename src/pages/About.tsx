@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
+import logoMark from "@/assets/logo-mark.png";
 
 const minusValues = [
   "No templates",
@@ -25,12 +26,10 @@ const values = [
 ];
 
 const milestones = [
-  { year: "2014", event: "Founded in Amsterdam as a two-person design studio" },
-  { year: "2016", event: "Expanded into full-stack development" },
-  { year: "2018", event: "Crossed 25 projects with a 100% client retention rate" },
-  { year: "2020", event: "Launched conversion optimization practice" },
-  { year: "2023", event: "50+ projects delivered across 12 countries" },
-  { year: "2025", event: "Recognized as a top 10 European digital studio" },
+  { year: "2025", event: "Founded in Mumbai, India as a design-first digital studio" },
+  { year: "2025", event: "Delivered first 10 projects across India and the Middle East" },
+  { year: "2025", event: "Expanded into full-stack development and conversion optimization" },
+  { year: "2026", event: "Crossed 20+ projects with clients spanning 4 continents" },
 ];
 
 const About = () => {
@@ -40,7 +39,6 @@ const About = () => {
       <main>
         {/* Split Duality Hero */}
         <section className="min-h-[80vh] grid grid-cols-1 md:grid-cols-2">
-          {/* Left: Dark - Minus */}
           <div className="section-dark flex items-center" style={{ padding: "160px 0 80px" }}>
             <div className="w-full px-8 md:px-16 lg:px-20">
               <motion.div
@@ -69,7 +67,6 @@ const About = () => {
             </div>
           </div>
 
-          {/* Right: Light - Plus */}
           <div className="section-light flex items-center" style={{ padding: "160px 0 80px" }}>
             <div className="w-full px-8 md:px-16 lg:px-20">
               <motion.div
@@ -120,7 +117,10 @@ const About = () => {
                 transition={{ duration: 0.7, delay: 0.2 }}
               >
                 <p className="text-lg leading-relaxed text-foreground-muted mb-6">
-                  PlusMinus is a digital design and development studio based in Amsterdam. We partner with ambitious brands to create web experiences that look exceptional and perform even better.
+                  PlusMinus is a digital design and development studio founded in Mumbai, India in 2025. We partner with ambitious brands across the globe to create web experiences that look exceptional and perform even better.
+                </p>
+                <p className="text-lg leading-relaxed text-foreground-muted mb-6">
+                  With 20+ projects delivered across India, the Middle East, Europe, and North America, we bring a global perspective to every engagement — while staying rooted in the energy and hustle of Mumbai.
                 </p>
                 <p className="text-lg leading-relaxed text-foreground-muted">
                   Our approach is simple: strip away the unnecessary, amplify what matters. No fluff, no filler — just work that works.
@@ -130,7 +130,22 @@ const About = () => {
           </div>
         </section>
 
-        {/* Values with ± markers */}
+        {/* Logo showcase */}
+        <section className="section-light border-t border-border" style={{ padding: "80px 0" }}>
+          <div className="container-site flex items-center justify-center">
+            <motion.img
+              src={logoMark}
+              alt="PlusMinus mark"
+              className="h-24 md:h-32 w-auto opacity-10"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 0.1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            />
+          </div>
+        </section>
+
+        {/* Values */}
         <section className="section-light border-t border-border" style={{ padding: "160px 0" }}>
           <div className="container-site">
             <motion.div
@@ -161,7 +176,7 @@ const About = () => {
                   transition={{ duration: 0.6, delay: i * 0.1 }}
                 >
                   <div className="flex items-center gap-3 mb-4">
-                    <span className="font-display italic text-lg text-foreground-muted">±</span>
+                    <img src={logoMark} alt="" className="h-3 w-auto opacity-30" />
                     <span className="text-[13px] font-semibold text-foreground-muted">0{i + 1}</span>
                   </div>
                   <h3 className="text-2xl font-bold text-foreground mb-4">{value.title}</h3>
@@ -172,7 +187,7 @@ const About = () => {
           </div>
         </section>
 
-        {/* Timeline with ± markers */}
+        {/* Timeline */}
         <section className="section-dark" style={{ padding: "160px 0" }}>
           <div className="container-site">
             <motion.div
@@ -194,13 +209,12 @@ const About = () => {
             </motion.div>
 
             <div className="relative">
-              {/* Vertical line */}
               <div className="absolute left-[18px] top-0 bottom-0 w-px hidden md:block" style={{ background: "hsl(0 0% 18%)" }} />
 
               <div className="space-y-0">
                 {milestones.map((milestone, i) => (
                   <motion.div
-                    key={milestone.year}
+                    key={i}
                     className="border-t py-8 md:py-10 flex items-baseline gap-8 md:gap-16 relative"
                     style={{ borderColor: "hsl(0 0% 15%)" }}
                     initial={{ opacity: 0, y: 20 }}
@@ -208,8 +222,7 @@ const About = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: i * 0.08 }}
                   >
-                    {/* ± marker on the line */}
-                    <span className="hidden md:block absolute left-2 top-8 font-display italic text-sm" style={{ color: "hsl(0 0% 30%)" }}>±</span>
+                    <img src={logoMark} alt="" className="hidden md:block absolute left-1 top-9 h-3 w-auto opacity-20" style={{ filter: "invert(1)" }} />
                     <span className="text-3xl md:text-4xl font-bold md:ml-12" style={{ color: "hsl(0 0% 30%)" }}>
                       {milestone.year}
                     </span>

@@ -2,8 +2,9 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import logoMark from "@/assets/logo-mark.png";
 
-const budgetOptions = ["Under €10k", "€10k – €25k", "€25k – €50k", "€50k – €100k", "€100k+"];
+const budgetOptions = ["Under ₹5L", "₹5L – ₹15L", "₹15L – ₹30L", "₹30L – ₹50L", "₹50L+"];
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -32,14 +33,13 @@ const Contact = () => {
                 transition={{ duration: 0.7 }}
                 className="relative"
               >
-                {/* Decorative ± */}
-                <span
-                  className="absolute -top-16 -left-4 font-display italic select-none pointer-events-none"
-                  style={{ fontSize: "200px", lineHeight: 1, color: "hsl(var(--border))", opacity: 0.5 }}
+                {/* Decorative logo mark */}
+                <img
+                  src={logoMark}
+                  alt=""
+                  className="absolute -top-8 -left-4 h-48 w-auto opacity-[0.06] pointer-events-none select-none"
                   aria-hidden="true"
-                >
-                  ±
-                </span>
+                />
 
                 <div className="relative z-10">
                   <p className="text-[13px] font-semibold tracking-[0.2em] uppercase text-foreground-muted mb-4">
@@ -61,16 +61,16 @@ const Contact = () => {
                       <h3 className="text-[12px] font-semibold tracking-[0.15em] uppercase text-foreground-muted mb-3">
                         Email
                       </h3>
-                      <a href="mailto:hello@plusminusdigital.com" className="text-lg font-medium text-foreground hover:text-foreground-muted transition-colors">
-                        hello@plusminusdigital.com
+                      <a href="mailto:hello@plusminus.studio" className="text-lg font-medium text-foreground hover:text-foreground-muted transition-colors">
+                        hello@plusminus.studio
                       </a>
                     </div>
                     <div>
                       <h3 className="text-[12px] font-semibold tracking-[0.15em] uppercase text-foreground-muted mb-3">
                         Location
                       </h3>
-                      <p className="text-lg font-medium text-foreground">Amsterdam, Netherlands</p>
-                      <p className="text-sm text-foreground-muted mt-1">Available worldwide</p>
+                      <p className="text-lg font-medium text-foreground">Mumbai, India</p>
+                      <p className="text-sm text-foreground-muted mt-1">Working with clients worldwide</p>
                     </div>
                     <div>
                       <h3 className="text-[12px] font-semibold tracking-[0.15em] uppercase text-foreground-muted mb-3">
@@ -137,7 +137,7 @@ const Contact = () => {
                   <select
                     value={formData.budget}
                     onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                    className="w-full bg-transparent border-b border-border py-3 text-foreground text-lg focus:outline-none focus:border-foreground transition-colors appearance-none cursor-pointer"
+                    className="w-full bg-transparent border-b border-border py-3 text-foreground text-lg focus:outline-none focus:border-foreground transition-colors appearance-none"
                   >
                     <option value="" className="bg-background">Select a range</option>
                     {budgetOptions.map((opt) => (

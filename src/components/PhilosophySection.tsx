@@ -2,10 +2,10 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 
 const stats = [
-  { number: 50, suffix: "+", label: "Projects Delivered" },
-  { number: 12, suffix: "", label: "Years Experience" },
+  { number: 20, suffix: "+", label: "Projects Delivered" },
+  { number: 1, suffix: "", label: "Year in Business" },
   { number: 3, suffix: "×", label: "Avg. Conversion Lift" },
-  { number: 98, suffix: "%", label: "Client Retention" },
+  { number: 100, suffix: "%", label: "Client Retention" },
 ];
 
 const CountUp = ({ target, suffix }: { target: number; suffix: string }) => {
@@ -41,7 +41,6 @@ const PhilosophySection = () => {
   return (
     <section id="about" className="section-light" style={{ padding: "100px 0" }}>
       <div className="container-site">
-        {/* ± divider above stats */}
         <div className="pm-divider mb-16">
           <span className="font-display italic text-xl text-foreground-muted">±</span>
         </div>
