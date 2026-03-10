@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
@@ -8,14 +9,14 @@ import CTASection from "@/components/CTASection";
 const categories = ["All", "Web Design", "Development", "Branding"];
 
 const projects = [
-  { title: "Meridian Finance", category: "Web Design", year: "2025", gradient: "linear-gradient(135deg, hsl(220 60% 60%), hsl(260 50% 50%))" },
-  { title: "Noma Kitchen", category: "Branding", year: "2025", gradient: "linear-gradient(135deg, hsl(30 70% 60%), hsl(15 60% 45%))" },
-  { title: "Volta Energy", category: "Development", year: "2024", gradient: "linear-gradient(135deg, hsl(150 50% 45%), hsl(180 40% 35%))" },
-  { title: "Arcade Studio", category: "Web Design", year: "2024", gradient: "linear-gradient(135deg, hsl(280 50% 55%), hsl(320 45% 50%))" },
-  { title: "Haven Real Estate", category: "Branding", year: "2024", gradient: "linear-gradient(135deg, hsl(200 40% 50%), hsl(220 35% 40%))" },
-  { title: "Prism Analytics", category: "Development", year: "2023", gradient: "linear-gradient(135deg, hsl(45 80% 55%), hsl(30 70% 45%))" },
-  { title: "Lyric Music App", category: "Web Design", year: "2023", gradient: "linear-gradient(135deg, hsl(340 55% 55%), hsl(360 50% 45%))" },
-  { title: "Bloom Wellness", category: "Branding", year: "2023", gradient: "linear-gradient(135deg, hsl(160 45% 50%), hsl(140 40% 40%))" },
+  { title: "Trots Architects", slug: "trots-architects", category: "Web Design", year: "2025", gradient: "linear-gradient(135deg, hsl(220 25% 18%), hsl(200 30% 25%), hsl(180 20% 15%))" },
+  { title: "Refinnd Restaurant", slug: "refinnd-restaurant", category: "Branding", year: "2025", gradient: "linear-gradient(135deg, hsl(25 40% 22%), hsl(15 35% 18%), hsl(35 30% 12%))" },
+  { title: "Overchends Real Estate", slug: "overchends-real-estate", category: "Web Design", year: "2024", gradient: "linear-gradient(135deg, hsl(150 15% 15%), hsl(170 20% 20%), hsl(140 15% 12%))" },
+  { title: "Velora Finance", slug: "velora-finance", category: "Development", year: "2024", gradient: "linear-gradient(135deg, hsl(260 25% 18%), hsl(280 20% 22%), hsl(250 20% 14%))" },
+  { title: "Meridian Finance", slug: "trots-architects", category: "Web Design", year: "2025", gradient: "linear-gradient(135deg, hsl(220 60% 60%), hsl(260 50% 50%))" },
+  { title: "Noma Kitchen", slug: "refinnd-restaurant", category: "Branding", year: "2025", gradient: "linear-gradient(135deg, hsl(30 70% 60%), hsl(15 60% 45%))" },
+  { title: "Volta Energy", slug: "velora-finance", category: "Development", year: "2024", gradient: "linear-gradient(135deg, hsl(150 50% 45%), hsl(180 40% 35%))" },
+  { title: "Arcade Studio", slug: "overchends-real-estate", category: "Web Design", year: "2024", gradient: "linear-gradient(135deg, hsl(280 50% 55%), hsl(320 45% 50%))" },
 ];
 
 const Work = () => {
@@ -28,7 +29,6 @@ const Work = () => {
     <>
       <Navbar />
       <main>
-        {/* Hero */}
         <section className="section-light pt-40 pb-20">
           <div className="container-site">
             <motion.p
@@ -59,7 +59,6 @@ const Work = () => {
           </div>
         </section>
 
-        {/* Filters */}
         <section className="section-light pb-8">
           <div className="container-site">
             <motion.div
@@ -85,23 +84,21 @@ const Work = () => {
           </div>
         </section>
 
-        {/* Project List - Hover Preview */}
         <section className="section-light pb-40">
           <div className="container-site">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-12">
-              {/* Left: rows */}
               <div>
                 {filtered.map((project, i) => (
                   <motion.div
                     key={project.title}
-                    className="border-t border-border cursor-pointer group"
+                    className="border-t border-border group"
                     onMouseEnter={() => setHoveredIndex(i)}
                     onMouseLeave={() => setHoveredIndex(null)}
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: i * 0.06 }}
                   >
-                    <div className="py-6 md:py-8 flex items-baseline justify-between">
+                    <Link to={`/work/${project.slug}`} className="py-6 md:py-8 flex items-baseline justify-between block">
                       <div className="flex items-baseline gap-5">
                         <span className="text-[13px] font-semibold text-foreground-muted">0{i + 1}</span>
                         <h3
@@ -127,13 +124,12 @@ const Work = () => {
                           <ArrowUpRight size={14} />
                         </motion.div>
                       </div>
-                    </div>
+                    </Link>
                   </motion.div>
                 ))}
                 <div className="border-t border-border" />
               </div>
 
-              {/* Right: preview */}
               <div className="hidden md:flex items-center justify-center relative sticky top-32" style={{ height: 500 }}>
                 {filtered.map((project, i) => (
                   <motion.div

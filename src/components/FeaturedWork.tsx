@@ -6,24 +6,28 @@ import { Link } from "react-router-dom";
 const projects = [
   {
     title: "Trots Architects",
+    slug: "trots-architects",
     category: "Architecture",
     year: "2025",
     gradient: "linear-gradient(135deg, hsl(220 25% 18%), hsl(200 30% 25%), hsl(180 20% 15%))",
   },
   {
     title: "Refinnd Restaurant",
+    slug: "refinnd-restaurant",
     category: "Hospitality",
     year: "2025",
     gradient: "linear-gradient(135deg, hsl(25 40% 22%), hsl(15 35% 18%), hsl(35 30% 12%))",
   },
   {
     title: "Overchends Real Estate",
+    slug: "overchends-real-estate",
     category: "Real Estate",
     year: "2024",
     gradient: "linear-gradient(135deg, hsl(150 15% 15%), hsl(170 20% 20%), hsl(140 15% 12%))",
   },
   {
     title: "Velora Finance",
+    slug: "velora-finance",
     category: "Fintech",
     year: "2024",
     gradient: "linear-gradient(135deg, hsl(260 25% 18%), hsl(280 20% 22%), hsl(250 20% 14%))",
@@ -60,14 +64,12 @@ const FeaturedWork = () => {
           </Link>
         </motion.div>
 
-        {/* Hover-preview list layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-12">
-          {/* Left: Project list */}
           <div>
             {projects.map((project, i) => (
               <motion.div
                 key={project.title}
-                className="border-t border-border cursor-pointer group"
+                className="border-t border-border group"
                 onMouseEnter={() => setHoveredIndex(i)}
                 onMouseLeave={() => setHoveredIndex(null)}
                 initial={{ opacity: 0, y: 30 }}
@@ -75,7 +77,7 @@ const FeaturedWork = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
               >
-                <div className="py-8 md:py-10 flex items-baseline justify-between">
+                <Link to={`/work/${project.slug}`} className="py-8 md:py-10 flex items-baseline justify-between block">
                   <div className="flex items-baseline gap-6">
                     <span
                       className="text-[13px] font-semibold transition-colors duration-300"
@@ -109,13 +111,12 @@ const FeaturedWork = () => {
                       <ArrowUpRight size={14} className="text-foreground" />
                     </motion.div>
                   </div>
-                </div>
+                </Link>
               </motion.div>
             ))}
             <div className="border-t border-border" />
           </div>
 
-          {/* Right: Preview */}
           <div className="hidden md:flex items-center justify-center relative" style={{ minHeight: 400 }}>
             {projects.map((project, i) => (
               <motion.div
