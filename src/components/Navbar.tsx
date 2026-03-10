@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
+import logoMark from "@/assets/logo-mark.png";
 
 const navLinks = [
   { label: "Work", href: "/work" },
@@ -26,7 +27,6 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // On non-home pages, always use light style
   const isDark = isHome && !pastHero;
 
   return (
@@ -43,12 +43,19 @@ const Navbar = () => {
       transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
     >
       <div className="container-site w-full flex items-center justify-between">
-        <Link
-          to="/"
-          className="text-xl font-bold tracking-tight transition-colors duration-300"
-          style={{ color: isDark ? "hsl(0 0% 95%)" : "hsl(0 0% 8%)" }}
-        >
-          PlusMinus
+        <Link to="/" className="flex items-center gap-2.5 transition-colors duration-300">
+          <img
+            src={logoMark}
+            alt="PlusMinus"
+            className="h-7 w-auto transition-all duration-300"
+            style={{ filter: isDark ? "invert(1)" : "none" }}
+          />
+          <span
+            className="text-lg font-bold tracking-tight"
+            style={{ color: isDark ? "hsl(0 0% 95%)" : "hsl(0 0% 8%)" }}
+          >
+            PlusMinus
+          </span>
         </Link>
 
         <div className="hidden md:flex items-center gap-1">

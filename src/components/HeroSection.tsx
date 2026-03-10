@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import logoMark from "@/assets/logo-mark.png";
 
 const clients = [
   "Stripe", "Vercel", "Linear", "Notion", "Figma", "Webflow", "Framer", "Arc",
@@ -31,17 +32,17 @@ const HeroSection = () => {
 
   return (
     <section className="section-dark min-h-screen relative flex flex-col overflow-hidden">
-      {/* Large ± watermark */}
+      {/* Logo watermark instead of ± text */}
       <div
         className="absolute inset-0 flex items-center justify-center pointer-events-none select-none"
         aria-hidden="true"
       >
-        <span
-          className="font-display text-[40vw] leading-none"
-          style={{ color: "hsl(0 0% 100% / 0.03)" }}
-        >
-          ±
-        </span>
+        <img
+          src={logoMark}
+          alt=""
+          className="w-[40vw] max-w-[500px] opacity-[0.04]"
+          style={{ filter: "invert(1)" }}
+        />
       </div>
 
       <div className="flex-1 flex items-center container-site pt-32 pb-20 relative z-10">
@@ -71,7 +72,7 @@ const HeroSection = () => {
                 </motion.span>
               </AnimatePresence>
             </div>
-            <span className="text-[15px] font-display italic" style={{ color: "hsl(0 0% 30%)" }}>±</span>
+            <img src={logoMark} alt="" className="h-4 w-auto opacity-30" style={{ filter: "invert(1)" }} />
             <div className="flex items-center gap-3">
               <span className="text-[13px] font-semibold tracking-[0.2em] uppercase" style={{ color: "hsl(0 0% 25%)" }}>
                 Plus the

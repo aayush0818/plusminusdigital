@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logoMark from "@/assets/logo-mark.png";
 
 const footerLinks = {
   Navigation: [
@@ -8,7 +9,7 @@ const footerLinks = {
     { label: "Journal", href: "/insights" },
   ],
   Contact: [
-    { label: "hello@plusminusdigital.com", href: "mailto:hello@plusminusdigital.com" },
+    { label: "hello@plusminus.studio", href: "mailto:hello@plusminus.studio" },
     { label: "Instagram", href: "https://instagram.com" },
     { label: "LinkedIn", href: "https://linkedin.com" },
     { label: "Twitter", href: "https://twitter.com" },
@@ -21,15 +22,15 @@ const Footer = () => {
       <div className="container-site">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
           <div className="md:col-span-2">
-            <Link to="/" className="flex items-center gap-2 mb-4">
-              <span className="text-xl font-bold" style={{ color: "hsl(0 0% 80%)" }}>PlusMinus</span>
-              <span className="font-display italic text-lg" style={{ color: "hsl(0 0% 30%)" }}>±</span>
+            <Link to="/" className="flex items-center gap-3 mb-4">
+              <img src={logoMark} alt="PlusMinus" className="h-6 w-auto" style={{ filter: "invert(1)" }} />
+              <span className="text-lg font-bold" style={{ color: "hsl(0 0% 80%)" }}>PlusMinus</span>
             </Link>
             <p className="text-[11px] font-semibold tracking-[0.25em] uppercase mb-4" style={{ color: "hsl(0 0% 30%)" }}>
               Minus the noise. Plus the results.
             </p>
             <p className="text-sm leading-relaxed max-w-sm" style={{ color: "hsl(0 0% 40%)" }}>
-              A digital design and development studio helping ambitious brands grow through exceptional web experiences.
+              A digital design and development studio from Mumbai, India — helping ambitious brands grow through exceptional web experiences worldwide.
             </p>
           </div>
 
@@ -70,10 +71,10 @@ const Footer = () => {
 
         <div className="border-t pt-8 flex items-center justify-between flex-wrap gap-4" style={{ borderColor: "hsl(0 0% 15%)" }}>
           <p className="text-[12px] font-medium" style={{ color: "hsl(0 0% 25%)" }}>
-            © 2026 PlusMinus Digital. All rights reserved.
+            © 2025 PlusMinus Studio. All rights reserved.
           </p>
           <p className="text-[12px] font-medium" style={{ color: "hsl(0 0% 20%)" }}>
-            Amsterdam, NL — Available worldwide
+            Mumbai, India — Available worldwide
           </p>
         </div>
       </div>
