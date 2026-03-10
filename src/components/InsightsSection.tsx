@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const articles = [
   {
@@ -38,12 +39,12 @@ const InsightsSection = () => {
               Insights
             </h2>
           </div>
-          <a
-            href="#journal"
+          <Link
+            to="/insights"
             className="hidden md:flex items-center gap-2 text-[13px] font-semibold text-foreground-muted hover:text-foreground transition-colors"
           >
             All Articles <ArrowUpRight size={14} />
-          </a>
+          </Link>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -58,9 +59,18 @@ const InsightsSection = () => {
               transition={{ duration: 0.6, delay: i * 0.1 }}
             >
               <div
-                className="rounded-lg h-48 md:h-56 mb-5 transition-transform duration-500 group-hover:scale-[1.02]"
+                className="rounded-lg h-48 md:h-56 mb-5 transition-transform duration-500 group-hover:scale-[1.02] relative overflow-hidden"
                 style={{ background: article.gradient }}
-              />
+              >
+                {/* Subtle ± watermark */}
+                <span
+                  className="absolute bottom-2 right-4 font-display italic text-4xl select-none pointer-events-none"
+                  style={{ color: "hsl(0 0% 0% / 0.04)" }}
+                  aria-hidden="true"
+                >
+                  ±
+                </span>
+              </div>
               <span className="text-[12px] font-semibold tracking-[0.15em] uppercase text-foreground-muted">
                 {article.tag}
               </span>
