@@ -58,9 +58,14 @@ const ServicesSection = () => {
               onMouseLeave={() => setActiveIndex(null)}
             >
               <div className="py-8 md:py-10 flex items-baseline gap-6 md:gap-12">
-                <span className="text-[13px] font-semibold text-foreground-muted w-8 flex-shrink-0">
-                  {service.num}
-                </span>
+                {/* +/- symbol */}
+                <motion.span
+                  className="text-2xl font-display italic flex-shrink-0 w-8 text-center select-none"
+                  style={{ color: "hsl(var(--foreground))" }}
+                  animate={{ rotate: activeIndex === i ? 0 : 0 }}
+                >
+                  {activeIndex === i ? "−" : "+"}
+                </motion.span>
                 <div className="flex-1">
                   <h3
                     className="text-2xl md:text-3xl font-bold transition-colors duration-300"

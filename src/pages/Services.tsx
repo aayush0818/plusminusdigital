@@ -79,12 +79,12 @@ const ServicesPage = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              From strategy to launch, we offer a complete suite of services designed to transform your digital presence and accelerate growth.
+              From strategy to launch, we offer a complete suite of services designed to transform your digital presence.
             </motion.p>
           </div>
         </section>
 
-        {/* Services Accordion */}
+        {/* Services Accordion with +/- */}
         <section className="section-light border-t border-border" style={{ padding: "80px 0 160px" }}>
           <div className="container-site">
             {services.map((service, i) => (
@@ -99,9 +99,12 @@ const ServicesPage = () => {
                 onMouseLeave={() => setActiveIndex(null)}
               >
                 <div className="py-8 md:py-10 flex items-baseline gap-6 md:gap-12">
-                  <span className="text-[13px] font-semibold text-foreground-muted w-8 flex-shrink-0">
-                    {service.num}
-                  </span>
+                  <motion.span
+                    className="text-2xl font-display italic flex-shrink-0 w-8 text-center select-none"
+                    style={{ color: "hsl(var(--foreground))" }}
+                  >
+                    {activeIndex === i ? "−" : "+"}
+                  </motion.span>
                   <div className="flex-1">
                     <h3
                       className="text-2xl md:text-4xl font-bold transition-colors duration-300"
@@ -143,49 +146,34 @@ const ServicesPage = () => {
           </div>
         </section>
 
-        {/* Our Approach */}
-        <section className="section-dark" style={{ padding: "160px 0" }}>
-          <div className="container-site">
+        {/* Approach - Alternating strips */}
+        <section style={{ padding: 0 }}>
+          {approach.map((item, i) => (
             <motion.div
-              className="mb-20"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              key={item.step}
+              className={i % 2 === 0 ? "section-dark" : "section-light"}
+              style={{ padding: "80px 0" }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
+              transition={{ duration: 0.6 }}
             >
-              <p className="text-[13px] font-semibold tracking-[0.2em] uppercase mb-4" style={{ color: "hsl(0 0% 40%)" }}>
-                How We Work
-              </p>
-              <h2
-                className="font-bold"
-                style={{ fontSize: "clamp(36px, 5vw, 64px)", lineHeight: 1.05, letterSpacing: "-0.03em", color: "hsl(0 0% 90%)" }}
-              >
-                Our Approach
-              </h2>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-10 md:gap-6">
-              {approach.map((item, i) => (
-                <motion.div
-                  key={item.step}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.1 }}
-                >
-                  <span className="text-4xl font-bold block mb-3" style={{ color: "hsl(0 0% 20%)" }}>
+              <div className="container-site flex flex-col md:flex-row items-baseline gap-6 md:gap-16">
+                <div className="flex items-center gap-3">
+                  <span className="font-display italic text-lg" style={{ color: i % 2 === 0 ? "hsl(0 0% 30%)" : "hsl(var(--muted-foreground))" }}>±</span>
+                  <span className="text-4xl font-bold" style={{ color: i % 2 === 0 ? "hsl(0 0% 25%)" : "hsl(var(--border))" }}>
                     {item.step}
                   </span>
-                  <h3 className="text-lg font-bold mb-2" style={{ color: "hsl(0 0% 80%)" }}>
-                    {item.title}
-                  </h3>
-                  <p className="text-sm leading-relaxed" style={{ color: "hsl(0 0% 45%)" }}>
-                    {item.text}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
+                </div>
+                <h3 className="text-2xl md:text-3xl font-bold" style={{ color: i % 2 === 0 ? "hsl(0 0% 85%)" : "hsl(var(--foreground))" }}>
+                  {item.title}
+                </h3>
+                <p className="text-base leading-relaxed max-w-lg" style={{ color: i % 2 === 0 ? "hsl(0 0% 50%)" : "hsl(var(--muted-foreground))" }}>
+                  {item.text}
+                </p>
+              </div>
+            </motion.div>
+          ))}
         </section>
 
         <CTASection />

@@ -44,10 +44,20 @@ const TestimonialsSection = () => {
           </p>
         </motion.div>
 
-        <div className="min-h-[300px] md:min-h-[250px]">
+        <div className="min-h-[300px] md:min-h-[250px] relative">
+          {/* Large decorative quotation mark */}
+          <div
+            className="absolute -top-8 -left-4 font-display italic select-none pointer-events-none"
+            style={{ fontSize: "clamp(120px, 15vw, 240px)", lineHeight: 1, color: "hsl(0 0% 12%)" }}
+            aria-hidden="true"
+          >
+            "
+          </div>
+
           <AnimatePresence mode="wait">
             <motion.div
               key={current}
+              className="relative z-10"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
@@ -57,15 +67,18 @@ const TestimonialsSection = () => {
                 className="font-display italic max-w-4xl"
                 style={{ fontSize: "clamp(28px, 4vw, 52px)", lineHeight: 1.2, color: "hsl(0 0% 85%)" }}
               >
-                "{testimonials[current].quote}"
+                {testimonials[current].quote}
               </blockquote>
-              <div className="mt-10">
-                <p className="text-base font-semibold" style={{ color: "hsl(0 0% 70%)" }}>
-                  {testimonials[current].name}
-                </p>
-                <p className="text-sm mt-1" style={{ color: "hsl(0 0% 40%)" }}>
-                  {testimonials[current].company}
-                </p>
+              <div className="mt-10 flex items-center gap-4">
+                <span className="font-display italic text-lg" style={{ color: "hsl(0 0% 25%)" }}>±</span>
+                <div>
+                  <p className="text-base font-semibold" style={{ color: "hsl(0 0% 70%)" }}>
+                    {testimonials[current].name}
+                  </p>
+                  <p className="text-sm mt-1" style={{ color: "hsl(0 0% 40%)" }}>
+                    {testimonials[current].company}
+                  </p>
+                </div>
               </div>
             </motion.div>
           </AnimatePresence>

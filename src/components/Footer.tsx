@@ -21,10 +21,11 @@ const Footer = () => {
       <div className="container-site">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
           <div className="md:col-span-2">
-            <Link to="/" className="text-xl font-bold block mb-2" style={{ color: "hsl(0 0% 80%)" }}>
-              PlusMinus
+            <Link to="/" className="flex items-center gap-2 mb-4">
+              <span className="text-xl font-bold" style={{ color: "hsl(0 0% 80%)" }}>PlusMinus</span>
+              <span className="font-display italic text-lg" style={{ color: "hsl(0 0% 30%)" }}>±</span>
             </Link>
-            <p className="text-[11px] font-semibold tracking-[0.2em] uppercase mb-4" style={{ color: "hsl(0 0% 30%)" }}>
+            <p className="text-[11px] font-semibold tracking-[0.25em] uppercase mb-4" style={{ color: "hsl(0 0% 30%)" }}>
               Minus the noise. Plus the results.
             </p>
             <p className="text-sm leading-relaxed max-w-sm" style={{ color: "hsl(0 0% 40%)" }}>
