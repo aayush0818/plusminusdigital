@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const services = [
   {
@@ -47,13 +48,19 @@ const approach = [
 
 const ServicesPage = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const isMobile = useIsMobile();
+
+  const handleInteraction = (i: number) => {
+    if (isMobile) {
+      setActiveIndex(activeIndex === i ? null : i);
+    }
+  };
 
   return (
     <>
       <Navbar />
       <main>
-        {/* Hero */}
-        <section className="section-light pt-40 pb-20">
+        <section className="section-light pt-28 md:pt-40 pb-12 md:pb-20">
           <div className="container-site">
             <motion.p
               className="text-[13px] font-semibold tracking-[0.2em] uppercase text-foreground-muted mb-4"
@@ -65,7 +72,7 @@ const ServicesPage = () => {
             </motion.p>
             <motion.h1
               className="font-bold text-foreground max-w-4xl"
-              style={{ fontSize: "clamp(40px, 6vw, 80px)", lineHeight: 1.05, letterSpacing: "-0.03em" }}
+              style={{ fontSize: "clamp(36px, 6vw, 80px)", lineHeight: 1.05, letterSpacing: "-0.03em" }}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
@@ -74,7 +81,7 @@ const ServicesPage = () => {
               <span className="font-display italic font-normal">excellence.</span>
             </motion.h1>
             <motion.p
-              className="mt-6 text-lg text-foreground-muted max-w-xl leading-relaxed"
+              className="mt-4 md:mt-6 text-base md:text-lg text-foreground-muted max-w-xl leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -84,8 +91,7 @@ const ServicesPage = () => {
           </div>
         </section>
 
-        {/* Services Accordion with +/- */}
-        <section className="section-light border-t border-border" style={{ padding: "80px 0 160px" }}>
+        <section className="section-light border-t border-border" style={{ padding: "60px 0 clamp(80px, 12vw, 160px)" }}>
           <div className="container-site">
             {services.map((service, i) => (
               <motion.div
@@ -95,19 +101,22 @@ const ServicesPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                onMouseEnter={() => setActiveIndex(i)}
-                onMouseLeave={() => setActiveIndex(null)}
+                onClick={() => handleInteraction(i)}
+                {...(!isMobile && {
+                  onMouseEnter: () => setActiveIndex(i),
+                  onMouseLeave: () => setActiveIndex(null),
+                })}
               >
-                <div className="py-8 md:py-10 flex items-baseline gap-6 md:gap-12">
+                <div className="py-6 md:py-10 flex items-baseline gap-4 md:gap-12">
                   <motion.span
-                    className="text-2xl font-display italic flex-shrink-0 w-8 text-center select-none"
+                    className="text-xl md:text-2xl font-display italic flex-shrink-0 w-6 md:w-8 text-center select-none"
                     style={{ color: "hsl(var(--foreground))" }}
                   >
                     {activeIndex === i ? "−" : "+"}
                   </motion.span>
                   <div className="flex-1">
                     <h3
-                      className="text-2xl md:text-4xl font-bold transition-colors duration-300"
+                      className="text-xl md:text-4xl font-bold transition-colors duration-300"
                       style={{
                         color: activeIndex === i ? "hsl(var(--foreground))" : activeIndex !== null ? "hsl(0 0% 75%)" : "hsl(var(--foreground))",
                       }}
@@ -122,14 +131,14 @@ const ServicesPage = () => {
                           exit={{ opacity: 0, height: 0 }}
                           transition={{ duration: 0.3 }}
                         >
-                          <p className="text-base leading-relaxed text-foreground-muted mt-4 max-w-2xl mb-5">
+                          <p className="text-sm md:text-base leading-relaxed text-foreground-muted mt-3 md:mt-4 max-w-2xl mb-4 md:mb-5">
                             {service.description}
                           </p>
                           <div className="flex flex-wrap gap-2">
                             {service.deliverables.map((d) => (
                               <span
                                 key={d}
-                                className="text-[12px] font-medium px-3 py-1.5 rounded-full border border-border text-foreground-muted"
+                                className="text-[11px] md:text-[12px] font-medium px-2.5 md:px-3 py-1 md:py-1.5 rounded-full border border-border text-foreground-muted"
                               >
                                 {d}
                               </span>
@@ -146,29 +155,28 @@ const ServicesPage = () => {
           </div>
         </section>
 
-        {/* Approach - Alternating strips */}
         <section style={{ padding: 0 }}>
           {approach.map((item, i) => (
             <motion.div
               key={item.step}
               className={i % 2 === 0 ? "section-dark" : "section-light"}
-              style={{ padding: "80px 0" }}
+              style={{ padding: "clamp(40px, 6vw, 80px) 0" }}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <div className="container-site flex flex-col md:flex-row items-baseline gap-6 md:gap-16">
+              <div className="container-site flex flex-col md:flex-row items-start md:items-baseline gap-4 md:gap-16">
                 <div className="flex items-center gap-3">
                   <span className="font-display italic text-lg" style={{ color: i % 2 === 0 ? "hsl(0 0% 30%)" : "hsl(var(--muted-foreground))" }}>±</span>
-                  <span className="text-4xl font-bold" style={{ color: i % 2 === 0 ? "hsl(0 0% 25%)" : "hsl(var(--border))" }}>
+                  <span className="text-3xl md:text-4xl font-bold" style={{ color: i % 2 === 0 ? "hsl(0 0% 25%)" : "hsl(var(--border))" }}>
                     {item.step}
                   </span>
                 </div>
-                <h3 className="text-2xl md:text-3xl font-bold" style={{ color: i % 2 === 0 ? "hsl(0 0% 85%)" : "hsl(var(--foreground))" }}>
+                <h3 className="text-xl md:text-3xl font-bold" style={{ color: i % 2 === 0 ? "hsl(0 0% 85%)" : "hsl(var(--foreground))" }}>
                   {item.title}
                 </h3>
-                <p className="text-base leading-relaxed max-w-lg" style={{ color: i % 2 === 0 ? "hsl(0 0% 50%)" : "hsl(var(--muted-foreground))" }}>
+                <p className="text-sm md:text-base leading-relaxed max-w-lg" style={{ color: i % 2 === 0 ? "hsl(0 0% 50%)" : "hsl(var(--muted-foreground))" }}>
                   {item.text}
                 </p>
               </div>

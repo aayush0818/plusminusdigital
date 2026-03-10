@@ -29,7 +29,7 @@ const Work = () => {
     <>
       <Navbar />
       <main>
-        <section className="section-light pt-40 pb-20">
+        <section className="section-light pt-28 md:pt-40 pb-12 md:pb-20">
           <div className="container-site">
             <motion.p
               className="text-[13px] font-semibold tracking-[0.2em] uppercase text-foreground-muted mb-4"
@@ -41,7 +41,7 @@ const Work = () => {
             </motion.p>
             <motion.h1
               className="font-bold text-foreground"
-              style={{ fontSize: "clamp(40px, 6vw, 80px)", lineHeight: 1.05, letterSpacing: "-0.03em" }}
+              style={{ fontSize: "clamp(36px, 6vw, 80px)", lineHeight: 1.05, letterSpacing: "-0.03em" }}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
@@ -49,7 +49,7 @@ const Work = () => {
               Our Work
             </motion.h1>
             <motion.p
-              className="mt-6 text-lg text-foreground-muted max-w-xl leading-relaxed"
+              className="mt-4 md:mt-6 text-base md:text-lg text-foreground-muted max-w-xl leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -59,7 +59,7 @@ const Work = () => {
           </div>
         </section>
 
-        <section className="section-light pb-8">
+        <section className="section-light pb-6 md:pb-8">
           <div className="container-site">
             <motion.div
               className="flex flex-wrap gap-2"
@@ -71,7 +71,7 @@ const Work = () => {
                 <button
                   key={cat}
                   onClick={() => setActiveFilter(cat)}
-                  className={`text-[13px] font-medium px-5 py-2 rounded-full transition-all duration-300 ${
+                  className={`text-[13px] font-medium px-4 md:px-5 py-2 rounded-full transition-all duration-300 ${
                     activeFilter === cat
                       ? "bg-foreground text-background"
                       : "text-foreground-muted hover:text-foreground hover:bg-foreground/5"
@@ -84,9 +84,37 @@ const Work = () => {
           </div>
         </section>
 
-        <section className="section-light pb-40">
+        <section className="section-light pb-20 md:pb-40">
           <div className="container-site">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-12">
+            {/* Mobile: card grid */}
+            <div className="md:hidden grid grid-cols-1 gap-6">
+              {filtered.map((project, i) => (
+                <motion.div
+                  key={project.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: i * 0.06 }}
+                >
+                  <Link to={`/work/${project.slug}`} className="block group">
+                    <div
+                      className="w-full aspect-[16/9] rounded-lg mb-3"
+                      style={{ background: project.gradient }}
+                    />
+                    <div className="flex items-baseline justify-between">
+                      <h3 className="text-lg font-bold text-foreground">{project.title}</h3>
+                      <ArrowUpRight size={14} className="text-muted-foreground" />
+                    </div>
+                    <div className="flex gap-3 mt-1">
+                      <span className="text-[12px] text-muted-foreground">{project.category}</span>
+                      <span className="text-[12px] text-muted-foreground">{project.year}</span>
+                    </div>
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Desktop: list + preview */}
+            <div className="hidden md:grid grid-cols-2 gap-12">
               <div>
                 {filtered.map((project, i) => (
                   <motion.div
@@ -98,11 +126,11 @@ const Work = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: i * 0.06 }}
                   >
-                    <Link to={`/work/${project.slug}`} className="py-6 md:py-8 flex items-baseline justify-between block">
+                    <Link to={`/work/${project.slug}`} className="py-8 flex items-baseline justify-between block">
                       <div className="flex items-baseline gap-5">
                         <span className="text-[13px] font-semibold text-foreground-muted">0{i + 1}</span>
                         <h3
-                          className="text-xl md:text-2xl font-bold transition-colors duration-300"
+                          className="text-2xl font-bold transition-colors duration-300"
                           style={{
                             color: hoveredIndex === i
                               ? "hsl(var(--foreground))"
@@ -114,7 +142,7 @@ const Work = () => {
                           {project.title}
                         </h3>
                       </div>
-                      <div className="hidden md:flex items-center gap-4 text-[13px] text-foreground-muted">
+                      <div className="flex items-center gap-4 text-[13px] text-foreground-muted">
                         <span>{project.category}</span>
                         <span>{project.year}</span>
                         <motion.div
@@ -130,7 +158,7 @@ const Work = () => {
                 <div className="border-t border-border" />
               </div>
 
-              <div className="hidden md:flex items-center justify-center relative sticky top-32" style={{ height: 500 }}>
+              <div className="flex items-center justify-center relative sticky top-32" style={{ height: 500 }}>
                 {filtered.map((project, i) => (
                   <motion.div
                     key={project.title}

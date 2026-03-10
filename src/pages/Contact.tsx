@@ -23,9 +23,9 @@ const Contact = () => {
     <>
       <Navbar />
       <main>
-        <section className="section-light pt-40 pb-40 min-h-screen">
+        <section className="section-light pt-28 md:pt-40 pb-20 md:pb-40 min-h-screen">
           <div className="container-site">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-20 md:gap-32">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-32">
               {/* Left - Info */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
@@ -33,11 +33,10 @@ const Contact = () => {
                 transition={{ duration: 0.7 }}
                 className="relative"
               >
-                {/* Decorative logo mark */}
                 <img
                   src={logoMark}
                   alt=""
-                  className="absolute -top-8 -left-4 h-48 w-auto opacity-[0.06] pointer-events-none select-none"
+                  className="absolute -top-4 md:-top-8 -left-2 md:-left-4 h-32 md:h-48 w-auto opacity-[0.06] pointer-events-none select-none"
                   aria-hidden="true"
                 />
 
@@ -46,34 +45,34 @@ const Contact = () => {
                     Contact
                   </p>
                   <h1
-                    className="font-bold text-foreground mb-8"
-                    style={{ fontSize: "clamp(40px, 5vw, 72px)", lineHeight: 1.05, letterSpacing: "-0.03em" }}
+                    className="font-bold text-foreground mb-6 md:mb-8"
+                    style={{ fontSize: "clamp(32px, 5vw, 72px)", lineHeight: 1.05, letterSpacing: "-0.03em" }}
                   >
                     Let's start a{" "}
                     <span className="font-display italic font-normal">conversation.</span>
                   </h1>
-                  <p className="text-lg leading-relaxed text-foreground-muted mb-12">
+                  <p className="text-base md:text-lg leading-relaxed text-foreground-muted mb-8 md:mb-12">
                     Have a project in mind? We'd love to hear about it. Fill out the form and we'll get back to you within 24 hours.
                   </p>
 
-                  <div className="space-y-8">
+                  <div className="space-y-6 md:space-y-8">
                     <div>
-                      <h3 className="text-[12px] font-semibold tracking-[0.15em] uppercase text-foreground-muted mb-3">
+                      <h3 className="text-[12px] font-semibold tracking-[0.15em] uppercase text-foreground-muted mb-2">
                         Email
                       </h3>
-                      <a href="mailto:hello@plusminus.studio" className="text-lg font-medium text-foreground hover:text-foreground-muted transition-colors">
+                      <a href="mailto:hello@plusminus.studio" className="text-base md:text-lg font-medium text-foreground hover:text-foreground-muted transition-colors">
                         hello@plusminus.studio
                       </a>
                     </div>
                     <div>
-                      <h3 className="text-[12px] font-semibold tracking-[0.15em] uppercase text-foreground-muted mb-3">
+                      <h3 className="text-[12px] font-semibold tracking-[0.15em] uppercase text-foreground-muted mb-2">
                         Location
                       </h3>
-                      <p className="text-lg font-medium text-foreground">Mumbai, India</p>
+                      <p className="text-base md:text-lg font-medium text-foreground">Mumbai, India</p>
                       <p className="text-sm text-foreground-muted mt-1">Working with clients worldwide</p>
                     </div>
                     <div>
-                      <h3 className="text-[12px] font-semibold tracking-[0.15em] uppercase text-foreground-muted mb-3">
+                      <h3 className="text-[12px] font-semibold tracking-[0.15em] uppercase text-foreground-muted mb-2">
                         Social
                       </h3>
                       <div className="flex gap-6">
@@ -95,7 +94,7 @@ const Contact = () => {
               {/* Right - Form */}
               <motion.form
                 onSubmit={handleSubmit}
-                className="space-y-6 pt-2 md:pt-16"
+                className="space-y-5 md:space-y-6 pt-2 md:pt-16"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.2 }}
@@ -106,7 +105,7 @@ const Contact = () => {
                     type="text"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full bg-transparent border-b border-border py-3 text-foreground text-lg focus:outline-none focus:border-foreground transition-colors placeholder:text-foreground-muted/50"
+                    className="w-full bg-transparent border-b border-border py-3 text-foreground text-base md:text-lg focus:outline-none focus:border-foreground transition-colors placeholder:text-foreground-muted/50"
                     placeholder="Your name"
                     required
                   />
@@ -117,7 +116,7 @@ const Contact = () => {
                     type="email"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full bg-transparent border-b border-border py-3 text-foreground text-lg focus:outline-none focus:border-foreground transition-colors placeholder:text-foreground-muted/50"
+                    className="w-full bg-transparent border-b border-border py-3 text-foreground text-base md:text-lg focus:outline-none focus:border-foreground transition-colors placeholder:text-foreground-muted/50"
                     placeholder="your@email.com"
                     required
                   />
@@ -128,7 +127,7 @@ const Contact = () => {
                     type="text"
                     value={formData.company}
                     onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                    className="w-full bg-transparent border-b border-border py-3 text-foreground text-lg focus:outline-none focus:border-foreground transition-colors placeholder:text-foreground-muted/50"
+                    className="w-full bg-transparent border-b border-border py-3 text-foreground text-base md:text-lg focus:outline-none focus:border-foreground transition-colors placeholder:text-foreground-muted/50"
                     placeholder="Company name"
                   />
                 </div>
@@ -137,11 +136,12 @@ const Contact = () => {
                   <select
                     value={formData.budget}
                     onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                    className="w-full bg-transparent border-b border-border py-3 text-foreground text-lg focus:outline-none focus:border-foreground transition-colors appearance-none"
+                    className="w-full bg-background border-b border-border py-3 text-foreground text-base md:text-lg focus:outline-none focus:border-foreground transition-colors rounded-none"
+                    style={{ WebkitAppearance: "none", backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E\")", backgroundRepeat: "no-repeat", backgroundPosition: "right 0 center" }}
                   >
-                    <option value="" className="bg-background">Select a range</option>
+                    <option value="">Select a range</option>
                     {budgetOptions.map((opt) => (
-                      <option key={opt} value={opt} className="bg-background">{opt}</option>
+                      <option key={opt} value={opt}>{opt}</option>
                     ))}
                   </select>
                 </div>
@@ -150,14 +150,14 @@ const Contact = () => {
                   <textarea
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full bg-transparent border-b border-border py-3 text-foreground text-lg focus:outline-none focus:border-foreground transition-colors placeholder:text-foreground-muted/50 min-h-[120px] resize-none"
+                    className="w-full bg-transparent border-b border-border py-3 text-foreground text-base md:text-lg focus:outline-none focus:border-foreground transition-colors placeholder:text-foreground-muted/50 min-h-[100px] resize-none"
                     placeholder="Tell us about your project..."
                     required
                   />
                 </div>
                 <button
                   type="submit"
-                  className="mt-4 text-[13px] font-semibold px-10 py-4 rounded-full bg-foreground text-background hover:opacity-90 transition-opacity"
+                  className="mt-4 text-[13px] font-semibold px-10 py-4 rounded-full bg-foreground text-background hover:opacity-90 transition-opacity w-full md:w-auto"
                 >
                   Send Message
                 </button>

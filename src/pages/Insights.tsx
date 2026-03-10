@@ -28,8 +28,7 @@ const Insights = () => {
     <>
       <Navbar />
       <main>
-        {/* Hero */}
-        <section className="section-light pt-40 pb-20">
+        <section className="section-light pt-28 md:pt-40 pb-12 md:pb-20">
           <div className="container-site">
             <motion.p
               className="text-[13px] font-semibold tracking-[0.2em] uppercase text-foreground-muted mb-4"
@@ -41,7 +40,7 @@ const Insights = () => {
             </motion.p>
             <motion.h1
               className="font-bold text-foreground"
-              style={{ fontSize: "clamp(40px, 6vw, 80px)", lineHeight: 1.05, letterSpacing: "-0.03em" }}
+              style={{ fontSize: "clamp(36px, 6vw, 80px)", lineHeight: 1.05, letterSpacing: "-0.03em" }}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
@@ -49,7 +48,7 @@ const Insights = () => {
               Insights <span className="font-display italic font-normal">&</span> Ideas
             </motion.h1>
             <motion.p
-              className="mt-6 text-lg text-foreground-muted max-w-xl leading-relaxed"
+              className="mt-4 md:mt-6 text-base md:text-lg text-foreground-muted max-w-xl leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -59,8 +58,7 @@ const Insights = () => {
           </div>
         </section>
 
-        {/* Filters */}
-        <section className="section-light pb-8">
+        <section className="section-light pb-6 md:pb-8">
           <div className="container-site">
             <motion.div
               className="flex flex-wrap gap-2"
@@ -72,7 +70,7 @@ const Insights = () => {
                 <button
                   key={cat}
                   onClick={() => setActiveFilter(cat)}
-                  className={`text-[13px] font-medium px-5 py-2 rounded-full transition-all duration-300 ${
+                  className={`text-[13px] font-medium px-4 md:px-5 py-2 rounded-full transition-all duration-300 ${
                     activeFilter === cat
                       ? "bg-foreground text-background"
                       : "text-foreground-muted hover:text-foreground hover:bg-foreground/5"
@@ -85,9 +83,8 @@ const Insights = () => {
           </div>
         </section>
 
-        {/* Featured Article */}
         {featuredArticle && (
-          <section className="section-light pb-12">
+          <section className="section-light pb-8 md:pb-12">
             <div className="container-site">
               <motion.a
                 href="#"
@@ -97,11 +94,11 @@ const Insights = () => {
                 transition={{ duration: 0.6, delay: 0.35 }}
               >
                 <div
-                  className="rounded-lg h-64 md:h-[400px] mb-6 transition-transform duration-500 group-hover:scale-[1.01] relative overflow-hidden"
+                  className="rounded-lg h-48 md:h-[400px] mb-4 md:mb-6 transition-transform duration-500 group-hover:scale-[1.01] relative overflow-hidden"
                   style={{ background: featuredArticle.gradient }}
                 >
                   <span
-                    className="absolute bottom-4 right-6 font-display italic text-6xl select-none pointer-events-none"
+                    className="absolute bottom-3 right-4 md:bottom-4 md:right-6 font-display italic text-4xl md:text-6xl select-none pointer-events-none"
                     style={{ color: "hsl(0 0% 0% / 0.04)" }}
                     aria-hidden="true"
                   >
@@ -115,7 +112,7 @@ const Insights = () => {
                   <span className="text-[12px] text-foreground-muted">·</span>
                   <span className="text-[12px] text-foreground-muted">{featuredArticle.date}</span>
                 </div>
-                <h3 className="text-2xl md:text-3xl font-bold text-foreground group-hover:text-foreground-muted transition-colors">
+                <h3 className="text-xl md:text-3xl font-bold text-foreground group-hover:text-foreground-muted transition-colors">
                   {featuredArticle.title}
                 </h3>
               </motion.a>
@@ -123,10 +120,9 @@ const Insights = () => {
           </section>
         )}
 
-        {/* 2-Column Grid */}
-        <section className="section-light pb-40">
+        <section className="section-light pb-20 md:pb-40">
           <div className="container-site">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
               {restArticles.map((article, i) => (
                 <motion.a
                   key={article.title}
@@ -138,25 +134,25 @@ const Insights = () => {
                   layout
                 >
                   <div
-                    className="rounded-lg h-48 md:h-56 mb-5 transition-transform duration-500 group-hover:scale-[1.02] relative overflow-hidden"
+                    className="rounded-lg h-40 md:h-56 mb-4 md:mb-5 transition-transform duration-500 group-hover:scale-[1.02] relative overflow-hidden"
                     style={{ background: article.gradient }}
                   >
                     <span
-                      className="absolute bottom-2 right-4 font-display italic text-4xl select-none pointer-events-none"
+                      className="absolute bottom-2 right-3 md:right-4 font-display italic text-3xl md:text-4xl select-none pointer-events-none"
                       style={{ color: "hsl(0 0% 0% / 0.04)" }}
                       aria-hidden="true"
                     >
                       ±
                     </span>
                   </div>
-                  <div className="flex items-center gap-3 mb-2">
+                  <div className="flex items-center gap-3 mb-1.5">
                     <span className="text-[12px] font-semibold tracking-[0.15em] uppercase text-foreground-muted">
                       {article.tag}
                     </span>
                     <span className="text-[12px] text-foreground-muted">·</span>
                     <span className="text-[12px] text-foreground-muted">{article.date}</span>
                   </div>
-                  <h3 className="text-lg font-semibold text-foreground group-hover:text-foreground-muted transition-colors">
+                  <h3 className="text-base md:text-lg font-semibold text-foreground group-hover:text-foreground-muted transition-colors">
                     {article.title}
                   </h3>
                 </motion.a>
