@@ -30,10 +30,10 @@ const TestimonialsSection = () => {
   }, []);
 
   return (
-    <section className="section-dark" style={{ padding: "160px 0" }}>
+    <section className="section-dark" style={{ padding: "clamp(80px, 12vw, 160px) 0" }}>
       <div className="container-site">
         <motion.div
-          className="mb-20"
+          className="mb-12 md:mb-20"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -44,11 +44,11 @@ const TestimonialsSection = () => {
           </p>
         </motion.div>
 
-        <div className="min-h-[300px] md:min-h-[250px] relative">
-          {/* Large decorative quotation mark */}
+        <div className="min-h-[250px] md:min-h-[300px] relative">
+          {/* Large decorative quotation mark — smaller on mobile */}
           <div
-            className="absolute -top-8 -left-4 font-display italic select-none pointer-events-none"
-            style={{ fontSize: "clamp(120px, 15vw, 240px)", lineHeight: 1, color: "hsl(0 0% 12%)" }}
+            className="absolute -top-4 md:-top-8 -left-2 md:-left-4 font-display italic select-none pointer-events-none"
+            style={{ fontSize: "clamp(80px, 15vw, 240px)", lineHeight: 1, color: "hsl(0 0% 12%)" }}
             aria-hidden="true"
           >
             "
@@ -65,17 +65,17 @@ const TestimonialsSection = () => {
             >
               <blockquote
                 className="font-display italic max-w-4xl"
-                style={{ fontSize: "clamp(28px, 4vw, 52px)", lineHeight: 1.2, color: "hsl(0 0% 85%)" }}
+                style={{ fontSize: "clamp(22px, 4vw, 52px)", lineHeight: 1.2, color: "hsl(0 0% 85%)" }}
               >
                 {testimonials[current].quote}
               </blockquote>
-              <div className="mt-10 flex items-center gap-4">
+              <div className="mt-8 md:mt-10 flex items-center gap-4">
                 <span className="font-display italic text-lg" style={{ color: "hsl(0 0% 25%)" }}>±</span>
                 <div>
-                  <p className="text-base font-semibold" style={{ color: "hsl(0 0% 70%)" }}>
+                  <p className="text-sm md:text-base font-semibold" style={{ color: "hsl(0 0% 70%)" }}>
                     {testimonials[current].name}
                   </p>
-                  <p className="text-sm mt-1" style={{ color: "hsl(0 0% 40%)" }}>
+                  <p className="text-xs md:text-sm mt-1" style={{ color: "hsl(0 0% 40%)" }}>
                     {testimonials[current].company}
                   </p>
                 </div>
@@ -85,12 +85,12 @@ const TestimonialsSection = () => {
         </div>
 
         {/* Dots */}
-        <div className="flex gap-2 mt-16">
+        <div className="flex gap-2 mt-12 md:mt-16">
           {testimonials.map((_, i) => (
             <button
               key={i}
               onClick={() => setCurrent(i)}
-              className="w-2 h-2 rounded-full transition-all duration-300"
+              className="w-2.5 h-2.5 md:w-2 md:h-2 rounded-full transition-all duration-300"
               style={{
                 backgroundColor: i === current ? "hsl(0 0% 70%)" : "hsl(0 0% 25%)",
               }}

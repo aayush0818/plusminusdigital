@@ -32,36 +32,28 @@ const HeroSection = () => {
 
   return (
     <section className="section-dark min-h-screen relative flex flex-col overflow-hidden">
-      {/* Logo watermark instead of ± text */}
-      <div
-        className="absolute inset-0 flex items-center justify-center pointer-events-none select-none"
-        aria-hidden="true"
-      >
-        <img
-          src={logoMark}
-          alt=""
-          className="w-[40vw] max-w-[500px] opacity-[0.04]"
-          style={{ filter: "invert(1)" }}
-        />
+      {/* Logo watermark */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none" aria-hidden="true">
+        <img src={logoMark} alt="" className="w-[40vw] max-w-[500px] opacity-[0.04]" style={{ filter: "invert(1)" }} />
       </div>
 
-      <div className="flex-1 flex items-center container-site pt-32 pb-20 relative z-10">
+      <div className="flex-1 flex items-center container-site pt-28 pb-16 md:pt-32 md:pb-20 relative z-10">
         <div className="w-full">
-          {/* Duality tagline */}
+          {/* Duality tagline — stacks vertically on mobile */}
           <motion.div
-            className="flex items-center gap-6 mb-16"
+            className="flex flex-col md:flex-row items-start md:items-center gap-3 md:gap-6 mb-10 md:mb-16"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.8 }}
           >
             <div className="flex items-center gap-3">
-              <span className="text-[13px] font-semibold tracking-[0.2em] uppercase" style={{ color: "hsl(0 0% 25%)" }}>
+              <span className="text-[11px] md:text-[13px] font-semibold tracking-[0.2em] uppercase" style={{ color: "hsl(0 0% 25%)" }}>
                 Minus the
               </span>
               <AnimatePresence mode="wait">
                 <motion.span
                   key={minusWords[dualityIndex]}
-                  className="text-[13px] font-semibold tracking-[0.2em] uppercase text-strikethrough"
+                  className="text-[11px] md:text-[13px] font-semibold tracking-[0.2em] uppercase text-strikethrough"
                   style={{ color: "hsl(0 0% 35%)" }}
                   initial={{ opacity: 0, y: 8 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -72,15 +64,15 @@ const HeroSection = () => {
                 </motion.span>
               </AnimatePresence>
             </div>
-            <img src={logoMark} alt="" className="h-4 w-auto opacity-30" style={{ filter: "invert(1)" }} />
+            <img src={logoMark} alt="" className="h-4 w-auto opacity-30 hidden md:block" style={{ filter: "invert(1)" }} />
             <div className="flex items-center gap-3">
-              <span className="text-[13px] font-semibold tracking-[0.2em] uppercase" style={{ color: "hsl(0 0% 25%)" }}>
+              <span className="text-[11px] md:text-[13px] font-semibold tracking-[0.2em] uppercase" style={{ color: "hsl(0 0% 25%)" }}>
                 Plus the
               </span>
               <AnimatePresence mode="wait">
                 <motion.span
                   key={plusWords[dualityIndex]}
-                  className="text-[13px] font-bold tracking-[0.2em] uppercase"
+                  className="text-[11px] md:text-[13px] font-bold tracking-[0.2em] uppercase"
                   style={{ color: "hsl(0 0% 70%)" }}
                   initial={{ opacity: 0, y: 8 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -94,7 +86,7 @@ const HeroSection = () => {
           </motion.div>
 
           {/* Main headline */}
-          <h1 className="flex flex-wrap gap-x-[0.3em]" style={{ fontSize: "clamp(48px, 8vw, 110px)", lineHeight: 1.05, letterSpacing: "-0.03em" }}>
+          <h1 className="flex flex-wrap gap-x-[0.3em]" style={{ fontSize: "clamp(36px, 8vw, 110px)", lineHeight: 1.05, letterSpacing: "-0.03em" }}>
             {["We", "design", "websites", "that", "drive"].map((word, i) => (
               <span key={i} className="overflow-hidden">
                 <motion.span
@@ -126,17 +118,17 @@ const HeroSection = () => {
           </h1>
 
           <motion.div
-            className="mt-16 flex flex-col sm:flex-row items-start sm:items-center gap-8"
+            className="mt-10 md:mt-16 flex flex-col sm:flex-row items-start sm:items-center gap-6 md:gap-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2, duration: 0.7 }}
           >
-            <p className="text-lg max-w-md leading-relaxed" style={{ color: "hsl(0 0% 40%)" }}>
+            <p className="text-base md:text-lg max-w-md leading-relaxed" style={{ color: "hsl(0 0% 40%)" }}>
               We partner with ambitious brands to create digital experiences that convert visitors into customers.
             </p>
             <a
               href="#work"
-              className="text-[13px] font-semibold px-8 py-3.5 rounded-full bg-white hover:bg-white/90 transition-colors flex-shrink-0"
+              className="text-[13px] font-semibold px-8 py-3.5 rounded-full bg-white hover:bg-white/90 transition-colors flex-shrink-0 w-full sm:w-auto text-center"
               style={{ color: "hsl(var(--background-dark))" }}
             >
               View Our Work
@@ -147,7 +139,7 @@ const HeroSection = () => {
 
       {/* Client logo bar */}
       <motion.div
-        className="border-t py-8 overflow-hidden"
+        className="border-t py-6 md:py-8 overflow-hidden"
         style={{ borderColor: "hsl(0 0% 15%)" }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -157,7 +149,7 @@ const HeroSection = () => {
           {clients.map((client, i) => (
             <span
               key={i}
-              className="mx-12 text-sm font-semibold tracking-wider uppercase flex-shrink-0"
+              className="mx-6 md:mx-12 text-xs md:text-sm font-semibold tracking-wider uppercase flex-shrink-0"
               style={{ color: "hsl(0 0% 25%)" }}
             >
               {client}

@@ -18,15 +18,15 @@ const footerLinks = {
 
 const Footer = () => {
   return (
-    <footer className="section-dark border-t" style={{ borderColor: "hsl(0 0% 15%)", padding: "80px 0 40px" }}>
+    <footer className="section-dark border-t" style={{ borderColor: "hsl(0 0% 15%)", padding: "60px 0 32px" }}>
       <div className="container-site">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 mb-12 md:mb-20">
           <div className="md:col-span-2">
             <Link to="/" className="flex items-center gap-3 mb-4">
-              <img src={logoMark} alt="PlusMinus" className="h-6 w-auto" style={{ filter: "invert(1)" }} />
-              <span className="text-lg font-bold" style={{ color: "hsl(0 0% 80%)" }}>PlusMinus</span>
+              <img src={logoMark} alt="PlusMinus" className="h-5 md:h-6 w-auto" style={{ filter: "invert(1)" }} />
+              <span className="text-base md:text-lg font-bold" style={{ color: "hsl(0 0% 80%)" }}>PlusMinus</span>
             </Link>
-            <p className="text-[11px] font-semibold tracking-[0.25em] uppercase mb-4" style={{ color: "hsl(0 0% 30%)" }}>
+            <p className="text-[11px] font-semibold tracking-[0.25em] uppercase mb-3" style={{ color: "hsl(0 0% 30%)" }}>
               Minus the noise. Plus the results.
             </p>
             <p className="text-sm leading-relaxed max-w-sm" style={{ color: "hsl(0 0% 40%)" }}>
@@ -36,10 +36,10 @@ const Footer = () => {
 
           {Object.entries(footerLinks).map(([title, links]) => (
             <div key={title}>
-              <h4 className="text-[12px] font-semibold tracking-[0.15em] uppercase mb-6" style={{ color: "hsl(0 0% 40%)" }}>
+              <h4 className="text-[12px] font-semibold tracking-[0.15em] uppercase mb-4 md:mb-6" style={{ color: "hsl(0 0% 40%)" }}>
                 {title}
               </h4>
-              <nav className="flex flex-col gap-3">
+              <nav className="flex flex-col gap-2 md:gap-3">
                 {links.map((link) => {
                   const isExternal = link.href.startsWith("http") || link.href.startsWith("mailto");
                   return isExternal ? (
@@ -69,7 +69,7 @@ const Footer = () => {
           ))}
         </div>
 
-        <div className="border-t pt-8 flex items-center justify-between flex-wrap gap-4" style={{ borderColor: "hsl(0 0% 15%)" }}>
+        <div className="border-t pt-6 md:pt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-2" style={{ borderColor: "hsl(0 0% 15%)" }}>
           <p className="text-[12px] font-medium" style={{ color: "hsl(0 0% 25%)" }}>
             © 2025 PlusMinus Studio. All rights reserved.
           </p>

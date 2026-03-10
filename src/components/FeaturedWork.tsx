@@ -38,10 +38,10 @@ const FeaturedWork = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <section id="work" className="section-light" style={{ padding: "160px 0" }}>
+    <section id="work" className="section-light" style={{ padding: "clamp(80px, 12vw, 160px) 0" }}>
       <div className="container-site">
         <motion.div
-          className="flex items-end justify-between mb-20"
+          className="flex items-end justify-between mb-12 md:mb-20"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -51,7 +51,7 @@ const FeaturedWork = () => {
             <p className="text-[13px] font-semibold tracking-[0.2em] uppercase text-foreground-muted mb-4">
               Selected Work
             </p>
-            <h2 style={{ fontSize: "clamp(36px, 5vw, 64px)", lineHeight: 1.05, letterSpacing: "-0.03em" }} className="font-bold text-foreground">
+            <h2 style={{ fontSize: "clamp(32px, 5vw, 64px)", lineHeight: 1.05, letterSpacing: "-0.03em" }} className="font-bold text-foreground">
               Featured{" "}
               <span className="font-display italic font-normal">Projects</span>
             </h2>
@@ -64,7 +64,39 @@ const FeaturedWork = () => {
           </Link>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-12">
+        {/* Mobile: card layout with gradient previews */}
+        <div className="md:hidden flex flex-col gap-4">
+          {projects.map((project, i) => (
+            <motion.div
+              key={project.title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.08 }}
+            >
+              <Link to={`/work/${project.slug}`} className="block group">
+                <div
+                  className="w-full aspect-[16/9] rounded-lg mb-3"
+                  style={{ background: project.gradient }}
+                />
+                <div className="flex items-baseline justify-between">
+                  <div className="flex items-baseline gap-3">
+                    <span className="text-[13px] font-semibold text-muted-foreground">0{i + 1}</span>
+                    <h3 className="text-lg font-bold text-foreground">{project.title}</h3>
+                  </div>
+                  <ArrowUpRight size={14} className="text-muted-foreground" />
+                </div>
+                <div className="flex gap-3 mt-1 ml-7">
+                  <span className="text-[12px] text-muted-foreground">{project.category}</span>
+                  <span className="text-[12px] text-muted-foreground">{project.year}</span>
+                </div>
+              </Link>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Desktop: list + hover preview */}
+        <div className="hidden md:grid grid-cols-2 gap-12">
           <div>
             {projects.map((project, i) => (
               <motion.div
@@ -77,7 +109,7 @@ const FeaturedWork = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
               >
-                <Link to={`/work/${project.slug}`} className="py-8 md:py-10 flex items-baseline justify-between block">
+                <Link to={`/work/${project.slug}`} className="py-10 flex items-baseline justify-between block">
                   <div className="flex items-baseline gap-6">
                     <span
                       className="text-[13px] font-semibold transition-colors duration-300"
@@ -88,7 +120,7 @@ const FeaturedWork = () => {
                       0{i + 1}
                     </span>
                     <h3
-                      className="text-2xl md:text-3xl font-bold transition-colors duration-300"
+                      className="text-3xl font-bold transition-colors duration-300"
                       style={{
                         color: hoveredIndex === i
                           ? "hsl(var(--foreground))"
@@ -100,7 +132,7 @@ const FeaturedWork = () => {
                       {project.title}
                     </h3>
                   </div>
-                  <div className="hidden md:flex items-center gap-4 text-[13px] text-foreground-muted">
+                  <div className="flex items-center gap-4 text-[13px] text-foreground-muted">
                     <span>{project.category}</span>
                     <span>{project.year}</span>
                     <motion.div
@@ -117,7 +149,7 @@ const FeaturedWork = () => {
             <div className="border-t border-border" />
           </div>
 
-          <div className="hidden md:flex items-center justify-center relative" style={{ minHeight: 400 }}>
+          <div className="flex items-center justify-center relative" style={{ minHeight: 400 }}>
             {projects.map((project, i) => (
               <motion.div
                 key={project.title}
@@ -138,6 +170,14 @@ const FeaturedWork = () => {
             )}
           </div>
         </div>
+
+        {/* Mobile "All Projects" link */}
+        <Link
+          to="/work"
+          className="md:hidden mt-8 flex items-center justify-center gap-2 text-[13px] font-semibold text-foreground-muted hover:text-foreground transition-colors"
+        >
+          All Projects <ArrowUpRight size={14} />
+        </Link>
       </div>
     </section>
   );

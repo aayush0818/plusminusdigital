@@ -17,6 +17,7 @@ const Navbar = () => {
   const [pastHero, setPastHero] = useState(false);
   const location = useLocation();
   const isHome = location.pathname === "/";
+  const isCaseStudy = location.pathname.startsWith("/work/") && location.pathname !== "/work";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,11 +28,16 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const isDark = isHome && !pastHero;
+  // Close mobile menu on route change
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [location.pathname]);
+
+  const isDark = (isHome || isCaseStudy) && !pastHero;
 
   return (
     <motion.nav
-      className={`fixed top-0 left-0 right-0 z-50 h-20 flex items-center transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 h-16 md:h-20 flex items-center transition-all duration-500 ${
         scrolled
           ? isDark
             ? "bg-background-dark/95 backdrop-blur-xl"
@@ -47,11 +53,11 @@ const Navbar = () => {
           <img
             src={logoMark}
             alt="PlusMinus"
-            className="h-7 w-auto transition-all duration-300"
+            className="h-6 md:h-7 w-auto transition-all duration-300"
             style={{ filter: isDark ? "invert(1)" : "none" }}
           />
           <span
-            className="text-lg font-bold tracking-tight"
+            className="text-base md:text-lg font-bold tracking-tight"
             style={{ color: isDark ? "hsl(0 0% 95%)" : "hsl(0 0% 8%)" }}
           >
             PlusMinus
@@ -85,7 +91,7 @@ const Navbar = () => {
         </div>
 
         <button
-          className="md:hidden p-2"
+          className="md:hidden p-2 min-w-[44px] min-h-[44px] flex items-center justify-center"
           onClick={() => setMobileOpen(!mobileOpen)}
           style={{ color: isDark ? "hsl(0 0% 95%)" : "hsl(0 0% 8%)" }}
         >
@@ -96,13 +102,14 @@ const Navbar = () => {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            className="absolute top-20 left-0 right-0 bg-background/98 backdrop-blur-xl border-b border-border md:hidden"
+            className="absolute top-16 md:top-20 left-0 right-0 backdrop-blur-xl border-b border-border md:hidden"
+            style={{ background: isDark ? "hsl(0 0% 7% / 0.98)" : "hsl(var(--background) / 0.98)" }}
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.3 }}
           >
-            <div className="container-site py-10 flex flex-col gap-4">
+            <div className="container-site py-8 flex flex-col gap-4">
               {navLinks.map((link, i) => (
                 <motion.div
                   key={link.label}
@@ -113,7 +120,8 @@ const Navbar = () => {
                   <Link
                     to={link.href}
                     onClick={() => setMobileOpen(false)}
-                    className="text-3xl font-bold text-foreground hover:text-foreground-muted transition-colors block"
+                    className="text-2xl font-bold transition-colors block min-h-[44px] flex items-center"
+                    style={{ color: isDark ? "hsl(0 0% 90%)" : "hsl(var(--foreground))" }}
                   >
                     {link.label}
                   </Link>
@@ -122,7 +130,11 @@ const Navbar = () => {
               <Link
                 to="/contact"
                 onClick={() => setMobileOpen(false)}
-                className="mt-4 text-[13px] font-semibold px-6 py-3 rounded-full bg-foreground text-background w-fit"
+                className="mt-4 text-[13px] font-semibold px-6 py-3 rounded-full w-fit"
+                style={{
+                  backgroundColor: isDark ? "hsl(0 0% 100%)" : "hsl(var(--foreground))",
+                  color: isDark ? "hsl(0 0% 8%)" : "hsl(var(--background))",
+                }}
               >
                 Let's Talk
               </Link>
