@@ -1,9 +1,11 @@
+import { Link } from "react-router-dom";
+
 const footerLinks = {
   Navigation: [
-    { label: "Work", href: "#work" },
-    { label: "Services", href: "#services" },
-    { label: "Process", href: "#process" },
-    { label: "Journal", href: "#journal" },
+    { label: "Work", href: "/work" },
+    { label: "Services", href: "/services" },
+    { label: "About", href: "/about" },
+    { label: "Journal", href: "/insights" },
   ],
   Contact: [
     { label: "hello@plusminusdigital.com", href: "mailto:hello@plusminusdigital.com" },
@@ -19,9 +21,12 @@ const Footer = () => {
       <div className="container-site">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
           <div className="md:col-span-2">
-            <span className="text-xl font-bold block mb-3" style={{ color: "hsl(0 0% 80%)" }}>
+            <Link to="/" className="text-xl font-bold block mb-2" style={{ color: "hsl(0 0% 80%)" }}>
               PlusMinus
-            </span>
+            </Link>
+            <p className="text-[11px] font-semibold tracking-[0.2em] uppercase mb-4" style={{ color: "hsl(0 0% 30%)" }}>
+              Minus the noise. Plus the results.
+            </p>
             <p className="text-sm leading-relaxed max-w-sm" style={{ color: "hsl(0 0% 40%)" }}>
               A digital design and development studio helping ambitious brands grow through exceptional web experiences.
             </p>
@@ -33,18 +38,30 @@ const Footer = () => {
                 {title}
               </h4>
               <nav className="flex flex-col gap-3">
-                {links.map((link) => (
-                  <a
-                    key={link.label}
-                    href={link.href}
-                    className="text-sm hover:text-white transition-colors duration-300"
-                    style={{ color: "hsl(0 0% 50%)" }}
-                    target={link.href.startsWith("http") ? "_blank" : undefined}
-                    rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                  >
-                    {link.label}
-                  </a>
-                ))}
+                {links.map((link) => {
+                  const isExternal = link.href.startsWith("http") || link.href.startsWith("mailto");
+                  return isExternal ? (
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      className="text-sm hover:text-white transition-colors duration-300"
+                      style={{ color: "hsl(0 0% 50%)" }}
+                      target={link.href.startsWith("http") ? "_blank" : undefined}
+                      rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link
+                      key={link.label}
+                      to={link.href}
+                      className="text-sm hover:text-white transition-colors duration-300"
+                      style={{ color: "hsl(0 0% 50%)" }}
+                    >
+                      {link.label}
+                    </Link>
+                  );
+                })}
               </nav>
             </div>
           ))}

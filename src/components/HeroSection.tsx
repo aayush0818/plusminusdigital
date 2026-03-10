@@ -1,9 +1,12 @@
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const clients = [
   "Stripe", "Vercel", "Linear", "Notion", "Figma", "Webflow", "Framer", "Arc",
   "Stripe", "Vercel", "Linear", "Notion", "Figma", "Webflow", "Framer", "Arc",
 ];
+
+const rotatingWords = ["growth.", "revenue.", "conversions.", "results.", "impact."];
 
 const wordVariants = {
   hidden: { y: "100%", opacity: 0 },
@@ -15,7 +18,15 @@ const wordVariants = {
 };
 
 const HeroSection = () => {
-  const words = ["We", "design", "websites", "that", "drive", "growth."];
+  const staticWords = ["We", "design", "websites", "that", "drive"];
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentWordIndex((prev) => (prev + 1) % rotatingWords.length);
+    }, 2500);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section className="section-dark min-h-screen relative flex flex-col">
@@ -32,24 +43,35 @@ const HeroSection = () => {
           </motion.p>
 
           <h1 className="flex flex-wrap gap-x-[0.3em]" style={{ fontSize: "clamp(48px, 8vw, 110px)", lineHeight: 1.05, letterSpacing: "-0.03em" }}>
-            {words.map((word, i) => (
+            {staticWords.map((word, i) => (
               <span key={i} className="overflow-hidden">
                 <motion.span
                   className="inline-block font-bold"
-                  style={{ color: word === "growth." ? "hsl(0 0% 100%)" : "hsl(0 0% 70%)" }}
+                  style={{ color: "hsl(0 0% 70%)" }}
                   custom={i}
                   variants={wordVariants}
                   initial="hidden"
                   animate="visible"
                 >
-                  {word === "growth." ? (
-                    <span className="font-display italic font-normal" style={{ color: "hsl(0 0% 100%)" }}>
-                      {word}
-                    </span>
-                  ) : word}
+                  {word}
                 </motion.span>
               </span>
             ))}
+            <span className="overflow-hidden relative inline-flex" style={{ minWidth: "2.5ch" }}>
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={rotatingWords[currentWordIndex]}
+                  className="inline-block font-display italic font-normal"
+                  style={{ color: "hsl(0 0% 100%)" }}
+                  initial={{ y: "100%", opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: "-100%", opacity: 0 }}
+                  transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  {rotatingWords[currentWordIndex]}
+                </motion.span>
+              </AnimatePresence>
+            </span>
           </h1>
 
           <motion.div
@@ -68,6 +90,16 @@ const HeroSection = () => {
               View Our Work
             </a>
           </motion.div>
+
+          <motion.p
+            className="mt-12 text-[11px] font-semibold tracking-[0.25em] uppercase"
+            style={{ color: "hsl(0 0% 25%)" }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.3, duration: 0.8 }}
+          >
+            Minus the noise. Plus the results.
+          </motion.p>
         </div>
       </div>
 
