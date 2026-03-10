@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
@@ -19,6 +20,7 @@ const projects = [
 
 const Work = () => {
   const [activeFilter, setActiveFilter] = useState("All");
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const filtered = activeFilter === "All" ? projects : projects.filter((p) => p.category === activeFilter);
 
@@ -52,7 +54,7 @@ const Work = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              A curated selection of projects where strategy, design, and engineering converge to create measurable impact.
+              A curated selection of projects where strategy, design, and engineering converge.
             </motion.p>
           </div>
         </section>
@@ -83,38 +85,75 @@ const Work = () => {
           </div>
         </section>
 
-        {/* Project Grid */}
+        {/* Project List - Hover Preview */}
         <section className="section-light pb-40">
           <div className="container-site">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {filtered.map((project, i) => (
-                <motion.div
-                  key={project.title}
-                  className={`group cursor-pointer ${i === 0 ? "md:col-span-2" : ""}`}
-                  initial={{ opacity: 0, y: 40 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: i * 0.08 }}
-                  layout
-                >
-                  <div
-                    className={`rounded-lg transition-transform duration-500 group-hover:scale-[1.02] ${
-                      i === 0 ? "h-[400px] md:h-[550px]" : "h-[300px] md:h-[400px]"
-                    }`}
-                    style={{ background: project.gradient }}
-                  />
-                  <div className="mt-5 flex items-baseline justify-between">
-                    <div>
-                      <h3 className="text-xl font-bold text-foreground group-hover:text-foreground-muted transition-colors">
-                        {project.title}
-                      </h3>
-                      <p className="text-[12px] font-semibold tracking-[0.15em] uppercase text-foreground-muted mt-1">
-                        {project.category}
-                      </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-12">
+              {/* Left: rows */}
+              <div>
+                {filtered.map((project, i) => (
+                  <motion.div
+                    key={project.title}
+                    className="border-t border-border cursor-pointer group"
+                    onMouseEnter={() => setHoveredIndex(i)}
+                    onMouseLeave={() => setHoveredIndex(null)}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: i * 0.06 }}
+                  >
+                    <div className="py-6 md:py-8 flex items-baseline justify-between">
+                      <div className="flex items-baseline gap-5">
+                        <span className="text-[13px] font-semibold text-foreground-muted">0{i + 1}</span>
+                        <h3
+                          className="text-xl md:text-2xl font-bold transition-colors duration-300"
+                          style={{
+                            color: hoveredIndex === i
+                              ? "hsl(var(--foreground))"
+                              : hoveredIndex !== null
+                              ? "hsl(0 0% 78%)"
+                              : "hsl(var(--foreground))",
+                          }}
+                        >
+                          {project.title}
+                        </h3>
+                      </div>
+                      <div className="hidden md:flex items-center gap-4 text-[13px] text-foreground-muted">
+                        <span>{project.category}</span>
+                        <span>{project.year}</span>
+                        <motion.div
+                          animate={{ opacity: hoveredIndex === i ? 1 : 0 }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          <ArrowUpRight size={14} />
+                        </motion.div>
+                      </div>
                     </div>
-                    <span className="text-sm text-foreground-muted">{project.year}</span>
+                  </motion.div>
+                ))}
+                <div className="border-t border-border" />
+              </div>
+
+              {/* Right: preview */}
+              <div className="hidden md:flex items-center justify-center relative sticky top-32" style={{ height: 500 }}>
+                {filtered.map((project, i) => (
+                  <motion.div
+                    key={project.title}
+                    className="absolute inset-0 rounded-lg"
+                    style={{ background: project.gradient }}
+                    initial={false}
+                    animate={{
+                      opacity: hoveredIndex === i ? 1 : 0,
+                      scale: hoveredIndex === i ? 1 : 0.95,
+                    }}
+                    transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                  />
+                ))}
+                {hoveredIndex === null && (
+                  <div className="text-foreground-muted text-sm font-medium flex items-center gap-2">
+                    <span className="font-display italic text-lg">±</span> Hover to preview
                   </div>
-                </motion.div>
-              ))}
+                )}
+              </div>
             </div>
           </div>
         </section>

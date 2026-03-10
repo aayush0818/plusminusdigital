@@ -16,7 +16,6 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Form submission logic would go here
   };
 
   return (
@@ -31,51 +30,63 @@ const Contact = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7 }}
+                className="relative"
               >
-                <p className="text-[13px] font-semibold tracking-[0.2em] uppercase text-foreground-muted mb-4">
-                  Contact
-                </p>
-                <h1
-                  className="font-bold text-foreground mb-8"
-                  style={{ fontSize: "clamp(40px, 5vw, 72px)", lineHeight: 1.05, letterSpacing: "-0.03em" }}
+                {/* Decorative ± */}
+                <span
+                  className="absolute -top-16 -left-4 font-display italic select-none pointer-events-none"
+                  style={{ fontSize: "200px", lineHeight: 1, color: "hsl(var(--border))", opacity: 0.5 }}
+                  aria-hidden="true"
                 >
-                  Let's start a{" "}
-                  <span className="font-display italic font-normal">conversation.</span>
-                </h1>
-                <p className="text-lg leading-relaxed text-foreground-muted mb-12">
-                  Have a project in mind? We'd love to hear about it. Fill out the form and we'll get back to you within 24 hours.
-                </p>
+                  ±
+                </span>
 
-                <div className="space-y-8">
-                  <div>
-                    <h3 className="text-[12px] font-semibold tracking-[0.15em] uppercase text-foreground-muted mb-3">
-                      Email
-                    </h3>
-                    <a href="mailto:hello@plusminusdigital.com" className="text-lg font-medium text-foreground hover:text-foreground-muted transition-colors">
-                      hello@plusminusdigital.com
-                    </a>
-                  </div>
-                  <div>
-                    <h3 className="text-[12px] font-semibold tracking-[0.15em] uppercase text-foreground-muted mb-3">
-                      Location
-                    </h3>
-                    <p className="text-lg font-medium text-foreground">Amsterdam, Netherlands</p>
-                    <p className="text-sm text-foreground-muted mt-1">Available worldwide</p>
-                  </div>
-                  <div>
-                    <h3 className="text-[12px] font-semibold tracking-[0.15em] uppercase text-foreground-muted mb-3">
-                      Social
-                    </h3>
-                    <div className="flex gap-6">
-                      {["Instagram", "LinkedIn", "Twitter"].map((social) => (
-                        <a
-                          key={social}
-                          href="#"
-                          className="text-sm font-medium text-foreground hover:text-foreground-muted transition-colors"
-                        >
-                          {social}
-                        </a>
-                      ))}
+                <div className="relative z-10">
+                  <p className="text-[13px] font-semibold tracking-[0.2em] uppercase text-foreground-muted mb-4">
+                    Contact
+                  </p>
+                  <h1
+                    className="font-bold text-foreground mb-8"
+                    style={{ fontSize: "clamp(40px, 5vw, 72px)", lineHeight: 1.05, letterSpacing: "-0.03em" }}
+                  >
+                    Let's start a{" "}
+                    <span className="font-display italic font-normal">conversation.</span>
+                  </h1>
+                  <p className="text-lg leading-relaxed text-foreground-muted mb-12">
+                    Have a project in mind? We'd love to hear about it. Fill out the form and we'll get back to you within 24 hours.
+                  </p>
+
+                  <div className="space-y-8">
+                    <div>
+                      <h3 className="text-[12px] font-semibold tracking-[0.15em] uppercase text-foreground-muted mb-3">
+                        Email
+                      </h3>
+                      <a href="mailto:hello@plusminusdigital.com" className="text-lg font-medium text-foreground hover:text-foreground-muted transition-colors">
+                        hello@plusminusdigital.com
+                      </a>
+                    </div>
+                    <div>
+                      <h3 className="text-[12px] font-semibold tracking-[0.15em] uppercase text-foreground-muted mb-3">
+                        Location
+                      </h3>
+                      <p className="text-lg font-medium text-foreground">Amsterdam, Netherlands</p>
+                      <p className="text-sm text-foreground-muted mt-1">Available worldwide</p>
+                    </div>
+                    <div>
+                      <h3 className="text-[12px] font-semibold tracking-[0.15em] uppercase text-foreground-muted mb-3">
+                        Social
+                      </h3>
+                      <div className="flex gap-6">
+                        {["Instagram", "LinkedIn", "Twitter"].map((social) => (
+                          <a
+                            key={social}
+                            href="#"
+                            className="text-sm font-medium text-foreground hover:text-foreground-muted transition-colors"
+                          >
+                            {social}
+                          </a>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -90,9 +101,7 @@ const Contact = () => {
                 transition={{ duration: 0.7, delay: 0.2 }}
               >
                 <div>
-                  <label className="text-[12px] font-semibold tracking-[0.1em] uppercase text-foreground-muted block mb-2">
-                    Name
-                  </label>
+                  <label className="text-[12px] font-semibold tracking-[0.1em] uppercase text-foreground-muted block mb-2">Name</label>
                   <input
                     type="text"
                     value={formData.name}
@@ -102,11 +111,8 @@ const Contact = () => {
                     required
                   />
                 </div>
-
                 <div>
-                  <label className="text-[12px] font-semibold tracking-[0.1em] uppercase text-foreground-muted block mb-2">
-                    Email
-                  </label>
+                  <label className="text-[12px] font-semibold tracking-[0.1em] uppercase text-foreground-muted block mb-2">Email</label>
                   <input
                     type="email"
                     value={formData.email}
@@ -116,11 +122,8 @@ const Contact = () => {
                     required
                   />
                 </div>
-
                 <div>
-                  <label className="text-[12px] font-semibold tracking-[0.1em] uppercase text-foreground-muted block mb-2">
-                    Company
-                  </label>
+                  <label className="text-[12px] font-semibold tracking-[0.1em] uppercase text-foreground-muted block mb-2">Company</label>
                   <input
                     type="text"
                     value={formData.company}
@@ -129,11 +132,8 @@ const Contact = () => {
                     placeholder="Company name"
                   />
                 </div>
-
                 <div>
-                  <label className="text-[12px] font-semibold tracking-[0.1em] uppercase text-foreground-muted block mb-2">
-                    Budget Range
-                  </label>
+                  <label className="text-[12px] font-semibold tracking-[0.1em] uppercase text-foreground-muted block mb-2">Budget Range</label>
                   <select
                     value={formData.budget}
                     onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
@@ -145,11 +145,8 @@ const Contact = () => {
                     ))}
                   </select>
                 </div>
-
                 <div>
-                  <label className="text-[12px] font-semibold tracking-[0.1em] uppercase text-foreground-muted block mb-2">
-                    Project Details
-                  </label>
+                  <label className="text-[12px] font-semibold tracking-[0.1em] uppercase text-foreground-muted block mb-2">Project Details</label>
                   <textarea
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
@@ -158,7 +155,6 @@ const Contact = () => {
                     required
                   />
                 </div>
-
                 <button
                   type="submit"
                   className="mt-4 text-[13px] font-semibold px-10 py-4 rounded-full bg-foreground text-background hover:opacity-90 transition-opacity"
