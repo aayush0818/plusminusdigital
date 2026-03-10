@@ -1,19 +1,21 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
 const navLinks = [
-  { label: "Work", href: "#work" },
-  { label: "Services", href: "#services" },
-  { label: "Process", href: "#process" },
-  { label: "About", href: "#about" },
-  { label: "Journal", href: "#journal" },
+  { label: "Work", href: "/work" },
+  { label: "Services", href: "/services" },
+  { label: "About", href: "/about" },
+  { label: "Journal", href: "/insights" },
 ];
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [pastHero, setPastHero] = useState(false);
+  const location = useLocation();
+  const isHome = location.pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,15 +26,16 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const isDark = !pastHero;
+  // On non-home pages, always use light style
+  const isDark = isHome && !pastHero;
 
   return (
     <motion.nav
       className={`fixed top-0 left-0 right-0 z-50 h-20 flex items-center transition-all duration-500 ${
         scrolled
-          ? pastHero
-            ? "bg-background/95 backdrop-blur-xl border-b border-border"
-            : "bg-background-dark/95 backdrop-blur-xl"
+          ? isDark
+            ? "bg-background-dark/95 backdrop-blur-xl"
+            : "bg-background/95 backdrop-blur-xl border-b border-border"
           : "bg-transparent"
       }`}
       initial={{ y: -80 }}
@@ -40,30 +43,30 @@ const Navbar = () => {
       transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
     >
       <div className="container-site w-full flex items-center justify-between">
-        <a
-          href="#"
+        <Link
+          to="/"
           className="text-xl font-bold tracking-tight transition-colors duration-300"
           style={{ color: isDark ? "hsl(0 0% 95%)" : "hsl(0 0% 8%)" }}
         >
           PlusMinus
-        </a>
+        </Link>
 
         <div className="hidden md:flex items-center gap-1">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.label}
-              href={link.href}
+              to={link.href}
               className="text-[13px] font-medium px-4 py-2 rounded-full transition-all duration-300 hover:bg-foreground/5"
               style={{ color: isDark ? "hsl(0 0% 60%)" : "hsl(0 0% 45%)" }}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </div>
 
         <div className="hidden md:block">
-          <a
-            href="#cta"
+          <Link
+            to="/contact"
             className="text-[13px] font-semibold px-6 py-2.5 rounded-full transition-all duration-300"
             style={{
               backgroundColor: isDark ? "hsl(0 0% 100%)" : "hsl(0 0% 8%)",
@@ -71,7 +74,7 @@ const Navbar = () => {
             }}
           >
             Let's Talk
-          </a>
+          </Link>
         </div>
 
         <button
@@ -94,25 +97,28 @@ const Navbar = () => {
           >
             <div className="container-site py-10 flex flex-col gap-4">
               {navLinks.map((link, i) => (
-                <motion.a
+                <motion.div
                   key={link.label}
-                  href={link.href}
-                  onClick={() => setMobileOpen(false)}
-                  className="text-3xl font-bold text-foreground hover:text-foreground-muted transition-colors"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.05 }}
                 >
-                  {link.label}
-                </motion.a>
+                  <Link
+                    to={link.href}
+                    onClick={() => setMobileOpen(false)}
+                    className="text-3xl font-bold text-foreground hover:text-foreground-muted transition-colors block"
+                  >
+                    {link.label}
+                  </Link>
+                </motion.div>
               ))}
-              <a
-                href="#cta"
+              <Link
+                to="/contact"
                 onClick={() => setMobileOpen(false)}
                 className="mt-4 text-[13px] font-semibold px-6 py-3 rounded-full bg-foreground text-background w-fit"
               >
                 Let's Talk
-              </a>
+              </Link>
             </div>
           </motion.div>
         )}
