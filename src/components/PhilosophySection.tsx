@@ -31,7 +31,7 @@ const CountUp = ({ target, suffix }: { target: number; suffix: string }) => {
   }, [isInView, target]);
 
   return (
-    <div ref={ref} className="text-5xl md:text-6xl font-bold tracking-tight text-foreground mb-2">
+    <div ref={ref} className="text-4xl md:text-6xl font-bold tracking-tight text-foreground mb-2">
       {count}{suffix}
     </div>
   );
@@ -39,13 +39,13 @@ const CountUp = ({ target, suffix }: { target: number; suffix: string }) => {
 
 const PhilosophySection = () => {
   return (
-    <section id="about" className="section-light" style={{ padding: "100px 0" }}>
+    <section id="about" className="section-light" style={{ padding: "clamp(60px, 8vw, 100px) 0" }}>
       <div className="container-site">
-        <div className="pm-divider mb-16">
+        <div className="pm-divider mb-10 md:mb-16">
           <span className="font-display italic text-xl text-foreground-muted">±</span>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-4">
           {stats.map((stat, i) => (
             <motion.div
               key={stat.label}
@@ -56,7 +56,7 @@ const PhilosophySection = () => {
               transition={{ duration: 0.6, delay: i * 0.1 }}
             >
               <CountUp target={stat.number} suffix={stat.suffix} />
-              <div className="text-sm font-medium text-foreground-muted">
+              <div className="text-xs md:text-sm font-medium text-foreground-muted">
                 {stat.label}
               </div>
             </motion.div>

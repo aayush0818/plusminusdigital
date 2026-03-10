@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const services = [
   {
@@ -26,12 +27,19 @@ const services = [
 
 const ServicesSection = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const isMobile = useIsMobile();
+
+  const handleInteraction = (i: number) => {
+    if (isMobile) {
+      setActiveIndex(activeIndex === i ? null : i);
+    }
+  };
 
   return (
-    <section id="services" className="section-light" style={{ padding: "160px 0" }}>
+    <section id="services" className="section-light" style={{ padding: "clamp(80px, 12vw, 160px) 0" }}>
       <div className="container-site">
         <motion.div
-          className="mb-20"
+          className="mb-12 md:mb-20"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -40,7 +48,7 @@ const ServicesSection = () => {
           <p className="text-[13px] font-semibold tracking-[0.2em] uppercase text-foreground-muted mb-4">
             What We Do
           </p>
-          <h2 style={{ fontSize: "clamp(36px, 5vw, 64px)", lineHeight: 1.05, letterSpacing: "-0.03em" }} className="font-bold text-foreground">
+          <h2 style={{ fontSize: "clamp(32px, 5vw, 64px)", lineHeight: 1.05, letterSpacing: "-0.03em" }} className="font-bold text-foreground">
             Services
           </h2>
         </motion.div>
@@ -54,21 +62,22 @@ const ServicesSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              onMouseEnter={() => setActiveIndex(i)}
-              onMouseLeave={() => setActiveIndex(null)}
+              onClick={() => handleInteraction(i)}
+              {...(!isMobile && {
+                onMouseEnter: () => setActiveIndex(i),
+                onMouseLeave: () => setActiveIndex(null),
+              })}
             >
-              <div className="py-8 md:py-10 flex items-baseline gap-6 md:gap-12">
-                {/* +/- symbol */}
+              <div className="py-6 md:py-10 flex items-baseline gap-4 md:gap-12">
                 <motion.span
-                  className="text-2xl font-display italic flex-shrink-0 w-8 text-center select-none"
+                  className="text-xl md:text-2xl font-display italic flex-shrink-0 w-6 md:w-8 text-center select-none"
                   style={{ color: "hsl(var(--foreground))" }}
-                  animate={{ rotate: activeIndex === i ? 0 : 0 }}
                 >
                   {activeIndex === i ? "−" : "+"}
                 </motion.span>
                 <div className="flex-1">
                   <h3
-                    className="text-2xl md:text-3xl font-bold transition-colors duration-300"
+                    className="text-xl md:text-3xl font-bold transition-colors duration-300"
                     style={{
                       color: activeIndex === i ? "hsl(var(--foreground))" : activeIndex !== null ? "hsl(0 0% 75%)" : "hsl(var(--foreground))",
                     }}
@@ -78,7 +87,7 @@ const ServicesSection = () => {
                   <AnimatePresence>
                     {activeIndex === i && (
                       <motion.p
-                        className="text-base leading-relaxed text-foreground-muted mt-4 max-w-2xl"
+                        className="text-sm md:text-base leading-relaxed text-foreground-muted mt-3 md:mt-4 max-w-2xl"
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}

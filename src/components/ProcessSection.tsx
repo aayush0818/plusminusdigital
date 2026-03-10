@@ -19,7 +19,7 @@ const ProcessSection = () => {
   const lineWidth = useTransform(scrollYProgress, [0.1, 0.8], ["0%", "100%"]);
 
   return (
-    <section id="process" className="section-dark border-t" style={{ borderColor: "hsl(0 0% 15%)", padding: "160px 0" }} ref={containerRef}>
+    <section id="process" className="section-dark border-t" style={{ borderColor: "hsl(0 0% 15%)", padding: "clamp(80px, 12vw, 160px) 0" }} ref={containerRef}>
       <div className="container-site">
         <motion.div
           className="mb-6"
@@ -31,47 +31,52 @@ const ProcessSection = () => {
           <p className="text-[13px] font-semibold tracking-[0.2em] uppercase mb-4" style={{ color: "hsl(0 0% 40%)" }}>
             How We Work
           </p>
-          <h2 style={{ fontSize: "clamp(36px, 5vw, 64px)", lineHeight: 1.05, letterSpacing: "-0.03em" }} className="font-bold" >
+          <h2 style={{ fontSize: "clamp(32px, 5vw, 64px)", lineHeight: 1.05, letterSpacing: "-0.03em" }} className="font-bold">
             <span style={{ color: "hsl(0 0% 90%)" }}>Our </span>
             <span className="font-display italic font-normal" style={{ color: "hsl(0 0% 90%)" }}>Process</span>
           </h2>
         </motion.div>
 
         {/* Connecting line */}
-        <div className="relative mb-16 h-px" style={{ background: "hsl(0 0% 15%)" }}>
+        <div className="relative mb-12 md:mb-16 h-px" style={{ background: "hsl(0 0% 15%)" }}>
           <motion.div className="absolute top-0 left-0 h-full" style={{ width: lineWidth, background: "hsl(0 0% 35%)" }} />
         </div>
 
-        {/* Horizontal scroll strip */}
-        <div className="horizontal-scroll-section gap-0 md:gap-0 pb-4 -mx-6 px-6 md:mx-0 md:px-0 md:overflow-visible md:grid md:grid-cols-5">
-          {steps.map((step, i) => (
-            <motion.div
-              key={step.num}
-              className="horizontal-scroll-item w-[280px] md:w-auto flex-shrink-0 md:flex-shrink pr-8 md:pr-0 group"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-            >
-              {/* ± marker */}
-              <div className="flex items-center gap-3 mb-6">
-                <span className="font-display italic text-lg" style={{ color: "hsl(0 0% 30%)" }}>±</span>
-                <div className="h-px flex-1" style={{ background: "hsl(0 0% 18%)" }} />
-              </div>
-              <div
-                className="text-5xl md:text-6xl font-bold tracking-tight mb-4 transition-colors duration-500"
-                style={{ color: "hsl(0 0% 20%)" }}
+        {/* Mobile: vertical stack. Desktop: horizontal grid */}
+        <div className="relative">
+          {/* Fade edges on mobile for scroll hint */}
+          <div className="absolute left-0 top-0 bottom-0 w-6 z-10 pointer-events-none md:hidden" style={{ background: "linear-gradient(to right, hsl(0 0% 7%), transparent)" }} />
+          <div className="absolute right-0 top-0 bottom-0 w-6 z-10 pointer-events-none md:hidden" style={{ background: "linear-gradient(to left, hsl(0 0% 7%), transparent)" }} />
+
+          <div className="horizontal-scroll-section gap-0 pb-4 -mx-6 px-6 md:mx-0 md:px-0 md:overflow-visible md:grid md:grid-cols-5">
+            {steps.map((step, i) => (
+              <motion.div
+                key={step.num}
+                className="horizontal-scroll-item w-[300px] md:w-auto flex-shrink-0 md:flex-shrink pr-8 md:pr-0 group"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
               >
-                {step.num}
-              </div>
-              <div className="text-base font-semibold mb-3" style={{ color: "hsl(0 0% 80%)" }}>
-                {step.title}
-              </div>
-              <p className="text-sm leading-relaxed" style={{ color: "hsl(0 0% 45%)" }}>
-                {step.desc}
-              </p>
-            </motion.div>
-          ))}
+                <div className="flex items-center gap-3 mb-6">
+                  <span className="font-display italic text-lg" style={{ color: "hsl(0 0% 30%)" }}>±</span>
+                  <div className="h-px flex-1" style={{ background: "hsl(0 0% 18%)" }} />
+                </div>
+                <div
+                  className="text-4xl md:text-6xl font-bold tracking-tight mb-4 transition-colors duration-500"
+                  style={{ color: "hsl(0 0% 20%)" }}
+                >
+                  {step.num}
+                </div>
+                <div className="text-base font-semibold mb-3" style={{ color: "hsl(0 0% 80%)" }}>
+                  {step.title}
+                </div>
+                <p className="text-sm leading-relaxed" style={{ color: "hsl(0 0% 45%)" }}>
+                  {step.desc}
+                </p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
