@@ -175,6 +175,72 @@ const caseStudies: Record<string, CaseStudyData> = {
       mobile: udaMobile,
       tablet: udaTablet,
     },
+    nextProject: { slug: "corrxp", title: "CORR XP", gradient: "linear-gradient(135deg, hsl(20 60% 10%), hsl(25 70% 18%), hsl(15 40% 8%))" },
+  },
+  "corrxp": {
+    slug: "corrxp",
+    title: "CORR XP",
+    category: "Web Design & Development",
+    year: "2025",
+    heroGradient: "linear-gradient(135deg, hsl(20 60% 10%), hsl(25 70% 18%), hsl(15 40% 8%))",
+    tagline: "Restoring strength. Reinforcing trust — digitally.",
+    mockupColors: ["#1A1A2E", "#E8612D", "#FAF5F0", "#2D2D3F"],
+    overview:
+      "CORR XP India is a specialized structural repair, rehabilitation, and retrofitting contractor with 9+ years of expertise. They needed a digital presence that communicated the precision and authority of their engineering work — so we built a bold, conversion-driven website that positions them as India's go-to structural repair specialists.",
+    problem: {
+      title: "The Challenge",
+      description:
+        "Despite being MSME registered with a strong project portfolio, CORR XP had no meaningful online presence. Potential clients in the construction and infrastructure sector couldn't find them, and their expertise in advanced repair systems like FRP strengthening went completely unrepresented online.",
+      challenges: [
+        "No existing website — zero digital presence in a competitive market",
+        "Complex technical services were hard to communicate clearly",
+        "No lead generation pipeline — all business came through word of mouth",
+        "Mobile-first audience (engineers on-site) had no way to access information",
+        "Multiple service verticals needed clear, organized presentation",
+      ],
+    },
+    strategy: {
+      title: "Our Strategy",
+      description:
+        "We built CORR XP's digital identity from the ground up — a dark, industrial-grade aesthetic that mirrors the strength of their work, with orange accents that demand attention and drive action.",
+      pillars: [
+        { label: "Industrial Visual Identity", detail: "Dark charcoal palette with bold orange CTAs — communicating strength, precision, and engineering authority" },
+        { label: "Service Architecture", detail: "Six core service verticals organized with clear descriptions, specifications, and relevant certifications (NACE, ASTM)" },
+        { label: "Trust Signals", detail: "MSME registration, GST compliance, 9+ years experience, and 25+ completed projects prominently displayed" },
+        { label: "Lead Generation", detail: "Multi-touch contact forms with project detail fields — converting site visitors into qualified consultation requests" },
+      ],
+    },
+    designSystem: {
+      fonts: [
+        { name: "Plus Jakarta Sans", style: "Headlines & Navigation", specimen: "Restoring Strength. Reinforcing Trust." },
+        { name: "Inter", style: "Body & Technical Copy", specimen: "Advanced solutions for concrete and steel structures using proven repair systems." },
+      ],
+      colors: [
+        { name: "Deep Navy", hex: "#1A1A2E" },
+        { name: "CORR Orange", hex: "#E8612D" },
+        { name: "Warm Cream", hex: "#FAF5F0" },
+        { name: "Charcoal", hex: "#2D2D3F" },
+      ],
+      gridNote: "Full-width hero with construction imagery overlay. Service cards in a 2×3 grid with icon accents. Stats section with bold counters and orange highlights.",
+    },
+    results: {
+      stats: [
+        { value: "5×", label: "Increase in consultation requests" },
+        { value: "2.5×", label: "Longer session duration" },
+        { value: "90%", label: "Mobile traffic optimized" },
+        { value: "6", label: "Service verticals launched" },
+      ],
+      quote: {
+        text: "PlusMinus understood our technical domain and translated it into a website that our clients actually trust. The consultation requests started coming in within the first week.",
+        author: "Corrxp Team",
+        role: "CORR XP India",
+      },
+    },
+    heroImages: {
+      browser: corrxpBrowser,
+      mobile: corrxpMobile,
+      tablet: corrxpTablet,
+    },
     nextProject: { slug: "trots-architects", title: "Trots Architects", gradient: "linear-gradient(135deg, hsl(220 25% 18%), hsl(200 30% 25%), hsl(180 20% 15%))" },
   },
 };
