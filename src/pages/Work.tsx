@@ -10,13 +10,6 @@ const categories = ["All", "Web Design", "Development", "Branding"];
 
 const projects = [
   { title: "Trots Architects", slug: "trots-architects", category: "Web Design", year: "2025", gradient: "linear-gradient(135deg, hsl(220 25% 18%), hsl(200 30% 25%), hsl(180 20% 15%))" },
-  { title: "Refinnd Restaurant", slug: "refinnd-restaurant", category: "Branding", year: "2025", gradient: "linear-gradient(135deg, hsl(25 40% 22%), hsl(15 35% 18%), hsl(35 30% 12%))" },
-  { title: "Overchends Real Estate", slug: "overchends-real-estate", category: "Web Design", year: "2024", gradient: "linear-gradient(135deg, hsl(150 15% 15%), hsl(170 20% 20%), hsl(140 15% 12%))" },
-  { title: "Velora Finance", slug: "velora-finance", category: "Development", year: "2024", gradient: "linear-gradient(135deg, hsl(260 25% 18%), hsl(280 20% 22%), hsl(250 20% 14%))" },
-  { title: "Meridian Finance", slug: "trots-architects", category: "Web Design", year: "2025", gradient: "linear-gradient(135deg, hsl(220 60% 60%), hsl(260 50% 50%))" },
-  { title: "Noma Kitchen", slug: "refinnd-restaurant", category: "Branding", year: "2025", gradient: "linear-gradient(135deg, hsl(30 70% 60%), hsl(15 60% 45%))" },
-  { title: "Volta Energy", slug: "velora-finance", category: "Development", year: "2024", gradient: "linear-gradient(135deg, hsl(150 50% 45%), hsl(180 40% 35%))" },
-  { title: "Arcade Studio", slug: "overchends-real-estate", category: "Web Design", year: "2024", gradient: "linear-gradient(135deg, hsl(280 50% 55%), hsl(320 45% 50%))" },
   { title: "UDA India", slug: "uda-india", category: "Web Design", year: "2025", gradient: "linear-gradient(135deg, hsl(30 30% 12%), hsl(40 40% 22%), hsl(20 25% 10%))" },
 ];
 

@@ -12,27 +12,6 @@ const projects = [
     gradient: "linear-gradient(135deg, hsl(220 25% 18%), hsl(200 30% 25%), hsl(180 20% 15%))",
   },
   {
-    title: "Refinnd Restaurant",
-    slug: "refinnd-restaurant",
-    category: "Hospitality",
-    year: "2025",
-    gradient: "linear-gradient(135deg, hsl(25 40% 22%), hsl(15 35% 18%), hsl(35 30% 12%))",
-  },
-  {
-    title: "Overchends Real Estate",
-    slug: "overchends-real-estate",
-    category: "Real Estate",
-    year: "2024",
-    gradient: "linear-gradient(135deg, hsl(150 15% 15%), hsl(170 20% 20%), hsl(140 15% 12%))",
-  },
-  {
-    title: "Velora Finance",
-    slug: "velora-finance",
-    category: "Fintech",
-    year: "2024",
-    gradient: "linear-gradient(135deg, hsl(260 25% 18%), hsl(280 20% 22%), hsl(250 20% 14%))",
-  },
-  {
     title: "UDA India",
     slug: "uda-india",
     category: "Architecture & Interior Design",

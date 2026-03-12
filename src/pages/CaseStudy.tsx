@@ -38,6 +38,11 @@ interface CaseStudyData {
     stats: { value: string; label: string }[];
     quote?: { text: string; author: string; role: string };
   };
+  heroImages?: {
+    browser?: string;
+    mobile?: string;
+    tablet?: string;
+  };
   nextProject?: { slug: string; title: string; gradient: string };
 }
 
