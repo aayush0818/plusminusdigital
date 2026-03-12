@@ -272,6 +272,67 @@ const caseStudies: Record<string, CaseStudyData> = {
         role: "Co-founder, Velora Finance",
       },
     },
+    nextProject: { slug: "uda-india", title: "UDA India", gradient: "linear-gradient(135deg, hsl(30 30% 12%), hsl(40 40% 22%), hsl(20 25% 10%))" },
+  },
+  "uda-india": {
+    slug: "uda-india",
+    title: "UDA India",
+    category: "Architecture & Interior Design",
+    year: "2025",
+    heroGradient: "linear-gradient(135deg, hsl(30 30% 12%), hsl(40 40% 22%), hsl(20 25% 10%))",
+    tagline: "Four decades of craft, one digital stage.",
+    mockupColors: ["#1A1614", "#C9A96E", "#FAF7F2", "#2C2420"],
+    overview:
+      "Umesh Desai & Associates (est. 1984) is one of India's most respected architecture and interior design firms, behind iconic hospitality spaces like Kyma, Blabber All Day, Cafe Crema, Nama, and Tattva. They needed a digital portfolio that matched the caliber of their interiors — so we built an immersive, image-first experience that lets their spaces speak.",
+    problem: {
+      title: "The Challenge",
+      description:
+        "Despite four decades of award-winning work, UDA's online presence was outdated and failed to convey the sophistication of their hospitality interiors. Prospective clients couldn't experience the quality of their spaces digitally.",
+      challenges: [
+        "Outdated website with no project showcase or visual narrative",
+        "Stunning photography was buried and underutilized",
+        "Zero mobile optimization — majority of traffic came from mobile",
+        "No inquiry pipeline from the website — all leads came through referrals",
+        "Brand positioning didn't reflect their premium hospitality portfolio",
+      ],
+    },
+    strategy: {
+      title: "Our Strategy",
+      description:
+        "We positioned UDA as a luxury hospitality design authority, crafting an editorial experience that treats each project as a story — not just a gallery.",
+      pillars: [
+        { label: "Full-Screen Imagery", detail: "Hero carousel showcasing their best venues — Kyma, Blabber, Nama — at cinematic scale" },
+        { label: "Project-First Architecture", detail: "Portfolio-driven navigation where spaces take center stage, not corporate pages" },
+        { label: "Editorial Storytelling", detail: "Each venue gets a dedicated narrative — concept, execution, photography — like an architecture journal" },
+        { label: "Inquiry Pipeline", detail: "Contextual contact forms on every project page — qualified leads are one click away" },
+      ],
+    },
+    designSystem: {
+      fonts: [
+        { name: "Cormorant Garamond", style: "Headlines & Display", specimen: "Where space becomes experience" },
+        { name: "DM Sans", style: "Body & Navigation", specimen: "Forty years of transforming hospitality spaces across India." },
+      ],
+      colors: [
+        { name: "Walnut", hex: "#1A1614" },
+        { name: "Antique Gold", hex: "#C9A96E" },
+        { name: "Ivory", hex: "#FAF7F2" },
+        { name: "Espresso", hex: "#2C2420" },
+      ],
+      gridNote: "Full-bleed hero imagery with editorial text overlays. Venue pages use masonry layouts with generous whitespace to let photography breathe.",
+    },
+    results: {
+      stats: [
+        { value: "4×", label: "Increase in project inquiries" },
+        { value: "3.2×", label: "Longer session duration" },
+        { value: "85%", label: "Mobile traffic now optimized" },
+        { value: "6", label: "Venue showcases launched" },
+      ],
+      quote: {
+        text: "For 40 years we let our spaces speak for themselves. PlusMinus gave us a digital space that finally does the same.",
+        author: "Umesh Desai",
+        role: "Founder, Umesh Desai & Associates",
+      },
+    },
     nextProject: { slug: "trots-architects", title: "Trots Architects", gradient: "linear-gradient(135deg, hsl(220 25% 18%), hsl(200 30% 25%), hsl(180 20% 15%))" },
   },
 };
