@@ -6,6 +6,9 @@ import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
 import ProjectMockup from "@/components/ProjectMockup";
 import logoMark from "@/assets/logo-mark.png";
+import udaHero from "@/assets/uda-hero.jpg";
+import udaMobile from "@/assets/uda-mobile.jpg";
+import udaTablet from "@/assets/uda-tablet.jpg";
 
 interface CaseStudyData {
   slug: string;
