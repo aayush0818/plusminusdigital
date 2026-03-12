@@ -161,6 +161,11 @@ const caseStudies: Record<string, CaseStudyData> = {
         role: "Founder, Umesh Desai & Associates",
       },
     },
+    heroImages: {
+      browser: udaHero,
+      mobile: udaMobile,
+      tablet: udaTablet,
+    },
     nextProject: { slug: "trots-architects", title: "Trots Architects", gradient: "linear-gradient(135deg, hsl(220 25% 18%), hsl(200 30% 25%), hsl(180 20% 15%))" },
   },
 };
