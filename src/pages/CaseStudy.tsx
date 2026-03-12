@@ -319,13 +319,51 @@ const CaseStudy = () => {
         <section className="relative overflow-hidden" style={{ background: study.heroGradient, padding: "clamp(60px, 10vw, 120px) 0" }}>
           <div className="container-site">
             <div className="flex flex-col md:flex-row items-end justify-center gap-6 md:gap-10">
-              <div className="hidden md:block">
-                <ProjectMockup variant="tablet" colors={study.mockupColors} />
-              </div>
-              <ProjectMockup variant="phone" colors={study.mockupColors} />
-              <div className="hidden md:block">
-                <ProjectMockup variant="phone" colors={[...study.mockupColors].reverse()} style={{ width: 200 }} />
-              </div>
+              {study.heroImages?.tablet ? (
+                <motion.div
+                  className="hidden md:block rounded-2xl overflow-hidden shadow-2xl"
+                  style={{ background: "hsl(0 0% 6%)", border: "2px solid hsl(0 0% 15%)", width: 360 }}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.7, delay: 0.3 }}
+                >
+                  <div className="flex justify-center pt-2">
+                    <div className="w-3 h-3 rounded-full" style={{ background: "hsl(0 0% 12%)" }} />
+                  </div>
+                  <div className="aspect-[4/3] p-1 overflow-hidden">
+                    <img src={study.heroImages.tablet} alt={`${study.title} tablet view`} className="w-full h-full object-cover object-top rounded-lg" />
+                  </div>
+                </motion.div>
+              ) : (
+                <div className="hidden md:block">
+                  <ProjectMockup variant="tablet" colors={study.mockupColors} />
+                </div>
+              )}
+              {study.heroImages?.mobile ? (
+                <motion.div
+                  className="rounded-[28px] overflow-hidden shadow-2xl"
+                  style={{ background: "hsl(0 0% 6%)", border: "3px solid hsl(0 0% 18%)", width: 220 }}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.7, delay: 0.2 }}
+                >
+                  <div className="flex justify-center pt-2 pb-1">
+                    <div className="w-16 h-4 rounded-full" style={{ background: "hsl(0 0% 10%)" }} />
+                  </div>
+                  <div className="aspect-[9/18] px-1 pb-2 overflow-hidden">
+                    <img src={study.heroImages.mobile} alt={`${study.title} mobile view`} className="w-full h-full object-cover object-top rounded-lg" />
+                  </div>
+                </motion.div>
+              ) : (
+                <ProjectMockup variant="phone" colors={study.mockupColors} />
+              )}
+              {!study.heroImages?.mobile && (
+                <div className="hidden md:block">
+                  <ProjectMockup variant="phone" colors={[...study.mockupColors].reverse()} style={{ width: 200 }} />
+                </div>
+              )}
             </div>
           </div>
         </section>
