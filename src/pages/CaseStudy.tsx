@@ -6,6 +6,9 @@ import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
 import ProjectMockup from "@/components/ProjectMockup";
 import logoMark from "@/assets/logo-mark.png";
+import udaHero from "@/assets/uda-hero.jpg";
+import udaMobile from "@/assets/uda-mobile.jpg";
+import udaTablet from "@/assets/uda-tablet.jpg";
 
 interface CaseStudyData {
   slug: string;
@@ -34,6 +37,11 @@ interface CaseStudyData {
   results: {
     stats: { value: string; label: string }[];
     quote?: { text: string; author: string; role: string };
+  };
+  heroImages?: {
+    browser?: string;
+    mobile?: string;
+    tablet?: string;
   };
   nextProject?: { slug: string; title: string; gradient: string };
 }
@@ -97,181 +105,6 @@ const caseStudies: Record<string, CaseStudyData> = {
         role: "Founding Partner, Trots Architects",
       },
     },
-    nextProject: { slug: "refinnd-restaurant", title: "Refinnd Restaurant", gradient: "linear-gradient(135deg, hsl(25 40% 22%), hsl(15 35% 18%), hsl(35 30% 12%))" },
-  },
-  "refinnd-restaurant": {
-    slug: "refinnd-restaurant",
-    title: "Refinnd Restaurant",
-    category: "Hospitality",
-    year: "2025",
-    heroGradient: "linear-gradient(135deg, hsl(25 40% 22%), hsl(15 35% 18%), hsl(35 30% 12%))",
-    tagline: "Where flavor meets digital finesse.",
-    mockupColors: ["#3E2723", "#D4A574", "#FFF8F0", "#1A1A1A"],
-    overview:
-      "Refinnd is a fine-dining experience in South Mumbai. We crafted a website that captures the warmth, artistry, and atmosphere of their restaurant — driving reservations and private event inquiries.",
-    problem: {
-      title: "The Challenge",
-      description:
-        "Their previous site was a basic template that felt generic. It didn't convey the exclusivity of the dining experience and lacked reservation integration.",
-      challenges: [
-        "Generic template with no brand personality",
-        "No online reservation system",
-        "Menu was a downloadable PDF — not mobile-friendly",
-        "Event inquiry process required phone calls only",
-      ],
-    },
-    strategy: {
-      title: "Our Strategy",
-      description:
-        "We designed an immersive, image-driven experience that makes you feel the ambiance before you walk through the door.",
-      pillars: [
-        { label: "Atmosphere First", detail: "Full-screen imagery and moody color palette that mirrors the dining experience" },
-        { label: "Seamless Reservations", detail: "Integrated booking widget accessible from every page" },
-        { label: "Digital Menu", detail: "Interactive, seasonal menu with dietary filters and chef's notes" },
-        { label: "Event Pipeline", detail: "Dedicated private dining section with instant quote requests" },
-      ],
-    },
-    designSystem: {
-      fonts: [
-        { name: "Playfair Display", style: "Headlines", specimen: "Taste the extraordinary" },
-        { name: "DM Sans", style: "Body & UI", specimen: "Every dish tells a story of heritage and innovation." },
-      ],
-      colors: [
-        { name: "Espresso", hex: "#3E2723" },
-        { name: "Warm Gold", hex: "#D4A574" },
-        { name: "Cream", hex: "#FFF8F0" },
-        { name: "Charcoal", hex: "#1A1A1A" },
-      ],
-      gridNote: "Asymmetric layouts with generous whitespace. Menu sections use card-based layouts with hover reveals.",
-    },
-    results: {
-      stats: [
-        { value: "5×", label: "Online reservations vs. phone" },
-        { value: "45%", label: "Increase in private event inquiries" },
-        { value: "92%", label: "Mobile satisfaction score" },
-        { value: "12s", label: "Avg. time to complete reservation" },
-      ],
-      quote: {
-        text: "The website captures exactly what it feels like to dine with us. Our bookings have never been stronger.",
-        author: "Chef Priya Sharma",
-        role: "Owner, Refinnd Restaurant",
-      },
-    },
-    nextProject: { slug: "overchends-real-estate", title: "Overchends Real Estate", gradient: "linear-gradient(135deg, hsl(150 15% 15%), hsl(170 20% 20%), hsl(140 15% 12%))" },
-  },
-  "overchends-real-estate": {
-    slug: "overchends-real-estate",
-    title: "Overchends Real Estate",
-    category: "Real Estate",
-    year: "2024",
-    heroGradient: "linear-gradient(135deg, hsl(150 15% 15%), hsl(170 20% 20%), hsl(140 15% 12%))",
-    tagline: "Premium properties deserve a premium presence.",
-    mockupColors: ["#1B2E1B", "#87A87B", "#F5F5F0", "#C9A96E"],
-    overview:
-      "Overchends is a luxury real estate firm operating across Mumbai and Dubai. We built a property showcase platform that elevates their listings and converts high-net-worth leads.",
-    problem: {
-      title: "The Challenge",
-      description:
-        "Their site was listing-heavy but experience-poor. Luxury buyers expect a premium feel, and the existing site felt transactional rather than aspirational.",
-      challenges: [
-        "No visual hierarchy — all listings looked the same",
-        "Lead capture was a basic contact form",
-        "Property pages lacked immersive media",
-        "No differentiation from aggregator sites like 99acres",
-      ],
-    },
-    strategy: {
-      title: "Our Strategy",
-      description:
-        "We positioned each property as a story, not just a listing — creating cinematic property pages that drive qualified inquiries.",
-      pillars: [
-        { label: "Property Stories", detail: "Each listing has a narrative arc: location, lifestyle, specs, and a strong CTA" },
-        { label: "Lead Qualification", detail: "Multi-step inquiry form that pre-qualifies leads by budget and timeline" },
-        { label: "Virtual Tours", detail: "Integrated 360° walkthroughs for premium listings" },
-        { label: "Market Authority", detail: "Blog and market reports section positioning Overchends as thought leaders" },
-      ],
-    },
-    designSystem: {
-      fonts: [
-        { name: "Instrument Serif", style: "Headlines", specimen: "Luxury is in the details" },
-        { name: "DM Sans", style: "Body & Data", specimen: "Where vision meets value — premium living redefined." },
-      ],
-      colors: [
-        { name: "Forest", hex: "#1B2E1B" },
-        { name: "Sage", hex: "#87A87B" },
-        { name: "Pearl", hex: "#F5F5F0" },
-        { name: "Gold", hex: "#C9A96E" },
-      ],
-      gridNote: "Property pages use full-bleed hero images with overlaid text. Grid shifts from 2-column on listing pages to full-width on property detail pages.",
-    },
-    results: {
-      stats: [
-        { value: "280%", label: "Qualified lead increase" },
-        { value: "4.2×", label: "Time on property pages" },
-        { value: "35%", label: "Reduction in unqualified inquiries" },
-        { value: "₹12Cr", label: "In deals attributed to the website" },
-      ],
-    },
-    nextProject: { slug: "velora-finance", title: "Velora Finance", gradient: "linear-gradient(135deg, hsl(260 25% 18%), hsl(280 20% 22%), hsl(250 20% 14%))" },
-  },
-  "velora-finance": {
-    slug: "velora-finance",
-    title: "Velora Finance",
-    category: "Fintech",
-    year: "2024",
-    heroGradient: "linear-gradient(135deg, hsl(260 25% 18%), hsl(280 20% 22%), hsl(250 20% 14%))",
-    tagline: "Making finance feel human.",
-    mockupColors: ["#2D1B4E", "#7C3AED", "#F3F0FF", "#0F0A1A"],
-    overview:
-      "Velora is a fintech startup simplifying wealth management for young professionals in India. We designed their brand identity and built a product-led website that drives app signups.",
-    problem: {
-      title: "The Challenge",
-      description:
-        "As a new entrant in a crowded fintech space, Velora needed to stand out visually while building trust with a skeptical audience.",
-      challenges: [
-        "No established brand identity",
-        "Complex product needed simple explanation",
-        "Trust deficit — new brand in a trust-heavy industry",
-        "Low conversion from landing page to app download",
-      ],
-    },
-    strategy: {
-      title: "Our Strategy",
-      description:
-        "We built a brand that feels approachable yet premium, with a website that educates before it sells.",
-      pillars: [
-        { label: "Brand Identity", detail: "Created a complete visual system: logo, type, color, illustration style" },
-        { label: "Product Storytelling", detail: "Scroll-driven animations that explain the product step by step" },
-        { label: "Social Proof", detail: "Integrated testimonials, press mentions, and security certifications prominently" },
-        { label: "Conversion Funnel", detail: "Optimized signup flow with progressive disclosure and trust signals" },
-      ],
-    },
-    designSystem: {
-      fonts: [
-        { name: "Cabinet Grotesk", style: "Headlines & Brand", specimen: "Your money, simplified" },
-        { name: "Inter", style: "Body & Product UI", specimen: "Investing shouldn't require a finance degree." },
-      ],
-      colors: [
-        { name: "Deep Purple", hex: "#2D1B4E" },
-        { name: "Electric Violet", hex: "#7C3AED" },
-        { name: "Soft Lavender", hex: "#F3F0FF" },
-        { name: "Midnight", hex: "#0F0A1A" },
-      ],
-      gridNote: "Alternating full-width sections with contained 8-column content areas. Heavy use of gradients and glassmorphism for a modern fintech feel.",
-    },
-    results: {
-      stats: [
-        { value: "8×", label: "App signup conversion" },
-        { value: "15K", label: "Signups in first month" },
-        { value: "4.8★", label: "App Store rating post-launch" },
-        { value: "₹2Cr", label: "Seed funding attributed to brand" },
-      ],
-      quote: {
-        text: "PlusMinus didn't just build us a website — they built us a brand. The response from investors and users has been incredible.",
-        author: "Rohan Kapoor",
-        role: "Co-founder, Velora Finance",
-      },
-    },
     nextProject: { slug: "uda-india", title: "UDA India", gradient: "linear-gradient(135deg, hsl(30 30% 12%), hsl(40 40% 22%), hsl(20 25% 10%))" },
   },
   "uda-india": {
@@ -332,6 +165,11 @@ const caseStudies: Record<string, CaseStudyData> = {
         author: "Umesh Desai",
         role: "Founder, Umesh Desai & Associates",
       },
+    },
+    heroImages: {
+      browser: udaHero,
+      mobile: udaMobile,
+      tablet: udaTablet,
     },
     nextProject: { slug: "trots-architects", title: "Trots Architects", gradient: "linear-gradient(135deg, hsl(220 25% 18%), hsl(200 30% 25%), hsl(180 20% 15%))" },
   },
@@ -411,7 +249,38 @@ const CaseStudy = () => {
           {/* Browser mockup overlapping into next section */}
           <div className="container-site relative z-20 pb-0">
             <div className="translate-y-12 md:translate-y-20">
-              <ProjectMockup variant="browser" colors={study.mockupColors} className="w-full max-w-5xl mx-auto" />
+              {study.heroImages?.browser ? (
+                <motion.div
+                  className="rounded-xl overflow-hidden shadow-2xl w-full max-w-5xl mx-auto"
+                  style={{ background: "hsl(0 0% 6%)", border: "1px solid hsl(0 0% 15%)" }}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  <div className="flex items-center gap-2 px-4 py-3" style={{ background: "hsl(0 0% 10%)", borderBottom: "1px solid hsl(0 0% 15%)" }}>
+                    <div className="flex gap-1.5">
+                      <div className="w-2.5 h-2.5 rounded-full" style={{ background: "hsl(0 70% 55%)" }} />
+                      <div className="w-2.5 h-2.5 rounded-full" style={{ background: "hsl(45 70% 55%)" }} />
+                      <div className="w-2.5 h-2.5 rounded-full" style={{ background: "hsl(130 50% 50%)" }} />
+                    </div>
+                    <div className="flex-1 mx-8">
+                      <div className="h-5 rounded-md mx-auto max-w-[240px]" style={{ background: "hsl(0 0% 14%)" }} />
+                    </div>
+                  </div>
+                  <div className="relative overflow-hidden" style={{ maxHeight: 500 }}>
+                    <motion.img
+                      src={study.heroImages.browser}
+                      alt={`${study.title} website`}
+                      className="w-full object-cover object-top"
+                      animate={{ y: [0, -100, 0] }}
+                      transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+                    />
+                  </div>
+                </motion.div>
+              ) : (
+                <ProjectMockup variant="browser" colors={study.mockupColors} className="w-full max-w-5xl mx-auto" />
+              )}
             </div>
           </div>
         </section>
@@ -450,13 +319,51 @@ const CaseStudy = () => {
         <section className="relative overflow-hidden" style={{ background: study.heroGradient, padding: "clamp(60px, 10vw, 120px) 0" }}>
           <div className="container-site">
             <div className="flex flex-col md:flex-row items-end justify-center gap-6 md:gap-10">
-              <div className="hidden md:block">
-                <ProjectMockup variant="tablet" colors={study.mockupColors} />
-              </div>
-              <ProjectMockup variant="phone" colors={study.mockupColors} />
-              <div className="hidden md:block">
-                <ProjectMockup variant="phone" colors={[...study.mockupColors].reverse()} style={{ width: 200 }} />
-              </div>
+              {study.heroImages?.tablet ? (
+                <motion.div
+                  className="hidden md:block rounded-2xl overflow-hidden shadow-2xl"
+                  style={{ background: "hsl(0 0% 6%)", border: "2px solid hsl(0 0% 15%)", width: 360 }}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.7, delay: 0.3 }}
+                >
+                  <div className="flex justify-center pt-2">
+                    <div className="w-3 h-3 rounded-full" style={{ background: "hsl(0 0% 12%)" }} />
+                  </div>
+                  <div className="aspect-[4/3] p-1 overflow-hidden">
+                    <img src={study.heroImages.tablet} alt={`${study.title} tablet view`} className="w-full h-full object-cover object-top rounded-lg" />
+                  </div>
+                </motion.div>
+              ) : (
+                <div className="hidden md:block">
+                  <ProjectMockup variant="tablet" colors={study.mockupColors} />
+                </div>
+              )}
+              {study.heroImages?.mobile ? (
+                <motion.div
+                  className="rounded-[28px] overflow-hidden shadow-2xl"
+                  style={{ background: "hsl(0 0% 6%)", border: "3px solid hsl(0 0% 18%)", width: 220 }}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.7, delay: 0.2 }}
+                >
+                  <div className="flex justify-center pt-2 pb-1">
+                    <div className="w-16 h-4 rounded-full" style={{ background: "hsl(0 0% 10%)" }} />
+                  </div>
+                  <div className="aspect-[9/18] px-1 pb-2 overflow-hidden">
+                    <img src={study.heroImages.mobile} alt={`${study.title} mobile view`} className="w-full h-full object-cover object-top rounded-lg" />
+                  </div>
+                </motion.div>
+              ) : (
+                <ProjectMockup variant="phone" colors={study.mockupColors} />
+              )}
+              {!study.heroImages?.mobile && (
+                <div className="hidden md:block">
+                  <ProjectMockup variant="phone" colors={[...study.mockupColors].reverse()} style={{ width: 200 }} />
+                </div>
+              )}
             </div>
           </div>
         </section>
@@ -599,7 +506,6 @@ const CaseStudy = () => {
           </div>
         </section>
 
-        {/* Full-bleed browser mockup with "After" label */}
         <section className="relative overflow-hidden" style={{ background: study.heroGradient, padding: "clamp(40px, 8vw, 100px) 0" }}>
           <div className="container-site">
             <motion.div
@@ -610,7 +516,30 @@ const CaseStudy = () => {
             >
               <span className="text-[11px] font-semibold tracking-[0.25em] uppercase" style={{ color: "hsl(0 0% 50%)" }}>The Result</span>
             </motion.div>
-            <ProjectMockup variant="browser" colors={study.mockupColors} className="w-full max-w-5xl mx-auto" />
+            {study.heroImages?.browser ? (
+              <motion.div
+                className="rounded-xl overflow-hidden shadow-2xl w-full max-w-5xl mx-auto"
+                style={{ background: "hsl(0 0% 6%)", border: "1px solid hsl(0 0% 15%)" }}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+              >
+                <div className="flex items-center gap-2 px-4 py-3" style={{ background: "hsl(0 0% 10%)", borderBottom: "1px solid hsl(0 0% 15%)" }}>
+                  <div className="flex gap-1.5">
+                    <div className="w-2.5 h-2.5 rounded-full" style={{ background: "hsl(0 70% 55%)" }} />
+                    <div className="w-2.5 h-2.5 rounded-full" style={{ background: "hsl(45 70% 55%)" }} />
+                    <div className="w-2.5 h-2.5 rounded-full" style={{ background: "hsl(130 50% 50%)" }} />
+                  </div>
+                  <div className="flex-1 mx-8">
+                    <div className="h-5 rounded-md mx-auto max-w-[240px]" style={{ background: "hsl(0 0% 14%)" }} />
+                  </div>
+                </div>
+                <img src={study.heroImages.browser} alt={`${study.title} final result`} className="w-full" />
+              </motion.div>
+            ) : (
+              <ProjectMockup variant="browser" colors={study.mockupColors} className="w-full max-w-5xl mx-auto" />
+            )}
           </div>
         </section>
 
