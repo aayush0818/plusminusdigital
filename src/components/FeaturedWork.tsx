@@ -18,6 +18,13 @@ const projects = [
     year: "2025",
     gradient: "linear-gradient(135deg, hsl(30 30% 12%), hsl(40 40% 22%), hsl(20 25% 10%))",
   },
+  {
+    title: "CORR XP",
+    slug: "corrxp",
+    category: "Web Design & Development",
+    year: "2025",
+    gradient: "linear-gradient(135deg, hsl(20 60% 10%), hsl(25 70% 18%), hsl(15 40% 8%))",
+  },
 ];
 
 const FeaturedWork = () => {
