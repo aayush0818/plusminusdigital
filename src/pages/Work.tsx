@@ -17,6 +17,7 @@ const projects = [
   { title: "Noma Kitchen", slug: "refinnd-restaurant", category: "Branding", year: "2025", gradient: "linear-gradient(135deg, hsl(30 70% 60%), hsl(15 60% 45%))" },
   { title: "Volta Energy", slug: "velora-finance", category: "Development", year: "2024", gradient: "linear-gradient(135deg, hsl(150 50% 45%), hsl(180 40% 35%))" },
   { title: "Arcade Studio", slug: "overchends-real-estate", category: "Web Design", year: "2024", gradient: "linear-gradient(135deg, hsl(280 50% 55%), hsl(320 45% 50%))" },
+  { title: "UDA India", slug: "uda-india", category: "Web Design", year: "2025", gradient: "linear-gradient(135deg, hsl(30 30% 12%), hsl(40 40% 22%), hsl(20 25% 10%))" },
 ];
 
 const Work = () => {
