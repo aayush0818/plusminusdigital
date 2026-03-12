@@ -47,6 +47,7 @@ interface CaseStudyData {
     mobile?: string;
     tablet?: string;
   };
+  galleryImages?: string[];
   nextProject?: { slug: string; title: string; gradient: string };
 }
 
