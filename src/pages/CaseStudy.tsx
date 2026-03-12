@@ -249,7 +249,38 @@ const CaseStudy = () => {
           {/* Browser mockup overlapping into next section */}
           <div className="container-site relative z-20 pb-0">
             <div className="translate-y-12 md:translate-y-20">
-              <ProjectMockup variant="browser" colors={study.mockupColors} className="w-full max-w-5xl mx-auto" />
+              {study.heroImages?.browser ? (
+                <motion.div
+                  className="rounded-xl overflow-hidden shadow-2xl w-full max-w-5xl mx-auto"
+                  style={{ background: "hsl(0 0% 6%)", border: "1px solid hsl(0 0% 15%)" }}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  <div className="flex items-center gap-2 px-4 py-3" style={{ background: "hsl(0 0% 10%)", borderBottom: "1px solid hsl(0 0% 15%)" }}>
+                    <div className="flex gap-1.5">
+                      <div className="w-2.5 h-2.5 rounded-full" style={{ background: "hsl(0 70% 55%)" }} />
+                      <div className="w-2.5 h-2.5 rounded-full" style={{ background: "hsl(45 70% 55%)" }} />
+                      <div className="w-2.5 h-2.5 rounded-full" style={{ background: "hsl(130 50% 50%)" }} />
+                    </div>
+                    <div className="flex-1 mx-8">
+                      <div className="h-5 rounded-md mx-auto max-w-[240px]" style={{ background: "hsl(0 0% 14%)" }} />
+                    </div>
+                  </div>
+                  <div className="relative overflow-hidden" style={{ maxHeight: 500 }}>
+                    <motion.img
+                      src={study.heroImages.browser}
+                      alt={`${study.title} website`}
+                      className="w-full object-cover object-top"
+                      animate={{ y: [0, -100, 0] }}
+                      transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+                    />
+                  </div>
+                </motion.div>
+              ) : (
+                <ProjectMockup variant="browser" colors={study.mockupColors} className="w-full max-w-5xl mx-auto" />
+              )}
             </div>
           </div>
         </section>
