@@ -238,10 +238,11 @@ const caseStudies: Record<string, CaseStudyData> = {
       },
     },
     heroImages: {
-      browser: corrxpBrowser,
+      browser: corrxpFullpage,
       mobile: corrxpMobile,
       tablet: corrxpTablet,
     },
+    galleryImages: [corrxpHero, corrxpTablet, corrxpMobile],
     nextProject: { slug: "trots-architects", title: "Trots Architects", gradient: "linear-gradient(135deg, hsl(220 25% 18%), hsl(200 30% 25%), hsl(180 20% 15%))" },
   },
 };
