@@ -506,7 +506,6 @@ const CaseStudy = () => {
           </div>
         </section>
 
-        {/* Full-bleed browser mockup with "After" label */}
         <section className="relative overflow-hidden" style={{ background: study.heroGradient, padding: "clamp(40px, 8vw, 100px) 0" }}>
           <div className="container-site">
             <motion.div
@@ -517,7 +516,30 @@ const CaseStudy = () => {
             >
               <span className="text-[11px] font-semibold tracking-[0.25em] uppercase" style={{ color: "hsl(0 0% 50%)" }}>The Result</span>
             </motion.div>
-            <ProjectMockup variant="browser" colors={study.mockupColors} className="w-full max-w-5xl mx-auto" />
+            {study.heroImages?.browser ? (
+              <motion.div
+                className="rounded-xl overflow-hidden shadow-2xl w-full max-w-5xl mx-auto"
+                style={{ background: "hsl(0 0% 6%)", border: "1px solid hsl(0 0% 15%)" }}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+              >
+                <div className="flex items-center gap-2 px-4 py-3" style={{ background: "hsl(0 0% 10%)", borderBottom: "1px solid hsl(0 0% 15%)" }}>
+                  <div className="flex gap-1.5">
+                    <div className="w-2.5 h-2.5 rounded-full" style={{ background: "hsl(0 70% 55%)" }} />
+                    <div className="w-2.5 h-2.5 rounded-full" style={{ background: "hsl(45 70% 55%)" }} />
+                    <div className="w-2.5 h-2.5 rounded-full" style={{ background: "hsl(130 50% 50%)" }} />
+                  </div>
+                  <div className="flex-1 mx-8">
+                    <div className="h-5 rounded-md mx-auto max-w-[240px]" style={{ background: "hsl(0 0% 14%)" }} />
+                  </div>
+                </div>
+                <img src={study.heroImages.browser} alt={`${study.title} final result`} className="w-full" />
+              </motion.div>
+            ) : (
+              <ProjectMockup variant="browser" colors={study.mockupColors} className="w-full max-w-5xl mx-auto" />
+            )}
           </div>
         </section>
 
