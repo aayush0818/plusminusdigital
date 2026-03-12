@@ -9,6 +9,10 @@ import logoMark from "@/assets/logo-mark.png";
 import udaHero from "@/assets/uda-hero.jpg";
 import udaMobile from "@/assets/uda-mobile.jpg";
 import udaTablet from "@/assets/uda-tablet.jpg";
+import corrxpBrowser from "@/assets/corrxp-browser.jpg";
+import corrxpHero from "@/assets/corrxp-hero.jpg";
+import corrxpMobile from "@/assets/corrxp-mobile.jpg";
+import corrxpTablet from "@/assets/corrxp-tablet.jpg";
 
 interface CaseStudyData {
   slug: string;
