@@ -344,9 +344,10 @@ const CaseStudy = () => {
                     <motion.img
                       src={study.heroImages.browser}
                       alt={`${study.title} website`}
-                      className="w-full object-cover object-top"
-                      animate={{ y: [0, -100, 0] }}
-                      transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+                      className="w-full"
+                      style={{ objectFit: "cover", objectPosition: "top" }}
+                      animate={{ y: [0, -300, 0] }}
+                      transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
                     />
                   </div>
                 </motion.div>
