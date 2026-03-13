@@ -417,12 +417,86 @@ const CaseStudy = () => {
           </div>
         </section>
 
-        {/* Full-bleed visual break — device mockups */}
+        {/* Full-bleed visual break — device mockups or spread gallery */}
         <section className="relative overflow-hidden" style={{ background: study.heroGradient, padding: "clamp(60px, 10vw, 120px) 0" }}>
           <div className="container-site">
             {study.galleryImages ? (
-              /* Show uploaded mockup photos directly — no fake device frames */
-              <GalleryCarousel images={study.galleryImages} title={study.title} />
+              /* Spread images across different layouts */
+              <div className="space-y-8">
+                {/* Row 1: Large hero image */}
+                <motion.div
+                  className="rounded-xl overflow-hidden shadow-2xl"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.7 }}
+                >
+                  <img src={study.galleryImages[0]} alt={`${study.title} screenshot 1`} className="w-full h-auto block" />
+                </motion.div>
+
+                {/* Row 2: Two-column */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {study.galleryImages.slice(1, 3).map((img, i) => (
+                    <motion.div
+                      key={i}
+                      className="rounded-xl overflow-hidden shadow-2xl"
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.6, delay: i * 0.15 }}
+                    >
+                      <img src={img} alt={`${study.title} screenshot ${i + 2}`} className="w-full h-auto block" />
+                    </motion.div>
+                  ))}
+                </div>
+
+                {/* Row 3: Three-column */}
+                {study.galleryImages.length > 3 && (
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {study.galleryImages.slice(3, 6).map((img, i) => (
+                      <motion.div
+                        key={i}
+                        className="rounded-xl overflow-hidden shadow-2xl"
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: i * 0.1 }}
+                      >
+                        <img src={img} alt={`${study.title} screenshot ${i + 4}`} className="w-full h-auto block" />
+                      </motion.div>
+                    ))}
+                  </div>
+                )}
+
+                {/* Row 4: Wide + narrow */}
+                {study.galleryImages.length > 6 && (
+                  <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
+                    <motion.div
+                      className="md:col-span-3 rounded-xl overflow-hidden shadow-2xl"
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.7 }}
+                    >
+                      <img src={study.galleryImages[6]} alt={`${study.title} screenshot 7`} className="w-full h-auto block" />
+                    </motion.div>
+                    <div className="md:col-span-2 flex flex-col gap-6">
+                      {study.galleryImages.slice(7, 9).map((img, i) => (
+                        <motion.div
+                          key={i}
+                          className="rounded-xl overflow-hidden shadow-2xl"
+                          initial={{ opacity: 0, y: 30 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.6, delay: i * 0.15 }}
+                        >
+                          <img src={img} alt={`${study.title} screenshot ${i + 8}`} className="w-full h-auto block" />
+                        </motion.div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
             ) : (
               <div className="flex flex-col md:flex-row items-end justify-center gap-6 md:gap-10">
                 {study.heroImages?.tablet ? (
