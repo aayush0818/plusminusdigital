@@ -276,7 +276,7 @@ const caseStudies: Record<string, CaseStudyData> = {
 };
 
 
-
+const CaseStudy = () => {
   const { slug } = useParams<{ slug: string }>();
   const study = slug ? caseStudies[slug] : null;
 
