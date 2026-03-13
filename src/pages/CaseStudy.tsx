@@ -750,8 +750,8 @@ const CaseStudy = () => {
           </section>
         )}
 
-        {/* Second visual break — more gallery images spread */}
-        {study.galleryImages && study.galleryImages.length > 3 && (
+        {/* Section snapshots */}
+        {study.galleryImages?.[5] && (
           <section className="relative overflow-hidden" style={{ background: study.heroGradient, padding: "clamp(40px, 8vw, 80px) 0" }}>
             <div className="container-site">
               <motion.div
@@ -760,21 +760,29 @@ const CaseStudy = () => {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
               >
-                <span className="text-[11px] font-semibold tracking-[0.25em] uppercase" style={{ color: "hsl(0 0% 50%)" }}>More Views</span>
+                <span className="text-[11px] font-semibold tracking-[0.25em] uppercase" style={{ color: "hsl(0 0% 50%)" }}>Section Snapshots</span>
               </motion.div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {study.galleryImages.slice(Math.floor(study.galleryImages.length / 2)).map((img, i) => (
+                <motion.div
+                  className="rounded-xl overflow-hidden shadow-2xl"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                >
+                  <img src={study.galleryImages[5]} alt={`${study.title} content snapshot 1`} className="w-full h-auto block" loading="lazy" />
+                </motion.div>
+                {study.galleryImages[6] && (
                   <motion.div
-                    key={i}
                     className="rounded-xl overflow-hidden shadow-2xl"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: i * 0.12 }}
+                    transition={{ duration: 0.6, delay: 0.1 }}
                   >
-                    <img src={img} alt={`${study.title} additional view ${i + 1}`} className="w-full h-auto block" />
+                    <img src={study.galleryImages[6]} alt={`${study.title} content snapshot 2`} className="w-full h-auto block" loading="lazy" />
                   </motion.div>
-                ))}
+                )}
               </div>
             </div>
           </section>
