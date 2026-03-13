@@ -9,8 +9,8 @@ import logoMark from "@/assets/logo-mark.png";
 import udaHero from "@/assets/uda-hero.jpg";
 import udaMobile from "@/assets/uda-mobile.jpg";
 import udaTablet from "@/assets/uda-tablet.jpg";
-import corrxpFullpage from "@/assets/corrxp-fullpage.jpg";
-import corrxpHero from "@/assets/corrxp-hero.jpg";
+import corrxpFullpageReal from "@/assets/corrxp-fullpage-real.png";
+
 import corrxpMobile from "@/assets/corrxp-mobile.jpg";
 import corrxpTablet from "@/assets/corrxp-tablet.jpg";
 import corrxp1 from "@/assets/corrxp-1.png";
@@ -249,7 +249,7 @@ const caseStudies: Record<string, CaseStudyData> = {
       },
     },
     heroImages: {
-      browser: corrxpFullpage,
+      browser: corrxpFullpageReal,
       mobile: corrxpMobile,
       tablet: corrxpTablet,
     },
@@ -369,14 +369,14 @@ const CaseStudy = () => {
                       <div className="h-5 rounded-md mx-auto max-w-[240px]" style={{ background: "hsl(0 0% 14%)" }} />
                     </div>
                   </div>
-                  <div className="relative overflow-hidden" style={{ maxHeight: 500 }}>
+                  <div className="relative overflow-hidden" style={{ height: "clamp(320px, 55vw, 560px)" }}>
                     <motion.img
                       src={study.heroImages.browser}
                       alt={`${study.title} website`}
-                      className="w-full"
-                      style={{ objectFit: "cover", objectPosition: "top" }}
-                      animate={{ y: [0, -300, 0] }}
-                      transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+                      className="w-full h-auto block"
+                      style={{ objectPosition: "top" }}
+                      animate={study.slug === "corrxp" ? { y: ["0%", "-72%", "0%"] } : { y: [0, -220, 0] }}
+                      transition={study.slug === "corrxp" ? { duration: 16, repeat: Infinity, ease: "easeInOut" } : { duration: 12, repeat: Infinity, ease: "easeInOut" }}
                     />
                   </div>
                 </motion.div>
@@ -421,80 +421,37 @@ const CaseStudy = () => {
         <section className="relative overflow-hidden" style={{ background: study.heroGradient, padding: "clamp(60px, 10vw, 120px) 0" }}>
           <div className="container-site">
             {study.galleryImages ? (
-              /* Spread images across different layouts */
-              <div className="space-y-8">
-                {/* Row 1: Large hero image */}
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
                 <motion.div
-                  className="rounded-xl overflow-hidden shadow-2xl"
+                  className="md:col-span-7 rounded-xl overflow-hidden shadow-2xl"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.7 }}
                 >
-                  <img src={study.galleryImages[0]} alt={`${study.title} screenshot 1`} className="w-full h-auto block" />
+                  <img src={study.galleryImages[0]} alt={`${study.title} homepage view`} className="w-full h-auto block" loading="lazy" />
                 </motion.div>
 
-                {/* Row 2: Two-column */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {study.galleryImages.slice(1, 3).map((img, i) => (
-                    <motion.div
-                      key={i}
-                      className="rounded-xl overflow-hidden shadow-2xl"
-                      initial={{ opacity: 0, y: 30 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.6, delay: i * 0.15 }}
-                    >
-                      <img src={img} alt={`${study.title} screenshot ${i + 2}`} className="w-full h-auto block" />
-                    </motion.div>
-                  ))}
-                </div>
+                <motion.div
+                  className="md:col-span-5 rounded-xl overflow-hidden shadow-2xl"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.7, delay: 0.08 }}
+                >
+                  <img src={study.galleryImages[1] ?? study.galleryImages[0]} alt={`${study.title} service section view`} className="w-full h-auto block" loading="lazy" />
+                </motion.div>
 
-                {/* Row 3: Three-column */}
-                {study.galleryImages.length > 3 && (
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {study.galleryImages.slice(3, 6).map((img, i) => (
-                      <motion.div
-                        key={i}
-                        className="rounded-xl overflow-hidden shadow-2xl"
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: i * 0.1 }}
-                      >
-                        <img src={img} alt={`${study.title} screenshot ${i + 4}`} className="w-full h-auto block" />
-                      </motion.div>
-                    ))}
-                  </div>
-                )}
-
-                {/* Row 4: Wide + narrow */}
-                {study.galleryImages.length > 6 && (
-                  <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
-                    <motion.div
-                      className="md:col-span-3 rounded-xl overflow-hidden shadow-2xl"
-                      initial={{ opacity: 0, y: 30 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.7 }}
-                    >
-                      <img src={study.galleryImages[6]} alt={`${study.title} screenshot 7`} className="w-full h-auto block" />
-                    </motion.div>
-                    <div className="md:col-span-2 flex flex-col gap-6">
-                      {study.galleryImages.slice(7, 9).map((img, i) => (
-                        <motion.div
-                          key={i}
-                          className="rounded-xl overflow-hidden shadow-2xl"
-                          initial={{ opacity: 0, y: 30 }}
-                          whileInView={{ opacity: 1, y: 0 }}
-                          viewport={{ once: true }}
-                          transition={{ duration: 0.6, delay: i * 0.15 }}
-                        >
-                          <img src={img} alt={`${study.title} screenshot ${i + 8}`} className="w-full h-auto block" />
-                        </motion.div>
-                      ))}
-                    </div>
-                  </div>
+                {study.galleryImages[2] && (
+                  <motion.div
+                    className="md:col-span-12 rounded-xl overflow-hidden shadow-2xl"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.7, delay: 0.14 }}
+                  >
+                    <img src={study.galleryImages[2]} alt={`${study.title} detailed page view`} className="w-full h-auto block" loading="lazy" />
+                  </motion.div>
                 )}
               </div>
             ) : (
@@ -645,6 +602,35 @@ const CaseStudy = () => {
           </div>
         </section>
 
+        {study.galleryImages?.[3] && (
+          <section className="section-light" style={{ padding: "clamp(28px, 6vw, 56px) 0" }}>
+            <div className="container-site">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <motion.div
+                  className="rounded-xl overflow-hidden shadow-2xl"
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                >
+                  <img src={study.galleryImages[3]} alt={`${study.title} execution phase visual`} className="w-full h-auto block" loading="lazy" />
+                </motion.div>
+                {study.galleryImages[4] && (
+                  <motion.div
+                    className="rounded-xl overflow-hidden shadow-2xl"
+                    initial={{ opacity: 0, y: 24 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.08 }}
+                  >
+                    <img src={study.galleryImages[4]} alt={`${study.title} architecture detail visual`} className="w-full h-auto block" loading="lazy" />
+                  </motion.div>
+                )}
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* Strategy */}
         <section className="section-light" style={{ padding: "clamp(60px, 10vw, 120px) 0" }}>
           <div className="container-site">
@@ -764,8 +750,8 @@ const CaseStudy = () => {
           </section>
         )}
 
-        {/* Second visual break — more gallery images spread */}
-        {study.galleryImages && study.galleryImages.length > 3 && (
+        {/* Section snapshots */}
+        {study.galleryImages?.[5] && (
           <section className="relative overflow-hidden" style={{ background: study.heroGradient, padding: "clamp(40px, 8vw, 80px) 0" }}>
             <div className="container-site">
               <motion.div
@@ -774,21 +760,29 @@ const CaseStudy = () => {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
               >
-                <span className="text-[11px] font-semibold tracking-[0.25em] uppercase" style={{ color: "hsl(0 0% 50%)" }}>More Views</span>
+                <span className="text-[11px] font-semibold tracking-[0.25em] uppercase" style={{ color: "hsl(0 0% 50%)" }}>Section Snapshots</span>
               </motion.div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {study.galleryImages.slice(Math.floor(study.galleryImages.length / 2)).map((img, i) => (
+                <motion.div
+                  className="rounded-xl overflow-hidden shadow-2xl"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                >
+                  <img src={study.galleryImages[5]} alt={`${study.title} content snapshot 1`} className="w-full h-auto block" loading="lazy" />
+                </motion.div>
+                {study.galleryImages[6] && (
                   <motion.div
-                    key={i}
                     className="rounded-xl overflow-hidden shadow-2xl"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: i * 0.12 }}
+                    transition={{ duration: 0.6, delay: 0.1 }}
                   >
-                    <img src={img} alt={`${study.title} additional view ${i + 1}`} className="w-full h-auto block" />
+                    <img src={study.galleryImages[6]} alt={`${study.title} content snapshot 2`} className="w-full h-auto block" loading="lazy" />
                   </motion.div>
-                ))}
+                )}
               </div>
             </div>
           </section>
@@ -823,7 +817,15 @@ const CaseStudy = () => {
                     <div className="h-5 rounded-md mx-auto max-w-[240px]" style={{ background: "hsl(0 0% 14%)" }} />
                   </div>
                 </div>
-                <img src={study.heroImages.browser} alt={`${study.title} final result`} className="w-full" />
+                <div className="relative overflow-hidden" style={{ height: "clamp(320px, 55vw, 560px)" }}>
+                  <motion.img
+                    src={study.heroImages.browser}
+                    alt={`${study.title} final result`}
+                    className="w-full h-auto block"
+                    animate={study.slug === "corrxp" ? { y: ["0%", "-72%", "0%"] } : { y: [0, -220, 0] }}
+                    transition={study.slug === "corrxp" ? { duration: 16, repeat: Infinity, ease: "easeInOut" } : { duration: 12, repeat: Infinity, ease: "easeInOut" }}
+                  />
+                </div>
               </motion.div>
             ) : (
               <ProjectMockup variant="browser" colors={study.mockupColors} className="w-full max-w-5xl mx-auto" />
@@ -930,6 +932,35 @@ const CaseStudy = () => {
             </motion.div>
           </div>
         </section>
+
+        {study.galleryImages?.[7] && (
+          <section className="section-light" style={{ padding: "clamp(32px, 6vw, 64px) 0" }}>
+            <div className="container-site">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <motion.div
+                  className="md:col-span-2 rounded-xl overflow-hidden shadow-2xl"
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                >
+                  <img src={study.galleryImages[7]} alt={`${study.title} final snapshot desktop`} className="w-full h-auto block" loading="lazy" />
+                </motion.div>
+                {study.galleryImages[8] && (
+                  <motion.div
+                    className="rounded-xl overflow-hidden shadow-2xl"
+                    initial={{ opacity: 0, y: 24 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.1 }}
+                  >
+                    <img src={study.galleryImages[8]} alt={`${study.title} final snapshot mobile`} className="w-full h-auto block" loading="lazy" />
+                  </motion.div>
+                )}
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* Results — with high-contrast background */}
         <section
