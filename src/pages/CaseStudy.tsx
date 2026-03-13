@@ -687,7 +687,113 @@ const CaseStudy = () => {
           </div>
         </section>
 
-        <section className="relative overflow-hidden" style={{ background: study.heroGradient, padding: "clamp(40px, 8vw, 100px) 0" }}>
+        {/* Tech Stack — only for projects that have it */}
+        {study.techStack && (
+          <section className="section-dark" style={{ padding: "clamp(60px, 10vw, 100px) 0" }}>
+            <div className="container-site">
+              <motion.div
+                className="mb-10 md:mb-14"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7 }}
+              >
+                <p className="text-[13px] font-semibold tracking-[0.2em] uppercase mb-4" style={{ color: "hsl(0 0% 35%)" }}>
+                  Tech Stack
+                </p>
+                <h2 className="font-bold" style={{ fontSize: "clamp(28px, 4vw, 52px)", lineHeight: 1.1, letterSpacing: "-0.03em", color: "hsl(0 0% 90%)" }}>
+                  Built <span className="font-display italic font-normal">with</span>
+                </h2>
+              </motion.div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                {study.techStack.map((tech, i) => (
+                  <motion.div
+                    key={tech.name}
+                    className="rounded-lg p-5 md:p-6"
+                    style={{ background: "hsl(0 0% 10%)", border: "1px solid hsl(0 0% 15%)" }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: i * 0.06 }}
+                  >
+                    <p className="text-sm md:text-base font-bold mb-1" style={{ color: "hsl(0 0% 90%)" }}>{tech.name}</p>
+                    <p className="text-xs md:text-sm" style={{ color: "hsl(0 0% 45%)" }}>{tech.purpose}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Site Pages — only for projects that have it */}
+        {study.sitePages && (
+          <section className="section-light" style={{ padding: "clamp(60px, 10vw, 100px) 0" }}>
+            <div className="container-site">
+              <motion.div
+                className="mb-10 md:mb-14"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7 }}
+              >
+                <p className="text-[13px] font-semibold tracking-[0.2em] uppercase text-foreground-muted mb-4">
+                  Site Structure
+                </p>
+                <h2 className="font-bold text-foreground" style={{ fontSize: "clamp(28px, 4vw, 52px)", lineHeight: 1.1, letterSpacing: "-0.03em" }}>
+                  {study.sitePages.length} <span className="font-display italic font-normal">pages</span>
+                </h2>
+              </motion.div>
+              <div className="space-y-0">
+                {study.sitePages.map((page, i) => (
+                  <motion.div
+                    key={page.name}
+                    className="border-t border-border py-5 md:py-6 flex flex-col md:flex-row md:items-center gap-2 md:gap-8"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: i * 0.08 }}
+                  >
+                    <span className="text-[13px] font-semibold text-foreground-muted w-8 flex-shrink-0">0{i + 1}</span>
+                    <h3 className="text-lg md:text-xl font-bold text-foreground min-w-[120px]">{page.name}</h3>
+                    <p className="text-sm md:text-base text-foreground-muted leading-relaxed">{page.description}</p>
+                  </motion.div>
+                ))}
+                <div className="border-t border-border" />
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Second visual break — more gallery images spread */}
+        {study.galleryImages && study.galleryImages.length > 3 && (
+          <section className="relative overflow-hidden" style={{ background: study.heroGradient, padding: "clamp(40px, 8vw, 80px) 0" }}>
+            <div className="container-site">
+              <motion.div
+                className="text-center mb-8"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+              >
+                <span className="text-[11px] font-semibold tracking-[0.25em] uppercase" style={{ color: "hsl(0 0% 50%)" }}>More Views</span>
+              </motion.div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {study.galleryImages.slice(Math.floor(study.galleryImages.length / 2)).map((img, i) => (
+                  <motion.div
+                    key={i}
+                    className="rounded-xl overflow-hidden shadow-2xl"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: i * 0.12 }}
+                  >
+                    <img src={img} alt={`${study.title} additional view ${i + 1}`} className="w-full h-auto block" />
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
           <div className="container-site">
             <motion.div
               className="text-center mb-8"
