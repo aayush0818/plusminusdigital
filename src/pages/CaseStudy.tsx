@@ -794,6 +794,7 @@ const CaseStudy = () => {
           </section>
         )}
 
+        <section className="relative overflow-hidden" style={{ background: study.heroGradient, padding: "clamp(40px, 8vw, 100px) 0" }}>
           <div className="container-site">
             <motion.div
               className="text-center mb-8"
