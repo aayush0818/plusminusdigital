@@ -403,20 +403,7 @@ const CaseStudy = () => {
           <div className="container-site">
             {study.galleryImages ? (
               /* Show uploaded mockup photos directly — no fake device frames */
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-                {study.galleryImages.map((img, i) => (
-                  <motion.div
-                    key={i}
-                    className="rounded-xl overflow-hidden shadow-2xl"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.7, delay: i * 0.15 }}
-                  >
-                    <img src={img} alt={`${study.title} mockup ${i + 1}`} className="w-full h-full object-cover" />
-                  </motion.div>
-                ))}
-              </div>
+              <GalleryCarousel images={study.galleryImages} title={study.title} />
             ) : (
               <div className="flex flex-col md:flex-row items-end justify-center gap-6 md:gap-10">
                 {study.heroImages?.tablet ? (
