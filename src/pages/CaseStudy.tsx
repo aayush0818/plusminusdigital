@@ -252,7 +252,7 @@ const caseStudies: Record<string, CaseStudyData> = {
       mobile: corrxpMobile,
       tablet: corrxpTablet,
     },
-    galleryImages: [corrxpHero, corrxpTablet, corrxpMobile],
+    galleryImages: [corrxp1, corrxp2, corrxp3, corrxp4, corrxp5, corrxp6, corrxp7, corrxp8, corrxp9],
     nextProject: { slug: "trots-architects", title: "Trots Architects", gradient: "linear-gradient(135deg, hsl(220 25% 18%), hsl(200 30% 25%), hsl(180 20% 15%))" },
   },
 };
