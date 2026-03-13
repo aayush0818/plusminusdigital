@@ -58,6 +58,8 @@ interface CaseStudyData {
     tablet?: string;
   };
   galleryImages?: string[];
+  techStack?: { name: string; purpose: string }[];
+  sitePages?: { name: string; description: string }[];
   nextProject?: { slug: string; title: string; gradient: string };
 }
 
