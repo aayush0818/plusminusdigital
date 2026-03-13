@@ -241,7 +241,7 @@ const caseStudies: Record<string, CaseStudyData> = {
         { value: "5×", label: "Increase in consultation requests" },
         { value: "2.5×", label: "Longer session duration" },
         { value: "90%", label: "Mobile traffic optimized" },
-        { value: "6", label: "Service verticals launched" },
+        { value: "7", label: "Service verticals launched" },
       ],
       quote: {
         text: "PlusMinus understood our technical domain and translated it into a website that our clients actually trust. The consultation requests started coming in within the first week.",
@@ -255,6 +255,23 @@ const caseStudies: Record<string, CaseStudyData> = {
       tablet: corrxpTablet,
     },
     galleryImages: [corrxp1, corrxp2, corrxp3, corrxp4, corrxp5, corrxp6, corrxp7, corrxp8, corrxp9],
+    techStack: [
+      { name: "React", purpose: "Frontend framework" },
+      { name: "Vite", purpose: "Build tool & dev server" },
+      { name: "TypeScript", purpose: "Type-safe development" },
+      { name: "Tailwind CSS", purpose: "Utility-first styling" },
+      { name: "Framer Motion", purpose: "Scroll & interaction animations" },
+      { name: "React Router", purpose: "Multi-page SPA routing" },
+      { name: "Responsive Design", purpose: "Mobile-first approach" },
+      { name: "SEO Optimized", purpose: "Meta tags & structured data" },
+    ],
+    sitePages: [
+      { name: "Home", description: "Hero with animated stats, services overview, vision section, and trust badges" },
+      { name: "Who We Are", description: "Company story, key services list, industry sectors, and business registrations" },
+      { name: "What We Do", description: "7 detailed service pages with NACE/ASTM testing standards and fiber systems breakdown" },
+      { name: "Projects", description: "Portfolio showcase of completed structural repair and retrofitting work" },
+      { name: "Contact", description: "Multi-field consultation form with project detail capture" },
+    ],
     nextProject: { slug: "trots-architects", title: "Trots Architects", gradient: "linear-gradient(135deg, hsl(220 25% 18%), hsl(200 30% 25%), hsl(180 20% 15%))" },
   },
 };
