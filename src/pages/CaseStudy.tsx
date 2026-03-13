@@ -1,6 +1,7 @@
 import { useParams, Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowLeft, ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
@@ -13,6 +14,15 @@ import corrxpFullpage from "@/assets/corrxp-fullpage.jpg";
 import corrxpHero from "@/assets/corrxp-hero.jpg";
 import corrxpMobile from "@/assets/corrxp-mobile.jpg";
 import corrxpTablet from "@/assets/corrxp-tablet.jpg";
+import corrxp1 from "@/assets/corrxp-1.png";
+import corrxp2 from "@/assets/corrxp-2.png";
+import corrxp3 from "@/assets/corrxp-3.png";
+import corrxp4 from "@/assets/corrxp-4.png";
+import corrxp5 from "@/assets/corrxp-5.png";
+import corrxp6 from "@/assets/corrxp-6.png";
+import corrxp7 from "@/assets/corrxp-7.png";
+import corrxp8 from "@/assets/corrxp-8.png";
+import corrxp9 from "@/assets/corrxp-9.png";
 
 interface CaseStudyData {
   slug: string;
@@ -242,9 +252,78 @@ const caseStudies: Record<string, CaseStudyData> = {
       mobile: corrxpMobile,
       tablet: corrxpTablet,
     },
-    galleryImages: [corrxpHero, corrxpTablet, corrxpMobile],
+    galleryImages: [corrxp1, corrxp2, corrxp3, corrxp4, corrxp5, corrxp6, corrxp7, corrxp8, corrxp9],
     nextProject: { slug: "trots-architects", title: "Trots Architects", gradient: "linear-gradient(135deg, hsl(220 25% 18%), hsl(200 30% 25%), hsl(180 20% 15%))" },
   },
+};
+
+const GalleryCarousel = ({ images, title }: { images: string[]; title: string }) => {
+  const [current, setCurrent] = useState(0);
+
+  const prev = () => setCurrent((c) => (c === 0 ? images.length - 1 : c - 1));
+  const next = () => setCurrent((c) => (c === images.length - 1 ? 0 : c + 1));
+
+  return (
+    <div className="relative w-full">
+      {/* Main large image */}
+      <div className="relative rounded-xl overflow-hidden shadow-2xl w-full max-w-5xl mx-auto" style={{ background: "hsl(0 0% 6%)" }}>
+        <AnimatePresence mode="wait">
+          <motion.img
+            key={current}
+            src={images[current]}
+            alt={`${title} mockup ${current + 1}`}
+            className="w-full h-auto block"
+            style={{ maxHeight: "70vh", objectFit: "contain", objectPosition: "center" }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4 }}
+          />
+        </AnimatePresence>
+
+        {/* Nav arrows */}
+        <button
+          onClick={prev}
+          className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center transition-colors"
+          style={{ background: "hsl(0 0% 0% / 0.5)", color: "hsl(0 0% 90%)" }}
+        >
+          <ChevronLeft size={20} />
+        </button>
+        <button
+          onClick={next}
+          className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center transition-colors"
+          style={{ background: "hsl(0 0% 0% / 0.5)", color: "hsl(0 0% 90%)" }}
+        >
+          <ChevronRight size={20} />
+        </button>
+
+        {/* Counter */}
+        <div className="absolute bottom-4 right-4 text-[12px] font-semibold tracking-wider px-3 py-1 rounded-full"
+          style={{ background: "hsl(0 0% 0% / 0.5)", color: "hsl(0 0% 80%)" }}>
+          {current + 1} / {images.length}
+        </div>
+      </div>
+
+      {/* Thumbnail strip */}
+      <div className="flex gap-2 mt-4 overflow-x-auto pb-2 justify-center">
+        {images.map((img, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrent(i)}
+            className="flex-shrink-0 rounded-md overflow-hidden transition-all"
+            style={{
+              width: 72,
+              height: 48,
+              border: i === current ? "2px solid hsl(0 0% 70%)" : "2px solid transparent",
+              opacity: i === current ? 1 : 0.5,
+            }}
+          >
+            <img src={img} alt="" className="w-full h-full object-cover" />
+          </button>
+        ))}
+      </div>
+    </div>
+  );
 };
 
 const CaseStudy = () => {
@@ -393,20 +472,7 @@ const CaseStudy = () => {
           <div className="container-site">
             {study.galleryImages ? (
               /* Show uploaded mockup photos directly — no fake device frames */
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-                {study.galleryImages.map((img, i) => (
-                  <motion.div
-                    key={i}
-                    className="rounded-xl overflow-hidden shadow-2xl"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.7, delay: i * 0.15 }}
-                  >
-                    <img src={img} alt={`${study.title} mockup ${i + 1}`} className="w-full h-full object-cover" />
-                  </motion.div>
-                ))}
-              </div>
+              <GalleryCarousel images={study.galleryImages} title={study.title} />
             ) : (
               <div className="flex flex-col md:flex-row items-end justify-center gap-6 md:gap-10">
                 {study.heroImages?.tablet ? (
@@ -734,13 +800,13 @@ const CaseStudy = () => {
           </div>
         </section>
 
-        {/* Results — with animated gradient background */}
+        {/* Results — with high-contrast background */}
         <section
           className="relative overflow-hidden"
-          style={{ padding: "clamp(60px, 10vw, 120px) 0" }}
+          style={{ padding: "clamp(60px, 10vw, 120px) 0", background: "hsl(0 0% 4%)" }}
         >
-          {/* Animated gradient bg */}
-          <div className="absolute inset-0" style={{ background: `linear-gradient(135deg, hsl(0 0% 6%), ${study.mockupColors[0]}44, hsl(0 0% 8%))` }} />
+          {/* Subtle accent glow */}
+          <div className="absolute inset-0 opacity-20" style={{ background: `radial-gradient(ellipse at 20% 50%, ${study.mockupColors[0]}66, transparent 60%)` }} />
 
           <div className="container-site relative z-10">
             <motion.div
