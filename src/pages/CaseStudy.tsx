@@ -10,7 +10,7 @@ import udaHero from "@/assets/uda-hero.jpg";
 import udaMobile from "@/assets/uda-mobile.jpg";
 import udaTablet from "@/assets/uda-tablet.jpg";
 import corrxpFullpageReal from "@/assets/corrxp-fullpage-real.png";
-import corrxpHero from "@/assets/corrxp-hero.jpg";
+
 import corrxpMobile from "@/assets/corrxp-mobile.jpg";
 import corrxpTablet from "@/assets/corrxp-tablet.jpg";
 import corrxp1 from "@/assets/corrxp-1.png";
