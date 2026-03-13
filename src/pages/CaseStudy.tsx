@@ -817,7 +817,15 @@ const CaseStudy = () => {
                     <div className="h-5 rounded-md mx-auto max-w-[240px]" style={{ background: "hsl(0 0% 14%)" }} />
                   </div>
                 </div>
-                <img src={study.heroImages.browser} alt={`${study.title} final result`} className="w-full" />
+                <div className="relative overflow-hidden" style={{ height: "clamp(320px, 55vw, 560px)" }}>
+                  <motion.img
+                    src={study.heroImages.browser}
+                    alt={`${study.title} final result`}
+                    className="w-full h-auto block"
+                    animate={study.slug === "corrxp" ? { y: ["0%", "-72%", "0%"] } : { y: [0, -220, 0] }}
+                    transition={study.slug === "corrxp" ? { duration: 16, repeat: Infinity, ease: "easeInOut" } : { duration: 12, repeat: Infinity, ease: "easeInOut" }}
+                  />
+                </div>
               </motion.div>
             ) : (
               <ProjectMockup variant="browser" colors={study.mockupColors} className="w-full max-w-5xl mx-auto" />
