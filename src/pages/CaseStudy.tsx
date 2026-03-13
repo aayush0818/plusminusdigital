@@ -326,7 +326,7 @@ const GalleryCarousel = ({ images, title }: { images: string[]; title: string })
   );
 };
 
-
+const CaseStudy = () => {
   const { slug } = useParams<{ slug: string }>();
   const study = slug ? caseStudies[slug] : null;
 
