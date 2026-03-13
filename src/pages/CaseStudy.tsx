@@ -1,7 +1,6 @@
 import { useParams, Link } from "react-router-dom";
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ArrowLeft, ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { motion } from "framer-motion";
+import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
@@ -58,6 +57,8 @@ interface CaseStudyData {
     tablet?: string;
   };
   galleryImages?: string[];
+  techStack?: { name: string; purpose: string }[];
+  sitePages?: { name: string; description: string }[];
   nextProject?: { slug: string; title: string; gradient: string };
 }
 
@@ -239,7 +240,7 @@ const caseStudies: Record<string, CaseStudyData> = {
         { value: "5×", label: "Increase in consultation requests" },
         { value: "2.5×", label: "Longer session duration" },
         { value: "90%", label: "Mobile traffic optimized" },
-        { value: "6", label: "Service verticals launched" },
+        { value: "7", label: "Service verticals launched" },
       ],
       quote: {
         text: "PlusMinus understood our technical domain and translated it into a website that our clients actually trust. The consultation requests started coming in within the first week.",
@@ -253,78 +254,27 @@ const caseStudies: Record<string, CaseStudyData> = {
       tablet: corrxpTablet,
     },
     galleryImages: [corrxp1, corrxp2, corrxp3, corrxp4, corrxp5, corrxp6, corrxp7, corrxp8, corrxp9],
+    techStack: [
+      { name: "React", purpose: "Frontend framework" },
+      { name: "Vite", purpose: "Build tool & dev server" },
+      { name: "TypeScript", purpose: "Type-safe development" },
+      { name: "Tailwind CSS", purpose: "Utility-first styling" },
+      { name: "Framer Motion", purpose: "Scroll & interaction animations" },
+      { name: "React Router", purpose: "Multi-page SPA routing" },
+      { name: "Responsive Design", purpose: "Mobile-first approach" },
+      { name: "SEO Optimized", purpose: "Meta tags & structured data" },
+    ],
+    sitePages: [
+      { name: "Home", description: "Hero with animated stats, services overview, vision section, and trust badges" },
+      { name: "Who We Are", description: "Company story, key services list, industry sectors, and business registrations" },
+      { name: "What We Do", description: "7 detailed service pages with NACE/ASTM testing standards and fiber systems breakdown" },
+      { name: "Projects", description: "Portfolio showcase of completed structural repair and retrofitting work" },
+      { name: "Contact", description: "Multi-field consultation form with project detail capture" },
+    ],
     nextProject: { slug: "trots-architects", title: "Trots Architects", gradient: "linear-gradient(135deg, hsl(220 25% 18%), hsl(200 30% 25%), hsl(180 20% 15%))" },
   },
 };
 
-const GalleryCarousel = ({ images, title }: { images: string[]; title: string }) => {
-  const [current, setCurrent] = useState(0);
-
-  const prev = () => setCurrent((c) => (c === 0 ? images.length - 1 : c - 1));
-  const next = () => setCurrent((c) => (c === images.length - 1 ? 0 : c + 1));
-
-  return (
-    <div className="relative w-full">
-      {/* Main large image */}
-      <div className="relative rounded-xl overflow-hidden shadow-2xl w-full max-w-5xl mx-auto" style={{ background: "hsl(0 0% 6%)" }}>
-        <AnimatePresence mode="wait">
-          <motion.img
-            key={current}
-            src={images[current]}
-            alt={`${title} mockup ${current + 1}`}
-            className="w-full h-auto block"
-            style={{ maxHeight: "70vh", objectFit: "contain", objectPosition: "center" }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.4 }}
-          />
-        </AnimatePresence>
-
-        {/* Nav arrows */}
-        <button
-          onClick={prev}
-          className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center transition-colors"
-          style={{ background: "hsl(0 0% 0% / 0.5)", color: "hsl(0 0% 90%)" }}
-        >
-          <ChevronLeft size={20} />
-        </button>
-        <button
-          onClick={next}
-          className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center transition-colors"
-          style={{ background: "hsl(0 0% 0% / 0.5)", color: "hsl(0 0% 90%)" }}
-        >
-          <ChevronRight size={20} />
-        </button>
-
-        {/* Counter */}
-        <div className="absolute bottom-4 right-4 text-[12px] font-semibold tracking-wider px-3 py-1 rounded-full"
-          style={{ background: "hsl(0 0% 0% / 0.5)", color: "hsl(0 0% 80%)" }}>
-          {current + 1} / {images.length}
-        </div>
-      </div>
-
-      {/* Thumbnail strip */}
-      <div className="flex gap-2 mt-4 overflow-x-auto pb-2 justify-center">
-        {images.map((img, i) => (
-          <button
-            key={i}
-            onClick={() => setCurrent(i)}
-            className="flex-shrink-0 rounded-md overflow-hidden transition-all"
-            style={{
-              width: 72,
-              height: 48,
-              border: i === current ? "2px solid hsl(0 0% 70%)" : "2px solid transparent",
-              opacity: i === current ? 1 : 0.5,
-            }}
-          >
-            <img src={img} alt="" className="w-full h-full object-cover" />
-          </button>
-        ))}
-      </div>
-    </div>
-  );
-};
 
 const CaseStudy = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -467,12 +417,86 @@ const CaseStudy = () => {
           </div>
         </section>
 
-        {/* Full-bleed visual break — device mockups */}
+        {/* Full-bleed visual break — device mockups or spread gallery */}
         <section className="relative overflow-hidden" style={{ background: study.heroGradient, padding: "clamp(60px, 10vw, 120px) 0" }}>
           <div className="container-site">
             {study.galleryImages ? (
-              /* Show uploaded mockup photos directly — no fake device frames */
-              <GalleryCarousel images={study.galleryImages} title={study.title} />
+              /* Spread images across different layouts */
+              <div className="space-y-8">
+                {/* Row 1: Large hero image */}
+                <motion.div
+                  className="rounded-xl overflow-hidden shadow-2xl"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.7 }}
+                >
+                  <img src={study.galleryImages[0]} alt={`${study.title} screenshot 1`} className="w-full h-auto block" />
+                </motion.div>
+
+                {/* Row 2: Two-column */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {study.galleryImages.slice(1, 3).map((img, i) => (
+                    <motion.div
+                      key={i}
+                      className="rounded-xl overflow-hidden shadow-2xl"
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.6, delay: i * 0.15 }}
+                    >
+                      <img src={img} alt={`${study.title} screenshot ${i + 2}`} className="w-full h-auto block" />
+                    </motion.div>
+                  ))}
+                </div>
+
+                {/* Row 3: Three-column */}
+                {study.galleryImages.length > 3 && (
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {study.galleryImages.slice(3, 6).map((img, i) => (
+                      <motion.div
+                        key={i}
+                        className="rounded-xl overflow-hidden shadow-2xl"
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: i * 0.1 }}
+                      >
+                        <img src={img} alt={`${study.title} screenshot ${i + 4}`} className="w-full h-auto block" />
+                      </motion.div>
+                    ))}
+                  </div>
+                )}
+
+                {/* Row 4: Wide + narrow */}
+                {study.galleryImages.length > 6 && (
+                  <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
+                    <motion.div
+                      className="md:col-span-3 rounded-xl overflow-hidden shadow-2xl"
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.7 }}
+                    >
+                      <img src={study.galleryImages[6]} alt={`${study.title} screenshot 7`} className="w-full h-auto block" />
+                    </motion.div>
+                    <div className="md:col-span-2 flex flex-col gap-6">
+                      {study.galleryImages.slice(7, 9).map((img, i) => (
+                        <motion.div
+                          key={i}
+                          className="rounded-xl overflow-hidden shadow-2xl"
+                          initial={{ opacity: 0, y: 30 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.6, delay: i * 0.15 }}
+                        >
+                          <img src={img} alt={`${study.title} screenshot ${i + 8}`} className="w-full h-auto block" />
+                        </motion.div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
             ) : (
               <div className="flex flex-col md:flex-row items-end justify-center gap-6 md:gap-10">
                 {study.heroImages?.tablet ? (
@@ -662,6 +686,113 @@ const CaseStudy = () => {
             </div>
           </div>
         </section>
+
+        {/* Tech Stack — only for projects that have it */}
+        {study.techStack && (
+          <section className="section-dark" style={{ padding: "clamp(60px, 10vw, 100px) 0" }}>
+            <div className="container-site">
+              <motion.div
+                className="mb-10 md:mb-14"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7 }}
+              >
+                <p className="text-[13px] font-semibold tracking-[0.2em] uppercase mb-4" style={{ color: "hsl(0 0% 35%)" }}>
+                  Tech Stack
+                </p>
+                <h2 className="font-bold" style={{ fontSize: "clamp(28px, 4vw, 52px)", lineHeight: 1.1, letterSpacing: "-0.03em", color: "hsl(0 0% 90%)" }}>
+                  Built <span className="font-display italic font-normal">with</span>
+                </h2>
+              </motion.div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                {study.techStack.map((tech, i) => (
+                  <motion.div
+                    key={tech.name}
+                    className="rounded-lg p-5 md:p-6"
+                    style={{ background: "hsl(0 0% 10%)", border: "1px solid hsl(0 0% 15%)" }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: i * 0.06 }}
+                  >
+                    <p className="text-sm md:text-base font-bold mb-1" style={{ color: "hsl(0 0% 90%)" }}>{tech.name}</p>
+                    <p className="text-xs md:text-sm" style={{ color: "hsl(0 0% 45%)" }}>{tech.purpose}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Site Pages — only for projects that have it */}
+        {study.sitePages && (
+          <section className="section-light" style={{ padding: "clamp(60px, 10vw, 100px) 0" }}>
+            <div className="container-site">
+              <motion.div
+                className="mb-10 md:mb-14"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7 }}
+              >
+                <p className="text-[13px] font-semibold tracking-[0.2em] uppercase text-foreground-muted mb-4">
+                  Site Structure
+                </p>
+                <h2 className="font-bold text-foreground" style={{ fontSize: "clamp(28px, 4vw, 52px)", lineHeight: 1.1, letterSpacing: "-0.03em" }}>
+                  {study.sitePages.length} <span className="font-display italic font-normal">pages</span>
+                </h2>
+              </motion.div>
+              <div className="space-y-0">
+                {study.sitePages.map((page, i) => (
+                  <motion.div
+                    key={page.name}
+                    className="border-t border-border py-5 md:py-6 flex flex-col md:flex-row md:items-center gap-2 md:gap-8"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: i * 0.08 }}
+                  >
+                    <span className="text-[13px] font-semibold text-foreground-muted w-8 flex-shrink-0">0{i + 1}</span>
+                    <h3 className="text-lg md:text-xl font-bold text-foreground min-w-[120px]">{page.name}</h3>
+                    <p className="text-sm md:text-base text-foreground-muted leading-relaxed">{page.description}</p>
+                  </motion.div>
+                ))}
+                <div className="border-t border-border" />
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Second visual break — more gallery images spread */}
+        {study.galleryImages && study.galleryImages.length > 3 && (
+          <section className="relative overflow-hidden" style={{ background: study.heroGradient, padding: "clamp(40px, 8vw, 80px) 0" }}>
+            <div className="container-site">
+              <motion.div
+                className="text-center mb-8"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+              >
+                <span className="text-[11px] font-semibold tracking-[0.25em] uppercase" style={{ color: "hsl(0 0% 50%)" }}>More Views</span>
+              </motion.div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {study.galleryImages.slice(Math.floor(study.galleryImages.length / 2)).map((img, i) => (
+                  <motion.div
+                    key={i}
+                    className="rounded-xl overflow-hidden shadow-2xl"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: i * 0.12 }}
+                  >
+                    <img src={img} alt={`${study.title} additional view ${i + 1}`} className="w-full h-auto block" />
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         <section className="relative overflow-hidden" style={{ background: study.heroGradient, padding: "clamp(40px, 8vw, 100px) 0" }}>
           <div className="container-site">
