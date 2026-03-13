@@ -731,13 +731,13 @@ const CaseStudy = () => {
           </div>
         </section>
 
-        {/* Results — with animated gradient background */}
+        {/* Results — with high-contrast background */}
         <section
           className="relative overflow-hidden"
-          style={{ padding: "clamp(60px, 10vw, 120px) 0" }}
+          style={{ padding: "clamp(60px, 10vw, 120px) 0", background: "hsl(0 0% 4%)" }}
         >
-          {/* Animated gradient bg */}
-          <div className="absolute inset-0" style={{ background: `linear-gradient(135deg, hsl(0 0% 6%), ${study.mockupColors[0]}44, hsl(0 0% 8%))` }} />
+          {/* Subtle accent glow */}
+          <div className="absolute inset-0 opacity-20" style={{ background: `radial-gradient(ellipse at 20% 50%, ${study.mockupColors[0]}66, transparent 60%)` }} />
 
           <div className="container-site relative z-10">
             <motion.div
