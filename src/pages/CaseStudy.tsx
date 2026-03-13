@@ -369,14 +369,14 @@ const CaseStudy = () => {
                       <div className="h-5 rounded-md mx-auto max-w-[240px]" style={{ background: "hsl(0 0% 14%)" }} />
                     </div>
                   </div>
-                  <div className="relative overflow-hidden" style={{ maxHeight: 500 }}>
+                  <div className="relative overflow-hidden" style={{ height: "clamp(320px, 55vw, 560px)" }}>
                     <motion.img
                       src={study.heroImages.browser}
                       alt={`${study.title} website`}
-                      className="w-full"
-                      style={{ objectFit: "cover", objectPosition: "top" }}
-                      animate={{ y: [0, -300, 0] }}
-                      transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+                      className="w-full h-auto block"
+                      style={{ objectPosition: "top" }}
+                      animate={study.slug === "corrxp" ? { y: ["0%", "-72%", "0%"] } : { y: [0, -220, 0] }}
+                      transition={study.slug === "corrxp" ? { duration: 16, repeat: Infinity, ease: "easeInOut" } : { duration: 12, repeat: Infinity, ease: "easeInOut" }}
                     />
                   </div>
                 </motion.div>
