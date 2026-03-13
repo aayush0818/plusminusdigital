@@ -602,6 +602,35 @@ const CaseStudy = () => {
           </div>
         </section>
 
+        {study.galleryImages?.[3] && (
+          <section className="section-light" style={{ padding: "clamp(28px, 6vw, 56px) 0" }}>
+            <div className="container-site">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <motion.div
+                  className="rounded-xl overflow-hidden shadow-2xl"
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                >
+                  <img src={study.galleryImages[3]} alt={`${study.title} execution phase visual`} className="w-full h-auto block" loading="lazy" />
+                </motion.div>
+                {study.galleryImages[4] && (
+                  <motion.div
+                    className="rounded-xl overflow-hidden shadow-2xl"
+                    initial={{ opacity: 0, y: 24 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.08 }}
+                  >
+                    <img src={study.galleryImages[4]} alt={`${study.title} architecture detail visual`} className="w-full h-auto block" loading="lazy" />
+                  </motion.div>
+                )}
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* Strategy */}
         <section className="section-light" style={{ padding: "clamp(60px, 10vw, 120px) 0" }}>
           <div className="container-site">
