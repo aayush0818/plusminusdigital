@@ -925,6 +925,35 @@ const CaseStudy = () => {
           </div>
         </section>
 
+        {study.galleryImages?.[7] && (
+          <section className="section-light" style={{ padding: "clamp(32px, 6vw, 64px) 0" }}>
+            <div className="container-site">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <motion.div
+                  className="md:col-span-2 rounded-xl overflow-hidden shadow-2xl"
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                >
+                  <img src={study.galleryImages[7]} alt={`${study.title} final snapshot desktop`} className="w-full h-auto block" loading="lazy" />
+                </motion.div>
+                {study.galleryImages[8] && (
+                  <motion.div
+                    className="rounded-xl overflow-hidden shadow-2xl"
+                    initial={{ opacity: 0, y: 24 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.1 }}
+                  >
+                    <img src={study.galleryImages[8]} alt={`${study.title} final snapshot mobile`} className="w-full h-auto block" loading="lazy" />
+                  </motion.div>
+                )}
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* Results — with high-contrast background */}
         <section
           className="relative overflow-hidden"
