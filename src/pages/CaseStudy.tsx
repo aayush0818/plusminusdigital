@@ -249,7 +249,7 @@ const caseStudies: Record<string, CaseStudyData> = {
       },
     },
     heroImages: {
-      browser: corrxpFullpage,
+      browser: corrxpFullpageReal,
       mobile: corrxpMobile,
       tablet: corrxpTablet,
     },
