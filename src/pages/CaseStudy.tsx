@@ -1,6 +1,7 @@
 import { useParams, Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowLeft, ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
@@ -13,6 +14,15 @@ import corrxpFullpage from "@/assets/corrxp-fullpage.jpg";
 import corrxpHero from "@/assets/corrxp-hero.jpg";
 import corrxpMobile from "@/assets/corrxp-mobile.jpg";
 import corrxpTablet from "@/assets/corrxp-tablet.jpg";
+import corrxp1 from "@/assets/corrxp-1.png";
+import corrxp2 from "@/assets/corrxp-2.png";
+import corrxp3 from "@/assets/corrxp-3.png";
+import corrxp4 from "@/assets/corrxp-4.png";
+import corrxp5 from "@/assets/corrxp-5.png";
+import corrxp6 from "@/assets/corrxp-6.png";
+import corrxp7 from "@/assets/corrxp-7.png";
+import corrxp8 from "@/assets/corrxp-8.png";
+import corrxp9 from "@/assets/corrxp-9.png";
 
 interface CaseStudyData {
   slug: string;
