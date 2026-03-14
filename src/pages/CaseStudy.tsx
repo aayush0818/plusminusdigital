@@ -416,8 +416,8 @@ const CaseStudy = () => {
                     alt={`${study.title} website`}
                     className="w-full h-auto block"
                     style={{ objectPosition: "top" }}
-                    animate={study.slug === "corrxp" ? { y: ["0%", "-72%", "0%"] } : { y: [0, -220, 0] }}
-                    transition={study.slug === "corrxp" ? { duration: 16, repeat: Infinity, ease: "easeInOut" } : { duration: 12, repeat: Infinity, ease: "easeInOut" }} />
+                    animate={study.slug === "corrxp" ? { y: ["0%", "-72%", "0%"] } : { y: ["0%", "-72%", "0%"] }}
+                    transition={study.slug === "corrxp" ? { duration: 16, repeat: Infinity, ease: "easeInOut", delay: 3 } : { duration: 14, repeat: Infinity, ease: "easeInOut", delay: 3 }} />
                   
                   </div>
                 </motion.div> :
