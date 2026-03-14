@@ -946,16 +946,16 @@ const CaseStudy = () => {
                 
                   <img src={study.galleryImages[7]} alt={`${study.title} final snapshot desktop`} className="w-full h-auto block" loading="lazy" />
                 </motion.div>
-                {study.galleryImages[8] &&
-              <motion.div
-                className="rounded-xl overflow-hidden shadow-2xl"
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.1 }}>
-                
-                    
-                  </motion.div>
+                {study.galleryImages[8]
+
+
+
+
+
+
+
+
+
               }
               </div>
             </div>
