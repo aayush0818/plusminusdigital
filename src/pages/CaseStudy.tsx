@@ -186,11 +186,13 @@ const caseStudies: Record<string, CaseStudyData> = {
         role: "Founder, Umesh Desai & Associates"
       }
     },
+    heroImage: uda1,
     heroImages: {
-      browser: udaHero,
+      browser: uda1,
       mobile: udaMobile,
       tablet: udaTablet
     },
+    galleryImages: [uda1, uda2, uda3],
     nextProject: { slug: "corrxp", title: "CORR XP", gradient: "linear-gradient(135deg, hsl(20 60% 10%), hsl(25 70% 18%), hsl(15 40% 8%))" }
   },
   "corrxp": {

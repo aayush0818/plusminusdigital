@@ -19,6 +19,7 @@ const projects = [
     category: "Architecture & Interior Design",
     year: "2025",
     gradient: "linear-gradient(135deg, hsl(30 30% 12%), hsl(40 40% 22%), hsl(20 25% 10%))",
+    preview: uda1,
   },
   {
     title: "CORR XP",
