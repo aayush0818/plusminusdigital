@@ -49,19 +49,13 @@ const Navbar = () => {
       transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
     >
       <div className="container-site w-full flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2.5 transition-colors duration-300">
+        <Link to="/" className="flex items-center transition-colors duration-300">
           <img
             src={logoMark}
             alt="PlusMinus"
-            className="h-6 md:h-7 w-auto transition-all duration-300"
+            className="h-8 md:h-10 w-auto transition-all duration-300"
             style={{ filter: isDark ? "invert(1)" : "none" }}
           />
-          <span
-            className="text-base md:text-lg font-bold tracking-tight"
-            style={{ color: isDark ? "hsl(0 0% 95%)" : "hsl(0 0% 8%)" }}
-          >
-            PlusMinus
-          </span>
         </Link>
 
         <div className="hidden md:flex items-center gap-1">
