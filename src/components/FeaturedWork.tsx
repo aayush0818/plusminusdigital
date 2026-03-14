@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import corrxp1 from "@/assets/corrxp-1.png";
 
 const projects = [
   {
@@ -24,6 +25,7 @@ const projects = [
     category: "Web Design & Development",
     year: "2025",
     gradient: "linear-gradient(135deg, hsl(20 60% 10%), hsl(25 70% 18%), hsl(15 40% 8%))",
+    preview: corrxp1,
   },
 ];
 
