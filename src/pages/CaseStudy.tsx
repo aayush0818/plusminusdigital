@@ -946,7 +946,6 @@ const CaseStudy = () => {
                 
                   <img src={study.galleryImages[7]} alt={`${study.title} final snapshot desktop`} className="w-full h-auto block" loading="lazy" />
                 </motion.div>
-              }
               </div>
             </div>
           </section>
