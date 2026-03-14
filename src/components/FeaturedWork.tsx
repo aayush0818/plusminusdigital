@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import corrxp1 from "@/assets/corrxp-1.png";
 
 const projects = [
   {
@@ -24,6 +25,7 @@ const projects = [
     category: "Web Design & Development",
     year: "2025",
     gradient: "linear-gradient(135deg, hsl(20 60% 10%), hsl(25 70% 18%), hsl(15 40% 8%))",
+    preview: corrxp1,
   },
 ];
 
@@ -69,9 +71,11 @@ const FeaturedWork = () => {
             >
               <Link to={`/work/${project.slug}`} className="block group">
                 <div
-                  className="w-full aspect-[16/9] rounded-lg mb-3"
+                  className="w-full aspect-[16/9] rounded-lg mb-3 overflow-hidden"
                   style={{ background: project.gradient }}
-                />
+                >
+                  {project.preview && <img src={project.preview} alt={project.title} className="w-full h-full object-cover" />}
+                </div>
                 <div className="flex items-baseline justify-between">
                   <div className="flex items-baseline gap-3">
                     <span className="text-[13px] font-semibold text-muted-foreground">0{i + 1}</span>
@@ -146,7 +150,7 @@ const FeaturedWork = () => {
             {projects.map((project, i) => (
               <motion.div
                 key={project.title}
-                className="absolute inset-0 rounded-lg"
+                className="absolute inset-0 rounded-lg overflow-hidden"
                 style={{ background: project.gradient }}
                 initial={false}
                 animate={{
@@ -154,7 +158,9 @@ const FeaturedWork = () => {
                   scale: hoveredIndex === i ? 1 : 0.95,
                 }}
                 transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              />
+              >
+                {project.preview && <img src={project.preview} alt={project.title} className="w-full h-full object-cover" />}
+              </motion.div>
             ))}
             {hoveredIndex === null && (
               <div className="text-foreground-muted text-sm font-medium flex items-center gap-2">

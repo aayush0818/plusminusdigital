@@ -5,13 +5,14 @@ import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
+import corrxp1 from "@/assets/corrxp-1.png";
 
 const categories = ["All", "Web Design", "Development", "Branding"];
 
 const projects = [
   { title: "Trots Architects", slug: "trots-architects", category: "Web Design", year: "2025", gradient: "linear-gradient(135deg, hsl(220 25% 18%), hsl(200 30% 25%), hsl(180 20% 15%))" },
   { title: "UDA India", slug: "uda-india", category: "Web Design", year: "2025", gradient: "linear-gradient(135deg, hsl(30 30% 12%), hsl(40 40% 22%), hsl(20 25% 10%))" },
-  { title: "CORR XP", slug: "corrxp", category: "Development", year: "2025", gradient: "linear-gradient(135deg, hsl(20 60% 10%), hsl(25 70% 18%), hsl(15 40% 8%))" },
+  { title: "CORR XP", slug: "corrxp", category: "Development", year: "2025", gradient: "linear-gradient(135deg, hsl(20 60% 10%), hsl(25 70% 18%), hsl(15 40% 8%))", preview: corrxp1 },
 ];
 
 const Work = () => {
@@ -92,9 +93,11 @@ const Work = () => {
                 >
                   <Link to={`/work/${project.slug}`} className="block group">
                     <div
-                      className="w-full aspect-[16/9] rounded-lg mb-3"
+                      className="w-full aspect-[16/9] rounded-lg mb-3 overflow-hidden"
                       style={{ background: project.gradient }}
-                    />
+                    >
+                      {project.preview && <img src={project.preview} alt={project.title} className="w-full h-full object-cover" />}
+                    </div>
                     <div className="flex items-baseline justify-between">
                       <h3 className="text-lg font-bold text-foreground">{project.title}</h3>
                       <ArrowUpRight size={14} className="text-muted-foreground" />
@@ -157,7 +160,7 @@ const Work = () => {
                 {filtered.map((project, i) => (
                   <motion.div
                     key={project.title}
-                    className="absolute inset-0 rounded-lg"
+                    className="absolute inset-0 rounded-lg overflow-hidden"
                     style={{ background: project.gradient }}
                     initial={false}
                     animate={{
@@ -165,7 +168,9 @@ const Work = () => {
                       scale: hoveredIndex === i ? 1 : 0.95,
                     }}
                     transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                  />
+                  >
+                    {project.preview && <img src={project.preview} alt={project.title} className="w-full h-full object-cover" />}
+                  </motion.div>
                 ))}
                 {hoveredIndex === null && (
                   <div className="text-foreground-muted text-sm font-medium flex items-center gap-2">
