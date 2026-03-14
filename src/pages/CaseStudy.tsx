@@ -51,6 +51,7 @@ interface CaseStudyData {
     stats: {value: string;label: string;}[];
     quote?: {text: string;author: string;role: string;};
   };
+  heroImage?: string;
   heroImages?: {
     browser?: string;
     mobile?: string;
