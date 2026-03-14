@@ -305,11 +305,19 @@ const CaseStudy = () => {
       <main>
         {/* Hero with browser mockup */}
         <section
-          className="min-h-[90vh] md:min-h-[95vh] relative flex flex-col justify-end"
+          className="min-h-[90vh] md:min-h-[95vh] relative flex flex-col justify-end overflow-hidden"
           style={{ background: study.heroGradient }}>
           
+          {/* Hero background image */}
+          {study.heroImage && (
+            <div className="absolute inset-0 z-0">
+              <img src={study.heroImage} alt="" className="w-full h-full object-cover opacity-20" />
+              <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, transparent 0%, hsl(0 0% 5% / 0.8) 60%, hsl(0 0% 5%) 100%)" }} />
+            </div>
+          )}
+
           {/* Logo watermark */}
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none" aria-hidden="true">
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-[1]" aria-hidden="true">
             <img src={logoMark} alt="" className="w-[25vw] max-w-[300px] opacity-[0.04]" style={{ filter: "invert(1)" }} />
           </div>
 
