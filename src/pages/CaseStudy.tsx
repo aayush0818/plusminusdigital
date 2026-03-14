@@ -12,6 +12,13 @@ import udaTablet from "@/assets/uda-tablet.jpg";
 import uda1 from "@/assets/uda-1.png";
 import uda2 from "@/assets/uda-2.png";
 import uda3 from "@/assets/uda-3.png";
+import uda4 from "@/assets/uda-4.png";
+import uda5 from "@/assets/uda-5.png";
+import uda6 from "@/assets/uda-6.png";
+import uda7 from "@/assets/uda-7.png";
+import uda8 from "@/assets/uda-8.png";
+import uda9 from "@/assets/uda-9.png";
+import uda10 from "@/assets/uda-10.png";
 import corrxpFullpageReal from "@/assets/corrxp-fullpage-real.png";
 
 import corrxpMobile from "@/assets/corrxp-mobile.jpg";
