@@ -195,11 +195,30 @@ const caseStudies: Record<string, CaseStudyData> = {
     },
     heroImage: uda1,
     heroImages: {
-      browser: uda1,
+      browser: uda8,
       mobile: udaMobile,
       tablet: udaTablet
     },
-    galleryImages: [uda1, uda2, uda3],
+    galleryImages: [uda1, uda2, uda3, uda4, uda5, uda6, uda7, uda8, uda9, uda10],
+    techStack: [
+      { name: "React", purpose: "Frontend framework" },
+      { name: "Vite", purpose: "Build tool & dev server" },
+      { name: "TypeScript", purpose: "Type-safe development" },
+      { name: "Tailwind CSS", purpose: "Utility-first styling" },
+      { name: "Framer Motion", purpose: "Scroll & interaction animations" },
+      { name: "React Router", purpose: "Multi-page SPA routing" },
+      { name: "Responsive Design", purpose: "Mobile-first approach" },
+      { name: "SEO Optimized", purpose: "Meta tags & structured data" }
+    ],
+    sitePages: [
+      { name: "Home", description: "Full-screen hero carousel showcasing signature hospitality interiors" },
+      { name: "Projects", description: "Filterable portfolio of hospitality and residential work with hero imagery" },
+      { name: "About Us", description: "Company story, philosophy, and 40-year legacy in architecture & design" },
+      { name: "Process", description: "Step-by-step design methodology from concept to handover" },
+      { name: "Clients", description: "Categorized client list across hotels, restaurants, residences, and commercial" },
+      { name: "Media", description: "Press coverage and magazine features including Surface Reporters" },
+      { name: "Contact", description: "Inquiry form with office details, hours, and social links" }
+    ],
     nextProject: { slug: "corrxp", title: "CORR XP", gradient: "linear-gradient(135deg, hsl(20 60% 10%), hsl(25 70% 18%), hsl(15 40% 8%))" }
   },
   "corrxp": {
