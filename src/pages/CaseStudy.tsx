@@ -9,6 +9,9 @@ import logoMark from "@/assets/logo-mark.png";
 import udaHero from "@/assets/uda-hero.jpg";
 import udaMobile from "@/assets/uda-mobile.jpg";
 import udaTablet from "@/assets/uda-tablet.jpg";
+import uda1 from "@/assets/uda-1.png";
+import uda2 from "@/assets/uda-2.png";
+import uda3 from "@/assets/uda-3.png";
 import corrxpFullpageReal from "@/assets/corrxp-fullpage-real.png";
 
 import corrxpMobile from "@/assets/corrxp-mobile.jpg";
