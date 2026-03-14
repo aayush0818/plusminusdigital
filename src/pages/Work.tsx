@@ -160,7 +160,7 @@ const Work = () => {
                 {filtered.map((project, i) => (
                   <motion.div
                     key={project.title}
-                    className="absolute inset-0 rounded-lg"
+                    className="absolute inset-0 rounded-lg overflow-hidden"
                     style={{ background: project.gradient }}
                     initial={false}
                     animate={{
@@ -168,7 +168,9 @@ const Work = () => {
                       scale: hoveredIndex === i ? 1 : 0.95,
                     }}
                     transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                  />
+                  >
+                    {project.preview && <img src={project.preview} alt={project.title} className="w-full h-full object-cover" />}
+                  </motion.div>
                 ))}
                 {hoveredIndex === null && (
                   <div className="text-foreground-muted text-sm font-medium flex items-center gap-2">
