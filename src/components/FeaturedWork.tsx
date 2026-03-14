@@ -71,9 +71,11 @@ const FeaturedWork = () => {
             >
               <Link to={`/work/${project.slug}`} className="block group">
                 <div
-                  className="w-full aspect-[16/9] rounded-lg mb-3"
+                  className="w-full aspect-[16/9] rounded-lg mb-3 overflow-hidden"
                   style={{ background: project.gradient }}
-                />
+                >
+                  {project.preview && <img src={project.preview} alt={project.title} className="w-full h-full object-cover" />}
+                </div>
                 <div className="flex items-baseline justify-between">
                   <div className="flex items-baseline gap-3">
                     <span className="text-[13px] font-semibold text-muted-foreground">0{i + 1}</span>
