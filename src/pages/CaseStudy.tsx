@@ -249,6 +249,7 @@ const caseStudies: Record<string, CaseStudyData> = {
         role: "CORR XP India"
       }
     },
+    heroImage: corrxp1,
     heroImages: {
       browser: corrxpFullpageReal,
       mobile: corrxpMobile,
