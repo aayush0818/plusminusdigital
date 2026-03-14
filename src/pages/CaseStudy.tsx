@@ -936,9 +936,9 @@ const CaseStudy = () => {
         {study.galleryImages?.[7] &&
         <section className="section-light" style={{ padding: "clamp(32px, 6vw, 64px) 0" }}>
             <div className="container-site">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 place-items-center">
                 <motion.div
-                className="md:col-span-2 rounded-xl overflow-hidden shadow-2xl"
+                className="md:col-span-3 rounded-xl overflow-hidden shadow-2xl max-w-4xl mx-auto"
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
