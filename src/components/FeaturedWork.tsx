@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import corrxp1 from "@/assets/corrxp-1.png";
+import uda1 from "@/assets/uda-1.png";
 
 const projects = [
   {
@@ -18,6 +19,7 @@ const projects = [
     category: "Architecture & Interior Design",
     year: "2025",
     gradient: "linear-gradient(135deg, hsl(30 30% 12%), hsl(40 40% 22%), hsl(20 25% 10%))",
+    preview: uda1,
   },
   {
     title: "CORR XP",
