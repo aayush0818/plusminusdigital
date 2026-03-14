@@ -93,9 +93,11 @@ const Work = () => {
                 >
                   <Link to={`/work/${project.slug}`} className="block group">
                     <div
-                      className="w-full aspect-[16/9] rounded-lg mb-3"
+                      className="w-full aspect-[16/9] rounded-lg mb-3 overflow-hidden"
                       style={{ background: project.gradient }}
-                    />
+                    >
+                      {project.preview && <img src={project.preview} alt={project.title} className="w-full h-full object-cover" />}
+                    </div>
                     <div className="flex items-baseline justify-between">
                       <h3 className="text-lg font-bold text-foreground">{project.title}</h3>
                       <ArrowUpRight size={14} className="text-muted-foreground" />
