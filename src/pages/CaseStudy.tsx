@@ -366,6 +366,9 @@ const caseStudies: Record<string, CaseStudyData> = {
       }
     },
     heroImage: sp2,
+    heroImages: {
+      browser: sp1,
+    },
     galleryImages: [sp2, sp4, sp5, sp6, sp9, sp7, sp8, sp3, sp8],
     techStack: [
       { name: "React", purpose: "Frontend framework" },
@@ -551,7 +554,7 @@ const CaseStudy = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.7 }}>
                 
-                  <img src={study.galleryImages[0]} alt={`${study.title} homepage view`} className="w-full h-auto block" loading="lazy" />
+                  <img src={study.galleryImages[0]} alt={`${study.title} homepage view`} className="w-full h-full object-cover block aspect-[4/3]" loading="lazy" />
                 </motion.div>
 
                 <motion.div
@@ -561,7 +564,7 @@ const CaseStudy = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, delay: 0.08 }}>
                 
-                  <img src={study.galleryImages[1] ?? study.galleryImages[0]} alt={`${study.title} service section view`} className="w-full h-auto block" loading="lazy" />
+                  <img src={study.galleryImages[1] ?? study.galleryImages[0]} alt={`${study.title} service section view`} className="w-full h-full object-cover block aspect-[4/3]" loading="lazy" />
                 </motion.div>
 
                 {study.galleryImages[2] &&
@@ -735,7 +738,7 @@ const CaseStudy = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}>
                 
-                  <img src={study.galleryImages[3]} alt={`${study.title} execution phase visual`} className="w-full h-auto block" loading="lazy" />
+                  <img src={study.galleryImages[3]} alt={`${study.title} execution phase visual`} className="w-full h-full object-cover block aspect-[4/3]" loading="lazy" />
                 </motion.div>
                 {study.galleryImages[4] &&
               <motion.div
@@ -745,7 +748,7 @@ const CaseStudy = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.08 }}>
                 
-                    <img src={study.galleryImages[4]} alt={`${study.title} architecture detail visual`} className="w-full h-auto block" loading="lazy" />
+                    <img src={study.galleryImages[4]} alt={`${study.title} architecture detail visual`} className="w-full h-full object-cover block aspect-[4/3]" loading="lazy" />
                   </motion.div>
               }
               </div>
@@ -892,7 +895,7 @@ const CaseStudy = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}>
                 
-                  <img src={study.galleryImages[5]} alt={`${study.title} content snapshot 1`} className="w-full h-auto block" loading="lazy" />
+                  <img src={study.galleryImages[5]} alt={`${study.title} content snapshot 1`} className="w-full h-full object-cover block aspect-[3/4]" loading="lazy" />
                 </motion.div>
                 {study.galleryImages[6] &&
               <motion.div
@@ -902,7 +905,7 @@ const CaseStudy = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1 }}>
                 
-                    <img src={study.galleryImages[6]} alt={`${study.title} content snapshot 2`} className="w-full h-auto block" loading="lazy" />
+                    <img src={study.galleryImages[6]} alt={`${study.title} content snapshot 2`} className="w-full h-full object-cover block aspect-[3/4]" loading="lazy" />
                   </motion.div>
               }
               </div>
