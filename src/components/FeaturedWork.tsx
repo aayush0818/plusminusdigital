@@ -30,6 +30,14 @@ const projects = [
     gradient: "linear-gradient(135deg, hsl(20 60% 10%), hsl(25 70% 18%), hsl(15 40% 8%))",
     preview: corrxp1,
   },
+  {
+    title: "Spaces & Places",
+    slug: "spaces-places",
+    category: "Web Design & Development",
+    year: "2025",
+    gradient: "linear-gradient(135deg, hsl(40 50% 15%), hsl(35 60% 25%), hsl(30 40% 12%))",
+    preview: sp2,
+  },
 ];
 
 const FeaturedWork = () => {
