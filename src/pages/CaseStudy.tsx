@@ -73,6 +73,7 @@ interface CaseStudyData {
     mobile?: string;
     tablet?: string;
   };
+  resultImage?: string;
   galleryImages?: string[];
   techStack?: {name: string;purpose: string;}[];
   sitePages?: {name: string;description: string;}[];
