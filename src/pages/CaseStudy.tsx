@@ -949,7 +949,7 @@ const CaseStudy = () => {
                 </div>
                 <div className="relative overflow-hidden" style={{ height: "clamp(320px, 55vw, 560px)" }}>
                   <motion.img
-                  src={study.heroImages.browser}
+                  src={study.resultImage || study.heroImages.browser}
                   alt={`${study.title} final result`}
                   className="w-full h-auto block"
                   animate={study.slug === "corrxp" ? { y: ["0%", "-72%", "0%"] } : { y: [0, -220, 0] }}
