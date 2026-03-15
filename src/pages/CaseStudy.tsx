@@ -365,13 +365,8 @@ const caseStudies: Record<string, CaseStudyData> = {
         role: "Spaces & Places, Mumbai"
       }
     },
-    heroImage: sp1,
-    heroImages: {
-      browser: sp1,
-      mobile: sp3,
-      tablet: sp4
-    },
-    galleryImages: [sp1, sp2, sp3, sp4, sp5, sp6, sp7, sp8, sp9],
+    heroImage: sp2,
+    galleryImages: [sp2, sp4, sp5, sp6, sp9, sp7, sp8, sp3, sp8],
     techStack: [
       { name: "React", purpose: "Frontend framework" },
       { name: "Next.js", purpose: "Server-side rendering & SEO" },
