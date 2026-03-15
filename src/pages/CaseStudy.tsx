@@ -554,7 +554,7 @@ const CaseStudy = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.7 }}>
                 
-                  <img src={study.galleryImages[0]} alt={`${study.title} homepage view`} className="w-full h-auto block" loading="lazy" />
+                  <img src={study.galleryImages[0]} alt={`${study.title} homepage view`} className="w-full h-full object-cover block aspect-[4/3]" loading="lazy" />
                 </motion.div>
 
                 <motion.div
