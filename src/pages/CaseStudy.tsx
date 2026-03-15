@@ -6,9 +6,6 @@ import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
 import ProjectMockup from "@/components/ProjectMockup";
 import logoMark from "@/assets/logo-icon.png";
-import udaHero from "@/assets/uda-hero.jpg";
-import udaMobile from "@/assets/uda-mobile.jpg";
-import udaTablet from "@/assets/uda-tablet.jpg";
 import uda1 from "@/assets/uda-1.png";
 import uda2 from "@/assets/uda-2.png";
 import uda3 from "@/assets/uda-3.png";
@@ -18,7 +15,6 @@ import uda6 from "@/assets/uda-6.png";
 import uda7 from "@/assets/uda-7.png";
 import uda8 from "@/assets/uda-8.png";
 import uda9 from "@/assets/uda-9.png";
-import uda10 from "@/assets/uda-10.png";
 import corrxpFullpageReal from "@/assets/corrxp-fullpage-real.png";
 
 import corrxpMobile from "@/assets/corrxp-mobile.jpg";
@@ -195,11 +191,11 @@ const caseStudies: Record<string, CaseStudyData> = {
     },
     heroImage: uda1,
     heroImages: {
-      browser: uda8,
-      mobile: udaMobile,
-      tablet: udaTablet
+      browser: uda1,
+      mobile: uda7,
+      tablet: uda2
     },
-    galleryImages: [uda1, uda2, uda3, uda4, uda5, uda6, uda7, uda8, uda9, uda10],
+    galleryImages: [uda1, uda2, uda3, uda4, uda5, uda6, uda7, uda8, uda9],
     techStack: [
       { name: "React", purpose: "Frontend framework" },
       { name: "Vite", purpose: "Build tool & dev server" },
