@@ -191,11 +191,11 @@ const caseStudies: Record<string, CaseStudyData> = {
     },
     heroImage: uda1,
     heroImages: {
-      browser: uda8,
-      mobile: udaMobile,
-      tablet: udaTablet
+      browser: uda1,
+      mobile: uda7,
+      tablet: uda2
     },
-    galleryImages: [uda1, uda2, uda3, uda4, uda5, uda6, uda7, uda8, uda9, uda10],
+    galleryImages: [uda1, uda2, uda3, uda4, uda5, uda6, uda7, uda8, uda9],
     techStack: [
       { name: "React", purpose: "Frontend framework" },
       { name: "Vite", purpose: "Build tool & dev server" },
