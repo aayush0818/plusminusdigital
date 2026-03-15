@@ -28,6 +28,15 @@ import corrxp6 from "@/assets/corrxp-6.png";
 import corrxp7 from "@/assets/corrxp-7.png";
 import corrxp8 from "@/assets/corrxp-8.png";
 import corrxp9 from "@/assets/corrxp-9.png";
+import sp1 from "@/assets/sp-1.png";
+import sp2 from "@/assets/sp-2.png";
+import sp3 from "@/assets/sp-3.png";
+import sp4 from "@/assets/sp-4.png";
+import sp5 from "@/assets/sp-5.png";
+import sp6 from "@/assets/sp-6.png";
+import sp7 from "@/assets/sp-7.png";
+import sp8 from "@/assets/sp-8.png";
+import sp9 from "@/assets/sp-9.png";
 
 interface CaseStudyData {
   slug: string;
