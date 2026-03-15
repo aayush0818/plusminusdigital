@@ -37,6 +37,7 @@ import sp6 from "@/assets/sp-6.png";
 import sp7 from "@/assets/sp-7.png";
 import sp8 from "@/assets/sp-8.png";
 import sp9 from "@/assets/sp-9.png";
+import spFullpage from "@/assets/sp-fullpage.png";
 
 interface CaseStudyData {
   slug: string;
