@@ -28,6 +28,15 @@ import corrxp6 from "@/assets/corrxp-6.png";
 import corrxp7 from "@/assets/corrxp-7.png";
 import corrxp8 from "@/assets/corrxp-8.png";
 import corrxp9 from "@/assets/corrxp-9.png";
+import sp1 from "@/assets/sp-1.png";
+import sp2 from "@/assets/sp-2.png";
+import sp3 from "@/assets/sp-3.png";
+import sp4 from "@/assets/sp-4.png";
+import sp5 from "@/assets/sp-5.png";
+import sp6 from "@/assets/sp-6.png";
+import sp7 from "@/assets/sp-7.png";
+import sp8 from "@/assets/sp-8.png";
+import sp9 from "@/assets/sp-9.png";
 
 interface CaseStudyData {
   slug: string;
@@ -300,6 +309,87 @@ const caseStudies: Record<string, CaseStudyData> = {
     { name: "Projects", description: "Portfolio showcase of completed structural repair and retrofitting work" },
     { name: "Contact", description: "Multi-field consultation form with project detail capture" }],
 
+    nextProject: { slug: "spaces-places", title: "Spaces & Places", gradient: "linear-gradient(135deg, hsl(40 50% 15%), hsl(35 60% 25%), hsl(30 40% 12%))" }
+  },
+  "spaces-places": {
+    slug: "spaces-places",
+    title: "Spaces & Places",
+    category: "Web Design & Development",
+    year: "2025",
+    heroGradient: "linear-gradient(135deg, hsl(40 50% 15%), hsl(35 60% 25%), hsl(30 40% 12%))",
+    tagline: "Mumbai's premium real estate, reimagined digitally.",
+    mockupColors: ["#8B6914", "#1A1A1A", "#FAF7F2", "#C9A96E"],
+    overview:
+    "Spaces & Places is a premium Mumbai real estate consultancy specializing in verified properties across the city's prime locations. They needed a modern, trust-driven platform that showcases curated listings, integrates Vastu consultation as a unique differentiator, and converts high-intent property seekers into qualified leads.",
+    problem: {
+      title: "The Challenge",
+      description:
+      "Despite 15+ years of market expertise and 500+ happy families served, Spaces & Places lacked a digital platform that matched their on-ground reputation. Property seekers couldn't browse listings, compare projects, or request consultations online.",
+      challenges: [
+      "No online property listing platform — all inquiries were offline",
+      "Vastu consultation USP was not communicated digitally",
+      "No search or filter functionality for property discovery",
+      "Mobile users (majority of traffic) had no optimized experience",
+      "Competing with aggregators like MagicBricks and 99acres without a branded platform"]
+    },
+    strategy: {
+      title: "Our Strategy",
+      description:
+      "We built a premium property discovery platform that combines editorial aesthetics with powerful search functionality, positioning Spaces & Places as Mumbai's trusted real estate partner — not just another listing site.",
+      pillars: [
+      { label: "Property Discovery Engine", detail: "Advanced search with filters for Buy/Rent, location, property type, BHK — making Mumbai's premium inventory instantly accessible" },
+      { label: "Vastu Integration", detail: "Dedicated Vastu Shastra section with interactive floor plan analysis — turning an ancient science into a modern competitive advantage" },
+      { label: "Trust Architecture", detail: "500+ families served, 100% verified properties, and free Vastu consultation prominently displayed as social proof" },
+      { label: "Lead Conversion Pipeline", detail: "Multi-touch forms across property pages, contact page, and newsletter — capturing leads at every stage of the buyer journey" }]
+    },
+    designSystem: {
+      fonts: [
+      { name: "Playfair Display", style: "Headlines & Display", specimen: "Find Your Perfect Space in Mumbai" },
+      { name: "Inter", style: "Body & Navigation", specimen: "Discover premium properties curated by experts across Mumbai's prime locations." }],
+      colors: [
+      { name: "Gold", hex: "#8B6914" },
+      { name: "Dark", hex: "#1A1A1A" },
+      { name: "Ivory", hex: "#FAF7F2" },
+      { name: "Antique Gold", hex: "#C9A96E" }],
+      gridNote: "Full-width hero with property search overlay. Featured projects in responsive card grid. Location sections with 3-column layout and deep-link navigation."
+    },
+    results: {
+      stats: [
+      { value: "8×", label: "Increase in online inquiries" },
+      { value: "500+", label: "Happy families served" },
+      { value: "2,500+", label: "Properties listed" },
+      { value: "50+", label: "Areas covered in Mumbai" }],
+      quote: {
+        text: "PlusMinus transformed our decades of real estate expertise into a digital experience our clients love. The Vastu integration alone sets us apart from every competitor.",
+        author: "Spaces & Places Team",
+        role: "Spaces & Places, Mumbai"
+      }
+    },
+    heroImage: sp1,
+    heroImages: {
+      browser: sp1,
+      mobile: sp3,
+      tablet: sp4
+    },
+    galleryImages: [sp1, sp2, sp3, sp4, sp5, sp6, sp7, sp8, sp9],
+    techStack: [
+      { name: "React", purpose: "Frontend framework" },
+      { name: "Next.js", purpose: "Server-side rendering & SEO" },
+      { name: "TypeScript", purpose: "Type-safe development" },
+      { name: "Tailwind CSS", purpose: "Utility-first styling" },
+      { name: "Supabase", purpose: "Database & authentication" },
+      { name: "Framer Motion", purpose: "Scroll & interaction animations" },
+      { name: "Responsive Design", purpose: "Mobile-first approach" },
+      { name: "SEO Optimized", purpose: "Meta tags & structured data" }
+    ],
+    sitePages: [
+      { name: "Home", description: "Hero with property search, featured projects carousel, Vastu section, and market stats" },
+      { name: "Projects", description: "Filterable property listings with search, location filters, and developer info" },
+      { name: "Project Detail", description: "Gallery, quick facts, floor plans, amenities, and inquiry form per property" },
+      { name: "Blog", description: "Real estate market insights, area guides, and investment advice" },
+      { name: "Vastu Consultation", description: "Interactive floor plan analysis with Vastu grid overlay and recommendations" },
+      { name: "Contact", description: "Multi-field inquiry form with office details and business hours" }
+    ],
     nextProject: { slug: "trots-architects", title: "Trots Architects", gradient: "linear-gradient(135deg, hsl(220 25% 18%), hsl(200 30% 25%), hsl(180 20% 15%))" }
   }
 };
