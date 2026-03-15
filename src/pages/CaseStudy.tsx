@@ -371,6 +371,7 @@ const caseStudies: Record<string, CaseStudyData> = {
     heroImages: {
       browser: sp1,
     },
+    resultImage: spFullpage,
     galleryImages: [sp2, sp4, sp5, sp6, sp9, sp7, sp8, sp3, sp8],
     techStack: [
       { name: "React", purpose: "Frontend framework" },
@@ -378,6 +379,7 @@ const caseStudies: Record<string, CaseStudyData> = {
       { name: "TypeScript", purpose: "Type-safe development" },
       { name: "Tailwind CSS", purpose: "Utility-first styling" },
       { name: "Supabase", purpose: "Database & authentication" },
+      { name: "Custom Admin Panel", purpose: "Content management for projects, blogs & site" },
       { name: "Framer Motion", purpose: "Scroll & interaction animations" },
       { name: "Responsive Design", purpose: "Mobile-first approach" },
       { name: "SEO Optimized", purpose: "Meta tags & structured data" }
@@ -387,6 +389,7 @@ const caseStudies: Record<string, CaseStudyData> = {
       { name: "Projects", description: "Filterable property listings with search, location filters, and developer info" },
       { name: "Project Detail", description: "Gallery, quick facts, floor plans, amenities, and inquiry form per property" },
       { name: "Blog", description: "Real estate market insights, area guides, and investment advice" },
+      { name: "Admin Panel", description: "Full CMS for managing projects, blogs, property listings, and site content" },
       { name: "Vastu Consultation", description: "Interactive floor plan analysis with Vastu grid overlay and recommendations" },
       { name: "Contact", description: "Multi-field inquiry form with office details and business hours" }
     ],
