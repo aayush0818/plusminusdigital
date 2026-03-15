@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logoMark from "@/assets/logo-mark.png";
+import logoMark from "@/assets/logo-mark-transparent.png";
 
 const footerLinks = {
   Navigation: [
@@ -22,9 +22,8 @@ const Footer = () => {
       <div className="container-site">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 mb-12 md:mb-20">
           <div className="md:col-span-2">
-            <Link to="/" className="flex items-center gap-3 mb-4">
-              <img src={logoMark} alt="PlusMinus" className="h-5 md:h-6 w-auto" style={{ filter: "invert(1)" }} />
-              <span className="text-base md:text-lg font-bold" style={{ color: "hsl(0 0% 80%)" }}>PlusMinus</span>
+            <Link to="/" className="mb-4 inline-block">
+              <img src={logoMark} alt="PlusMinus" className="h-6 md:h-8 w-auto" style={{ filter: "invert(1)" }} />
             </Link>
             <p className="text-[11px] font-semibold tracking-[0.25em] uppercase mb-3" style={{ color: "hsl(0 0% 30%)" }}>
               Minus the noise. Plus the results.

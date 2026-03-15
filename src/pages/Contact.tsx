@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import logoMark from "@/assets/logo-mark.png";
+import logoMark from "@/assets/logo-mark-transparent.png";
 
 const budgetOptions = ["Under ₹5L", "₹5L – ₹15L", "₹15L – ₹30L", "₹30L – ₹50L", "₹50L+"];
 
