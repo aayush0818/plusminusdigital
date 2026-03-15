@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logoMark from "@/assets/logo-mark-transparent.png";
+import logoMark from "@/assets/logo-icon.png";
 
 const footerLinks = {
   Navigation: [

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import logoMark from "@/assets/logo-mark-transparent.png";
+import logoMark from "@/assets/logo-icon.png";
 
 const clients = [
   "Stripe", "Vercel", "Linear", "Notion", "Figma", "Webflow", "Framer", "Arc",

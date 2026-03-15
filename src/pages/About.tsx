@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
-import logoMark from "@/assets/logo-mark-transparent.png";
+import logoMark from "@/assets/logo-icon.png";
 
 const values = [
   {
