@@ -460,7 +460,7 @@ const caseStudies: Record<string, CaseStudyData> = {
         role: "Founder, The Smart Realtors"
       }
     },
-    heroImage: undefined,
+    heroImage: tsr1,
     heroImages: {
       browser: tsrFullpage,
     },
