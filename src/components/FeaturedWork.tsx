@@ -45,7 +45,7 @@ const projects = [
     category: "Landing Page Design",
     year: "2025",
     gradient: "linear-gradient(135deg, hsl(220 50% 15%), hsl(210 60% 22%), hsl(225 40% 12%))",
-    preview: tsrHero,
+    preview: tsr1,
   },
 ];
 
