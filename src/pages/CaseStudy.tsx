@@ -38,6 +38,16 @@ import sp7 from "@/assets/sp-7.png";
 import sp8 from "@/assets/sp-8.png";
 import sp9 from "@/assets/sp-9.png";
 import spFullpage from "@/assets/sp-fullpage.png";
+import tsrHero from "@/assets/tsr-hero.png";
+import tsrFullpage from "@/assets/tsr-fullpage.png";
+import tsr1 from "@/assets/tsr-1.png";
+import tsr2 from "@/assets/tsr-2.png";
+import tsr3 from "@/assets/tsr-3.png";
+import tsr4 from "@/assets/tsr-4.png";
+import tsr5 from "@/assets/tsr-5.png";
+import tsr6 from "@/assets/tsr-6.png";
+import tsr7 from "@/assets/tsr-7.png";
+import tsr8 from "@/assets/tsr-8.png";
 
 interface CaseStudyData {
   slug: string;
@@ -392,6 +402,85 @@ const caseStudies: Record<string, CaseStudyData> = {
       { name: "Admin Panel", description: "Full CMS for managing projects, blogs, property listings, and site content" },
       { name: "Vastu Consultation", description: "Interactive floor plan analysis with Vastu grid overlay and recommendations" },
       { name: "Contact", description: "Multi-field inquiry form with office details and business hours" }
+    ],
+    nextProject: { slug: "the-smart-realtors", title: "The Smart Realtors", gradient: "linear-gradient(135deg, hsl(220 50% 15%), hsl(210 60% 22%), hsl(225 40% 12%))" }
+  },
+  "the-smart-realtors": {
+    slug: "the-smart-realtors",
+    title: "The Smart Realtors",
+    category: "Web Design & Development",
+    year: "2025",
+    heroGradient: "linear-gradient(135deg, hsl(220 50% 15%), hsl(210 60% 22%), hsl(225 40% 12%))",
+    tagline: "Mumbai's luxury real estate, elevated digitally.",
+    mockupColors: ["#1B2A4A", "#2ECC71", "#FAF7F2", "#C8A2FF"],
+    overview:
+    "The Smart Realtors is a RERA-registered luxury real estate consultancy specializing in South Mumbai's most prestigious addresses — Worli, Malabar Hill, Cuffe Parade, and Altamount Road. They needed a premium digital platform that communicates trust, showcases verified luxury properties, and converts high-net-worth property seekers into qualified leads.",
+    problem: {
+      title: "The Challenge",
+      description:
+      "Despite 15+ years of expertise in Mumbai's luxury apartment market and 200+ successful transactions, The Smart Realtors had no digital presence that matched their on-ground reputation. High-net-worth clients couldn't browse verified listings or schedule consultations online.",
+      challenges: [
+      "No digital platform — all business relied on referrals and offline networks",
+      "Luxury positioning wasn't communicated — competing with aggregator sites",
+      "RERA registration and channel partner credentials were invisible online",
+      "Mobile-first affluent audience had no optimized browsing experience",
+      "No structured lead capture for property inquiries and consultations"]
+    },
+    strategy: {
+      title: "Our Strategy",
+      description:
+      "We crafted a premium real estate platform that positions The Smart Realtors as South Mumbai's most trusted luxury property consultancy — combining editorial elegance with conversion-focused design.",
+      pillars: [
+      { label: "Luxury Visual Identity", detail: "Deep navy and gold palette with serif typography — communicating exclusivity, trust, and premium positioning" },
+      { label: "Property Showcase", detail: "Featured properties with high-resolution imagery, pricing, specifications, and one-click scheduling for viewings" },
+      { label: "Trust Architecture", detail: "RERA registration, 10+ registered channel partnerships with top developers (MICL, Birla, Lodha, L&T), and client testimonials" },
+      { label: "Multi-Touch Conversion", detail: "WhatsApp integration, consultation forms, and property-specific inquiry CTAs — capturing leads at every touchpoint" }]
+    },
+    designSystem: {
+      fonts: [
+      { name: "Playfair Display", style: "Headlines & Display", specimen: "Find Your Perfect Space in Mumbai's Luxury Market" },
+      { name: "Inter", style: "Body & Navigation", specimen: "Verified premium homes & smart investments tailored to you." }],
+      colors: [
+      { name: "Navy", hex: "#1B2A4A" },
+      { name: "Emerald", hex: "#2ECC71" },
+      { name: "Ivory", hex: "#FAF7F2" },
+      { name: "Lavender", hex: "#C8A2FF" }],
+      gridNote: "Split-screen hero with luxury property imagery. Featured properties in responsive card grid. Channel partner logos in trust section. Services in 3-column layout with icon accents."
+    },
+    results: {
+      stats: [
+      { value: "200+", label: "Properties sold" },
+      { value: "95%", label: "Client satisfaction" },
+      { value: "15+", label: "Years experience" },
+      { value: "100%", label: "RERA verified" }],
+      quote: {
+        text: "PlusMinus understood the luxury real estate space and built a platform that our high-net-worth clients trust instantly. The WhatsApp integration alone doubled our consultation requests.",
+        author: "Maushmi",
+        role: "Founder, The Smart Realtors"
+      }
+    },
+    heroImage: tsrHero,
+    heroImages: {
+      browser: tsrHero,
+    },
+    resultImage: tsrFullpage,
+    galleryImages: [tsr1, tsr2, tsr3, tsr4, tsr5, tsr6, tsr7, tsr8],
+    techStack: [
+      { name: "React", purpose: "Frontend framework" },
+      { name: "Vite", purpose: "Build tool & dev server" },
+      { name: "TypeScript", purpose: "Type-safe development" },
+      { name: "Tailwind CSS", purpose: "Utility-first styling" },
+      { name: "Framer Motion", purpose: "Scroll & interaction animations" },
+      { name: "WhatsApp API", purpose: "Direct client communication" },
+      { name: "Responsive Design", purpose: "Mobile-first approach" },
+      { name: "SEO Optimized", purpose: "Meta tags & structured data" }
+    ],
+    sitePages: [
+      { name: "Home", description: "Split-screen hero with luxury property imagery, featured listings, and channel partner trust section" },
+      { name: "Properties", description: "Curated luxury apartment listings with high-res imagery, specs, and scheduling CTAs" },
+      { name: "Services", description: "Three service verticals — Buying, Selling, and Investment Advisory — with detailed breakdowns" },
+      { name: "Testimonials", description: "Client success stories with transaction details and satisfaction metrics" },
+      { name: "Contact", description: "Multi-field inquiry form with WhatsApp, phone, email, and office details" }
     ],
     nextProject: { slug: "trots-architects", title: "Trots Architects", gradient: "linear-gradient(135deg, hsl(220 25% 18%), hsl(200 30% 25%), hsl(180 20% 15%))" }
   }
