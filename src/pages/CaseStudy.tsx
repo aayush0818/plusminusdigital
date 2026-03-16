@@ -832,7 +832,7 @@ const CaseStudy = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}>
                 
-                  <img src={study.galleryImages[3]} alt={`${study.title} execution phase visual`} className="w-full h-full object-cover block aspect-[4/3]" loading="lazy" />
+                  <img src={study.galleryImages[3]} alt={`${study.title} execution phase visual`} className={`w-full block ${study.galleryContain ? 'h-auto object-contain' : 'h-full object-cover aspect-[4/3]'}`} loading="lazy" />
                 </motion.div>
                 {study.galleryImages[4] &&
               <motion.div
