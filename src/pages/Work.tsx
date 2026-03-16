@@ -8,7 +8,7 @@ import CTASection from "@/components/CTASection";
 import corrxp1 from "@/assets/corrxp-1.png";
 import uda1 from "@/assets/uda-1.png";
 import sp2 from "@/assets/sp-2.png";
-import tsrHero from "@/assets/tsr-hero.png";
+import tsr1 from "@/assets/tsr-1.png";
 
 const categories = ["All", "Web Design", "Development", "Branding"];
 
