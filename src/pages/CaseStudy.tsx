@@ -1017,7 +1017,7 @@ const CaseStudy = () => {
               
               <span className="text-[11px] font-semibold tracking-[0.25em] uppercase" style={{ color: "hsl(0 0% 50%)" }}>The Result</span>
             </motion.div>
-            {study.heroImages?.browser ?
+            {(study.heroImages?.browser || study.resultImage) ?
             <motion.div
               className="rounded-xl overflow-hidden shadow-2xl w-full max-w-5xl mx-auto"
               style={{ background: "hsl(0 0% 6%)", border: "1px solid hsl(0 0% 15%)" }}
