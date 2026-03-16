@@ -461,7 +461,9 @@ const caseStudies: Record<string, CaseStudyData> = {
       }
     },
     heroImage: undefined,
-    heroImages: undefined,
+    heroImages: {
+      browser: tsrFullpage,
+    },
     resultImage: tsrFullpage,
     galleryImages: [tsr1, tsr2, tsr3, tsr4, tsr5, tsr6, tsr7, tsr8],
     galleryContain: true,
