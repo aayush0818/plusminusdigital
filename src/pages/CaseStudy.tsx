@@ -85,6 +85,7 @@ interface CaseStudyData {
   };
   resultImage?: string;
   galleryImages?: string[];
+  galleryContain?: boolean;
   techStack?: {name: string;purpose: string;}[];
   sitePages?: {name: string;description: string;}[];
   nextProject?: {slug: string;title: string;gradient: string;};
@@ -408,7 +409,7 @@ const caseStudies: Record<string, CaseStudyData> = {
   "the-smart-realtors": {
     slug: "the-smart-realtors",
     title: "The Smart Realtors",
-    category: "Web Design & Development",
+    category: "Landing Page Design",
     year: "2025",
     heroGradient: "linear-gradient(135deg, hsl(220 50% 15%), hsl(210 60% 22%), hsl(225 40% 12%))",
     tagline: "Mumbai's luxury real estate, elevated digitally.",
@@ -459,12 +460,11 @@ const caseStudies: Record<string, CaseStudyData> = {
         role: "Founder, The Smart Realtors"
       }
     },
-    heroImage: tsrHero,
-    heroImages: {
-      browser: tsrHero,
-    },
+    heroImage: undefined,
+    heroImages: undefined,
     resultImage: tsrFullpage,
     galleryImages: [tsr1, tsr2, tsr3, tsr4, tsr5, tsr6, tsr7, tsr8],
+    galleryContain: true,
     techStack: [
       { name: "React", purpose: "Frontend framework" },
       { name: "Vite", purpose: "Build tool & dev server" },
@@ -648,7 +648,7 @@ const CaseStudy = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.7 }}>
                 
-                  <img src={study.galleryImages[0]} alt={`${study.title} homepage view`} className="w-full h-full object-cover block aspect-[4/3]" loading="lazy" />
+                  <img src={study.galleryImages[0]} alt={`${study.title} homepage view`} className={`w-full block ${study.galleryContain ? 'h-auto object-contain' : 'h-full object-cover aspect-[4/3]'}`} loading="lazy" />
                 </motion.div>
 
                 <motion.div
@@ -658,7 +658,7 @@ const CaseStudy = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, delay: 0.08 }}>
                 
-                  <img src={study.galleryImages[1] ?? study.galleryImages[0]} alt={`${study.title} service section view`} className="w-full h-full object-cover block aspect-[4/3]" loading="lazy" />
+                  <img src={study.galleryImages[1] ?? study.galleryImages[0]} alt={`${study.title} service section view`} className={`w-full block ${study.galleryContain ? 'h-auto object-contain' : 'h-full object-cover aspect-[4/3]'}`} loading="lazy" />
                 </motion.div>
 
                 {study.galleryImages[2] &&
@@ -832,7 +832,7 @@ const CaseStudy = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}>
                 
-                  <img src={study.galleryImages[3]} alt={`${study.title} execution phase visual`} className="w-full h-full object-cover block aspect-[4/3]" loading="lazy" />
+                  <img src={study.galleryImages[3]} alt={`${study.title} execution phase visual`} className={`w-full block ${study.galleryContain ? 'h-auto object-contain' : 'h-full object-cover aspect-[4/3]'}`} loading="lazy" />
                 </motion.div>
                 {study.galleryImages[4] &&
               <motion.div
@@ -842,7 +842,7 @@ const CaseStudy = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.08 }}>
                 
-                    <img src={study.galleryImages[4]} alt={`${study.title} architecture detail visual`} className="w-full h-full object-cover block aspect-[4/3]" loading="lazy" />
+                    <img src={study.galleryImages[4]} alt={`${study.title} architecture detail visual`} className={`w-full block ${study.galleryContain ? 'h-auto object-contain' : 'h-full object-cover aspect-[4/3]'}`} loading="lazy" />
                   </motion.div>
               }
               </div>
@@ -989,7 +989,7 @@ const CaseStudy = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}>
                 
-                  <img src={study.galleryImages[5]} alt={`${study.title} content snapshot 1`} className="w-full h-full object-cover block aspect-[3/4]" loading="lazy" />
+                  <img src={study.galleryImages[5]} alt={`${study.title} content snapshot 1`} className={`w-full block ${study.galleryContain ? 'h-auto object-contain' : 'h-full object-cover aspect-[3/4]'}`} loading="lazy" />
                 </motion.div>
                 {study.galleryImages[6] &&
               <motion.div
@@ -999,7 +999,7 @@ const CaseStudy = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1 }}>
                 
-                    <img src={study.galleryImages[6]} alt={`${study.title} content snapshot 2`} className="w-full h-full object-cover block aspect-[3/4]" loading="lazy" />
+                    <img src={study.galleryImages[6]} alt={`${study.title} content snapshot 2`} className={`w-full block ${study.galleryContain ? 'h-auto object-contain' : 'h-full object-cover aspect-[3/4]'}`} loading="lazy" />
                   </motion.div>
               }
               </div>
@@ -1017,7 +1017,7 @@ const CaseStudy = () => {
               
               <span className="text-[11px] font-semibold tracking-[0.25em] uppercase" style={{ color: "hsl(0 0% 50%)" }}>The Result</span>
             </motion.div>
-            {study.heroImages?.browser ?
+            {(study.heroImages?.browser || study.resultImage) ?
             <motion.div
               className="rounded-xl overflow-hidden shadow-2xl w-full max-w-5xl mx-auto"
               style={{ background: "hsl(0 0% 6%)", border: "1px solid hsl(0 0% 15%)" }}
@@ -1038,11 +1038,11 @@ const CaseStudy = () => {
                 </div>
                 <div className="relative overflow-hidden" style={{ height: "clamp(320px, 55vw, 560px)" }}>
                   <motion.img
-                  src={study.resultImage || study.heroImages.browser}
+                  src={study.resultImage || study.heroImages?.browser}
                   alt={`${study.title} final result`}
                   className="w-full h-auto block"
-                  animate={study.slug === "corrxp" ? { y: ["0%", "-72%", "0%"] } : study.slug === "spaces-places" ? { y: ["0%", "-72%", "0%"] } : { y: [0, -220, 0] }}
-                  transition={study.slug === "corrxp" ? { duration: 16, repeat: Infinity, ease: "easeInOut" } : study.slug === "spaces-places" ? { duration: 18, repeat: Infinity, ease: "easeInOut" } : { duration: 12, repeat: Infinity, ease: "easeInOut" }} />
+                  animate={{ y: ["0%", "-72%", "0%"] }}
+                  transition={{ duration: 18, repeat: Infinity, ease: "easeInOut", delay: 3 }} />
                 
                 </div>
               </motion.div> :

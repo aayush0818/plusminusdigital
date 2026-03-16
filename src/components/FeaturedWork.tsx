@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import corrxp1 from "@/assets/corrxp-1.png";
 import uda1 from "@/assets/uda-1.png";
 import sp2 from "@/assets/sp-2.png";
-import tsrHero from "@/assets/tsr-hero.png";
+import tsr1 from "@/assets/tsr-1.png";
 
 const projects = [
   {
@@ -42,10 +42,10 @@ const projects = [
   {
     title: "The Smart Realtors",
     slug: "the-smart-realtors",
-    category: "Web Design & Development",
+    category: "Landing Page Design",
     year: "2025",
     gradient: "linear-gradient(135deg, hsl(220 50% 15%), hsl(210 60% 22%), hsl(225 40% 12%))",
-    preview: tsrHero,
+    preview: tsr1,
   },
 ];
 
