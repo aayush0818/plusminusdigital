@@ -17,7 +17,7 @@ const projects = [
   { title: "UDA India", slug: "uda-india", category: "Web Design", year: "2025", gradient: "linear-gradient(135deg, hsl(30 30% 12%), hsl(40 40% 22%), hsl(20 25% 10%))", preview: uda1 },
   { title: "CORR XP", slug: "corrxp", category: "Development", year: "2025", gradient: "linear-gradient(135deg, hsl(20 60% 10%), hsl(25 70% 18%), hsl(15 40% 8%))", preview: corrxp1 },
   { title: "Spaces & Places", slug: "spaces-places", category: "Web Design", year: "2025", gradient: "linear-gradient(135deg, hsl(40 50% 15%), hsl(35 60% 25%), hsl(30 40% 12%))", preview: sp2 },
-  { title: "The Smart Realtors", slug: "the-smart-realtors", category: "Web Design", year: "2025", gradient: "linear-gradient(135deg, hsl(220 50% 15%), hsl(210 60% 22%), hsl(225 40% 12%))", preview: tsrHero },
+  { title: "The Smart Realtors", slug: "the-smart-realtors", category: "Web Design", year: "2025", gradient: "linear-gradient(135deg, hsl(220 50% 15%), hsl(210 60% 22%), hsl(225 40% 12%))", preview: tsr1 },
 ];
 
 const Work = () => {

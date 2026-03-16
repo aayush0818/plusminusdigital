@@ -42,7 +42,7 @@ const projects = [
   {
     title: "The Smart Realtors",
     slug: "the-smart-realtors",
-    category: "Web Design & Development",
+    category: "Landing Page Design",
     year: "2025",
     gradient: "linear-gradient(135deg, hsl(220 50% 15%), hsl(210 60% 22%), hsl(225 40% 12%))",
     preview: tsrHero,
