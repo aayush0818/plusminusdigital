@@ -85,6 +85,7 @@ interface CaseStudyData {
   };
   resultImage?: string;
   galleryImages?: string[];
+  galleryContain?: boolean;
   techStack?: {name: string;purpose: string;}[];
   sitePages?: {name: string;description: string;}[];
   nextProject?: {slug: string;title: string;gradient: string;};
