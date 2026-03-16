@@ -952,8 +952,8 @@ const CaseStudy = () => {
                   src={study.resultImage || study.heroImages.browser}
                   alt={`${study.title} final result`}
                   className="w-full h-auto block"
-                  animate={study.slug === "corrxp" ? { y: ["0%", "-72%", "0%"] } : { y: [0, -220, 0] }}
-                  transition={study.slug === "corrxp" ? { duration: 16, repeat: Infinity, ease: "easeInOut" } : { duration: 12, repeat: Infinity, ease: "easeInOut" }} />
+                  animate={study.slug === "corrxp" ? { y: ["0%", "-72%", "0%"] } : study.slug === "spaces-places" ? { y: ["0%", "-72%", "0%"] } : { y: [0, -220, 0] }}
+                  transition={study.slug === "corrxp" ? { duration: 16, repeat: Infinity, ease: "easeInOut" } : study.slug === "spaces-places" ? { duration: 18, repeat: Infinity, ease: "easeInOut" } : { duration: 12, repeat: Infinity, ease: "easeInOut" }} />
                 
                 </div>
               </motion.div> :
