@@ -371,7 +371,7 @@ const caseStudies: Record<string, CaseStudyData> = {
     heroImages: {
       browser: sp1,
     },
-    resultImage: sp1,
+    resultImage: spFullpage,
     galleryImages: [sp2, sp4, sp5, sp6, sp9, sp7, sp8, sp3, sp8],
     techStack: [
       { name: "React", purpose: "Frontend framework" },
