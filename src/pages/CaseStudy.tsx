@@ -38,6 +38,16 @@ import sp7 from "@/assets/sp-7.png";
 import sp8 from "@/assets/sp-8.png";
 import sp9 from "@/assets/sp-9.png";
 import spFullpage from "@/assets/sp-fullpage.png";
+import tsrHero from "@/assets/tsr-hero.png";
+import tsrFullpage from "@/assets/tsr-fullpage.png";
+import tsr1 from "@/assets/tsr-1.png";
+import tsr2 from "@/assets/tsr-2.png";
+import tsr3 from "@/assets/tsr-3.png";
+import tsr4 from "@/assets/tsr-4.png";
+import tsr5 from "@/assets/tsr-5.png";
+import tsr6 from "@/assets/tsr-6.png";
+import tsr7 from "@/assets/tsr-7.png";
+import tsr8 from "@/assets/tsr-8.png";
 
 interface CaseStudyData {
   slug: string;
