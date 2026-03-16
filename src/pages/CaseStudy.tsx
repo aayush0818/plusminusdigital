@@ -408,7 +408,7 @@ const caseStudies: Record<string, CaseStudyData> = {
   "the-smart-realtors": {
     slug: "the-smart-realtors",
     title: "The Smart Realtors",
-    category: "Web Design & Development",
+    category: "Landing Page Design",
     year: "2025",
     heroGradient: "linear-gradient(135deg, hsl(220 50% 15%), hsl(210 60% 22%), hsl(225 40% 12%))",
     tagline: "Mumbai's luxury real estate, elevated digitally.",
