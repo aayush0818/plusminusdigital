@@ -464,6 +464,7 @@ const caseStudies: Record<string, CaseStudyData> = {
     heroImages: undefined,
     resultImage: tsrFullpage,
     galleryImages: [tsr1, tsr2, tsr3, tsr4, tsr5, tsr6, tsr7, tsr8],
+    galleryContain: true,
     techStack: [
       { name: "React", purpose: "Frontend framework" },
       { name: "Vite", purpose: "Build tool & dev server" },
