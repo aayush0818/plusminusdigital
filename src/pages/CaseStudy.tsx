@@ -89,6 +89,7 @@ interface CaseStudyData {
   techStack?: {name: string;purpose: string;}[];
   sitePages?: {name: string;description: string;}[];
   nextProject?: {slug: string;title: string;gradient: string;};
+  liveUrl?: string;
 }
 
 const caseStudies: Record<string, CaseStudyData> = {
