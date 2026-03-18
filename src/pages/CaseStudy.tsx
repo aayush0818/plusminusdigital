@@ -498,6 +498,93 @@ const caseStudies: Record<string, CaseStudyData> = {
       { name: "Contact", description: "Multi-field inquiry form with WhatsApp, phone, email, and office details" }
     ],
     liveUrl: "https://thesmartrealtors.com",
+    nextProject: { slug: "shharda-reliable", title: "Shharda Reliable", gradient: "linear-gradient(135deg, hsl(40 60% 12%), hsl(45 50% 20%), hsl(35 40% 10%))" }
+  },
+  "shharda-reliable": {
+    slug: "shharda-reliable",
+    title: "Shharda Reliable",
+    category: "Web Design & Development",
+    year: "2025",
+    heroGradient: "linear-gradient(135deg, hsl(40 60% 12%), hsl(45 50% 20%), hsl(35 40% 10%))",
+    tagline: "Premium exports, premium digital presence.",
+    mockupColors: ["#1A1A1A", "#D4A843", "#FFFFFF", "#2D5016"],
+    overview:
+    "Shharda Reliable is a global export company specializing in premium Indian goods — from handcrafted handbags and essential oils to white coal and spices. We designed and developed a professional, trust-driven website that positions them as a credible partner for international trade, complete with product showcases, certifications, and a global presence map.",
+    problem: {
+      title: "The Challenge",
+      description:
+      "Shharda Reliable needed a digital platform that would establish credibility with international buyers and streamline their export inquiry process across multiple product verticals.",
+      challenges: [
+        "No existing web presence to showcase product range and quality standards",
+        "International buyers needed assurance of certifications and compliance",
+        "Multiple product categories required organized, navigable presentation",
+        "WhatsApp and direct inquiry channels needed seamless integration",
+        "Global reach needed visual representation to build trust"
+      ]
+    },
+    strategy: {
+      title: "Our Strategy",
+      description:
+      "We built a trust-first website that leads with quality credentials, showcases products through professional imagery, and makes international inquiry frictionless.",
+      pillars: [
+        { label: "Trust Architecture", detail: "Certifications (ISO, FSSAI, APEDA, HACCP, AEO) prominently displayed to establish credibility with global buyers" },
+        { label: "Product-Centric Navigation", detail: "Dedicated pages for each product vertical — handbags, oils, white coal, spices — with detailed specifications" },
+        { label: "Global Presence Visualization", detail: "Interactive map and stats (25+ countries, 500+ clients) to demonstrate international reach" },
+        { label: "Multi-Channel Inquiry", detail: "WhatsApp integration, contact forms, and product-specific inquiry flows for seamless lead capture" }
+      ]
+    },
+    designSystem: {
+      fonts: [
+        { name: "Playfair Display", style: "Headlines & Display", specimen: "Your Reliable Partner for Global Trade" },
+        { name: "Inter", style: "Body & Navigation", specimen: "Premium quality goods that represent the finest standards of craftsmanship." }
+      ],
+      colors: [
+        { name: "Charcoal", hex: "#1A1A1A" },
+        { name: "Heritage Gold", hex: "#D4A843" },
+        { name: "Pure White", hex: "#FFFFFF" },
+        { name: "Forest Green", hex: "#2D5016" }
+      ],
+      gridNote: "Clean, professional layout with generous whitespace. Product cards use consistent imagery sizing with hover effects. Certification badges positioned for immediate trust signals."
+    },
+    results: {
+      stats: [
+        { value: "25+", label: "Countries reached" },
+        { value: "500+", label: "Happy clients served" },
+        { value: "100%", label: "Compliant exports" },
+        { value: "4", label: "Product verticals launched" }
+      ],
+      quote: {
+        text: "PlusMinus gave us a website that speaks the language of international trade. Our inquiry rate has grown significantly since launch.",
+        author: "Shharda Reliable",
+        role: "Management Team"
+      }
+    },
+    heroImage: sr1,
+    heroImages: {
+      browser: srFullpage,
+    },
+    resultImage: srFullpage,
+    galleryImages: [sr1, sr2, sr3, sr4, sr5, sr6, sr7, sr8],
+    galleryContain: true,
+    techStack: [
+      { name: "React", purpose: "Frontend framework" },
+      { name: "Vite", purpose: "Build tool & dev server" },
+      { name: "TypeScript", purpose: "Type-safe development" },
+      { name: "Tailwind CSS", purpose: "Utility-first styling" },
+      { name: "Framer Motion", purpose: "Scroll & interaction animations" },
+      { name: "Supabase", purpose: "Backend & file storage" },
+      { name: "Responsive Design", purpose: "Mobile-first approach" },
+      { name: "WhatsApp API", purpose: "Direct messaging integration" }
+    ],
+    sitePages: [
+      { name: "Home", description: "Hero with brand promise, product showcase grid, differentiators, mission & vision, global stats, and certifications" },
+      { name: "Products", description: "Four product verticals — Handbags, Oils, White Coal, Spices — with detailed specifications and imagery" },
+      { name: "About Us", description: "Company story, values, mission, vision, and team introduction" },
+      { name: "Global Presence", description: "Interactive map showing 25+ countries served with export statistics" },
+      { name: "Certifications", description: "ISO, FSSAI, APEDA, HACCP, and AEO certifications with details and validity" },
+      { name: "Contact", description: "Multi-field inquiry form with product interest selection, WhatsApp integration, and office details" }
+    ],
+    liveUrl: "https://shhardareliable.com",
     nextProject: { slug: "trots-architects", title: "Trots Architects", gradient: "linear-gradient(135deg, hsl(220 25% 18%), hsl(200 30% 25%), hsl(180 20% 15%))" }
   }
 };
