@@ -6,6 +6,7 @@ import corrxp1 from "@/assets/corrxp-1.png";
 import uda1 from "@/assets/uda-1.png";
 import sp2 from "@/assets/sp-2.png";
 import tsr1 from "@/assets/tsr-1.png";
+import sr1 from "@/assets/sr-1.png";
 
 const projects = [
   {
@@ -46,6 +47,14 @@ const projects = [
     year: "2025",
     gradient: "linear-gradient(135deg, hsl(220 50% 15%), hsl(210 60% 22%), hsl(225 40% 12%))",
     preview: tsr1,
+  },
+  {
+    title: "Shharda Reliable",
+    slug: "shharda-reliable",
+    category: "Web Design & Development",
+    year: "2025",
+    gradient: "linear-gradient(135deg, hsl(40 60% 12%), hsl(45 50% 20%), hsl(35 40% 10%))",
+    preview: sr1,
   },
 ];
 
