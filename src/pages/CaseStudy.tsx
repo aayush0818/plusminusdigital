@@ -408,6 +408,7 @@ const caseStudies: Record<string, CaseStudyData> = {
       { name: "Vastu Consultation", description: "Interactive floor plan analysis with Vastu grid overlay and recommendations" },
       { name: "Contact", description: "Multi-field inquiry form with office details and business hours" }
     ],
+    liveUrl: "https://spacesplaces.in",
     nextProject: { slug: "the-smart-realtors", title: "The Smart Realtors", gradient: "linear-gradient(135deg, hsl(220 50% 15%), hsl(210 60% 22%), hsl(225 40% 12%))" }
   },
   "the-smart-realtors": {
