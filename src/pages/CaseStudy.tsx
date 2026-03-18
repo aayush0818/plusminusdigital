@@ -571,6 +571,17 @@ const CaseStudy = () => {
               <p className="text-lg md:text-2xl max-w-2xl font-display italic" style={{ color: "hsl(0 0% 60%)" }}>
                 {study.tagline}
               </p>
+              {study.liveUrl && (
+                <a
+                  href={study.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 mt-6 md:mt-8 text-[13px] font-semibold tracking-[0.1em] uppercase transition-colors hover:text-white"
+                  style={{ color: "hsl(0 0% 50%)" }}
+                >
+                  Visit Live Site <ArrowUpRight size={14} />
+                </a>
+              )}
             </motion.div>
           </div>
 
