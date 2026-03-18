@@ -576,10 +576,15 @@ const CaseStudy = () => {
                   href={study.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 mt-6 md:mt-8 text-[13px] font-semibold tracking-[0.1em] uppercase transition-colors hover:text-white"
-                  style={{ color: "hsl(0 0% 50%)" }}
+                  className="inline-flex items-center gap-2 mt-8 md:mt-10 px-6 py-3 rounded-[4px] text-[13px] font-semibold tracking-[0.15em] uppercase transition-all duration-300 hover:scale-105"
+                  style={{
+                    border: "1px solid hsl(0 0% 40%)",
+                    color: "hsl(0 0% 85%)",
+                    background: "hsla(0 0% 100% / 0.06)",
+                    backdropFilter: "blur(8px)",
+                  }}
                 >
-                  Visit Live Site <ArrowUpRight size={14} />
+                  Visit Live Site <ArrowUpRight size={16} />
                 </a>
               )}
             </motion.div>
