@@ -325,6 +325,7 @@ const caseStudies: Record<string, CaseStudyData> = {
     { name: "Projects", description: "Portfolio showcase of completed structural repair and retrofitting work" },
     { name: "Contact", description: "Multi-field consultation form with project detail capture" }],
 
+    liveUrl: "https://corrxp.com",
     nextProject: { slug: "spaces-places", title: "Spaces & Places", gradient: "linear-gradient(135deg, hsl(40 50% 15%), hsl(35 60% 25%), hsl(30 40% 12%))" }
   },
   "spaces-places": {
