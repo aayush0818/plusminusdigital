@@ -89,6 +89,7 @@ interface CaseStudyData {
   techStack?: {name: string;purpose: string;}[];
   sitePages?: {name: string;description: string;}[];
   nextProject?: {slug: string;title: string;gradient: string;};
+  liveUrl?: string;
 }
 
 const caseStudies: Record<string, CaseStudyData> = {
@@ -150,6 +151,7 @@ const caseStudies: Record<string, CaseStudyData> = {
         role: "Founding Partner, Trots Architects"
       }
     },
+    liveUrl: "https://trotsarchitects.com",
     nextProject: { slug: "uda-india", title: "UDA India", gradient: "linear-gradient(135deg, hsl(30 30% 12%), hsl(40 40% 22%), hsl(20 25% 10%))" }
   },
   "uda-india": {
@@ -237,6 +239,7 @@ const caseStudies: Record<string, CaseStudyData> = {
       { name: "Media", description: "Press coverage and magazine features including Surface Reporters" },
       { name: "Contact", description: "Inquiry form with office details, hours, and social links" }
     ],
+    liveUrl: "https://udaindia.com",
     nextProject: { slug: "corrxp", title: "CORR XP", gradient: "linear-gradient(135deg, hsl(20 60% 10%), hsl(25 70% 18%), hsl(15 40% 8%))" }
   },
   "corrxp": {
@@ -322,6 +325,7 @@ const caseStudies: Record<string, CaseStudyData> = {
     { name: "Projects", description: "Portfolio showcase of completed structural repair and retrofitting work" },
     { name: "Contact", description: "Multi-field consultation form with project detail capture" }],
 
+    liveUrl: "https://corrxp.com",
     nextProject: { slug: "spaces-places", title: "Spaces & Places", gradient: "linear-gradient(135deg, hsl(40 50% 15%), hsl(35 60% 25%), hsl(30 40% 12%))" }
   },
   "spaces-places": {
@@ -404,6 +408,7 @@ const caseStudies: Record<string, CaseStudyData> = {
       { name: "Vastu Consultation", description: "Interactive floor plan analysis with Vastu grid overlay and recommendations" },
       { name: "Contact", description: "Multi-field inquiry form with office details and business hours" }
     ],
+    liveUrl: "https://spacesplaces.in",
     nextProject: { slug: "the-smart-realtors", title: "The Smart Realtors", gradient: "linear-gradient(135deg, hsl(220 50% 15%), hsl(210 60% 22%), hsl(225 40% 12%))" }
   },
   "the-smart-realtors": {
@@ -484,6 +489,7 @@ const caseStudies: Record<string, CaseStudyData> = {
       { name: "Testimonials", description: "Client success stories with transaction details and satisfaction metrics" },
       { name: "Contact", description: "Multi-field inquiry form with WhatsApp, phone, email, and office details" }
     ],
+    liveUrl: "https://thesmartrealtors.com",
     nextProject: { slug: "trots-architects", title: "Trots Architects", gradient: "linear-gradient(135deg, hsl(220 25% 18%), hsl(200 30% 25%), hsl(180 20% 15%))" }
   }
 };
@@ -565,6 +571,17 @@ const CaseStudy = () => {
               <p className="text-lg md:text-2xl max-w-2xl font-display italic" style={{ color: "hsl(0 0% 60%)" }}>
                 {study.tagline}
               </p>
+              {study.liveUrl && (
+                <a
+                  href={study.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 mt-6 md:mt-8 text-[13px] font-semibold tracking-[0.1em] uppercase transition-colors hover:text-white"
+                  style={{ color: "hsl(0 0% 50%)" }}
+                >
+                  Visit Live Site <ArrowUpRight size={14} />
+                </a>
+              )}
             </motion.div>
           </div>
 
