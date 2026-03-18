@@ -489,6 +489,7 @@ const caseStudies: Record<string, CaseStudyData> = {
       { name: "Testimonials", description: "Client success stories with transaction details and satisfaction metrics" },
       { name: "Contact", description: "Multi-field inquiry form with WhatsApp, phone, email, and office details" }
     ],
+    liveUrl: "https://thesmartrealtors.com",
     nextProject: { slug: "trots-architects", title: "Trots Architects", gradient: "linear-gradient(135deg, hsl(220 25% 18%), hsl(200 30% 25%), hsl(180 20% 15%))" }
   }
 };
