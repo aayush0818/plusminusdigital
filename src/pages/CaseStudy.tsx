@@ -239,6 +239,7 @@ const caseStudies: Record<string, CaseStudyData> = {
       { name: "Media", description: "Press coverage and magazine features including Surface Reporters" },
       { name: "Contact", description: "Inquiry form with office details, hours, and social links" }
     ],
+    liveUrl: "https://udaindia.com",
     nextProject: { slug: "corrxp", title: "CORR XP", gradient: "linear-gradient(135deg, hsl(20 60% 10%), hsl(25 70% 18%), hsl(15 40% 8%))" }
   },
   "corrxp": {
