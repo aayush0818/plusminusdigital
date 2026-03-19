@@ -691,6 +691,94 @@ const caseStudies: Record<string, CaseStudyData> = {
       { name: "Contact", description: "Inquiry form with studio address, hours, and project type selection" }
     ],
     liveUrl: "https://innovatorsinteriors.vercel.app",
+    nextProject: { slug: "interior-dictionary", title: "Interior Dictionary", gradient: "linear-gradient(135deg, hsl(30 15% 12%), hsl(35 20% 18%), hsl(25 10% 8%))" }
+  },
+  "interior-dictionary": {
+    slug: "interior-dictionary",
+    title: "Interior Dictionary",
+    category: "Web App Design & Development",
+    year: "2025",
+    heroGradient: "linear-gradient(135deg, hsl(30 15% 12%), hsl(35 20% 18%), hsl(25 10% 8%))",
+    tagline: "Design your home with confidence — India's interior design discovery platform.",
+    mockupColors: ["#1A1A1A", "#C9A76B", "#FAF7F2", "#3D3D3D"],
+    overview:
+    "Interior Dictionary is a comprehensive interior design discovery platform that connects homeowners with curated studios, real project budgets, and design inspiration. From a smart studio finder to a cost estimator, moodboard builder, and style encyclopedia — we built a full-stack product that brings transparency and confidence to the Indian interior design market.",
+    problem: {
+      title: "The Challenge",
+      description:
+      "India's interior design market is fragmented and opaque. Homeowners struggle to find reliable studios, understand realistic budgets, or explore design styles in a structured way. There was no single platform offering curated, transparent, and actionable interior design discovery.",
+      challenges: [
+        "No transparency in interior design pricing — homeowners had no budget benchmarks",
+        "Fragmented studio discovery — no platform to compare vetted professionals",
+        "Design style exploration was limited to Pinterest boards with no actionable context",
+        "No tools for homeowners to estimate costs or build moodboards before consultations",
+        "Mobile-first audience needed a responsive, app-like experience"
+      ]
+    },
+    strategy: {
+      title: "Our Strategy",
+      description:
+      "We built Interior Dictionary as a product-grade platform — not just a website — combining editorial content, interactive tools, and a curated marketplace into one seamless experience.",
+      pillars: [
+        { label: "Smart Studio Finder", detail: "Multi-filter search by city, area, style, and budget — matching homeowners with vetted interior design studios" },
+        { label: "Cost Estimator Tool", detail: "Interactive calculator providing transparent budget estimates based on project type, style, finish level, and area size" },
+        { label: "Moodboard Builder", detail: "Visual curation tool letting users collect images, colors, and materials to share with matched studios" },
+        { label: "Style Encyclopedia", detail: "Six curated design languages — Japandi, Minimal Luxe, Contemporary Indian, Warm Modern, Industrial Chic, Art Deco Revival — with color palettes and descriptions" }
+      ]
+    },
+    designSystem: {
+      fonts: [
+        { name: "Playfair Display", style: "Headlines & Display", specimen: "Design your home with confidence" },
+        { name: "Inter", style: "Body & Navigation", specimen: "Discover curated interiors, real budgets, and trusted studios — handpicked for you." }
+      ],
+      colors: [
+        { name: "Charcoal", hex: "#1A1A1A" },
+        { name: "Warm Beige", hex: "#C9A76B" },
+        { name: "Ivory", hex: "#FAF7F2" },
+        { name: "Soft Gray", hex: "#E8E4DF" }
+      ],
+      gridNote: "Clean editorial layout with warm neutral palette. Studio cards use consistent imagery with trust badges. Interactive tools feature form-driven UIs with real-time feedback. Responsive grid adapts from desktop to mobile seamlessly."
+    },
+    results: {
+      stats: [
+        { value: "6", label: "Design styles catalogued" },
+        { value: "3", label: "Interactive tools built" },
+        { value: "WIP", label: "Currently in development" },
+        { value: "100%", label: "Mobile responsive" }
+      ],
+      quote: {
+        text: "PlusMinus didn't just build a website — they built an entire product ecosystem. The moodboard builder and cost estimator are game-changers for our users.",
+        author: "Interior Dictionary",
+        role: "Founding Team"
+      }
+    },
+    heroImage: id1,
+    heroImages: {
+      browser: idFullpage,
+    },
+    resultImage: idFullpage,
+    galleryImages: [id1, id2, id3, id4, id5, id6, id7, id8, id9],
+    galleryContain: true,
+    techStack: [
+      { name: "React", purpose: "Frontend framework" },
+      { name: "Vite", purpose: "Build tool & dev server" },
+      { name: "TypeScript", purpose: "Type-safe development" },
+      { name: "Tailwind CSS", purpose: "Utility-first styling" },
+      { name: "Framer Motion", purpose: "Scroll & interaction animations" },
+      { name: "Supabase", purpose: "Backend, auth & database" },
+      { name: "React Router", purpose: "Multi-page SPA routing" },
+      { name: "Responsive Design", purpose: "Mobile-first approach" }
+    ],
+    sitePages: [
+      { name: "Home", description: "Hero with studio finder, real project showcases, design style explorer, curated studios preview, how it works, and featured transformation" },
+      { name: "Styles", description: "Six curated design languages with color palettes, typical budgets, and detailed breakdowns" },
+      { name: "Components", description: "Interior component library with material options and pricing" },
+      { name: "Projects", description: "Real project gallery with transparent budget breakdowns and style tags" },
+      { name: "Studios", description: "Curated, vetted interior design studios filterable by city, budget, and style" },
+      { name: "Blog", description: "Interior design articles, trends, and guides" },
+      { name: "Tools", description: "Cost Estimator and Moodboard Builder — interactive tools for homeowners" }
+    ],
+    liveUrl: "https://interior-dictionary.vercel.app",
     nextProject: { slug: "trots-architects", title: "Trots Architects", gradient: "linear-gradient(135deg, hsl(220 25% 18%), hsl(200 30% 25%), hsl(180 20% 15%))" }
   }
 };

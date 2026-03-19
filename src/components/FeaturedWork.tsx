@@ -66,6 +66,14 @@ const projects = [
     gradient: "linear-gradient(135deg, hsl(30 25% 15%), hsl(35 30% 22%), hsl(25 20% 10%))",
     preview: ii1,
   },
+  {
+    title: "Interior Dictionary",
+    slug: "interior-dictionary",
+    category: "Web App Design & Development",
+    year: "2025",
+    gradient: "linear-gradient(135deg, hsl(30 15% 12%), hsl(35 20% 18%), hsl(25 10% 8%))",
+    preview: id1,
+  },
 ];
 
 const FeaturedWork = () => {
