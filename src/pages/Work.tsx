@@ -11,6 +11,7 @@ import sp2 from "@/assets/sp-2.png";
 import tsr1 from "@/assets/tsr-1.png";
 import sr1 from "@/assets/sr-1.png";
 import ii1 from "@/assets/ii-1.png";
+import id1 from "@/assets/id-1.png";
 
 const categories = ["All", "Web Design", "Development", "Branding"];
 
@@ -22,6 +23,7 @@ const projects = [
   { title: "The Smart Realtors", slug: "the-smart-realtors", category: "Web Design", year: "2025", gradient: "linear-gradient(135deg, hsl(220 50% 15%), hsl(210 60% 22%), hsl(225 40% 12%))", preview: tsr1 },
   { title: "Shharda Reliable", slug: "shharda-reliable", category: "Web Design", year: "2025", gradient: "linear-gradient(135deg, hsl(40 60% 12%), hsl(45 50% 20%), hsl(35 40% 10%))", preview: sr1 },
   { title: "Innovators Interiors", slug: "innovators-interiors", category: "Web Design", year: "2025", gradient: "linear-gradient(135deg, hsl(30 25% 15%), hsl(35 30% 22%), hsl(25 20% 10%))", preview: ii1 },
+  { title: "Interior Dictionary", slug: "interior-dictionary", category: "Development", year: "2025", gradient: "linear-gradient(135deg, hsl(30 15% 12%), hsl(35 20% 18%), hsl(25 10% 8%))", preview: id1 },
 ];
 
 const Work = () => {

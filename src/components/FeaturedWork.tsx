@@ -8,6 +8,7 @@ import sp2 from "@/assets/sp-2.png";
 import tsr1 from "@/assets/tsr-1.png";
 import sr1 from "@/assets/sr-1.png";
 import ii1 from "@/assets/ii-1.png";
+import id1 from "@/assets/id-1.png";
 
 const projects = [
   {
@@ -64,6 +65,14 @@ const projects = [
     year: "2025",
     gradient: "linear-gradient(135deg, hsl(30 25% 15%), hsl(35 30% 22%), hsl(25 20% 10%))",
     preview: ii1,
+  },
+  {
+    title: "Interior Dictionary",
+    slug: "interior-dictionary",
+    category: "Web App Design & Development",
+    year: "2025",
+    gradient: "linear-gradient(135deg, hsl(30 15% 12%), hsl(35 20% 18%), hsl(25 10% 8%))",
+    preview: id1,
   },
 ];
 
