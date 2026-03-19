@@ -7,6 +7,7 @@ import uda1 from "@/assets/uda-1.png";
 import sp2 from "@/assets/sp-2.png";
 import tsr1 from "@/assets/tsr-1.png";
 import sr1 from "@/assets/sr-1.png";
+import ii1 from "@/assets/ii-1.png";
 
 const projects = [
   {
