@@ -57,6 +57,16 @@ import sr6 from "@/assets/sr-6.png";
 import sr7 from "@/assets/sr-7.png";
 import sr8 from "@/assets/sr-8.png";
 import srFullpage from "@/assets/sr-fullpage.png";
+import ii1 from "@/assets/ii-1.png";
+import ii2 from "@/assets/ii-2.png";
+import ii3 from "@/assets/ii-3.png";
+import ii4 from "@/assets/ii-4.png";
+import ii5 from "@/assets/ii-5.png";
+import ii6 from "@/assets/ii-6.png";
+import ii7 from "@/assets/ii-7.png";
+import ii8 from "@/assets/ii-8.png";
+import ii9 from "@/assets/ii-9.png";
+import iiFullpage from "@/assets/ii-fullpage.png";
 interface CaseStudyData {
   slug: string;
   title: string;
@@ -585,6 +595,92 @@ const caseStudies: Record<string, CaseStudyData> = {
       { name: "Contact", description: "Multi-field inquiry form with product interest selection, WhatsApp integration, and office details" }
     ],
     liveUrl: "https://shhardareliable.com",
+    nextProject: { slug: "innovators-interiors", title: "Innovators Interiors", gradient: "linear-gradient(135deg, hsl(30 25% 15%), hsl(35 30% 22%), hsl(25 20% 10%))" }
+  },
+  "innovators-interiors": {
+    slug: "innovators-interiors",
+    title: "Innovators Interiors",
+    category: "Web Design & Development",
+    year: "2025",
+    heroGradient: "linear-gradient(135deg, hsl(30 25% 15%), hsl(35 30% 22%), hsl(25 20% 10%))",
+    tagline: "Design beyond space — Mumbai's trusted interior studio, now digital.",
+    mockupColors: ["#1A1A1A", "#C9A76B", "#FAF7F2", "#3D3D3D"],
+    overview:
+    "Innovators Interiors is a Mumbai-based interior design studio founded in 2012 by Urvashi Jain, specializing in residential and commercial interiors. With 105+ projects and 15+ years of experience, they needed a digital presence that reflected their thoughtful design philosophy — so we built an elegant, image-driven website that lets their interiors speak.",
+    problem: {
+      title: "The Challenge",
+      description:
+      "Despite a strong local reputation and 105+ completed projects, Innovators Interiors lacked a digital platform that showcased their portfolio and converted visitors into consultation requests.",
+      challenges: [
+        "No professional website to showcase residential and commercial projects",
+        "Beautiful project photography was underutilized and not accessible online",
+        "No digital inquiry pipeline — all leads came through word of mouth",
+        "Mobile-first audience had no way to browse their portfolio",
+        "Services and process weren't communicated clearly to prospective clients"
+      ]
+    },
+    strategy: {
+      title: "Our Strategy",
+      description:
+      "We crafted an editorial, image-first experience that positions Innovators Interiors as Mumbai's go-to interior design studio — combining warmth with professionalism.",
+      pillars: [
+        { label: "Image-First Portfolio", detail: "Full-screen project showcases with high-res photography — letting the interiors speak for themselves" },
+        { label: "Founder-Led Narrative", detail: "Personal brand storytelling around Urvashi Jain's BE EXTC background and design philosophy" },
+        { label: "Service Clarity", detail: "Five service verticals clearly presented — Residential, Commercial, Turnkey, Project Management, and Custom Furniture" },
+        { label: "Consultation Pipeline", detail: "Embedded contact forms with project type selection — converting browsers into booked consultations" }
+      ]
+    },
+    designSystem: {
+      fonts: [
+        { name: "Cormorant Garamond", style: "Headlines & Display", specimen: "Design Beyond Space" },
+        { name: "DM Sans", style: "Body & Navigation", specimen: "Transforming spaces with thoughtful design and quality execution since 2012." }
+      ],
+      colors: [
+        { name: "Charcoal", hex: "#1A1A1A" },
+        { name: "Warm Gold", hex: "#C9A76B" },
+        { name: "Ivory", hex: "#FAF7F2" },
+        { name: "Slate", hex: "#3D3D3D" }
+      ],
+      gridNote: "Full-bleed hero carousel with editorial overlays. Project pages use immersive photography with minimal text. Warm, neutral palette inspired by interior design aesthetics."
+    },
+    results: {
+      stats: [
+        { value: "105+", label: "Projects completed" },
+        { value: "15+", label: "Years in business" },
+        { value: "3×", label: "Increase in consultations" },
+        { value: "5", label: "Service verticals launched" }
+      ],
+      quote: {
+        text: "PlusMinus captured exactly what we stand for — thoughtful design with quality execution. Our website finally reflects the spaces we create.",
+        author: "Urvashi Jain",
+        role: "Founder, Innovators Interiors"
+      }
+    },
+    heroImage: ii1,
+    heroImages: {
+      browser: iiFullpage,
+    },
+    resultImage: iiFullpage,
+    galleryImages: [ii1, ii2, ii3, ii4, ii5, ii6, ii7, ii8, ii9],
+    galleryContain: true,
+    techStack: [
+      { name: "React", purpose: "Frontend framework" },
+      { name: "Vite", purpose: "Build tool & dev server" },
+      { name: "TypeScript", purpose: "Type-safe development" },
+      { name: "Tailwind CSS", purpose: "Utility-first styling" },
+      { name: "Framer Motion", purpose: "Scroll & interaction animations" },
+      { name: "React Router", purpose: "Multi-page SPA routing" },
+      { name: "Responsive Design", purpose: "Mobile-first approach" },
+      { name: "SEO Optimized", purpose: "Meta tags & structured data" }
+    ],
+    sitePages: [
+      { name: "Home", description: "Hero carousel with founder imagery, featured projects, about section, services overview, and contact form" },
+      { name: "Projects", description: "Filterable portfolio — Residential, Commercial, Hospitality — with project detail pages" },
+      { name: "About", description: "Founder story, company philosophy, stats, and design values" },
+      { name: "Services", description: "Five service verticals with process timeline — Consultation, Concept, Design, Execute" },
+      { name: "Contact", description: "Inquiry form with studio address, hours, and project type selection" }
+    ],
+    liveUrl: "https://innovatorsinteriors.vercel.app",
     nextProject: { slug: "trots-architects", title: "Trots Architects", gradient: "linear-gradient(135deg, hsl(220 25% 18%), hsl(200 30% 25%), hsl(180 20% 15%))" }
   }
 };

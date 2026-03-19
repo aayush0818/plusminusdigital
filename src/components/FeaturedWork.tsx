@@ -7,6 +7,7 @@ import uda1 from "@/assets/uda-1.png";
 import sp2 from "@/assets/sp-2.png";
 import tsr1 from "@/assets/tsr-1.png";
 import sr1 from "@/assets/sr-1.png";
+import ii1 from "@/assets/ii-1.png";
 
 const projects = [
   {
@@ -55,6 +56,14 @@ const projects = [
     year: "2025",
     gradient: "linear-gradient(135deg, hsl(40 60% 12%), hsl(45 50% 20%), hsl(35 40% 10%))",
     preview: sr1,
+  },
+  {
+    title: "Innovators Interiors",
+    slug: "innovators-interiors",
+    category: "Web Design & Development",
+    year: "2025",
+    gradient: "linear-gradient(135deg, hsl(30 25% 15%), hsl(35 30% 22%), hsl(25 20% 10%))",
+    preview: ii1,
   },
 ];
 
