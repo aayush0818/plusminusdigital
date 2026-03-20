@@ -25,7 +25,7 @@ const InsightsSection = () => {
     <section id="journal" className="section-light border-t border-border" style={{ padding: "clamp(80px, 12vw, 160px) 0" }}>
       <div className="container-site">
         <motion.div
-          className="flex items-end justify-between mb-16"
+          className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between mb-10 md:mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
