@@ -35,6 +35,11 @@ const Work = () => {
 
   return (
     <>
+      <SEOHead
+        title="Our Work — PlusMinus Studio Portfolio"
+        description="Explore our portfolio of high-converting websites built for ambitious brands across real estate, architecture, interiors, and more."
+        path="/work"
+      />
       <Navbar />
       <main>
         <section className="section-light pt-28 md:pt-40 pb-12 md:pb-20">
