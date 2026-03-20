@@ -332,6 +332,75 @@ const About = () => {
           </div>
         </section>
 
+        {/* Co-Founders */}
+        <section className="section-light border-t border-border" style={{ padding: "clamp(80px, 12vw, 160px) 0" }}>
+          <div className="container-site">
+            <motion.div
+              className="mb-12 md:mb-20"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+            >
+              <p className="text-[13px] font-semibold tracking-[0.2em] uppercase text-foreground-muted mb-4">
+                The Founders
+              </p>
+              <h2
+                className="font-bold text-foreground"
+                style={{ fontSize: "clamp(32px, 5vw, 64px)", lineHeight: 1.05, letterSpacing: "-0.03em" }}
+              >
+                Built by <span className="font-display italic font-normal">two</span>
+              </h2>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
+              {[
+                {
+                  name: "Aayush Pandey",
+                  role: "Co-Founder",
+                  focus: "Strategy & Design",
+                  bio: "Obsessed with the intersection of aesthetics and conversion. Leads creative direction and ensures every project communicates with clarity and intent.",
+                  initials: "AP",
+                },
+                {
+                  name: "Atharva Khuke",
+                  role: "Co-Founder",
+                  focus: "Engineering & Development",
+                  bio: "Turns ambitious designs into performant, scalable code. Leads technical architecture and ensures every build is as clean under the hood as it looks on screen.",
+                  initials: "AK",
+                },
+              ].map((founder, i) => (
+                <motion.div
+                  key={founder.name}
+                  className="p-8 md:p-10 lg:p-14 border-t border-border"
+                  style={{ borderRight: i === 0 ? "1px solid hsl(var(--border))" : "none" }}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: i * 0.12 }}
+                >
+                  <div
+                    className="w-16 h-16 rounded-full flex items-center justify-center mb-6 text-lg font-bold"
+                    style={{ background: "hsl(0 0% 8%)", color: "hsl(0 0% 60%)" }}
+                  >
+                    {founder.initials}
+                  </div>
+                  <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-1">{founder.name}</h3>
+                  <p className="text-[13px] font-semibold tracking-[0.15em] uppercase text-foreground-muted mb-1">
+                    {founder.role}
+                  </p>
+                  <p className="text-[13px] font-medium text-foreground-muted mb-5" style={{ color: "hsl(0 0% 45%)" }}>
+                    {founder.focus}
+                  </p>
+                  <p className="text-sm md:text-base leading-relaxed text-foreground-muted">
+                    {founder.bio}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <CTASection />
       </main>
       <Footer />
