@@ -8,6 +8,7 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import InsightsSection from "@/components/InsightsSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
 
 const Index = () => {
   return (
