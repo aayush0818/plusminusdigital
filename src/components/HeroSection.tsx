@@ -34,7 +34,7 @@ const HeroSection = () => {
     <section className="section-dark min-h-screen relative flex flex-col overflow-hidden">
       {/* Logo watermark */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none" aria-hidden="true">
-        <img src={logoMark} alt="" className="w-[40vw] max-w-[500px] opacity-[0.04]" style={{ filter: "invert(1)" }} />
+        <img src={logoMark} alt="" className="w-[40vw] max-w-[500px] opacity-[0.06]" />
       </div>
 
       <div className="flex-1 flex items-center container-site pt-28 pb-16 md:pt-32 md:pb-20 relative z-10">
@@ -64,7 +64,7 @@ const HeroSection = () => {
                 </motion.span>
               </AnimatePresence>
             </div>
-            <img src={logoMark} alt="" className="h-4 w-auto opacity-30 hidden md:block" style={{ filter: "invert(1)" }} />
+            <img src={logoMark} alt="" className="h-4 w-auto opacity-30 hidden md:block" />
             <div className="flex items-center gap-3">
               <span className="text-[11px] md:text-[13px] font-semibold tracking-[0.2em] uppercase" style={{ color: "hsl(0 0% 25%)" }}>
                 Plus the

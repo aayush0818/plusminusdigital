@@ -54,7 +54,7 @@ const Navbar = () => {
             src={logoMark}
             alt="PlusMinus"
             className="h-8 md:h-10 w-auto transition-all duration-300"
-            style={{ filter: isDark ? "invert(1)" : "none" }}
+            style={{ filter: isDark ? "none" : "invert(1)" }}
           />
         </Link>
 
