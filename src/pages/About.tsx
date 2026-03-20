@@ -74,7 +74,7 @@ const About = () => {
         >
           {/* Watermark */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none" aria-hidden="true">
-            <img src={logoMark} alt="" className="w-[30vw] max-w-[360px] opacity-[0.03]" style={{ filter: "invert(1)" }} />
+            <img src={logoMark} alt="" className="w-[30vw] max-w-[360px] opacity-[0.04]" />
           </div>
 
           <div className="container-site relative z-10">

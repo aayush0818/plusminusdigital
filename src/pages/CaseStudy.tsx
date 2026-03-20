@@ -824,7 +824,7 @@ const CaseStudy = () => {
 
           {/* Logo watermark */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-[1]" aria-hidden="true">
-            <img src={logoMark} alt="" className="w-[25vw] max-w-[300px] opacity-[0.04]" style={{ filter: "invert(1)" }} />
+            <img src={logoMark} alt="" className="w-[25vw] max-w-[300px] opacity-[0.06]" />
           </div>
 
           <div className="container-site pb-12 md:pb-20 pt-28 md:pt-40 relative z-10 w-full">
