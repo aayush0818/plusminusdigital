@@ -34,11 +34,32 @@ const stats = [
   { value: "98%", label: "On-Time Delivery" },
 ];
 
-const milestones = [
-  { year: "2025", event: "Founded in Mumbai, India as a design-first digital studio" },
-  { year: "2025", event: "Delivered first 10 projects across India and the Middle East" },
-  { year: "2025", event: "Expanded into full-stack development and conversion optimization" },
-  { year: "2026", event: "Crossed 20+ projects with clients spanning 4 continents" },
+const capabilities = [
+  {
+    number: "01",
+    title: "Design That Converts",
+    description: "Not just pretty screens — every layout, color, and interaction is engineered to move users toward action.",
+  },
+  {
+    number: "02",
+    title: "Code That Scales",
+    description: "Clean, modular architecture built for performance. No bloated frameworks, no tech debt from day one.",
+  },
+  {
+    number: "03",
+    title: "Strategy Before Pixels",
+    description: "We study your market, your users, and your goals before we open a design tool. Research first, always.",
+  },
+  {
+    number: "04",
+    title: "Speed as a Feature",
+    description: "Fast turnarounds without cutting corners. We ship in weeks, not months — because momentum matters.",
+  },
+  {
+    number: "05",
+    title: "Full Ownership",
+    description: "You own everything we build — the code, the designs, the assets. No lock-in, no licensing games.",
+  },
 ];
 
 const About = () => {
