@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
+import SEOHead from "@/components/SEOHead";
 import corrxp1 from "@/assets/corrxp-1.png";
 import uda1 from "@/assets/uda-1.png";
 import sp2 from "@/assets/sp-2.png";
