@@ -66,6 +66,11 @@ const capabilities = [
 const About = () => {
   return (
     <>
+      <SEOHead
+        title="About Us — PlusMinus Studio"
+        description="PlusMinus is a design and development studio founded in Mumbai. We partner with ambitious brands to create digital experiences that are as strategic as they are beautiful."
+        path="/about"
+      />
       <Navbar />
       <main>
         {/* Hero */}
