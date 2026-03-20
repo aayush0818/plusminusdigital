@@ -124,7 +124,7 @@ const HeroSection = () => {
             transition={{ delay: 1.2, duration: 0.7 }}
           >
             <p className="text-base md:text-lg max-w-md leading-relaxed" style={{ color: "hsl(0 0% 40%)" }}>
-              We partner with ambitious brands to create digital experiences that convert visitors into customers.
+              Strategy-led design and development for brands that refuse to blend in.
             </p>
             <a
               href="#work"
