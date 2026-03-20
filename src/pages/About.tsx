@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
+import SEOHead from "@/components/SEOHead";
 import logoMark from "@/assets/logo-icon.png";
 
 const values = [
