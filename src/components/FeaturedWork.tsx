@@ -5,18 +5,16 @@ import { Link } from "react-router-dom";
 import corrxp1 from "@/assets/corrxp-1.png";
 import uda1 from "@/assets/uda-1.png";
 import sp2 from "@/assets/sp-2.png";
-import tsr1 from "@/assets/tsr-1.png";
 import sr1 from "@/assets/sr-1.png";
-import ii1 from "@/assets/ii-1.png";
-import id1 from "@/assets/id-1.png";
 
 const projects = [
   {
-    title: "Trots Architects",
-    slug: "trots-architects",
-    category: "Architecture",
+    title: "CORR XP",
+    slug: "corrxp",
+    category: "Web Design & Development",
     year: "2025",
-    gradient: "linear-gradient(135deg, hsl(220 25% 18%), hsl(200 30% 25%), hsl(180 20% 15%))",
+    gradient: "linear-gradient(135deg, hsl(20 60% 10%), hsl(25 70% 18%), hsl(15 40% 8%))",
+    preview: corrxp1,
   },
   {
     title: "UDA India",
@@ -27,14 +25,6 @@ const projects = [
     preview: uda1,
   },
   {
-    title: "CORR XP",
-    slug: "corrxp",
-    category: "Web Design & Development",
-    year: "2025",
-    gradient: "linear-gradient(135deg, hsl(20 60% 10%), hsl(25 70% 18%), hsl(15 40% 8%))",
-    preview: corrxp1,
-  },
-  {
     title: "Spaces & Places",
     slug: "spaces-places",
     category: "Web Design & Development",
@@ -43,36 +33,12 @@ const projects = [
     preview: sp2,
   },
   {
-    title: "The Smart Realtors",
-    slug: "the-smart-realtors",
-    category: "Landing Page Design",
-    year: "2025",
-    gradient: "linear-gradient(135deg, hsl(220 50% 15%), hsl(210 60% 22%), hsl(225 40% 12%))",
-    preview: tsr1,
-  },
-  {
     title: "Shharda Reliable",
     slug: "shharda-reliable",
     category: "Web Design & Development",
     year: "2025",
     gradient: "linear-gradient(135deg, hsl(40 60% 12%), hsl(45 50% 20%), hsl(35 40% 10%))",
     preview: sr1,
-  },
-  {
-    title: "Innovators Interiors",
-    slug: "innovators-interiors",
-    category: "Web Design & Development",
-    year: "2025",
-    gradient: "linear-gradient(135deg, hsl(30 25% 15%), hsl(35 30% 22%), hsl(25 20% 10%))",
-    preview: ii1,
-  },
-  {
-    title: "Interior Dictionary",
-    slug: "interior-dictionary",
-    category: "Web App Design & Development",
-    year: "2025",
-    gradient: "linear-gradient(135deg, hsl(30 15% 12%), hsl(35 20% 18%), hsl(25 10% 8%))",
-    preview: id1,
   },
 ];
 
