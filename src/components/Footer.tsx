@@ -23,7 +23,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 mb-12 md:mb-20">
           <div className="md:col-span-2">
             <Link to="/" className="mb-4 inline-block">
-              <img src={logoMark} alt="PlusMinus" className="h-6 md:h-8 w-auto" style={{ filter: "invert(1)" }} />
+              <img src={logoMark} alt="PlusMinus" className="h-6 md:h-8 w-auto" />
             </Link>
             <p className="text-[11px] font-semibold tracking-[0.25em] uppercase mb-3" style={{ color: "hsl(0 0% 30%)" }}>
               Minus the noise. Plus the results.

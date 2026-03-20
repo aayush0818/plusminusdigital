@@ -64,7 +64,7 @@ const HeroSection = () => {
                 </motion.span>
               </AnimatePresence>
             </div>
-            <img src={logoMark} alt="" className="h-4 w-auto opacity-30 hidden md:block" style={{ filter: "invert(1)" }} />
+            <img src={logoMark} alt="" className="h-4 w-auto opacity-30 hidden md:block" />
             <div className="flex items-center gap-3">
               <span className="text-[11px] md:text-[13px] font-semibold tracking-[0.2em] uppercase" style={{ color: "hsl(0 0% 25%)" }}>
                 Plus the
