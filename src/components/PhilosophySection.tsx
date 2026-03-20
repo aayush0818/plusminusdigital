@@ -3,7 +3,7 @@ import { motion, useInView } from "framer-motion";
 
 const stats = [
   { number: 20, suffix: "+", label: "Projects Shipped" },
-  { number: 4, suffix: "", label: "Continents Served" },
+  { number: 8, suffix: "+", label: "Industries Covered" },
   { number: 3, suffix: "×", label: "Avg. Conversion Lift" },
   { number: 98, suffix: "%", label: "On-Time Delivery" },
 ];
