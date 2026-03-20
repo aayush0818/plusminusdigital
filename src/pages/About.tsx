@@ -28,10 +28,10 @@ const values = [
 ];
 
 const stats = [
-  { value: "20+", label: "Projects Delivered" },
-  { value: "4", label: "Continents Reached" },
-  { value: "2025", label: "Year Founded" },
-  { value: "100%", label: "Client Retention" },
+  { value: "20+", label: "Projects Shipped" },
+  { value: "8+", label: "Industries Covered" },
+  { value: "3×", label: "Avg. Conversion Lift" },
+  { value: "98%", label: "On-Time Delivery" },
 ];
 
 const milestones = [
