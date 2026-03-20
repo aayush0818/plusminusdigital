@@ -34,11 +34,32 @@ const stats = [
   { value: "98%", label: "On-Time Delivery" },
 ];
 
-const milestones = [
-  { year: "2025", event: "Founded in Mumbai, India as a design-first digital studio" },
-  { year: "2025", event: "Delivered first 10 projects across India and the Middle East" },
-  { year: "2025", event: "Expanded into full-stack development and conversion optimization" },
-  { year: "2026", event: "Crossed 20+ projects with clients spanning 4 continents" },
+const capabilities = [
+  {
+    number: "01",
+    title: "Design That Converts",
+    description: "Not just pretty screens — every layout, color, and interaction is engineered to move users toward action.",
+  },
+  {
+    number: "02",
+    title: "Code That Scales",
+    description: "Clean, modular architecture built for performance. No bloated frameworks, no tech debt from day one.",
+  },
+  {
+    number: "03",
+    title: "Strategy Before Pixels",
+    description: "We study your market, your users, and your goals before we open a design tool. Research first, always.",
+  },
+  {
+    number: "04",
+    title: "Speed as a Feature",
+    description: "Fast turnarounds without cutting corners. We ship in weeks, not months — because momentum matters.",
+  },
+  {
+    number: "05",
+    title: "Full Ownership",
+    description: "You own everything we build — the code, the designs, the assets. No lock-in, no licensing games.",
+  },
 ];
 
 const About = () => {
@@ -287,7 +308,7 @@ const About = () => {
           </div>
         </section>
 
-        {/* Timeline */}
+        {/* Capabilities */}
         <section className="section-dark" style={{ padding: "clamp(80px, 12vw, 160px) 0" }}>
           <div className="container-site">
             <motion.div
@@ -298,32 +319,38 @@ const About = () => {
               transition={{ duration: 0.7 }}
             >
               <p className="text-[13px] font-semibold tracking-[0.2em] uppercase mb-4" style={{ color: "hsl(0 0% 40%)" }}>
-                Our Journey
+                Why Us
               </p>
               <h2
-                className="font-bold"
+                className="font-bold max-w-xl"
                 style={{ fontSize: "clamp(32px, 5vw, 64px)", lineHeight: 1.05, letterSpacing: "-0.03em", color: "hsl(0 0% 90%)" }}
               >
-                Milestones
+                What we bring to{" "}
+                <span className="font-display italic font-normal" style={{ color: "hsl(0 0% 55%)" }}>
+                  the table
+                </span>
               </h2>
             </motion.div>
 
             <div className="space-y-0">
-              {milestones.map((milestone, i) => (
+              {capabilities.map((cap, i) => (
                 <motion.div
-                  key={i}
-                  className="border-t flex items-baseline gap-8 md:gap-16 py-8 md:py-12"
+                  key={cap.number}
+                  className="border-t grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 py-8 md:py-12 group"
                   style={{ borderColor: "hsl(0 0% 14%)" }}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.08 }}
+                  transition={{ duration: 0.5, delay: i * 0.06 }}
                 >
-                  <span className="text-3xl md:text-5xl font-bold shrink-0" style={{ color: "hsl(0 0% 22%)" }}>
-                    {milestone.year}
+                  <span className="md:col-span-1 text-[13px] font-semibold" style={{ color: "hsl(0 0% 28%)" }}>
+                    {cap.number}
                   </span>
-                  <p className="text-base md:text-lg leading-relaxed" style={{ color: "hsl(0 0% 55%)" }}>
-                    {milestone.event}
+                  <h3 className="md:col-span-4 text-xl md:text-2xl font-bold" style={{ color: "hsl(0 0% 85%)" }}>
+                    {cap.title}
+                  </h3>
+                  <p className="md:col-span-7 text-sm md:text-base leading-relaxed" style={{ color: "hsl(0 0% 45%)" }}>
+                    {cap.description}
                   </p>
                 </motion.div>
               ))}
