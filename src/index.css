@@ -86,6 +86,12 @@
     cursor: none;
   }
 
+  @media (hover: none), (pointer: coarse) {
+    body, a, button, [role="button"], input, textarea, select, [data-cursor-hover] {
+      cursor: auto;
+    }
+  }
+
   ::selection {
     background: hsl(var(--foreground) / 0.08);
     color: hsl(var(--foreground));
