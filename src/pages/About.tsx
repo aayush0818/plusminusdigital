@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
+import SEOHead from "@/components/SEOHead";
 import logoMark from "@/assets/logo-icon.png";
 
 const values = [
@@ -65,6 +66,11 @@ const capabilities = [
 const About = () => {
   return (
     <>
+      <SEOHead
+        title="About Us — PlusMinus Studio"
+        description="PlusMinus is a design and development studio founded in Mumbai. We partner with ambitious brands to create digital experiences that are as strategic as they are beautiful."
+        path="/about"
+      />
       <Navbar />
       <main>
         {/* Hero */}

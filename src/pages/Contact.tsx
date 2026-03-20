@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
 import logoMark from "@/assets/logo-icon.png";
 
 const budgetOptions = ["Under ₹5L", "₹5L – ₹15L", "₹15L – ₹30L", "₹30L – ₹50L", "₹50L+"];
@@ -21,6 +22,11 @@ const Contact = () => {
 
   return (
     <>
+      <SEOHead
+        title="Contact — PlusMinus Studio"
+        description="Have a project in mind? Let's talk. Get in touch with PlusMinus Studio for web design, development, and brand strategy."
+        path="/contact"
+      />
       <Navbar />
       <main>
         <section className="section-light pt-28 md:pt-40 pb-20 md:pb-40 min-h-screen">

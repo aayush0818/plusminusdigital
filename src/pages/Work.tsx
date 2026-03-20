@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
+import SEOHead from "@/components/SEOHead";
 import corrxp1 from "@/assets/corrxp-1.png";
 import uda1 from "@/assets/uda-1.png";
 import sp2 from "@/assets/sp-2.png";
@@ -34,6 +35,11 @@ const Work = () => {
 
   return (
     <>
+      <SEOHead
+        title="Our Work — PlusMinus Studio Portfolio"
+        description="Explore our portfolio of high-converting websites built for ambitious brands across real estate, architecture, interiors, and more."
+        path="/work"
+      />
       <Navbar />
       <main>
         <section className="section-light pt-28 md:pt-40 pb-12 md:pb-20">

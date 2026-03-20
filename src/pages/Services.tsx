@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
+import SEOHead from "@/components/SEOHead";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const services = [
@@ -58,6 +59,11 @@ const ServicesPage = () => {
 
   return (
     <>
+      <SEOHead
+        title="Services — PlusMinus Studio"
+        description="End-to-end digital services: brand strategy, website design, web development, conversion optimization, and content strategy for ambitious brands."
+        path="/services"
+      />
       <Navbar />
       <main>
         <section className="section-light pt-28 md:pt-40 pb-12 md:pb-20">

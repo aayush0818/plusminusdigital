@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
 
 const categories = ["All", "Design", "Strategy", "Development", "Conversion"];
 
@@ -26,6 +27,11 @@ const Insights = () => {
 
   return (
     <>
+      <SEOHead
+        title="Journal — PlusMinus Studio Insights"
+        description="Thoughts on design, development, and building digital products that perform. Insights from PlusMinus Studio."
+        path="/insights"
+      />
       <Navbar />
       <main>
         <section className="section-light pt-28 md:pt-40 pb-12 md:pb-20">
