@@ -22,7 +22,7 @@ const articles = [
 
 const InsightsSection = () => {
   return (
-    <section id="journal" className="section-light border-t border-border" style={{ padding: "160px 0" }}>
+    <section id="journal" className="section-light border-t border-border" style={{ padding: "clamp(80px, 12vw, 160px) 0" }}>
       <div className="container-site">
         <motion.div
           className="flex items-end justify-between mb-16"
