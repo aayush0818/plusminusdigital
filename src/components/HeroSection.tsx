@@ -121,7 +121,7 @@ const HeroSection = () => {
             transition={{ delay: 1.2, duration: 0.7 }}
           >
             <p className="text-base md:text-lg max-w-lg leading-relaxed" style={{ color: "hsl(0 0% 40%)" }}>
-              We cut through the noise and build websites that actually move the needle. No templates, no guesswork, just sharp design backed by real strategy.
+              Your website should be your best salesperson. We design and build sites that look incredible, load fast, and get people to hit that button.
             </p>
             
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
