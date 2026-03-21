@@ -2,11 +2,11 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 const steps = [
-  { num: "01", title: "Discovery", desc: "Understanding your business, audience, and goals through deep research and stakeholder interviews." },
-  { num: "02", title: "Strategy", desc: "Defining structure, messaging, and positioning based on data-driven insights." },
-  { num: "03", title: "Design", desc: "Crafting a visual system that communicates value and converts visitors." },
-  { num: "04", title: "Development", desc: "Building fast, scalable, and meticulously engineered digital products." },
-  { num: "05", title: "Launch", desc: "Deployment, optimization, and continuous measurement of results." },
+  { num: "01", title: "Discovery", desc: "We dig into your business, your audience, and what you're trying to achieve through research and honest conversations." },
+  { num: "02", title: "Strategy", desc: "We define the structure, messaging, and positioning based on what the data actually tells us." },
+  { num: "03", title: "Design", desc: "We build a visual system that communicates value and gets visitors to take action." },
+  { num: "04", title: "Development", desc: "We write clean, fast, scalable code. No shortcuts, no bloat." },
+  { num: "05", title: "Launch", desc: "We deploy, fine-tune, and keep tracking the numbers to make sure it works." },
 ];
 
 const ProcessSection = () => {

@@ -73,7 +73,7 @@ const Footer = () => {
             © 2025 PlusMinus Studio. All rights reserved.
           </p>
           <p className="text-[12px] font-medium" style={{ color: "hsl(0 0% 20%)" }}>
-            Mumbai, India — Available worldwide
+            Mumbai, India · Available worldwide
           </p>
         </div>
       </div>

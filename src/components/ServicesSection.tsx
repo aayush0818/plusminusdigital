@@ -6,22 +6,22 @@ const services = [
   {
     num: "01",
     title: "Brand Strategy",
-    description: "We define your positioning, visual identity, and messaging framework to build a brand that resonates with your ideal audience and stands apart in a crowded market.",
+    description: "We define your positioning, visual identity, and messaging so your brand connects with the right audience and actually stands out.",
   },
   {
     num: "02",
     title: "Website Design",
-    description: "Conversion-focused design systems rooted in user research. Every layout, interaction, and visual decision is intentional — built to communicate value at first glance.",
+    description: "Conversion-focused design rooted in user research. Every layout and interaction is built to communicate value the moment someone lands on your page.",
   },
   {
     num: "03",
     title: "Web Development",
-    description: "Fast, accessible, and meticulously engineered websites built with React, Next.js, and modern tooling. Performance isn't an afterthought — it's the foundation.",
+    description: "Fast, accessible, and well-built websites using React, Next.js, and modern tools. Performance is baked in from the start, not patched on later.",
   },
   {
     num: "04",
     title: "Conversion Optimization",
-    description: "Data-driven improvements that compound. We analyze behavior, run experiments, and implement changes that measurably grow your revenue.",
+    description: "Data-backed improvements that stack up over time. We study user behavior, test ideas, and ship changes that grow your numbers.",
   },
 ];
 

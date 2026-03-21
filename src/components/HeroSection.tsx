@@ -2,11 +2,6 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import logoMark from "@/assets/logo-icon.png";
 
-const clients = [
-  "Spaces & Places", "UDA", "CorrXP", "The Smart Realtors", "SH Harda Reliable", "Innovators Interiors", "Interior Dictionary",
-  "Spaces & Places", "UDA", "CorrXP", "The Smart Realtors", "SH Harda Reliable", "Innovators Interiors", "Interior Dictionary",
-];
-
 const rotatingWords = ["growth.", "revenue.", "conversions.", "results.", "impact."];
 
 const minusWords = ["noise", "clutter", "guesswork", "bloat", "complexity"];
@@ -39,7 +34,7 @@ const HeroSection = () => {
 
       <div className="flex-1 flex items-center container-site pt-28 pb-16 md:pt-32 md:pb-20 relative z-10">
         <div className="w-full">
-          {/* Duality tagline — stacks vertically on mobile */}
+          {/* Duality tagline */}
           <motion.div
             className="flex flex-col md:flex-row items-start md:items-center gap-3 md:gap-6 mb-10 md:mb-16"
             initial={{ opacity: 0 }}
@@ -124,7 +119,7 @@ const HeroSection = () => {
             transition={{ delay: 1.2, duration: 0.7 }}
           >
             <p className="text-base md:text-lg max-w-md leading-relaxed" style={{ color: "hsl(0 0% 40%)" }}>
-              Strategy-led design and development for brands that refuse to blend in.
+              Websites that look sharp, load fast, and actually bring in business. Built from Mumbai for brands everywhere.
             </p>
             <a
               href="#work"
@@ -136,27 +131,6 @@ const HeroSection = () => {
           </motion.div>
         </div>
       </div>
-
-      {/* Client logo bar */}
-      <motion.div
-        className="border-t py-6 md:py-8 overflow-hidden"
-        style={{ borderColor: "hsl(0 0% 15%)" }}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 0.8 }}
-      >
-        <div className="flex whitespace-nowrap animate-logo-scroll">
-          {clients.map((client, i) => (
-            <span
-              key={i}
-              className="mx-6 md:mx-12 text-xs md:text-sm font-semibold tracking-wider uppercase flex-shrink-0"
-              style={{ color: "hsl(0 0% 25%)" }}
-            >
-              {client}
-            </span>
-          ))}
-        </div>
-      </motion.div>
     </section>
   );
 };
