@@ -9,10 +9,9 @@ const footerLinks = {
     { label: "Journal", href: "/insights" },
   ],
   Contact: [
-    { label: "hello@plusminus.studio", href: "mailto:hello@plusminus.studio" },
-    { label: "Instagram", href: "https://instagram.com" },
-    { label: "LinkedIn", href: "https://linkedin.com" },
-    { label: "Twitter", href: "https://twitter.com" },
+    { label: "hello@plusminusdigital.in", href: "mailto:hello@plusminusdigital.in" },
+    { label: "Instagram", href: "https://www.instagram.com/plusminusdigital.in?igsh=MWVvaXZ2bnFha3pyNw==" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/company/plusminusdigital/" },
   ],
 };
 

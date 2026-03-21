@@ -66,8 +66,8 @@ const Contact = () => {
                       <h3 className="text-[12px] font-semibold tracking-[0.15em] uppercase text-foreground-muted mb-2">
                         Email
                       </h3>
-                      <a href="mailto:hello@plusminus.studio" className="text-base md:text-lg font-medium text-foreground hover:text-foreground-muted transition-colors">
-                        hello@plusminus.studio
+                      <a href="mailto:hello@plusminusdigital.in" className="text-base md:text-lg font-medium text-foreground hover:text-foreground-muted transition-colors">
+                        hello@plusminusdigital.in
                       </a>
                     </div>
                     <div>
@@ -82,15 +82,22 @@ const Contact = () => {
                         Social
                       </h3>
                       <div className="flex gap-6">
-                        {["Instagram", "LinkedIn", "Twitter"].map((social) => (
-                          <a
-                            key={social}
-                            href="#"
-                            className="text-sm font-medium text-foreground hover:text-foreground-muted transition-colors"
-                          >
-                            {social}
-                          </a>
-                        ))}
+                        <a
+                          href="https://www.instagram.com/plusminusdigital.in?igsh=MWVvaXZ2bnFha3pyNw=="
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-sm font-medium text-foreground hover:text-foreground-muted transition-colors"
+                        >
+                          Instagram
+                        </a>
+                        <a
+                          href="https://www.linkedin.com/company/plusminusdigital/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-sm font-medium text-foreground hover:text-foreground-muted transition-colors"
+                        >
+                          LinkedIn
+                        </a>
                       </div>
                     </div>
                   </div>

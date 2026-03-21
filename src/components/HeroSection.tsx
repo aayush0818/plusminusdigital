@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Instagram, Linkedin } from "lucide-react";
 import logoMark from "@/assets/logo-icon.png";
 
 const rotatingWords = ["growth.", "revenue.", "conversions.", "results.", "impact."];
@@ -36,7 +37,7 @@ const HeroSection = () => {
         <div className="w-full">
           {/* Duality tagline */}
           <motion.div
-            className="flex flex-col md:flex-row items-start md:items-center gap-3 md:gap-6 mb-10 md:mb-16"
+            className="flex flex-col md:flex-row items-start md:items-center gap-3 md:gap-6 mb-8 md:mb-16"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.8 }}
@@ -112,8 +113,9 @@ const HeroSection = () => {
             </span>
           </h1>
 
+          {/* Subtext + CTA */}
           <motion.div
-            className="mt-10 md:mt-16 flex flex-col sm:flex-row items-start sm:items-center gap-6 md:gap-8"
+            className="mt-8 md:mt-16 flex flex-col gap-6 md:gap-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2, duration: 0.7 }}
@@ -121,12 +123,61 @@ const HeroSection = () => {
             <p className="text-base md:text-lg max-w-md leading-relaxed" style={{ color: "hsl(0 0% 40%)" }}>
               Websites that look sharp, load fast, and actually bring in business. Built from Mumbai for brands everywhere.
             </p>
+            
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
+              <a
+                href="#work"
+                className="text-[13px] font-semibold px-8 py-3.5 rounded-full bg-white hover:bg-white/90 transition-colors w-full sm:w-auto text-center"
+                style={{ color: "hsl(var(--background-dark))" }}
+              >
+                View Our Work
+              </a>
+              <a
+                href="/contact"
+                className="text-[13px] font-semibold px-8 py-3.5 rounded-full border transition-colors w-full sm:w-auto text-center"
+                style={{ borderColor: "hsl(0 0% 30%)", color: "hsl(0 0% 60%)" }}
+              >
+                Get in Touch
+              </a>
+            </div>
+          </motion.div>
+
+          {/* Social links + email - mobile fills the space */}
+          <motion.div
+            className="mt-10 md:mt-20 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.6, duration: 0.7 }}
+          >
+            <div className="flex items-center gap-5">
+              <a
+                href="https://www.instagram.com/plusminusdigital.in?igsh=MWVvaXZ2bnFha3pyNw=="
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-[12px] font-medium tracking-wide uppercase hover:text-white transition-colors"
+                style={{ color: "hsl(0 0% 35%)" }}
+              >
+                <Instagram size={16} />
+                Instagram
+              </a>
+              <span className="w-px h-3" style={{ backgroundColor: "hsl(0 0% 20%)" }} />
+              <a
+                href="https://www.linkedin.com/company/plusminusdigital/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-[12px] font-medium tracking-wide uppercase hover:text-white transition-colors"
+                style={{ color: "hsl(0 0% 35%)" }}
+              >
+                <Linkedin size={16} />
+                LinkedIn
+              </a>
+            </div>
             <a
-              href="#work"
-              className="text-[13px] font-semibold px-8 py-3.5 rounded-full bg-white hover:bg-white/90 transition-colors flex-shrink-0 w-full sm:w-auto text-center"
-              style={{ color: "hsl(var(--background-dark))" }}
+              href="mailto:hello@plusminusdigital.in"
+              className="text-[12px] font-medium tracking-wide hover:text-white transition-colors"
+              style={{ color: "hsl(0 0% 35%)" }}
             >
-              View Our Work
+              hello@plusminusdigital.in
             </a>
           </motion.div>
         </div>
