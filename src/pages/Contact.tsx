@@ -82,15 +82,22 @@ const Contact = () => {
                         Social
                       </h3>
                       <div className="flex gap-6">
-                        {["Instagram", "LinkedIn", "Twitter"].map((social) => (
-                          <a
-                            key={social}
-                            href="#"
-                            className="text-sm font-medium text-foreground hover:text-foreground-muted transition-colors"
-                          >
-                            {social}
-                          </a>
-                        ))}
+                        <a
+                          href="https://www.instagram.com/plusminusdigital.in?igsh=MWVvaXZ2bnFha3pyNw=="
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-sm font-medium text-foreground hover:text-foreground-muted transition-colors"
+                        >
+                          Instagram
+                        </a>
+                        <a
+                          href="https://www.linkedin.com/company/plusminusdigital/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-sm font-medium text-foreground hover:text-foreground-muted transition-colors"
+                        >
+                          LinkedIn
+                        </a>
                       </div>
                     </div>
                   </div>
