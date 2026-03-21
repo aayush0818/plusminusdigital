@@ -75,18 +75,17 @@ const About = () => {
       <main>
         {/* Hero */}
         <section
-          className="section-dark relative overflow-hidden"
+          className="section-light relative overflow-hidden"
           style={{ padding: "clamp(120px, 18vw, 200px) 0 clamp(80px, 12vw, 140px)" }}
         >
           {/* Watermark */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none" aria-hidden="true">
-            <img src={logoMark} alt="" className="w-[30vw] max-w-[360px] opacity-[0.04]" />
+            <img src={logoMark} alt="" className="w-[30vw] max-w-[360px] opacity-[0.06]" />
           </div>
 
           <div className="container-site relative z-10">
             <motion.p
-              className="text-[13px] font-semibold tracking-[0.2em] uppercase mb-6"
-              style={{ color: "hsl(0 0% 40%)" }}
+              className="text-[13px] font-semibold tracking-[0.2em] uppercase text-foreground-muted mb-6"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -95,21 +94,20 @@ const About = () => {
             </motion.p>
 
             <motion.h1
-              className="font-bold max-w-4xl"
-              style={{ fontSize: "clamp(36px, 6vw, 80px)", lineHeight: 1.05, letterSpacing: "-0.03em", color: "hsl(0 0% 95%)" }}
+              className="font-bold max-w-4xl text-foreground"
+              style={{ fontSize: "clamp(36px, 6vw, 80px)", lineHeight: 1.05, letterSpacing: "-0.03em" }}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
             >
               We subtract the noise.{" "}
-              <span className="font-display italic font-normal" style={{ color: "hsl(0 0% 55%)" }}>
+              <span className="font-display italic font-normal text-foreground-muted">
                 We add the meaning.
               </span>
             </motion.h1>
 
             <motion.p
-              className="mt-6 md:mt-8 text-base md:text-lg max-w-2xl leading-relaxed"
-              style={{ color: "hsl(0 0% 50%)" }}
+              className="mt-6 md:mt-8 text-base md:text-lg max-w-2xl leading-relaxed text-foreground-muted"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.25 }}
