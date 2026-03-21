@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 import logoMark from "@/assets/logo-icon.png";
 
-const budgetOptions = ["Under ₹5L", "₹5L – ₹15L", "₹15L – ₹30L", "₹30L – ₹50L", "₹50L+"];
+
 
 const Contact = () => {
   const [formData, setFormData] = useState({
