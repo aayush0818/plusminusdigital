@@ -23,8 +23,8 @@ const Contact = () => {
   return (
     <>
       <SEOHead
-        title="Contact — PlusMinus Studio"
-        description="Have a project in mind? Let's talk. Get in touch with PlusMinus Studio for web design, development, and brand strategy."
+        title="Contact | PlusMinus Studio"
+        description="Got a project in mind? Let's talk. Reach out to PlusMinus Studio for web design, development, and brand strategy."
         path="/contact"
       />
       <Navbar />

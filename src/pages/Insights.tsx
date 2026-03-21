@@ -28,8 +28,8 @@ const Insights = () => {
   return (
     <>
       <SEOHead
-        title="Journal — PlusMinus Studio Insights"
-        description="Thoughts on design, development, and building digital products that perform. Insights from PlusMinus Studio."
+        title="Journal | PlusMinus Studio"
+        description="Our takes on design, development, and building digital products that actually perform. Written by the PlusMinus team."
         path="/insights"
       />
       <Navbar />

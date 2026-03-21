@@ -60,8 +60,8 @@ const ServicesPage = () => {
   return (
     <>
       <SEOHead
-        title="Services — PlusMinus Studio"
-        description="End-to-end digital services: brand strategy, website design, web development, conversion optimization, and content strategy for ambitious brands."
+        title="Services | PlusMinus Studio"
+        description="Brand strategy, website design, web development, conversion optimization, and content strategy. Everything your brand needs to grow online."
         path="/services"
       />
       <Navbar />
