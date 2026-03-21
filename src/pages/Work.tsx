@@ -36,8 +36,8 @@ const Work = () => {
   return (
     <>
       <SEOHead
-        title="Our Work — PlusMinus Studio Portfolio"
-        description="Explore our portfolio of high-converting websites built for ambitious brands across real estate, architecture, interiors, and more."
+        title="Our Work | PlusMinus Studio Portfolio"
+        description="See the websites we've built for brands in real estate, architecture, interiors, exports, and more. Real projects, real results."
         path="/work"
       />
       <Navbar />
@@ -67,7 +67,7 @@ const Work = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              A curated selection of projects where strategy, design, and engineering converge.
+              Projects where strategy, design, and good engineering come together.
             </motion.p>
           </div>
         </section>

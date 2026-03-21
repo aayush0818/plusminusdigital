@@ -8,17 +8,17 @@ import logoMark from "@/assets/logo-icon.png";
 const values = [
   {
     title: "Intentional Design",
-    description: "Every pixel serves a purpose. We don't decorate — we communicate. Design decisions are rooted in strategy, not trends.",
+    description: "Every pixel serves a purpose. We don't decorate, we communicate. Design decisions come from strategy, not trends.",
     icon: "−",
   },
   {
     title: "Engineering Excellence",
-    description: "Performance, accessibility, and clean architecture aren't extras — they're the foundation everything is built on.",
+    description: "Performance, accessibility, and clean architecture aren't extras. They're the foundation everything is built on.",
     icon: "+",
   },
   {
     title: "Transparent Partnership",
-    description: "No black boxes. We bring you into the process, share our thinking, and build trust through radical transparency.",
+    description: "No black boxes. We bring you into the process, share our thinking, and build trust through honest communication.",
     icon: "±",
   },
   {
@@ -39,27 +39,27 @@ const capabilities = [
   {
     number: "01",
     title: "Design That Converts",
-    description: "Not just pretty screens — every layout, color, and interaction is engineered to move users toward action.",
+    description: "Not just good-looking screens. Every layout, color, and interaction is built to get users to take action.",
   },
   {
     number: "02",
     title: "Code That Scales",
-    description: "Clean, modular architecture built for performance. No bloated frameworks, no tech debt from day one.",
+    description: "Clean, modular architecture built for speed. No bloated frameworks, no tech debt from day one.",
   },
   {
     number: "03",
     title: "Strategy Before Pixels",
-    description: "We study your market, your users, and your goals before we open a design tool. Research first, always.",
+    description: "We study your market, your users, and your goals before we touch a design tool. Research first, always.",
   },
   {
     number: "04",
     title: "Speed as a Feature",
-    description: "Fast turnarounds without cutting corners. We ship in weeks, not months — because momentum matters.",
+    description: "Fast turnarounds without cutting corners. We ship in weeks, not months, because momentum matters.",
   },
   {
     number: "05",
     title: "Full Ownership",
-    description: "You own everything we build — the code, the designs, the assets. No lock-in, no licensing games.",
+    description: "You own everything we build. The code, the designs, the assets. No lock-in, no licensing games.",
   },
 ];
 
@@ -67,8 +67,8 @@ const About = () => {
   return (
     <>
       <SEOHead
-        title="About Us — PlusMinus Studio"
-        description="PlusMinus is a design and development studio founded in Mumbai. We partner with ambitious brands to create digital experiences that are as strategic as they are beautiful."
+        title="About Us | PlusMinus Studio"
+        description="PlusMinus is a design and development studio from Mumbai. We build digital experiences that are as strategic as they are well-designed."
         path="/about"
       />
       <Navbar />
@@ -114,7 +114,7 @@ const About = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.25 }}
             >
-              PlusMinus is a design and development studio founded in Mumbai. We partner with ambitious brands to create digital experiences that are as strategic as they are beautiful.
+              PlusMinus is a design and development studio from Mumbai. We build digital experiences that are as strategic as they are well-designed.
             </motion.p>
           </div>
         </section>
@@ -260,10 +260,10 @@ const About = () => {
                   PlusMinus was founded in Mumbai, India in 2025 with a clear conviction: the best digital experiences are the ones where design gets out of the way and lets the content, the product, and the brand speak for themselves.
                 </p>
                 <p className="text-base md:text-lg leading-relaxed text-foreground-muted mb-6">
-                  With 20+ projects delivered across India, the Middle East, Europe, and North America, we bring a global perspective to every engagement — while staying rooted in the energy and hustle of Mumbai.
+                  With 20+ projects delivered across India and beyond, we bring a global perspective to every engagement while staying rooted in the energy and hustle of Mumbai.
                 </p>
                 <p className="text-base md:text-lg leading-relaxed text-foreground-muted">
-                  Our approach is simple: strip away the unnecessary, amplify what matters. No fluff, no filler — just work that works.
+                  Our approach is simple: strip away the unnecessary, amplify what matters. No fluff, no filler. Just work that works.
                 </p>
               </motion.div>
             </div>
@@ -392,14 +392,14 @@ const About = () => {
                   name: "Aayush Pandey",
                   role: "Co-Founder",
                   focus: "Strategy & Design",
-                  bio: "Obsessed with the intersection of aesthetics and conversion. Leads creative direction and ensures every project communicates with clarity and intent.",
+                  bio: "Obsessed with the intersection of aesthetics and conversion. Leads creative direction and makes sure every project communicates with clarity and intent.",
                   initials: "AP",
                 },
                 {
                   name: "Atharva Khuke",
                   role: "Co-Founder",
                   focus: "Engineering & Development",
-                  bio: "Turns ambitious designs into performant, scalable code. Leads technical architecture and ensures every build is as clean under the hood as it looks on screen.",
+                  bio: "Turns ambitious designs into fast, scalable code. Leads technical architecture and makes sure every build is as clean under the hood as it looks on screen.",
                   initials: "AK",
                 },
               ].map((founder, i) => (

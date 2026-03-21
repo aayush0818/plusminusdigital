@@ -8,12 +8,12 @@ const testimonials = [
     company: "Interior Design Studio",
   },
   {
-    quote: "They understood our vision from day one. The result was a website that not only looks stunning but actually converts visitors into booked consultations.",
+    quote: "They understood our vision from day one. The result was a website that not only looks great but actually converts visitors into booked consultations.",
     name: "The Smart Realtors",
     company: "Real Estate Consultancy",
   },
   {
-    quote: "The level of craft and attention to detail is unmatched. Every scroll, every transition — it all feels intentional. Truly elevated our digital presence.",
+    quote: "The level of craft and attention to detail is unmatched. Every scroll, every transition, it all feels intentional. Truly elevated our digital presence.",
     name: "SH Harda Reliable",
     company: "Manufacturing & Engineering",
   },

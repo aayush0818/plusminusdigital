@@ -130,14 +130,14 @@ const caseStudies: Record<string, CaseStudyData> = {
     tagline: "A digital presence as refined as their builds.",
     mockupColors: ["#1E293B", "#78716C", "#FAF9F6", "#3B82F6"],
     overview:
-    "Trots Architects needed a website that mirrored the precision and elegance of their architectural work. We designed and developed a portfolio-driven experience that lets their projects speak with confidence — clean, immersive, and conversion-ready.",
+    "Trots Architects needed a website that mirrored the precision and elegance of their architectural work. We designed and developed a portfolio-driven experience that lets their projects speak with confidence, clean, immersive, and conversion-ready.",
     problem: {
       title: "The Challenge",
       description:
       "Trots had an outdated website that failed to communicate the caliber of their work. Potential clients were bouncing before reaching the portfolio, and the inquiry form was buried three clicks deep.",
       challenges: [
       "Portfolio images were low-res and poorly cropped",
-      "No mobile optimization — 60% of traffic was mobile",
+      "No mobile optimization, 60% of traffic was mobile",
       "Inquiry form completion rate was under 2%",
       "Brand identity didn't match the quality of their builds"]
 
@@ -150,7 +150,7 @@ const caseStudies: Record<string, CaseStudyData> = {
       { label: "Content Architecture", detail: "Reorganized the sitemap to lead with projects, not corporate pages" },
       { label: "Visual Identity", detail: "Developed a restrained, editorial design system inspired by architectural journals" },
       { label: "Performance", detail: "Optimized image delivery with lazy loading, WebP, and responsive srcsets" },
-      { label: "Conversion", detail: "Embedded contextual CTAs within project pages — inquiries are always one click away" }]
+      { label: "Conversion", detail: "Embedded contextual CTAs within project pages, inquiries are always one click away" }]
 
     },
     designSystem: {
@@ -191,7 +191,7 @@ const caseStudies: Record<string, CaseStudyData> = {
     tagline: "Four decades of craft, one digital stage.",
     mockupColors: ["#1A1614", "#C9A96E", "#FAF7F2", "#2C2420"],
     overview:
-    "Umesh Desai & Associates (est. 1984) is one of India's most respected architecture and interior design firms, behind iconic hospitality spaces like Kyma, Blabber All Day, Cafe Crema, Nama, and Tattva. They needed a digital portfolio that matched the caliber of their interiors — so we built an immersive, image-first experience that lets their spaces speak.",
+    "Umesh Desai & Associates (est. 1984) is one of India's most respected architecture and interior design firms, behind iconic hospitality spaces like Kyma, Blabber All Day, Cafe Crema, Nama, and Tattva. They needed a digital portfolio that matched the caliber of their interiors, so we built an immersive, image-first experience that lets their spaces speak.",
     problem: {
       title: "The Challenge",
       description:
@@ -199,20 +199,20 @@ const caseStudies: Record<string, CaseStudyData> = {
       challenges: [
       "Outdated website with no project showcase or visual narrative",
       "Stunning photography was buried and underutilized",
-      "Zero mobile optimization — majority of traffic came from mobile",
-      "No inquiry pipeline from the website — all leads came through referrals",
+      "Zero mobile optimization, majority of traffic came from mobile",
+      "No inquiry pipeline from the website, all leads came through referrals",
       "Brand positioning didn't reflect their premium hospitality portfolio"]
 
     },
     strategy: {
       title: "Our Strategy",
       description:
-      "We positioned UDA as a luxury hospitality design authority, crafting an editorial experience that treats each project as a story — not just a gallery.",
+      "We positioned UDA as a luxury hospitality design authority, crafting an editorial experience that treats each project as a story, not just a gallery.",
       pillars: [
-      { label: "Full-Screen Imagery", detail: "Hero carousel showcasing their best venues — Kyma, Blabber, Nama — at cinematic scale" },
+      { label: "Full-Screen Imagery", detail: "Hero carousel showcasing their best venues, Kyma, Blabber, Nama, at cinematic scale" },
       { label: "Project-First Architecture", detail: "Portfolio-driven navigation where spaces take center stage, not corporate pages" },
-      { label: "Editorial Storytelling", detail: "Each venue gets a dedicated narrative — concept, execution, photography — like an architecture journal" },
-      { label: "Inquiry Pipeline", detail: "Contextual contact forms on every project page — qualified leads are one click away" }]
+      { label: "Editorial Storytelling", detail: "Each venue gets a dedicated narrative, concept, execution, photography, like an architecture journal" },
+      { label: "Inquiry Pipeline", detail: "Contextual contact forms on every project page, qualified leads are one click away" }]
 
     },
     designSystem: {
@@ -276,18 +276,18 @@ const caseStudies: Record<string, CaseStudyData> = {
     category: "Web Design & Development",
     year: "2025",
     heroGradient: "linear-gradient(135deg, hsl(20 60% 10%), hsl(25 70% 18%), hsl(15 40% 8%))",
-    tagline: "Restoring strength. Reinforcing trust — digitally.",
+    tagline: "Restoring strength. Reinforcing trust, digitally.",
     mockupColors: ["#1A1A2E", "#E8612D", "#FAF5F0", "#2D2D3F"],
     overview:
-    "CORR XP India is a specialized structural repair, rehabilitation, and retrofitting contractor with 9+ years of expertise. They needed a digital presence that communicated the precision and authority of their engineering work — so we built a bold, conversion-driven website that positions them as India's go-to structural repair specialists.",
+    "CORR XP India is a specialized structural repair, rehabilitation, and retrofitting contractor with 9+ years of expertise. They needed a digital presence that communicated the precision and authority of their engineering work, so we built a bold, conversion-driven website that positions them as India's go-to structural repair specialists.",
     problem: {
       title: "The Challenge",
       description:
       "Despite being MSME registered with a strong project portfolio, CORR XP had no meaningful online presence. Potential clients in the construction and infrastructure sector couldn't find them, and their expertise in advanced repair systems like FRP strengthening went completely unrepresented online.",
       challenges: [
-      "No existing website — zero digital presence in a competitive market",
+      "No existing website, zero digital presence in a competitive market",
       "Complex technical services were hard to communicate clearly",
-      "No lead generation pipeline — all business came through word of mouth",
+      "No lead generation pipeline, all business came through word of mouth",
       "Mobile-first audience (engineers on-site) had no way to access information",
       "Multiple service verticals needed clear, organized presentation"]
 
@@ -295,12 +295,12 @@ const caseStudies: Record<string, CaseStudyData> = {
     strategy: {
       title: "Our Strategy",
       description:
-      "We built CORR XP's digital identity from the ground up — a dark, industrial-grade aesthetic that mirrors the strength of their work, with orange accents that demand attention and drive action.",
+      "We built CORR XP's digital identity from the ground up, a dark, industrial-grade aesthetic that mirrors the strength of their work, with orange accents that demand attention and drive action.",
       pillars: [
-      { label: "Industrial Visual Identity", detail: "Dark charcoal palette with bold orange CTAs — communicating strength, precision, and engineering authority" },
+      { label: "Industrial Visual Identity", detail: "Dark charcoal palette with bold orange CTAs, communicating strength, precision, and engineering authority" },
       { label: "Service Architecture", detail: "Six core service verticals organized with clear descriptions, specifications, and relevant certifications (NACE, ASTM)" },
       { label: "Trust Signals", detail: "MSME registration, GST compliance, 9+ years experience, and 25+ completed projects prominently displayed" },
-      { label: "Lead Generation", detail: "Multi-touch contact forms with project detail fields — converting site visitors into qualified consultation requests" }]
+      { label: "Lead Generation", detail: "Multi-touch contact forms with project detail fields, converting site visitors into qualified consultation requests" }]
 
     },
     designSystem: {
@@ -371,7 +371,7 @@ const caseStudies: Record<string, CaseStudyData> = {
       description:
       "Despite 15+ years of market expertise and 500+ happy families served, Spaces & Places lacked a digital platform that matched their on-ground reputation. Property seekers couldn't browse listings, compare projects, or request consultations online.",
       challenges: [
-      "No online property listing platform — all inquiries were offline",
+      "No online property listing platform, all inquiries were offline",
       "Vastu consultation USP was not communicated digitally",
       "No search or filter functionality for property discovery",
       "Mobile users (majority of traffic) had no optimized experience",
@@ -380,12 +380,12 @@ const caseStudies: Record<string, CaseStudyData> = {
     strategy: {
       title: "Our Strategy",
       description:
-      "We built a premium property discovery platform that combines editorial aesthetics with powerful search functionality, positioning Spaces & Places as Mumbai's trusted real estate partner — not just another listing site.",
+      "We built a premium property discovery platform that combines editorial aesthetics with powerful search functionality, positioning Spaces & Places as Mumbai's trusted real estate partner, not just another listing site.",
       pillars: [
-      { label: "Property Discovery Engine", detail: "Advanced search with filters for Buy/Rent, location, property type, BHK — making Mumbai's premium inventory instantly accessible" },
-      { label: "Vastu Integration", detail: "Dedicated Vastu Shastra section with interactive floor plan analysis — turning an ancient science into a modern competitive advantage" },
+      { label: "Property Discovery Engine", detail: "Advanced search with filters for Buy/Rent, location, property type, BHK, making Mumbai's premium inventory instantly accessible" },
+      { label: "Vastu Integration", detail: "Dedicated Vastu Shastra section with interactive floor plan analysis, turning an ancient science into a modern competitive advantage" },
       { label: "Trust Architecture", detail: "500+ families served, 100% verified properties, and free Vastu consultation prominently displayed as social proof" },
-      { label: "Lead Conversion Pipeline", detail: "Multi-touch forms across property pages, contact page, and newsletter — capturing leads at every stage of the buyer journey" }]
+      { label: "Lead Conversion Pipeline", detail: "Multi-touch forms across property pages, contact page, and newsletter, capturing leads at every stage of the buyer journey" }]
     },
     designSystem: {
       fonts: [
@@ -448,14 +448,14 @@ const caseStudies: Record<string, CaseStudyData> = {
     tagline: "Mumbai's luxury real estate, elevated digitally.",
     mockupColors: ["#1B2A4A", "#2ECC71", "#FAF7F2", "#C8A2FF"],
     overview:
-    "The Smart Realtors is a RERA-registered luxury real estate consultancy specializing in South Mumbai's most prestigious addresses — Worli, Malabar Hill, Cuffe Parade, and Altamount Road. They needed a premium digital platform that communicates trust, showcases verified luxury properties, and converts high-net-worth property seekers into qualified leads.",
+    "The Smart Realtors is a RERA-registered luxury real estate consultancy specializing in South Mumbai's most prestigious addresses, Worli, Malabar Hill, Cuffe Parade, and Altamount Road. They needed a premium digital platform that communicates trust, showcases verified luxury properties, and converts high-net-worth property seekers into qualified leads.",
     problem: {
       title: "The Challenge",
       description:
       "Despite 15+ years of expertise in Mumbai's luxury apartment market and 200+ successful transactions, The Smart Realtors had no digital presence that matched their on-ground reputation. High-net-worth clients couldn't browse verified listings or schedule consultations online.",
       challenges: [
-      "No digital platform — all business relied on referrals and offline networks",
-      "Luxury positioning wasn't communicated — competing with aggregator sites",
+      "No digital platform, all business relied on referrals and offline networks",
+      "Luxury positioning wasn't communicated, competing with aggregator sites",
       "RERA registration and channel partner credentials were invisible online",
       "Mobile-first affluent audience had no optimized browsing experience",
       "No structured lead capture for property inquiries and consultations"]
@@ -463,12 +463,12 @@ const caseStudies: Record<string, CaseStudyData> = {
     strategy: {
       title: "Our Strategy",
       description:
-      "We crafted a premium real estate platform that positions The Smart Realtors as South Mumbai's most trusted luxury property consultancy — combining editorial elegance with conversion-focused design.",
+      "We crafted a premium real estate platform that positions The Smart Realtors as South Mumbai's most trusted luxury property consultancy, combining editorial elegance with conversion-focused design.",
       pillars: [
-      { label: "Luxury Visual Identity", detail: "Deep navy and gold palette with serif typography — communicating exclusivity, trust, and premium positioning" },
+      { label: "Luxury Visual Identity", detail: "Deep navy and gold palette with serif typography, communicating exclusivity, trust, and premium positioning" },
       { label: "Property Showcase", detail: "Featured properties with high-resolution imagery, pricing, specifications, and one-click scheduling for viewings" },
       { label: "Trust Architecture", detail: "RERA registration, 10+ registered channel partnerships with top developers (MICL, Birla, Lodha, L&T), and client testimonials" },
-      { label: "Multi-Touch Conversion", detail: "WhatsApp integration, consultation forms, and property-specific inquiry CTAs — capturing leads at every touchpoint" }]
+      { label: "Multi-Touch Conversion", detail: "WhatsApp integration, consultation forms, and property-specific inquiry CTAs, capturing leads at every touchpoint" }]
     },
     designSystem: {
       fonts: [
@@ -513,7 +513,7 @@ const caseStudies: Record<string, CaseStudyData> = {
     sitePages: [
       { name: "Home", description: "Split-screen hero with luxury property imagery, featured listings, and channel partner trust section" },
       { name: "Properties", description: "Curated luxury apartment listings with high-res imagery, specs, and scheduling CTAs" },
-      { name: "Services", description: "Three service verticals — Buying, Selling, and Investment Advisory — with detailed breakdowns" },
+      { name: "Services", description: "Three service verticals, Buying, Selling, and Investment Advisory, with detailed breakdowns" },
       { name: "Testimonials", description: "Client success stories with transaction details and satisfaction metrics" },
       { name: "Contact", description: "Multi-field inquiry form with WhatsApp, phone, email, and office details" }
     ],
@@ -529,7 +529,7 @@ const caseStudies: Record<string, CaseStudyData> = {
     tagline: "Premium exports, premium digital presence.",
     mockupColors: ["#1A1A1A", "#D4A843", "#FFFFFF", "#2D5016"],
     overview:
-    "Shharda Reliable is a global export company specializing in premium Indian goods — from handcrafted handbags and essential oils to white coal and spices. We designed and developed a professional, trust-driven website that positions them as a credible partner for international trade, complete with product showcases, certifications, and a global presence map.",
+    "Shharda Reliable is a global export company specializing in premium Indian goods, from handcrafted handbags and essential oils to white coal and spices. We designed and developed a professional, trust-driven website that positions them as a credible partner for international trade, complete with product showcases, certifications, and a global presence map.",
     problem: {
       title: "The Challenge",
       description:
@@ -548,7 +548,7 @@ const caseStudies: Record<string, CaseStudyData> = {
       "We built a trust-first website that leads with quality credentials, showcases products through professional imagery, and makes international inquiry frictionless.",
       pillars: [
         { label: "Trust Architecture", detail: "Certifications (ISO, FSSAI, APEDA, HACCP, AEO) prominently displayed to establish credibility with global buyers" },
-        { label: "Product-Centric Navigation", detail: "Dedicated pages for each product vertical — handbags, oils, white coal, spices — with detailed specifications" },
+        { label: "Product-Centric Navigation", detail: "Dedicated pages for each product vertical, handbags, oils, white coal, spices, with detailed specifications" },
         { label: "Global Presence Visualization", detail: "Interactive map and stats (25+ countries, 500+ clients) to demonstrate international reach" },
         { label: "Multi-Channel Inquiry", detail: "WhatsApp integration, contact forms, and product-specific inquiry flows for seamless lead capture" }
       ]
@@ -598,7 +598,7 @@ const caseStudies: Record<string, CaseStudyData> = {
     ],
     sitePages: [
       { name: "Home", description: "Hero with brand promise, product showcase grid, differentiators, mission & vision, global stats, and certifications" },
-      { name: "Products", description: "Four product verticals — Handbags, Oils, White Coal, Spices — with detailed specifications and imagery" },
+      { name: "Products", description: "Four product verticals, Handbags, Oils, White Coal, Spices, with detailed specifications and imagery" },
       { name: "About Us", description: "Company story, values, mission, vision, and team introduction" },
       { name: "Global Presence", description: "Interactive map showing 25+ countries served with export statistics" },
       { name: "Certifications", description: "ISO, FSSAI, APEDA, HACCP, and AEO certifications with details and validity" },
@@ -613,10 +613,10 @@ const caseStudies: Record<string, CaseStudyData> = {
     category: "Web Design & Development",
     year: "2025",
     heroGradient: "linear-gradient(135deg, hsl(30 25% 15%), hsl(35 30% 22%), hsl(25 20% 10%))",
-    tagline: "Design beyond space — Mumbai's trusted interior studio, now digital.",
+    tagline: "Design beyond space, Mumbai's trusted interior studio, now digital.",
     mockupColors: ["#1A1A1A", "#C9A76B", "#FAF7F2", "#3D3D3D"],
     overview:
-    "Innovators Interiors is a Mumbai-based interior design studio founded in 2012 by Urvashi Jain, specializing in residential and commercial interiors. With 105+ projects and 15+ years of experience, they needed a digital presence that reflected their thoughtful design philosophy — so we built an elegant, image-driven website that lets their interiors speak.",
+    "Innovators Interiors is a Mumbai-based interior design studio founded in 2012 by Urvashi Jain, specializing in residential and commercial interiors. With 105+ projects and 15+ years of experience, they needed a digital presence that reflected their thoughtful design philosophy, so we built an elegant, image-driven website that lets their interiors speak.",
     problem: {
       title: "The Challenge",
       description:
@@ -624,7 +624,7 @@ const caseStudies: Record<string, CaseStudyData> = {
       challenges: [
         "No professional website to showcase residential and commercial projects",
         "Beautiful project photography was underutilized and not accessible online",
-        "No digital inquiry pipeline — all leads came through word of mouth",
+        "No digital inquiry pipeline, all leads came through word of mouth",
         "Mobile-first audience had no way to browse their portfolio",
         "Services and process weren't communicated clearly to prospective clients"
       ]
@@ -632,12 +632,12 @@ const caseStudies: Record<string, CaseStudyData> = {
     strategy: {
       title: "Our Strategy",
       description:
-      "We crafted an editorial, image-first experience that positions Innovators Interiors as Mumbai's go-to interior design studio — combining warmth with professionalism.",
+      "We crafted an editorial, image-first experience that positions Innovators Interiors as Mumbai's go-to interior design studio, combining warmth with professionalism.",
       pillars: [
-        { label: "Image-First Portfolio", detail: "Full-screen project showcases with high-res photography — letting the interiors speak for themselves" },
+        { label: "Image-First Portfolio", detail: "Full-screen project showcases with high-res photography, letting the interiors speak for themselves" },
         { label: "Founder-Led Narrative", detail: "Personal brand storytelling around Urvashi Jain's BE EXTC background and design philosophy" },
-        { label: "Service Clarity", detail: "Five service verticals clearly presented — Residential, Commercial, Turnkey, Project Management, and Custom Furniture" },
-        { label: "Consultation Pipeline", detail: "Embedded contact forms with project type selection — converting browsers into booked consultations" }
+        { label: "Service Clarity", detail: "Five service verticals clearly presented, Residential, Commercial, Turnkey, Project Management, and Custom Furniture" },
+        { label: "Consultation Pipeline", detail: "Embedded contact forms with project type selection, converting browsers into booked consultations" }
       ]
     },
     designSystem: {
@@ -661,7 +661,7 @@ const caseStudies: Record<string, CaseStudyData> = {
         { value: "5", label: "Service verticals launched" }
       ],
       quote: {
-        text: "PlusMinus captured exactly what we stand for — thoughtful design with quality execution. Our website finally reflects the spaces we create.",
+        text: "PlusMinus captured exactly what we stand for, thoughtful design with quality execution. Our website finally reflects the spaces we create.",
         author: "Urvashi Jain",
         role: "Founder, Innovators Interiors"
       }
@@ -685,9 +685,9 @@ const caseStudies: Record<string, CaseStudyData> = {
     ],
     sitePages: [
       { name: "Home", description: "Hero carousel with founder imagery, featured projects, about section, services overview, and contact form" },
-      { name: "Projects", description: "Filterable portfolio — Residential, Commercial, Hospitality — with project detail pages" },
+      { name: "Projects", description: "Filterable portfolio, Residential, Commercial, Hospitality, with project detail pages" },
       { name: "About", description: "Founder story, company philosophy, stats, and design values" },
-      { name: "Services", description: "Five service verticals with process timeline — Consultation, Concept, Design, Execute" },
+      { name: "Services", description: "Five service verticals with process timeline, Consultation, Concept, Design, Execute" },
       { name: "Contact", description: "Inquiry form with studio address, hours, and project type selection" }
     ],
     liveUrl: "https://innovatorsinteriors.vercel.app",
@@ -699,17 +699,17 @@ const caseStudies: Record<string, CaseStudyData> = {
     category: "Web App Design & Development",
     year: "2025",
     heroGradient: "linear-gradient(135deg, hsl(30 15% 12%), hsl(35 20% 18%), hsl(25 10% 8%))",
-    tagline: "Design your home with confidence — India's interior design discovery platform.",
+    tagline: "Design your home with confidence, India's interior design discovery platform.",
     mockupColors: ["#1A1A1A", "#C9A76B", "#FAF7F2", "#3D3D3D"],
     overview:
-    "Interior Dictionary is a comprehensive interior design discovery platform that connects homeowners with curated studios, real project budgets, and design inspiration. From a smart studio finder to a cost estimator, moodboard builder, and style encyclopedia — we built a full-stack product that brings transparency and confidence to the Indian interior design market.",
+    "Interior Dictionary is a comprehensive interior design discovery platform that connects homeowners with curated studios, real project budgets, and design inspiration. From a smart studio finder to a cost estimator, moodboard builder, and style encyclopedia, we built a full-stack product that brings transparency and confidence to the Indian interior design market.",
     problem: {
       title: "The Challenge",
       description:
       "India's interior design market is fragmented and opaque. Homeowners struggle to find reliable studios, understand realistic budgets, or explore design styles in a structured way. There was no single platform offering curated, transparent, and actionable interior design discovery.",
       challenges: [
-        "No transparency in interior design pricing — homeowners had no budget benchmarks",
-        "Fragmented studio discovery — no platform to compare vetted professionals",
+        "No transparency in interior design pricing, homeowners had no budget benchmarks",
+        "Fragmented studio discovery, no platform to compare vetted professionals",
         "Design style exploration was limited to Pinterest boards with no actionable context",
         "No tools for homeowners to estimate costs or build moodboards before consultations",
         "Mobile-first audience needed a responsive, app-like experience"
@@ -718,18 +718,18 @@ const caseStudies: Record<string, CaseStudyData> = {
     strategy: {
       title: "Our Strategy",
       description:
-      "We built Interior Dictionary as a product-grade platform — not just a website — combining editorial content, interactive tools, and a curated marketplace into one seamless experience.",
+      "We built Interior Dictionary as a product-grade platform, not just a website, combining editorial content, interactive tools, and a curated marketplace into one seamless experience.",
       pillars: [
-        { label: "Smart Studio Finder", detail: "Multi-filter search by city, area, style, and budget — matching homeowners with vetted interior design studios" },
+        { label: "Smart Studio Finder", detail: "Multi-filter search by city, area, style, and budget, matching homeowners with vetted interior design studios" },
         { label: "Cost Estimator Tool", detail: "Interactive calculator providing transparent budget estimates based on project type, style, finish level, and area size" },
         { label: "Moodboard Builder", detail: "Visual curation tool letting users collect images, colors, and materials to share with matched studios" },
-        { label: "Style Encyclopedia", detail: "Six curated design languages — Japandi, Minimal Luxe, Contemporary Indian, Warm Modern, Industrial Chic, Art Deco Revival — with color palettes and descriptions" }
+        { label: "Style Encyclopedia", detail: "Six curated design languages, Japandi, Minimal Luxe, Contemporary Indian, Warm Modern, Industrial Chic, Art Deco Revival, with color palettes and descriptions" }
       ]
     },
     designSystem: {
       fonts: [
         { name: "Playfair Display", style: "Headlines & Display", specimen: "Design your home with confidence" },
-        { name: "Inter", style: "Body & Navigation", specimen: "Discover curated interiors, real budgets, and trusted studios — handpicked for you." }
+        { name: "Inter", style: "Body & Navigation", specimen: "Discover curated interiors, real budgets, and trusted studios, handpicked for you." }
       ],
       colors: [
         { name: "Charcoal", hex: "#1A1A1A" },
@@ -747,7 +747,7 @@ const caseStudies: Record<string, CaseStudyData> = {
         { value: "100%", label: "Mobile responsive" }
       ],
       quote: {
-        text: "PlusMinus didn't just build a website — they built an entire product ecosystem. The moodboard builder and cost estimator are game-changers for our users.",
+        text: "PlusMinus didn't just build a website, they built an entire product ecosystem. The moodboard builder and cost estimator are game-changers for our users.",
         author: "Interior Dictionary",
         role: "Founding Team"
       }
@@ -776,7 +776,7 @@ const caseStudies: Record<string, CaseStudyData> = {
       { name: "Projects", description: "Real project gallery with transparent budget breakdowns and style tags" },
       { name: "Studios", description: "Curated, vetted interior design studios filterable by city, budget, and style" },
       { name: "Blog", description: "Interior design articles, trends, and guides" },
-      { name: "Tools", description: "Cost Estimator and Moodboard Builder — interactive tools for homeowners" }
+      { name: "Tools", description: "Cost Estimator and Moodboard Builder, interactive tools for homeowners" }
     ],
     liveUrl: "https://interior-dictionary.vercel.app",
     nextProject: { slug: "trots-architects", title: "Trots Architects", gradient: "linear-gradient(135deg, hsl(220 25% 18%), hsl(200 30% 25%), hsl(180 20% 15%))" }
@@ -919,7 +919,7 @@ const CaseStudy = () => {
           </div>
         </section>
 
-        {/* Overview — extra top padding for mockup overlap */}
+        {/* Overview, extra top padding for mockup overlap */}
         <section className="section-light" style={{ paddingTop: "clamp(80px, 10vw, 160px)", paddingBottom: "clamp(60px, 8vw, 120px)" }}>
           <div className="container-site">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-24">
@@ -949,7 +949,7 @@ const CaseStudy = () => {
           </div>
         </section>
 
-        {/* Full-bleed visual break — device mockups or spread gallery */}
+        {/* Full-bleed visual break, device mockups or spread gallery */}
         <section className="relative overflow-hidden" style={{ background: study.heroGradient, padding: "clamp(60px, 10vw, 120px) 0" }}>
           <div className="container-site">
             {study.galleryImages ?
@@ -1038,7 +1038,7 @@ const CaseStudy = () => {
           </div>
         </section>
 
-        {/* Problem — with "before" wireframe */}
+        {/* Problem, with "before" wireframe */}
         <section className="section-dark" style={{ padding: "clamp(60px, 10vw, 120px) 0" }}>
           <div className="container-site">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24">
@@ -1081,7 +1081,7 @@ const CaseStudy = () => {
                 </div>
               </motion.div>
 
-              {/* "Before" — generic ugly wireframe */}
+              {/* "Before", generic ugly wireframe */}
               <motion.div
                 className="flex items-center justify-center"
                 initial={{ opacity: 0, scale: 0.95 }}
@@ -1108,14 +1108,14 @@ const CaseStudy = () => {
                         <div className="w-8 h-2 rounded" style={{ background: "hsl(0 0% 15%)" }} />
                       </div>
                     </div>
-                    {/* Generic hero — cramped, boring */}
+                    {/* Generic hero, cramped, boring */}
                     <div className="rounded" style={{ background: "hsl(0 0% 14%)", height: 80 }}>
                       <div className="p-3">
                         <div className="w-3/4 h-3 rounded mb-2" style={{ background: "hsl(0 0% 18%)" }} />
                         <div className="w-1/2 h-2 rounded" style={{ background: "hsl(0 0% 16%)" }} />
                       </div>
                     </div>
-                    {/* Generic grid — cramped */}
+                    {/* Generic grid, cramped */}
                     <div className="grid grid-cols-3 gap-1.5">
                       {[...Array(6)].map((_, k) =>
                       <div key={k} className="aspect-square rounded" style={{ background: "hsl(0 0% 14%)" }} />
@@ -1205,7 +1205,7 @@ const CaseStudy = () => {
           </div>
         </section>
 
-        {/* Tech Stack — only for projects that have it */}
+        {/* Tech Stack, only for projects that have it */}
         {study.techStack &&
         <section className="section-dark" style={{ padding: "clamp(60px, 10vw, 100px) 0" }}>
             <div className="container-site">
@@ -1243,7 +1243,7 @@ const CaseStudy = () => {
           </section>
         }
 
-        {/* Site Pages — only for projects that have it */}
+        {/* Site Pages, only for projects that have it */}
         {study.sitePages &&
         <section className="section-light" style={{ padding: "clamp(60px, 10vw, 100px) 0" }}>
             <div className="container-site">
@@ -1365,7 +1365,7 @@ const CaseStudy = () => {
           </div>
         </section>
 
-        {/* Design System — rich visual */}
+        {/* Design System, rich visual */}
         <section className="section-light" style={{ padding: "clamp(60px, 10vw, 120px) 0" }}>
           <div className="container-site">
             <motion.div
@@ -1383,7 +1383,7 @@ const CaseStudy = () => {
               </h2>
             </motion.div>
 
-            {/* Typography specimens — large and visual */}
+            {/* Typography specimens, large and visual */}
             <div className="mb-16">
               <h3 className="text-[12px] font-semibold tracking-[0.15em] uppercase text-foreground-muted mb-8">Typography</h3>
               <div className="space-y-8">
@@ -1414,7 +1414,7 @@ const CaseStudy = () => {
               </div>
             </div>
 
-            {/* Color palette — horizontal Pantone-style bars */}
+            {/* Color palette, horizontal Pantone-style bars */}
             <div className="mb-12 md:mb-16">
               <h3 className="text-[12px] font-semibold tracking-[0.15em] uppercase text-foreground-muted mb-8">Color Palette</h3>
               <div className="space-y-3">
@@ -1483,7 +1483,7 @@ const CaseStudy = () => {
           </section>
         }
 
-        {/* Results — with high-contrast background */}
+        {/* Results, with high-contrast background */}
         <section
           className="relative overflow-hidden"
           style={{ padding: "clamp(60px, 10vw, 120px) 0", background: "hsl(0 0% 4%)" }}>
@@ -1549,7 +1549,7 @@ const CaseStudy = () => {
           </div>
         </section>
 
-        {/* Next Project — with gradient preview */}
+        {/* Next Project, with gradient preview */}
         {study.nextProject &&
         <section className="section-light border-t border-border" style={{ padding: "clamp(40px, 6vw, 80px) 0" }}>
             <div className="container-site">

@@ -10,31 +10,31 @@ const services = [
   {
     num: "01",
     title: "Brand Strategy",
-    description: "We define your positioning, visual identity, and messaging framework to build a brand that resonates with your ideal audience and stands apart in a crowded market.",
+    description: "We define your positioning, visual identity, and messaging so your brand connects with the right audience and actually stands out.",
     deliverables: ["Brand Positioning", "Visual Identity", "Messaging Framework", "Brand Guidelines", "Competitive Analysis"],
   },
   {
     num: "02",
     title: "Website Design",
-    description: "Conversion-focused design systems rooted in user research. Every layout, interaction, and visual decision is intentional — built to communicate value at first glance.",
+    description: "Conversion-focused design rooted in user research. Every layout and interaction is built to communicate value the moment someone lands on your page.",
     deliverables: ["UX Research", "Wireframes", "UI Design", "Design System", "Interaction Design", "Prototyping"],
   },
   {
     num: "03",
     title: "Web Development",
-    description: "Fast, accessible, and meticulously engineered websites built with React, Next.js, and modern tooling. Performance isn't an afterthought — it's the foundation.",
+    description: "Fast, accessible, and well-built websites using React, Next.js, and modern tools. Performance is baked in from the start, not patched on later.",
     deliverables: ["Frontend Development", "CMS Integration", "API Development", "Performance Optimization", "Accessibility Audit"],
   },
   {
     num: "04",
     title: "Conversion Optimization",
-    description: "Data-driven improvements that compound. We analyze behavior, run experiments, and implement changes that measurably grow your revenue.",
+    description: "Data-backed improvements that stack up over time. We study user behavior, test ideas, and ship changes that grow your numbers.",
     deliverables: ["Analytics Setup", "A/B Testing", "Heatmap Analysis", "Funnel Optimization", "Landing Page Design"],
   },
   {
     num: "05",
     title: "Content Strategy",
-    description: "Strategic content architecture that drives organic growth and builds authority. From SEO foundations to editorial calendars, we make every word count.",
+    description: "Strategic content planning that drives organic growth and builds authority. From SEO to editorial calendars, we make every word count.",
     deliverables: ["SEO Strategy", "Content Architecture", "Copywriting", "Editorial Calendar", "Content Auditing"],
   },
 ];
@@ -44,7 +44,7 @@ const approach = [
   { step: "02", title: "Define", text: "We synthesize insights into a clear strategy that aligns design decisions with business objectives." },
   { step: "03", title: "Design", text: "We craft pixel-perfect interfaces through iterative design sprints with continuous feedback loops." },
   { step: "04", title: "Develop", text: "We build with modern tools, prioritizing speed, accessibility, and maintainable code architecture." },
-  { step: "05", title: "Deliver", text: "We launch, measure, and optimize — ensuring the work performs as beautifully as it looks." },
+  { step: "05", title: "Deliver", text: "We launch, measure, and keep optimizing until the work performs as well as it looks." },
 ];
 
 const ServicesPage = () => {
@@ -60,8 +60,8 @@ const ServicesPage = () => {
   return (
     <>
       <SEOHead
-        title="Services — PlusMinus Studio"
-        description="End-to-end digital services: brand strategy, website design, web development, conversion optimization, and content strategy for ambitious brands."
+        title="Services | PlusMinus Studio"
+        description="Brand strategy, website design, web development, conversion optimization, and content strategy. Everything your brand needs to grow online."
         path="/services"
       />
       <Navbar />
