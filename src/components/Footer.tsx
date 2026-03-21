@@ -29,7 +29,7 @@ const Footer = () => {
               Minus the noise. Plus the results.
             </p>
             <p className="text-sm leading-relaxed max-w-sm" style={{ color: "hsl(0 0% 40%)" }}>
-              A digital design and development studio from Mumbai, India — helping ambitious brands grow through exceptional web experiences worldwide.
+              A digital design and development studio from Mumbai, India. Helping ambitious brands grow through better web experiences, worldwide.
             </p>
           </div>
 
