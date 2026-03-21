@@ -13,6 +13,7 @@ import tsr1 from "@/assets/tsr-1.png";
 import sr1 from "@/assets/sr-1.png";
 import ii1 from "@/assets/ii-1.png";
 import id1 from "@/assets/id-1.png";
+import spi1 from "@/assets/spi-1.png";
 
 const categories = ["All", "Web Design", "Development", "Branding"];
 
