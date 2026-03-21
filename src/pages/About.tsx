@@ -39,27 +39,27 @@ const capabilities = [
   {
     number: "01",
     title: "Design That Converts",
-    description: "Not just pretty screens — every layout, color, and interaction is engineered to move users toward action.",
+    description: "Not just good-looking screens. Every layout, color, and interaction is built to get users to take action.",
   },
   {
     number: "02",
     title: "Code That Scales",
-    description: "Clean, modular architecture built for performance. No bloated frameworks, no tech debt from day one.",
+    description: "Clean, modular architecture built for speed. No bloated frameworks, no tech debt from day one.",
   },
   {
     number: "03",
     title: "Strategy Before Pixels",
-    description: "We study your market, your users, and your goals before we open a design tool. Research first, always.",
+    description: "We study your market, your users, and your goals before we touch a design tool. Research first, always.",
   },
   {
     number: "04",
     title: "Speed as a Feature",
-    description: "Fast turnarounds without cutting corners. We ship in weeks, not months — because momentum matters.",
+    description: "Fast turnarounds without cutting corners. We ship in weeks, not months, because momentum matters.",
   },
   {
     number: "05",
     title: "Full Ownership",
-    description: "You own everything we build — the code, the designs, the assets. No lock-in, no licensing games.",
+    description: "You own everything we build. The code, the designs, the assets. No lock-in, no licensing games.",
   },
 ];
 
