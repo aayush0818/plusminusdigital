@@ -44,7 +44,7 @@ const approach = [
   { step: "02", title: "Define", text: "We synthesize insights into a clear strategy that aligns design decisions with business objectives." },
   { step: "03", title: "Design", text: "We craft pixel-perfect interfaces through iterative design sprints with continuous feedback loops." },
   { step: "04", title: "Develop", text: "We build with modern tools, prioritizing speed, accessibility, and maintainable code architecture." },
-  { step: "05", title: "Deliver", text: "We launch, measure, and optimize — ensuring the work performs as beautifully as it looks." },
+  { step: "05", title: "Deliver", text: "We launch, measure, and keep optimizing until the work performs as well as it looks." },
 ];
 
 const ServicesPage = () => {
