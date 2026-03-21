@@ -8,17 +8,17 @@ import logoMark from "@/assets/logo-icon.png";
 const values = [
   {
     title: "Intentional Design",
-    description: "Every pixel serves a purpose. We don't decorate — we communicate. Design decisions are rooted in strategy, not trends.",
+    description: "Every pixel serves a purpose. We don't decorate, we communicate. Design decisions come from strategy, not trends.",
     icon: "−",
   },
   {
     title: "Engineering Excellence",
-    description: "Performance, accessibility, and clean architecture aren't extras — they're the foundation everything is built on.",
+    description: "Performance, accessibility, and clean architecture aren't extras. They're the foundation everything is built on.",
     icon: "+",
   },
   {
     title: "Transparent Partnership",
-    description: "No black boxes. We bring you into the process, share our thinking, and build trust through radical transparency.",
+    description: "No black boxes. We bring you into the process, share our thinking, and build trust through honest communication.",
     icon: "±",
   },
   {
