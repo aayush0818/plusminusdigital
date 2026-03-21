@@ -67,7 +67,7 @@ const Work = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              A curated selection of projects where strategy, design, and engineering converge.
+              Projects where strategy, design, and good engineering come together.
             </motion.p>
           </div>
         </section>

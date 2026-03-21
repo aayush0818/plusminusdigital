@@ -114,7 +114,7 @@ const About = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.25 }}
             >
-              PlusMinus is a design and development studio founded in Mumbai. We partner with ambitious brands to create digital experiences that are as strategic as they are beautiful.
+              PlusMinus is a design and development studio from Mumbai. We build digital experiences that are as strategic as they are well-designed.
             </motion.p>
           </div>
         </section>
