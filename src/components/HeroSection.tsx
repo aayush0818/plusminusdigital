@@ -33,7 +33,7 @@ const HeroSection = () => {
         <img src={logoMark} alt="" className="w-[40vw] max-w-[500px] opacity-[0.06]" />
       </div>
 
-      <div className="flex-1 flex items-center container-site pt-28 pb-16 md:pt-32 md:pb-20 relative z-10">
+      <div className="flex-1 flex items-center container-site pt-20 pb-12 md:pt-32 md:pb-20 relative z-10">
         <div className="w-full">
           {/* Duality tagline */}
           <motion.div

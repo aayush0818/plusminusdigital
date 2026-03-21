@@ -36,7 +36,7 @@ const ServicesSection = () => {
   };
 
   return (
-    <section id="services" className="section-light" style={{ padding: "clamp(80px, 12vw, 160px) 0" }}>
+    <section id="services" className="section-light" style={{ padding: "clamp(60px, 8vw, 100px) 0" }}>
       <div className="container-site">
         <motion.div
           className="mb-12 md:mb-20"
