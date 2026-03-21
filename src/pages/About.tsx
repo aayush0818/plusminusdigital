@@ -260,10 +260,10 @@ const About = () => {
                   PlusMinus was founded in Mumbai, India in 2025 with a clear conviction: the best digital experiences are the ones where design gets out of the way and lets the content, the product, and the brand speak for themselves.
                 </p>
                 <p className="text-base md:text-lg leading-relaxed text-foreground-muted mb-6">
-                  With 20+ projects delivered across India, the Middle East, Europe, and North America, we bring a global perspective to every engagement — while staying rooted in the energy and hustle of Mumbai.
+                  With 20+ projects delivered across India and beyond, we bring a global perspective to every engagement while staying rooted in the energy and hustle of Mumbai.
                 </p>
                 <p className="text-base md:text-lg leading-relaxed text-foreground-muted">
-                  Our approach is simple: strip away the unnecessary, amplify what matters. No fluff, no filler — just work that works.
+                  Our approach is simple: strip away the unnecessary, amplify what matters. No fluff, no filler. Just work that works.
                 </p>
               </motion.div>
             </div>
