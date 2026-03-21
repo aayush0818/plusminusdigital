@@ -12,7 +12,6 @@ const Contact = () => {
     name: "",
     email: "",
     company: "",
-    budget: "",
     message: "",
   });
 
