@@ -121,7 +121,7 @@ const HeroSection = () => {
             transition={{ delay: 1.2, duration: 0.7 }}
           >
             <p className="text-base md:text-lg max-w-md leading-relaxed" style={{ color: "hsl(0 0% 40%)" }}>
-              Websites that look sharp, load fast, and actually bring in business. Built from Mumbai for brands everywhere.
+              Strategy-led design and development for brands that refuse to blend in.
             </p>
             
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
