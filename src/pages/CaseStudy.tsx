@@ -789,6 +789,93 @@ const caseStudies: Record<string, CaseStudyData> = {
       { name: "Tools", description: "Cost Estimator and Moodboard Builder, interactive tools for homeowners" }
     ],
     liveUrl: "https://interior-dictionary.vercel.app",
+    nextProject: { slug: "spaces-places-interior", title: "Spaces & Places Interior", gradient: "linear-gradient(135deg, hsl(30 40% 12%), hsl(35 50% 20%), hsl(25 30% 10%))" }
+  },
+  "spaces-places-interior": {
+    slug: "spaces-places-interior",
+    title: "Spaces & Places Interior",
+    category: "Web Design & Development",
+    year: "2025",
+    heroGradient: "linear-gradient(135deg, hsl(30 40% 12%), hsl(35 50% 20%), hsl(25 30% 10%))",
+    tagline: "Premium interiors, now with a digital showroom to match.",
+    mockupColors: ["#1A1A1A", "#C9A044", "#FAF7F2", "#3D3D3D"],
+    overview:
+    "Spaces & Places Interior is a Mumbai-based modular furniture and interior design studio with 143+ projects and an in-house manufacturing facility. They needed a website that showcased their portfolio, communicated their 5-stage process, and highlighted their Vastu-aligned design approach as a differentiator. We built a warm, trust-driven platform that turns visitors into consultation requests.",
+    problem: {
+      title: "The Challenge",
+      description:
+      "Despite 4+ years of experience and a strong local reputation, Spaces & Places Interior had no digital platform to showcase their work or capture leads online. All business came through word of mouth.",
+      challenges: [
+        "No online portfolio to showcase 143+ completed projects",
+        "In-house manufacturing capability was not communicated to potential clients",
+        "Vastu consultation USP had zero digital visibility",
+        "No structured lead capture or inquiry pipeline",
+        "Mobile-first audience had no way to browse their work"
+      ]
+    },
+    strategy: {
+      title: "Our Strategy",
+      description:
+      "We built a premium interior design platform that leads with project photography, highlights their manufacturing edge, and integrates Vastu as a core differentiator.",
+      pillars: [
+        { label: "Portfolio-First Design", detail: "Category-filtered project gallery (Residential, Commercial, Kitchen, Study Units) with high-res photography" },
+        { label: "Manufacturing Story", detail: "Dedicated section showcasing their in-house facility, 5-stage process, and premium material partners (Greenply, Merino, Hettich)" },
+        { label: "Vastu Integration", detail: "Full section on Vastu-aligned design with directional harmony, elemental balance, and included consultation with every project" },
+        { label: "Trust & Conversion", detail: "143+ projects, 97% satisfaction, brand partners, and client testimonials prominently displayed with multi-touch contact forms" }
+      ]
+    },
+    designSystem: {
+      fonts: [
+        { name: "Playfair Display", style: "Headlines & Display", specimen: "Transform Your Spaces & Places" },
+        { name: "Inter", style: "Body & Navigation", specimen: "We create extraordinary interior experiences that blend luxury with functionality." }
+      ],
+      colors: [
+        { name: "Dark", hex: "#1A1A1A" },
+        { name: "Gold", hex: "#C9A044" },
+        { name: "Ivory", hex: "#FAF7F2" },
+        { name: "Slate", hex: "#3D3D3D" }
+      ],
+      gridNote: "Full-width hero carousel with stats overlay. Project cards in responsive grid with category filters. Services in icon-accented card layout. Brand partner logos in trust section."
+    },
+    results: {
+      stats: [
+        { value: "143+", label: "Projects completed" },
+        { value: "4+", label: "Years in business" },
+        { value: "97%", label: "Client satisfaction" },
+        { value: "6", label: "Service verticals launched" }
+      ],
+      quote: {
+        text: "PlusMinus gave us a website that truly represents our craft. Clients now come to us already familiar with our work and process.",
+        author: "Spaces & Places Interior",
+        role: "Founding Team"
+      }
+    },
+    heroImage: spi1,
+    heroImages: {
+      browser: spiFullpage,
+    },
+    resultImage: spiFullpage,
+    galleryImages: [spi1, spi2, spi3, spi4, spi5, spi6, spi7, spi8, spi9],
+    galleryContain: true,
+    techStack: [
+      { name: "React", purpose: "Frontend framework" },
+      { name: "Vite", purpose: "Build tool & dev server" },
+      { name: "TypeScript", purpose: "Type-safe development" },
+      { name: "Tailwind CSS", purpose: "Utility-first styling" },
+      { name: "Framer Motion", purpose: "Scroll & interaction animations" },
+      { name: "Supabase", purpose: "Backend, auth & storage" },
+      { name: "Responsive Design", purpose: "Mobile-first approach" },
+      { name: "SEO Optimized", purpose: "Meta tags & structured data" }
+    ],
+    sitePages: [
+      { name: "Home", description: "Hero carousel with stats, featured projects, services grid, Vastu section, brand partners, and testimonials" },
+      { name: "Portfolio", description: "Category-filtered project gallery with residential, commercial, kitchen, and study unit filters" },
+      { name: "About", description: "Company story, team, values, and 4+ years of design experience" },
+      { name: "Services", description: "Six service verticals with detailed descriptions and project links" },
+      { name: "Manufacturing", description: "In-house facility showcase with 5-stage process and material partners" },
+      { name: "Contact", description: "Multi-field inquiry form with free consultation CTA and office details" }
+    ],
+    liveUrl: "https://spacesplacesinterior.com",
     nextProject: { slug: "trots-architects", title: "Trots Architects", gradient: "linear-gradient(135deg, hsl(220 25% 18%), hsl(200 30% 25%), hsl(180 20% 15%))" }
   }
 };

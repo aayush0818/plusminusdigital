@@ -26,6 +26,7 @@ const projects = [
   { title: "Shharda Reliable", slug: "shharda-reliable", category: "Web Design", year: "2025", gradient: "linear-gradient(135deg, hsl(40 60% 12%), hsl(45 50% 20%), hsl(35 40% 10%))", preview: sr1 },
   { title: "Innovators Interiors", slug: "innovators-interiors", category: "Web Design", year: "2025", gradient: "linear-gradient(135deg, hsl(30 25% 15%), hsl(35 30% 22%), hsl(25 20% 10%))", preview: ii1 },
   { title: "Interior Dictionary", slug: "interior-dictionary", category: "Development", year: "2025", gradient: "linear-gradient(135deg, hsl(30 15% 12%), hsl(35 20% 18%), hsl(25 10% 8%))", preview: id1 },
+  { title: "Spaces & Places Interior", slug: "spaces-places-interior", category: "Web Design", year: "2025", gradient: "linear-gradient(135deg, hsl(30 40% 12%), hsl(35 50% 20%), hsl(25 30% 10%))", preview: spi1 },
 ];
 
 const Work = () => {
