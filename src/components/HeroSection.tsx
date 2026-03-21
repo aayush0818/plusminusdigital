@@ -3,8 +3,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import logoMark from "@/assets/logo-icon.png";
 
 const clients = [
-  "Stripe", "Vercel", "Linear", "Notion", "Figma", "Webflow", "Framer", "Arc",
-  "Stripe", "Vercel", "Linear", "Notion", "Figma", "Webflow", "Framer", "Arc",
+  "Spaces & Places", "UDA", "CorrXP", "The Smart Realtors", "SH Harda Reliable", "Innovators Interiors", "Interior Dictionary",
+  "Spaces & Places", "UDA", "CorrXP", "The Smart Realtors", "SH Harda Reliable", "Innovators Interiors", "Interior Dictionary",
 ];
 
 const rotatingWords = ["growth.", "revenue.", "conversions.", "results.", "impact."];

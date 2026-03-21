@@ -3,19 +3,19 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const testimonials = [
   {
-    quote: "PlusMinus transformed our digital presence. The website finally reflects the quality of our work and has driven a 4× increase in qualified leads.",
-    name: "Martijn de Vries",
-    company: "Trots Architects",
+    quote: "PlusMinus completely reimagined our online presence. The website captures our brand perfectly and has significantly boosted our client inquiries.",
+    name: "Spaces & Places",
+    company: "Interior Design Studio",
   },
   {
-    quote: "Working with PlusMinus felt like a true partnership. They understood our brand instantly and delivered beyond what we thought was possible.",
-    name: "Sophie Laurent",
-    company: "Refinnd Restaurant Group",
+    quote: "They understood our vision from day one. The result was a website that not only looks stunning but actually converts visitors into booked consultations.",
+    name: "The Smart Realtors",
+    company: "Real Estate Consultancy",
   },
   {
-    quote: "The attention to detail is exceptional. Every interaction, every page transition — it all feels considered. Our conversion rate doubled within three months.",
-    name: "James Chen",
-    company: "Velora Finance",
+    quote: "The level of craft and attention to detail is unmatched. Every scroll, every transition — it all feels intentional. Truly elevated our digital presence.",
+    name: "SH Harda Reliable",
+    company: "Manufacturing & Engineering",
   },
 ];
 
