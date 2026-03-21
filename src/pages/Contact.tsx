@@ -66,8 +66,8 @@ const Contact = () => {
                       <h3 className="text-[12px] font-semibold tracking-[0.15em] uppercase text-foreground-muted mb-2">
                         Email
                       </h3>
-                      <a href="mailto:hello@plusminus.studio" className="text-base md:text-lg font-medium text-foreground hover:text-foreground-muted transition-colors">
-                        hello@plusminus.studio
+                      <a href="mailto:hello@plusminusdigital.in" className="text-base md:text-lg font-medium text-foreground hover:text-foreground-muted transition-colors">
+                        hello@plusminusdigital.in
                       </a>
                     </div>
                     <div>
