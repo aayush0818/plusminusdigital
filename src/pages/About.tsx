@@ -392,14 +392,14 @@ const About = () => {
                   name: "Aayush Pandey",
                   role: "Co-Founder",
                   focus: "Strategy & Design",
-                  bio: "Obsessed with the intersection of aesthetics and conversion. Leads creative direction and ensures every project communicates with clarity and intent.",
+                  bio: "Obsessed with the intersection of aesthetics and conversion. Leads creative direction and makes sure every project communicates with clarity and intent.",
                   initials: "AP",
                 },
                 {
                   name: "Atharva Khuke",
                   role: "Co-Founder",
                   focus: "Engineering & Development",
-                  bio: "Turns ambitious designs into performant, scalable code. Leads technical architecture and ensures every build is as clean under the hood as it looks on screen.",
+                  bio: "Turns ambitious designs into fast, scalable code. Leads technical architecture and makes sure every build is as clean under the hood as it looks on screen.",
                   initials: "AK",
                 },
               ].map((founder, i) => (
