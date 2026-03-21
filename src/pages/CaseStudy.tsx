@@ -77,6 +77,16 @@ import id7 from "@/assets/id-7.png";
 import id8 from "@/assets/id-8.png";
 import id9 from "@/assets/id-9.png";
 import idFullpage from "@/assets/id-fullpage.png";
+import spi1 from "@/assets/spi-1.png";
+import spi2 from "@/assets/spi-2.png";
+import spi3 from "@/assets/spi-3.png";
+import spi4 from "@/assets/spi-4.png";
+import spi5 from "@/assets/spi-5.png";
+import spi6 from "@/assets/spi-6.png";
+import spi7 from "@/assets/spi-7.png";
+import spi8 from "@/assets/spi-8.png";
+import spi9 from "@/assets/spi-9.png";
+import spiFullpage from "@/assets/spi-fullpage.png";
 interface CaseStudyData {
   slug: string;
   title: string;
