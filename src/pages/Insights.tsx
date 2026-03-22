@@ -5,6 +5,16 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 
+import imgPremium from "@/assets/insights/premium-website.jpg";
+import imgRestaurant from "@/assets/insights/restaurant-websites.jpg";
+import imgConversions from "@/assets/insights/conversions.jpg";
+import imgPerformance from "@/assets/insights/web-performance.jpg";
+import imgBrief from "@/assets/insights/design-brief.jpg";
+import imgTypography from "@/assets/insights/typography.jpg";
+import imgServer from "@/assets/insights/server-components.jpg";
+import imgLanding from "@/assets/insights/landing-pages.jpg";
+import imgMinimalism from "@/assets/insights/digital-minimalism.jpg";
+
 const categories = ["All", "Design", "Strategy", "Development", "Conversion"];
 
 const articles = [
@@ -14,7 +24,7 @@ const articles = [
     date: "Mar 2026",
     readTime: "5 min read",
     excerpt: "The subtle details that separate forgettable websites from ones that actually build trust and keep visitors around.",
-    gradient: "linear-gradient(135deg, hsl(220 20% 92%), hsl(200 15% 88%))",
+    image: imgPremium,
     featured: true,
   },
   {
@@ -23,7 +33,7 @@ const articles = [
     date: "Feb 2026",
     readTime: "4 min read",
     excerpt: "Your food is great. Your online presence? Probably costing you reservations. Here's what we keep seeing go wrong.",
-    gradient: "linear-gradient(135deg, hsl(30 20% 92%), hsl(20 15% 88%))",
+    image: imgRestaurant,
     featured: false,
   },
   {
@@ -32,7 +42,7 @@ const articles = [
     date: "Jan 2026",
     readTime: "6 min read",
     excerpt: "Small layout and copy changes that moved the needle for our clients. Real numbers, no fluff.",
-    gradient: "linear-gradient(135deg, hsl(150 15% 90%), hsl(170 12% 86%))",
+    image: imgConversions,
     featured: false,
   },
   {
@@ -41,7 +51,7 @@ const articles = [
     date: "Dec 2025",
     readTime: "5 min read",
     excerpt: "Every second your site takes to load costs you visitors. We break down exactly how much and what to do about it.",
-    gradient: "linear-gradient(135deg, hsl(260 20% 92%), hsl(280 15% 88%))",
+    image: imgPerformance,
     featured: false,
   },
   {
@@ -50,7 +60,7 @@ const articles = [
     date: "Nov 2025",
     readTime: "3 min read",
     excerpt: "A good brief saves weeks of back-and-forth. Here's a framework we share with every new client.",
-    gradient: "linear-gradient(135deg, hsl(340 20% 92%), hsl(360 15% 88%))",
+    image: imgBrief,
     featured: false,
   },
   {
@@ -59,7 +69,7 @@ const articles = [
     date: "Oct 2025",
     readTime: "4 min read",
     excerpt: "Fonts do more heavy lifting than most people think. The right pairing can shift how your entire brand is perceived.",
-    gradient: "linear-gradient(135deg, hsl(45 25% 90%), hsl(40 20% 86%))",
+    image: imgTypography,
     featured: false,
   },
   {
@@ -68,7 +78,7 @@ const articles = [
     date: "Sep 2025",
     readTime: "7 min read",
     excerpt: "Cutting through the hype to show when server components actually help and when they just add complexity.",
-    gradient: "linear-gradient(135deg, hsl(180 15% 90%), hsl(200 12% 86%))",
+    image: imgServer,
     featured: false,
   },
   {
@@ -77,7 +87,7 @@ const articles = [
     date: "Aug 2025",
     readTime: "5 min read",
     excerpt: "We studied our top-performing landing pages. These patterns showed up in every single one.",
-    gradient: "linear-gradient(135deg, hsl(120 15% 90%), hsl(140 12% 86%))",
+    image: imgLanding,
     featured: false,
   },
   {
@@ -86,7 +96,7 @@ const articles = [
     date: "Jul 2025",
     readTime: "4 min read",
     excerpt: "Doing more with less. How stripping away the unnecessary makes everything that remains work harder.",
-    gradient: "linear-gradient(135deg, hsl(0 0% 92%), hsl(0 0% 88%))",
+    image: imgMinimalism,
     featured: false,
   },
 ];
@@ -174,22 +184,18 @@ const Insights = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.35 }}
               >
-                <div
-                  className="rounded-lg h-48 md:h-[400px] mb-4 md:mb-6 transition-transform duration-500 group-hover:scale-[1.01] relative overflow-hidden"
-                  style={{ background: featuredArticle.gradient }}
-                >
+                <div className="rounded-lg h-48 md:h-[400px] mb-4 md:mb-6 transition-transform duration-500 group-hover:scale-[1.01] relative overflow-hidden">
+                  <img
+                    src={featuredArticle.image}
+                    alt={featuredArticle.title}
+                    className="w-full h-full object-cover"
+                    loading="eager"
+                  />
                   <div className="absolute top-4 left-4 md:top-6 md:left-6">
                     <span className="text-[11px] font-semibold tracking-[0.15em] uppercase bg-background/80 backdrop-blur-sm text-foreground px-3 py-1.5 rounded-full">
                       Featured
                     </span>
                   </div>
-                  <span
-                    className="absolute bottom-3 right-4 md:bottom-4 md:right-6 font-display italic text-4xl md:text-6xl select-none pointer-events-none"
-                    style={{ color: "hsl(0 0% 0% / 0.04)" }}
-                    aria-hidden="true"
-                  >
-                    ±
-                  </span>
                 </div>
                 <div className="flex items-center gap-3 mb-2">
                   <span className="text-[12px] font-semibold tracking-[0.15em] uppercase text-foreground-muted">
@@ -231,17 +237,13 @@ const Insights = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: i * 0.06 }}
                   >
-                    <div
-                      className="rounded-lg h-40 md:h-56 mb-4 md:mb-5 transition-transform duration-500 group-hover:scale-[1.02] relative overflow-hidden"
-                      style={{ background: article.gradient }}
-                    >
-                      <span
-                        className="absolute bottom-2 right-3 md:right-4 font-display italic text-3xl md:text-4xl select-none pointer-events-none"
-                        style={{ color: "hsl(0 0% 0% / 0.04)" }}
-                        aria-hidden="true"
-                      >
-                        ±
-                      </span>
+                    <div className="rounded-lg h-40 md:h-56 mb-4 md:mb-5 transition-transform duration-500 group-hover:scale-[1.02] relative overflow-hidden">
+                      <img
+                        src={article.image}
+                        alt={article.title}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                      />
                     </div>
                     <div className="flex items-center gap-3 mb-1.5">
                       <span className="text-[12px] font-semibold tracking-[0.15em] uppercase text-foreground-muted">
@@ -265,7 +267,7 @@ const Insights = () => {
           </div>
         </section>
 
-        {/* Newsletter / CTA */}
+        {/* CTA */}
         <section className="section-light border-t border-border" style={{ padding: "clamp(60px, 8vw, 120px) 0" }}>
           <div className="container-site text-center max-w-xl mx-auto">
             <motion.h2
