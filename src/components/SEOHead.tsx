@@ -24,7 +24,7 @@ const SEOHead = ({ title, description, path = "" }: SEOHeadProps) => {
     setMeta("description", description);
     setMeta("og:title", title, true);
     setMeta("og:description", description, true);
-    setMeta("og:url", `https://plusminusdigital.lovable.app${path}`, true);
+    setMeta("og:url", `https://plusminusdigital.in${path}`, true);
     setMeta("twitter:title", title);
     setMeta("twitter:description", description);
 
@@ -34,7 +34,7 @@ const SEOHead = ({ title, description, path = "" }: SEOHeadProps) => {
       canonical.rel = "canonical";
       document.head.appendChild(canonical);
     }
-    canonical.href = `https://plusminusdigital.lovable.app${path}`;
+    canonical.href = `https://plusminusdigital.in${path}`;
   }, [title, description, path]);
 
   return null;
