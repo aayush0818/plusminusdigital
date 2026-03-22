@@ -202,11 +202,11 @@ const caseStudies: Record<string, CaseStudyData> = {
         role: "Founding Partner, Trots Architects"
       }
     },
-    heroImage: trotsHero,
+    heroImage: trots1,
     heroImages: {
       browser: trotsAboutFullpage,
-      mobile: trots1,
-      tablet: trots5
+      mobile: trotsPhone1,
+      tablet: trots4
     },
     resultImage: trotsAboutFullpage,
     galleryImages: [trots1, trots2, trots3, trots4, trots5, trots6, trots7, trotsPhone1, trotsPhone2, trotsPhone3, trotsPhone4],
