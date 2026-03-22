@@ -34,7 +34,7 @@ const SEOHead = ({ title, description, path = "" }: SEOHeadProps) => {
       canonical.rel = "canonical";
       document.head.appendChild(canonical);
     }
-    canonical.href = `https://plusminusdigital.lovable.app${path}`;
+    canonical.href = `https://plusminusdigital.in${path}`;
   }, [title, description, path]);
 
   return null;
