@@ -7,6 +7,7 @@ import CTASection from "@/components/CTASection";
 import ProjectMockup from "@/components/ProjectMockup";
 import logoMark from "@/assets/logo-icon.png";
 import trotsHero from "@/assets/trots-hero.png";
+import trotsAboutFullpage from "@/assets/trots-about-fullpage.png";
 import trots1 from "@/assets/trots-1.png";
 import trots2 from "@/assets/trots-2.png";
 import trots3 from "@/assets/trots-3.png";
@@ -14,6 +15,10 @@ import trots4 from "@/assets/trots-4.png";
 import trots5 from "@/assets/trots-5.png";
 import trots6 from "@/assets/trots-6.png";
 import trots7 from "@/assets/trots-7.webp";
+import trotsPhone1 from "@/assets/trots-phone-1.png";
+import trotsPhone2 from "@/assets/trots-phone-2.png";
+import trotsPhone3 from "@/assets/trots-phone-3.png";
+import trotsPhone4 from "@/assets/trots-phone-4.png";
 import uda1 from "@/assets/uda-1.png";
 import uda2 from "@/assets/uda-2.png";
 import uda3 from "@/assets/uda-3.png";
@@ -199,11 +204,12 @@ const caseStudies: Record<string, CaseStudyData> = {
     },
     heroImage: trotsHero,
     heroImages: {
-      browser: trotsHero,
+      browser: trotsAboutFullpage,
       mobile: trots1,
       tablet: trots5
     },
-    galleryImages: [trots1, trots2, trots3, trots4, trots5, trots6, trots7],
+    resultImage: trotsAboutFullpage,
+    galleryImages: [trots1, trots2, trots3, trots4, trots5, trots6, trots7, trotsPhone1, trotsPhone2, trotsPhone3, trotsPhone4],
     galleryContain: true,
     techStack: [
       { name: "React", purpose: "Frontend framework" },
