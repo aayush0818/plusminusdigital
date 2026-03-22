@@ -197,6 +197,30 @@ const caseStudies: Record<string, CaseStudyData> = {
         role: "Founding Partner, Trots Architects"
       }
     },
+    heroImage: trotsHero,
+    heroImages: {
+      browser: trotsHero,
+      mobile: trots1,
+      tablet: trots5
+    },
+    galleryImages: [trots1, trots2, trots3, trots4, trots5, trots6, trots7],
+    galleryContain: true,
+    techStack: [
+      { name: "React", purpose: "Frontend framework" },
+      { name: "Vite", purpose: "Build tool & dev server" },
+      { name: "TypeScript", purpose: "Type-safe development" },
+      { name: "Tailwind CSS", purpose: "Utility-first styling" },
+      { name: "Framer Motion", purpose: "Scroll & interaction animations" },
+      { name: "React Router", purpose: "Multi-page SPA routing" },
+      { name: "Responsive Design", purpose: "Mobile-first approach" },
+      { name: "SEO Optimized", purpose: "Meta tags & structured data" }
+    ],
+    sitePages: [
+      { name: "Home", description: "Full-screen video hero with architectural photography carousel" },
+      { name: "Work", description: "Project portfolio with filterable gallery and detailed case studies" },
+      { name: "Studio", description: "Philosophy, team, and design approach" },
+      { name: "Contact", description: "Inquiry form with office location and social links" }
+    ],
     liveUrl: "https://trotsarchitects.com",
     nextProject: { slug: "uda-india", title: "UDA India", gradient: "linear-gradient(135deg, hsl(30 30% 12%), hsl(40 40% 22%), hsl(20 25% 10%))" }
   },
