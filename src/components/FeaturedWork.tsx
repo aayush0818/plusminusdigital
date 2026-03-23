@@ -119,6 +119,10 @@ const FeaturedWork = () => {
                   <span className="text-[12px] text-muted-foreground">{project.category}</span>
                   <span className="text-[12px] text-muted-foreground">{project.year}</span>
                 </div>
+                <div className="flex items-center gap-2 mt-2 ml-7">
+                  <span className="text-[11px] line-through opacity-50 text-muted-foreground">− {project.minus}</span>
+                  <span className="text-[11px] font-semibold text-foreground-muted">+ {project.plus}</span>
+                </div>
               </Link>
             </motion.div>
           ))}
