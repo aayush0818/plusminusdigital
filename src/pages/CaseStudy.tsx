@@ -19,6 +19,10 @@ import trotsPhone1 from "@/assets/trots-phone-1.png";
 import trotsPhone2 from "@/assets/trots-phone-2.png";
 import trotsPhone3 from "@/assets/trots-phone-3.png";
 import trotsPhone4 from "@/assets/trots-phone-4.png";
+import trotsLaptopHero from "@/assets/trots-laptop-hero.png";
+import trotsPhones from "@/assets/trots-phones.png";
+import trotsMenu from "@/assets/trots-menu.png";
+import trotsMobileProjects from "@/assets/trots-mobile-projects.png";
 import uda1 from "@/assets/uda-1.png";
 import uda2 from "@/assets/uda-2.png";
 import uda3 from "@/assets/uda-3.png";
@@ -202,14 +206,14 @@ const caseStudies: Record<string, CaseStudyData> = {
         role: "Founding Partner, Trots Architects"
       }
     },
-    heroImage: trots1,
+    heroImage: trotsLaptopHero,
     heroImages: {
       browser: trotsAboutFullpage,
       mobile: trotsPhone1,
       tablet: trots4
     },
     resultImage: trotsAboutFullpage,
-    galleryImages: [trots1, trots2, trots3, trots4, trots5, trots6, trots7, trotsPhone1, trotsPhone2, trotsPhone3, trotsPhone4],
+    galleryImages: [trotsLaptopHero, trotsPhones, trotsMobileProjects, trotsMenu, trots1, trots2, trots3, trots4, trots5, trots6, trots7, trotsPhone1, trotsPhone2, trotsPhone3, trotsPhone4],
     galleryContain: true,
     techStack: [
       { name: "React", purpose: "Frontend framework" },
