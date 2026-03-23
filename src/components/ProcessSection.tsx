@@ -2,11 +2,11 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 const steps = [
-  { num: "01", title: "Discovery", desc: "We dig into your business, your audience, and what you're trying to achieve through research and honest conversations." },
-  { num: "02", title: "Strategy", desc: "We define the structure, messaging, and positioning based on what the data actually tells us." },
-  { num: "03", title: "Design", desc: "We build a visual system that communicates value and gets visitors to take action." },
-  { num: "04", title: "Development", desc: "We write clean, fast, scalable code. No shortcuts, no bloat." },
-  { num: "05", title: "Launch", desc: "We deploy, fine-tune, and keep tracking the numbers to make sure it works." },
+  { num: "01", title: "Discovery", desc: "We dig into your business, your audience, and what you're trying to achieve through research and honest conversations.", minus: "Assumptions", plus: "Clarity" },
+  { num: "02", title: "Strategy", desc: "We define the structure, messaging, and positioning based on what the data actually tells us.", minus: "Guesswork", plus: "Direction" },
+  { num: "03", title: "Design", desc: "We build a visual system that communicates value and gets visitors to take action.", minus: "Clutter", plus: "Intent" },
+  { num: "04", title: "Development", desc: "We write clean, fast, scalable code. No shortcuts, no bloat.", minus: "Bloat", plus: "Performance" },
+  { num: "05", title: "Launch", desc: "We deploy, fine-tune, and keep tracking the numbers to make sure it works.", minus: "Uncertainty", plus: "Momentum" },
 ];
 
 const ProcessSection = () => {
@@ -44,7 +44,6 @@ const ProcessSection = () => {
 
         {/* Mobile: vertical stack. Desktop: horizontal grid */}
         <div className="relative">
-          {/* Fade edges on mobile for scroll hint */}
           <div className="absolute left-0 top-0 bottom-0 w-6 z-10 pointer-events-none md:hidden" style={{ background: "linear-gradient(to right, hsl(0 0% 7%), transparent)" }} />
           <div className="absolute right-0 top-0 bottom-0 w-6 z-10 pointer-events-none md:hidden" style={{ background: "linear-gradient(to left, hsl(0 0% 7%), transparent)" }} />
 
@@ -70,6 +69,15 @@ const ProcessSection = () => {
                 </div>
                 <div className="text-base font-semibold mb-3" style={{ color: "hsl(0 0% 80%)" }}>
                   {step.title}
+                </div>
+                {/* ± micro-pair */}
+                <div className="flex flex-col gap-1 mb-3">
+                  <span className="text-xs line-through opacity-50" style={{ color: "hsl(0 0% 50%)" }}>
+                    − {step.minus}
+                  </span>
+                  <span className="text-xs font-semibold" style={{ color: "hsl(0 0% 70%)" }}>
+                    + {step.plus}
+                  </span>
                 </div>
                 <p className="text-sm leading-relaxed" style={{ color: "hsl(0 0% 45%)" }}>
                   {step.desc}

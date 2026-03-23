@@ -16,6 +16,8 @@ const projects = [
     year: "2025",
     gradient: "linear-gradient(135deg, hsl(220 25% 18%), hsl(200 30% 25%), hsl(180 20% 15%))",
     preview: trotsLaptopHero,
+    minus: "outdated web presence",
+    plus: "a site that matches their craft",
   },
   {
     title: "CORR XP",
@@ -24,6 +26,8 @@ const projects = [
     year: "2025",
     gradient: "linear-gradient(135deg, hsl(20 60% 10%), hsl(25 70% 18%), hsl(15 40% 8%))",
     preview: corrxp1,
+    minus: "no digital identity",
+    plus: "a brand built for scale",
   },
   {
     title: "UDA India",
@@ -32,6 +36,8 @@ const projects = [
     year: "2025",
     gradient: "linear-gradient(135deg, hsl(30 30% 12%), hsl(40 40% 22%), hsl(20 25% 10%))",
     preview: uda1,
+    minus: "slow legacy site",
+    plus: "sub-2s load times",
   },
   {
     title: "Spaces & Places",
@@ -40,6 +46,8 @@ const projects = [
     year: "2025",
     gradient: "linear-gradient(135deg, hsl(40 50% 15%), hsl(35 60% 25%), hsl(30 40% 12%))",
     preview: sp2,
+    minus: "low online visibility",
+    plus: "3x more inquiries",
   },
   {
     title: "Shharda Reliable",
@@ -48,6 +56,8 @@ const projects = [
     year: "2025",
     gradient: "linear-gradient(135deg, hsl(40 60% 12%), hsl(45 50% 20%), hsl(35 40% 10%))",
     preview: sr1,
+    minus: "generic manufacturer site",
+    plus: "a presence that builds trust",
   },
 ];
 
