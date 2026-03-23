@@ -1,22 +1,25 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import imgPremium from "@/assets/insights/premium-website.jpg";
+import imgRestaurant from "@/assets/insights/restaurant-websites.jpg";
+import imgConversions from "@/assets/insights/conversions.jpg";
 
 const articles = [
   {
     title: "What Makes a Website Feel Premium",
     tag: "Design",
-    gradient: "linear-gradient(135deg, hsl(220 20% 92%), hsl(200 15% 88%))",
+    image: imgPremium,
   },
   {
-    title: "Why Most Restaurant Websites Fail",
+    title: "Why Most Restaurant Websites Still Get It Wrong",
     tag: "Strategy",
-    gradient: "linear-gradient(135deg, hsl(30 20% 92%), hsl(20 15% 88%))",
+    image: imgRestaurant,
   },
   {
-    title: "Design Decisions That Improve Conversions",
+    title: "5 Design Decisions That Actually Move Conversion Numbers",
     tag: "Conversion",
-    gradient: "linear-gradient(135deg, hsl(150 15% 90%), hsl(170 12% 86%))",
+    image: imgConversions,
   },
 ];
 
@@ -49,35 +52,31 @@ const InsightsSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {articles.map((article, i) => (
-            <motion.a
+            <motion.div
               key={article.title}
-              href="#"
               className="group block"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
             >
-              <div
-                className="rounded-lg h-48 md:h-56 mb-5 transition-transform duration-500 group-hover:scale-[1.02] relative overflow-hidden"
-                style={{ background: article.gradient }}
-              >
-                {/* Subtle ± watermark */}
-                <span
-                  className="absolute bottom-2 right-4 font-display italic text-4xl select-none pointer-events-none"
-                  style={{ color: "hsl(0 0% 0% / 0.04)" }}
-                  aria-hidden="true"
-                >
-                  ±
+              <Link to="/insights" className="block">
+                <div className="rounded-lg h-48 md:h-56 mb-5 transition-transform duration-500 group-hover:scale-[1.02] relative overflow-hidden">
+                  <img
+                    src={article.image}
+                    alt={article.title}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <span className="text-[12px] font-semibold tracking-[0.15em] uppercase text-foreground-muted">
+                  {article.tag}
                 </span>
-              </div>
-              <span className="text-[12px] font-semibold tracking-[0.15em] uppercase text-foreground-muted">
-                {article.tag}
-              </span>
-              <h3 className="text-lg font-semibold text-foreground mt-2 group-hover:text-foreground-muted transition-colors">
-                {article.title}
-              </h3>
-            </motion.a>
+                <h3 className="text-lg font-semibold text-foreground mt-2 group-hover:text-foreground-muted transition-colors">
+                  {article.title}
+                </h3>
+              </Link>
+            </motion.div>
           ))}
         </div>
       </div>
