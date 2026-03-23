@@ -206,14 +206,14 @@ const caseStudies: Record<string, CaseStudyData> = {
         role: "Founding Partner, Trots Architects"
       }
     },
-    heroImage: trots1,
+    heroImage: trotsLaptopHero,
     heroImages: {
       browser: trotsAboutFullpage,
       mobile: trotsPhone1,
       tablet: trots4
     },
     resultImage: trotsAboutFullpage,
-    galleryImages: [trots1, trots2, trots3, trots4, trots5, trots6, trots7, trotsPhone1, trotsPhone2, trotsPhone3, trotsPhone4],
+    galleryImages: [trotsLaptopHero, trotsPhones, trotsMobileProjects, trotsMenu, trots1, trots2, trots3, trots4, trots5, trots6, trots7, trotsPhone1, trotsPhone2, trotsPhone3, trotsPhone4],
     galleryContain: true,
     techStack: [
       { name: "React", purpose: "Frontend framework" },
