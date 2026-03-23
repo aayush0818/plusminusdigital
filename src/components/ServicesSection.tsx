@@ -6,21 +6,29 @@ const services = [
   {
     num: "01",
     title: "Brand Strategy",
+    minus: "Generic positioning",
+    plus: "A brand that owns its space",
     description: "We define your positioning, visual identity, and messaging so your brand connects with the right audience and actually stands out.",
   },
   {
     num: "02",
     title: "Website Design",
+    minus: "Cookie-cutter layouts",
+    plus: "Designs built around your goals",
     description: "Conversion-focused design rooted in user research. Every layout and interaction is built to communicate value the moment someone lands on your page.",
   },
   {
     num: "03",
     title: "Web Development",
+    minus: "Slow, bloated code",
+    plus: "Fast, scalable builds",
     description: "Fast, accessible, and well-built websites using React, Next.js, and modern tools. Performance is baked in from the start, not patched on later.",
   },
   {
     num: "04",
     title: "Conversion Optimization",
+    minus: "Guessing what works",
+    plus: "Data-driven growth",
     description: "Data-backed improvements that stack up over time. We study user behavior, test ideas, and ship changes that grow your numbers.",
   },
 ];
@@ -86,15 +94,25 @@ const ServicesSection = () => {
                   </h3>
                   <AnimatePresence>
                     {activeIndex === i && (
-                      <motion.p
-                        className="text-sm md:text-base leading-relaxed text-foreground-muted mt-3 md:mt-4 max-w-2xl"
+                      <motion.div
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}
                         transition={{ duration: 0.3 }}
                       >
-                        {service.description}
-                      </motion.p>
+                        {/* ± Duality pair */}
+                        <div className="flex flex-col sm:flex-row gap-2 sm:gap-6 mt-3 md:mt-4 mb-3">
+                          <span className="text-sm text-foreground-muted line-through opacity-60">
+                            − {service.minus}
+                          </span>
+                          <span className="text-sm font-semibold text-foreground">
+                            + {service.plus}
+                          </span>
+                        </div>
+                        <p className="text-sm md:text-base leading-relaxed text-foreground-muted max-w-2xl">
+                          {service.description}
+                        </p>
+                      </motion.div>
                     )}
                   </AnimatePresence>
                 </div>

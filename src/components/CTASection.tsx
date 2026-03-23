@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const CTASection = () => {
   return (
     <section id="cta" className="relative overflow-hidden" style={{ minHeight: "400px" }}>
-      {/* Split background — hidden on mobile, solid dark instead */}
+      {/* Split background */}
       <div className="absolute inset-0 md:grid md:grid-cols-2" style={{ background: "hsl(0 0% 7%)" }}>
         <div className="hidden md:block" style={{ background: "hsl(0 0% 7%)" }} />
         <div className="hidden md:block" style={{ background: "hsl(0 0% 11%)" }} />
@@ -20,7 +20,8 @@ const CTASection = () => {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         >
           <p className="text-base md:text-xl font-medium" style={{ color: "hsl(0 0% 40%)" }}>
-            Done with mediocre websites?
+            <span className="font-display italic mr-2" style={{ color: "hsl(0 0% 30%)" }}>−</span>
+            Done settling for less?
           </p>
         </motion.div>
 
@@ -54,8 +55,9 @@ const CTASection = () => {
             className="font-bold"
             style={{ fontSize: "clamp(28px, 4vw, 56px)", lineHeight: 1.1, letterSpacing: "-0.03em", color: "hsl(0 0% 90%)" }}
           >
-            Let's build something{" "}
-            <span className="font-display italic font-normal">better.</span>
+            <span className="font-display italic font-normal mr-2" style={{ color: "hsl(0 0% 50%)" }}>+</span>
+            Let's build{" "}
+            <span className="font-display italic font-normal">what's next.</span>
           </h2>
         </motion.div>
       </div>

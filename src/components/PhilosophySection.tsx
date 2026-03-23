@@ -41,8 +41,51 @@ const PhilosophySection = () => {
   return (
     <section id="about" className="section-light" style={{ padding: "clamp(60px, 8vw, 100px) 0" }}>
       <div className="container-site">
-        <div className="pm-divider mb-10 md:mb-16">
-          <span className="font-display italic text-xl text-foreground-muted">±</span>
+        {/* ± Animated divider */}
+        <div className="mb-10 md:mb-16 flex items-center gap-4 md:gap-6">
+          <motion.div
+            className="flex-1 h-px"
+            style={{ background: "hsl(var(--border))" }}
+            initial={{ scaleX: 0, originX: 1 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          />
+          <motion.span
+            className="text-xs font-semibold tracking-widest text-foreground-muted"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            − MINUS THE NOISE
+          </motion.span>
+          <motion.span
+            className="font-display italic text-xl text-foreground-muted"
+            initial={{ opacity: 0, scale: 0.5 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
+            ±
+          </motion.span>
+          <motion.span
+            className="text-xs font-semibold tracking-widest text-foreground-muted"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            PLUS THE RESULTS +
+          </motion.span>
+          <motion.div
+            className="flex-1 h-px"
+            style={{ background: "hsl(var(--border))" }}
+            initial={{ scaleX: 0, originX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          />
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-4">

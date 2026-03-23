@@ -16,6 +16,8 @@ const projects = [
     year: "2025",
     gradient: "linear-gradient(135deg, hsl(220 25% 18%), hsl(200 30% 25%), hsl(180 20% 15%))",
     preview: trotsLaptopHero,
+    minus: "outdated web presence",
+    plus: "a site that matches their craft",
   },
   {
     title: "CORR XP",
@@ -24,6 +26,8 @@ const projects = [
     year: "2025",
     gradient: "linear-gradient(135deg, hsl(20 60% 10%), hsl(25 70% 18%), hsl(15 40% 8%))",
     preview: corrxp1,
+    minus: "no digital identity",
+    plus: "a brand built for scale",
   },
   {
     title: "UDA India",
@@ -32,6 +36,8 @@ const projects = [
     year: "2025",
     gradient: "linear-gradient(135deg, hsl(30 30% 12%), hsl(40 40% 22%), hsl(20 25% 10%))",
     preview: uda1,
+    minus: "slow legacy site",
+    plus: "sub-2s load times",
   },
   {
     title: "Spaces & Places",
@@ -40,6 +46,8 @@ const projects = [
     year: "2025",
     gradient: "linear-gradient(135deg, hsl(40 50% 15%), hsl(35 60% 25%), hsl(30 40% 12%))",
     preview: sp2,
+    minus: "low online visibility",
+    plus: "3x more inquiries",
   },
   {
     title: "Shharda Reliable",
@@ -48,6 +56,8 @@ const projects = [
     year: "2025",
     gradient: "linear-gradient(135deg, hsl(40 60% 12%), hsl(45 50% 20%), hsl(35 40% 10%))",
     preview: sr1,
+    minus: "generic manufacturer site",
+    plus: "a presence that builds trust",
   },
 ];
 
@@ -109,6 +119,10 @@ const FeaturedWork = () => {
                   <span className="text-[12px] text-muted-foreground">{project.category}</span>
                   <span className="text-[12px] text-muted-foreground">{project.year}</span>
                 </div>
+                <div className="flex items-center gap-2 mt-2 ml-7">
+                  <span className="text-[11px] line-through opacity-50 text-muted-foreground">− {project.minus}</span>
+                  <span className="text-[11px] font-semibold text-foreground-muted">+ {project.plus}</span>
+                </div>
               </Link>
             </motion.div>
           ))}
@@ -128,40 +142,53 @@ const FeaturedWork = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
               >
-                <Link to={`/work/${project.slug}`} className="py-10 flex items-baseline justify-between block">
-                  <div className="flex items-baseline gap-6">
-                    <span
-                      className="text-[13px] font-semibold transition-colors duration-300"
-                      style={{
-                        color: hoveredIndex === i ? "hsl(var(--foreground))" : "hsl(var(--muted-foreground))",
-                      }}
-                    >
-                      0{i + 1}
-                    </span>
-                    <h3
-                      className="text-3xl font-bold transition-colors duration-300"
-                      style={{
-                        color: hoveredIndex === i
-                          ? "hsl(var(--foreground))"
-                          : hoveredIndex !== null
-                          ? "hsl(0 0% 78%)"
-                          : "hsl(var(--foreground))",
-                      }}
-                    >
-                      {project.title}
-                    </h3>
+                <Link to={`/work/${project.slug}`} className="py-10 flex flex-col block">
+                  <div className="flex items-baseline justify-between">
+                    <div className="flex items-baseline gap-6">
+                      <span
+                        className="text-[13px] font-semibold transition-colors duration-300"
+                        style={{
+                          color: hoveredIndex === i ? "hsl(var(--foreground))" : "hsl(var(--muted-foreground))",
+                        }}
+                      >
+                        0{i + 1}
+                      </span>
+                      <h3
+                        className="text-3xl font-bold transition-colors duration-300"
+                        style={{
+                          color: hoveredIndex === i
+                            ? "hsl(var(--foreground))"
+                            : hoveredIndex !== null
+                            ? "hsl(0 0% 78%)"
+                            : "hsl(var(--foreground))",
+                        }}
+                      >
+                        {project.title}
+                      </h3>
+                    </div>
+                    <div className="flex items-center gap-4 text-[13px] text-foreground-muted">
+                      <span>{project.category}</span>
+                      <span>{project.year}</span>
+                      <motion.div
+                        className="w-8 h-8 rounded-full border border-border flex items-center justify-center"
+                        animate={{ opacity: hoveredIndex === i ? 1 : 0, scale: hoveredIndex === i ? 1 : 0.8 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <ArrowUpRight size={14} className="text-foreground" />
+                      </motion.div>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-4 text-[13px] text-foreground-muted">
-                    <span>{project.category}</span>
-                    <span>{project.year}</span>
+                  {hoveredIndex === i && (
                     <motion.div
-                      className="w-8 h-8 rounded-full border border-border flex items-center justify-center"
-                      animate={{ opacity: hoveredIndex === i ? 1 : 0, scale: hoveredIndex === i ? 1 : 0.8 }}
+                      className="flex items-center gap-3 ml-12 mt-1"
+                      initial={{ opacity: 0, y: -5 }}
+                      animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.2 }}
                     >
-                      <ArrowUpRight size={14} className="text-foreground" />
+                      <span className="text-[12px] line-through opacity-50 text-foreground-muted">− {project.minus}</span>
+                      <span className="text-[12px] font-semibold text-foreground-muted">+ {project.plus}</span>
                     </motion.div>
-                  </div>
+                  )}
                 </Link>
               </motion.div>
             ))}
