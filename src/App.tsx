@@ -12,6 +12,7 @@ import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import Insights from "./pages/Insights";
 import CaseStudy from "./pages/CaseStudy";
+import ArticleDetail from "./pages/ArticleDetail";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
