@@ -1,27 +1,9 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import imgPremium from "@/assets/insights/premium-website.jpg";
-import imgRestaurant from "@/assets/insights/restaurant-websites.jpg";
-import imgConversions from "@/assets/insights/conversions.jpg";
+import { articles } from "@/data/articles";
 
-const articles = [
-  {
-    title: "What Makes a Website Feel Premium",
-    tag: "Design",
-    image: imgPremium,
-  },
-  {
-    title: "Why Most Restaurant Websites Still Get It Wrong",
-    tag: "Strategy",
-    image: imgRestaurant,
-  },
-  {
-    title: "5 Design Decisions That Actually Move Conversion Numbers",
-    tag: "Conversion",
-    image: imgConversions,
-  },
-];
+const previewArticles = articles.slice(0, 3);
 
 const InsightsSection = () => {
   return (
@@ -51,7 +33,7 @@ const InsightsSection = () => {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {articles.map((article, i) => (
+          {previewArticles.map((article, i) => (
             <motion.div
               key={article.title}
               className="group block"
@@ -60,7 +42,7 @@ const InsightsSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
             >
-              <Link to="/insights" className="block">
+              <Link to={`/insights/${article.slug}`} className="block">
                 <div className="rounded-lg h-48 md:h-56 mb-5 transition-transform duration-500 group-hover:scale-[1.02] relative overflow-hidden">
                   <img
                     src={article.image}
