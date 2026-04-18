@@ -85,12 +85,21 @@ const ServicesSection = () => {
                 </motion.span>
                 <div className="flex-1">
                   <h3
-                    className="text-xl md:text-3xl font-bold transition-colors duration-300"
+                    className="font-display italic transition-colors duration-300 relative inline-block"
                     style={{
+                      fontSize: "clamp(28px, 4vw, 56px)",
+                      lineHeight: 1.05,
                       color: activeIndex === i ? "hsl(var(--foreground))" : activeIndex !== null ? "hsl(0 0% 75%)" : "hsl(var(--foreground))",
                     }}
                   >
                     {service.title}
+                    <span
+                      className="absolute left-0 right-0 -bottom-1 h-[3px] origin-left transition-transform duration-500"
+                      style={{
+                        background: "hsl(var(--accent-signal))",
+                        transform: activeIndex === i ? "scaleX(1)" : "scaleX(0)",
+                      }}
+                    />
                   </h3>
                   <AnimatePresence>
                     {activeIndex === i && (
