@@ -62,8 +62,8 @@ const ProcessSection = () => {
                   <div className="h-px flex-1" style={{ background: "hsl(0 0% 18%)" }} />
                 </div>
                 <div
-                  className="text-4xl md:text-6xl font-bold tracking-tight mb-4 transition-colors duration-500"
-                  style={{ color: "hsl(0 0% 20%)" }}
+                  className="font-display italic tracking-tight mb-4 transition-colors duration-500"
+                  style={{ fontSize: "clamp(72px, 9vw, 140px)", lineHeight: 0.9, color: "hsl(var(--accent-signal) / 0.22)" }}
                 >
                   {step.num}
                 </div>

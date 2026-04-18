@@ -154,8 +154,10 @@ const FeaturedWork = () => {
                         0{i + 1}
                       </span>
                       <h3
-                        className="text-3xl font-bold transition-colors duration-300"
+                        className="font-display italic transition-colors duration-300"
                         style={{
+                          fontSize: "clamp(28px, 4vw, 56px)",
+                          lineHeight: 1,
                           color: hoveredIndex === i
                             ? "hsl(var(--foreground))"
                             : hoveredIndex !== null

@@ -19,6 +19,7 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         "background-dark": "hsl(var(--background-dark))",
+        "accent-signal": "hsl(var(--accent-signal))",
         foreground: {
           DEFAULT: "hsl(var(--foreground))",
           muted: "hsl(var(--foreground-muted))",
