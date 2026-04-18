@@ -81,7 +81,17 @@ const TestimonialsSection = () => {
                 className="font-display italic max-w-4xl"
                 style={{ fontSize: "clamp(22px, 4vw, 52px)", lineHeight: 1.2, color: "hsl(0 0% 85%)" }}
               >
-                {testimonials[current].quote}
+                {testimonials[current].quote.split("").map((ch, i) => (
+                  <motion.span
+                    key={i}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.02, delay: i * 0.012 }}
+                    className="inline"
+                  >
+                    {ch}
+                  </motion.span>
+                ))}
               </blockquote>
 
               {/* Plus: the result */}
