@@ -83,17 +83,24 @@ const HeroSection = () => {
 
           {/* Main headline */}
           <h1 className="flex flex-wrap gap-x-[0.3em]" style={{ fontSize: "clamp(36px, 8vw, 110px)", lineHeight: 1.05, letterSpacing: "-0.03em" }}>
-            {["We", "design", "websites", "that", "drive"].map((word, i) => (
-              <span key={i} className="overflow-hidden">
-                <motion.span
-                  className="inline-block font-bold"
-                  style={{ color: "hsl(0 0% 70%)" }}
-                  initial={{ y: "100%", opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.8, delay: 0.5 + i * 0.08, ease: [0.22, 1, 0.36, 1] }}
-                >
-                  {word}
-                </motion.span>
+            {["We", "design", "websites", "that", "drive"].map((word, wi) => (
+              <span key={wi} className="overflow-hidden inline-flex">
+                {word.split("").map((ch, ci) => (
+                  <motion.span
+                    key={ci}
+                    className="inline-block font-bold"
+                    style={{ color: "hsl(0 0% 70%)" }}
+                    initial={{ y: "110%", opacity: 0, rotate: 6 }}
+                    animate={{ y: 0, opacity: 1, rotate: 0 }}
+                    transition={{
+                      duration: 0.7,
+                      delay: 0.4 + wi * 0.08 + ci * 0.025,
+                      ease: [0.22, 1, 0.36, 1],
+                    }}
+                  >
+                    {ch}
+                  </motion.span>
+                ))}
               </span>
             ))}
             <span className="overflow-hidden relative inline-flex" style={{ minWidth: "2.5ch" }}>
@@ -101,7 +108,7 @@ const HeroSection = () => {
                 <motion.span
                   key={rotatingWords[currentWordIndex]}
                   className="inline-block font-display italic font-normal"
-                  style={{ color: "hsl(0 0% 100%)" }}
+                  style={{ color: "hsl(var(--accent-signal))" }}
                   initial={{ y: "100%", opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   exit={{ y: "-100%", opacity: 0 }}
