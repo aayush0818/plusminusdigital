@@ -6,10 +6,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CustomCursor from "@/components/CustomCursor";
 import ScrollToTop from "@/components/ScrollToTop";
 import SmoothScroll from "@/components/SmoothScroll";
-import LoadingScreen from "@/components/LoadingScreen";
-import ScrollProgress from "@/components/ScrollProgress";
-import SectionRail from "@/components/SectionRail";
-import GrainOverlay from "@/components/GrainOverlay";
 import Index from "./pages/Index";
 import Work from "./pages/Work";
 import About from "./pages/About";
@@ -27,14 +23,10 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <LoadingScreen />
-      <GrainOverlay />
-      <ScrollProgress />
       <CustomCursor />
       <BrowserRouter>
         <ScrollToTop />
         <SmoothScroll>
-          <SectionRail />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/work" element={<Work />} />

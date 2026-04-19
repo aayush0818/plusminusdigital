@@ -1,78 +1,113 @@
 import { Link } from "react-router-dom";
-import logoMark from "@/assets/logo-icon.png";
-
-const footerLinks = {
-  Navigation: [
-    { label: "Work", href: "/work" },
-    { label: "Services", href: "/services" },
-    { label: "About", href: "/about" },
-    { label: "Journal", href: "/insights" },
-  ],
-  Contact: [
-    { label: "hello@plusminusdigital.in", href: "mailto:hello@plusminusdigital.in" },
-    { label: "Instagram", href: "https://www.instagram.com/plusminusdigital.in?igsh=MWVvaXZ2bnFha3pyNw==" },
-    { label: "LinkedIn", href: "https://www.linkedin.com/company/plusminusdigital/" },
-  ],
-};
 
 const Footer = () => {
   return (
-    <footer className="section-dark border-t" style={{ borderColor: "hsl(0 0% 15%)", padding: "60px 0 32px" }}>
-      <div className="container-site">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 mb-12 md:mb-20">
-          <div className="md:col-span-2">
-            <Link to="/" className="mb-4 inline-block">
-              <img src={logoMark} alt="PlusMinus" className="h-10 md:h-12 w-auto" />
-            </Link>
-            <p className="text-[11px] font-semibold tracking-[0.25em] uppercase mb-3" style={{ color: "hsl(0 0% 30%)" }}>
-              Minus the noise. Plus the results.
+    <footer className="section-dark relative overflow-hidden" style={{ borderTop: "1px solid hsl(0 0% 12%)" }}>
+      <div className="container-site" style={{ padding: "clamp(60px, 8vw, 120px) 0 32px" }}>
+        {/* Top row: editorial caption */}
+        <div className="flex items-center gap-3 mb-12 md:mb-20">
+          <span className="text-[10px] font-mono uppercase tracking-[0.3em]" style={{ color: "hsl(0 0% 45%)" }}>
+            Nº 08
+          </span>
+          <span className="block w-8 h-px" style={{ background: "hsl(0 0% 20%)" }} />
+          <span className="text-[10px] font-mono uppercase tracking-[0.3em]" style={{ color: "hsl(0 0% 45%)" }}>
+            End ©2025
+          </span>
+        </div>
+
+        {/* Massive typographic statement */}
+        <div
+          className="font-display italic mb-12 md:mb-20"
+          style={{
+            fontSize: "clamp(64px, 13vw, 220px)",
+            lineHeight: 0.9,
+            letterSpacing: "-0.03em",
+            color: "hsl(0 0% 92%)",
+          }}
+        >
+          Let's make
+          <br />
+          something <span style={{ color: "hsl(0 0% 50%)" }}>◇</span> good.
+        </div>
+
+        {/* Address spread */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 pb-12 md:pb-20" style={{ borderBottom: "1px solid hsl(0 0% 15%)" }}>
+          <div className="md:col-span-4">
+            <p className="text-[10px] font-mono uppercase tracking-[0.3em] mb-4" style={{ color: "hsl(0 0% 35%)" }}>
+              ⌂ Studio
             </p>
-            <p className="text-sm leading-relaxed max-w-sm" style={{ color: "hsl(0 0% 40%)" }}>
-              A digital design and development studio from Mumbai, India. Helping ambitious brands grow through better web experiences, worldwide.
+            <p className="text-base md:text-lg" style={{ color: "hsl(0 0% 75%)" }}>
+              Mumbai, India
+              <br />
+              <span style={{ color: "hsl(0 0% 45%)" }}>Working worldwide ⤴</span>
             </p>
           </div>
 
-          {Object.entries(footerLinks).map(([title, links]) => (
-            <div key={title}>
-              <h4 className="text-[12px] font-semibold tracking-[0.15em] uppercase mb-4 md:mb-6" style={{ color: "hsl(0 0% 40%)" }}>
-                {title}
-              </h4>
-              <nav className="flex flex-col gap-2 md:gap-3">
-                {links.map((link) => {
-                  const isExternal = link.href.startsWith("http") || link.href.startsWith("mailto");
-                  return isExternal ? (
-                    <a
-                      key={link.label}
-                      href={link.href}
-                      className="text-sm hover:text-white transition-colors duration-300"
-                      style={{ color: "hsl(0 0% 50%)" }}
-                      target={link.href.startsWith("http") ? "_blank" : undefined}
-                      rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                    >
-                      {link.label}
-                    </a>
-                  ) : (
-                    <Link
-                      key={link.label}
-                      to={link.href}
-                      className="text-sm hover:text-white transition-colors duration-300"
-                      style={{ color: "hsl(0 0% 50%)" }}
-                    >
-                      {link.label}
-                    </Link>
-                  );
-                })}
-              </nav>
+          <div className="md:col-span-4">
+            <p className="text-[10px] font-mono uppercase tracking-[0.3em] mb-4" style={{ color: "hsl(0 0% 35%)" }}>
+              ✉ Contact
+            </p>
+            <a
+              href="mailto:hello@plusminusdigital.in"
+              className="text-base md:text-lg hover:opacity-70 transition-opacity"
+              style={{ color: "hsl(0 0% 75%)" }}
+            >
+              hello@plusminusdigital.in
+            </a>
+          </div>
+
+          <div className="md:col-span-4">
+            <p className="text-[10px] font-mono uppercase tracking-[0.3em] mb-4" style={{ color: "hsl(0 0% 35%)" }}>
+              ◇ Elsewhere
+            </p>
+            <div className="flex flex-col gap-2">
+              <a
+                href="https://www.instagram.com/plusminusdigital.in?igsh=MWVvaXZ2bnFha3pyNw=="
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-base md:text-lg hover:opacity-70 transition-opacity"
+                style={{ color: "hsl(0 0% 75%)" }}
+              >
+                Instagram ⤴
+              </a>
+              <a
+                href="https://www.linkedin.com/company/plusminusdigital/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-base md:text-lg hover:opacity-70 transition-opacity"
+                style={{ color: "hsl(0 0% 75%)" }}
+              >
+                LinkedIn ⤴
+              </a>
             </div>
-          ))}
+          </div>
         </div>
 
-        <div className="border-t pt-6 md:pt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-2" style={{ borderColor: "hsl(0 0% 15%)" }}>
-          <p className="text-[12px] font-medium" style={{ color: "hsl(0 0% 25%)" }}>
-            © 2025 PlusMinus Studio. All rights reserved.
+        {/* Bottom row */}
+        <div className="pt-8 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 items-baseline">
+          <p className="text-[10px] font-mono uppercase tracking-[0.25em]" style={{ color: "hsl(0 0% 30%)" }}>
+            ©2025 PlusMinus Studio
           </p>
-          <p className="text-[12px] font-medium" style={{ color: "hsl(0 0% 20%)" }}>
-            Mumbai, India · Available worldwide
+          <nav className="flex flex-wrap gap-4 md:justify-center text-[10px] font-mono uppercase tracking-[0.25em]">
+            {[
+              { to: "/work", l: "Work" },
+              { to: "/services", l: "Services" },
+              { to: "/about", l: "About" },
+              { to: "/insights", l: "Journal" },
+              { to: "/contact", l: "Contact" },
+            ].map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                className="hover:opacity-100 transition-opacity"
+                style={{ color: "hsl(0 0% 50%)" }}
+              >
+                {link.l}
+              </Link>
+            ))}
+          </nav>
+          <p className="text-[10px] font-mono uppercase tracking-[0.25em] md:text-right" style={{ color: "hsl(0 0% 30%)" }}>
+            Q Minus the noise · Plus the results
           </p>
         </div>
       </div>
