@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import MarqueeWall from "@/components/MarqueeWall";
+import ManifestoSpread from "@/components/MarqueeWall";
 import PhilosophySection from "@/components/PhilosophySection";
 import FeaturedWork from "@/components/FeaturedWork";
 import ServicesSection from "@/components/ServicesSection";
@@ -23,7 +23,7 @@ const Index = () => {
       <main>
         <div id="top" />
         <HeroSection />
-        <section id="manifesto"><MarqueeWall /></section>
+        <ManifestoSpread />
         <PhilosophySection />
         <FeaturedWork />
         <ServicesSection />
