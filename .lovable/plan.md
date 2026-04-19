@@ -1,121 +1,93 @@
 
 
-# Bold, Artistic Redesign — "PlusMinus, but Loud"
+## What I actually found (researched live)
 
-## Inspiration Pulled From The Best
-After reviewing leading agency/portfolio sites (Awwwards SOTD winners, SiteInspire's top portfolios), the recurring traits in award-winning work are:
+| Site | The thing that makes it stick |
+|---|---|
+| **Obys Agency** | Pitch-black canvas. Custom counter loader (50 → 100). One numeric/symbolic mark center-screen. Almost zero color. Confidence through emptiness. |
+| **Exo Ape** | Full-bleed cinematic photo as hero, with ONE oversized sans word ("Digital") bleeding off the bottom edge over the image. Scroll-to-explore microcopy bottom-right. |
+| **Basic / Dept** | Editorial captions everywhere (`©2022`, `B/D® JAMS©`, footnote-style labels). Looks like a magazine masthead, not a website. |
+| **Hello Monday** | Center-stacked serif headline alone on white. Tiny "1 day until Monday" widget top-right — playful counter. Whole hero is empty space. |
+| **Locomotive** | Brutalist footer is a full art piece — typographic address with iconographic glyphs (◇ Q © ⤴) embedded inline. The footer IS the brand statement. |
+| **Ueno** | Massive serif headline ("Hi. We're a strategic design and innovation studio.") flush left over a quiet product photograph. No marquees, no noise. |
+| **Active Theory** | Full WebGL hero, single rotating glyph centered. They dare you to scroll. |
 
-- **Active Theory / Resn** — full-bleed kinetic typography, scroll-driven scenes, audio-reactive moments
-- **Locomotive / Studio Brave** — buttery smooth scroll, marquee text walls, oversized editorial type
-- **Obys Agency** — brutalist grid breaks, jittery hover states, raw monospace + serif clash
-- **Hello Monday / Exo Ape** — magnetic cursor, image-on-hover reveals on link lists, cinematic transitions
-- **Edward Hinrichsen / Basic Agency** — black canvas, one accent color, asymmetric layouts, "list as art"
-- **Ueno / Bruno Simon-style** — playful WebGL distortions, sticky scroll choreography
+**The pattern that actually wins:** restraint, not noise. Every site we admire commits to ONE big move per screen — a photo, a sentence, a glyph. Marquees and grain and rotating text are *symptoms* of insecurity. The current PlusMinus site has too many simultaneous gestures (kinetic letters + marquee wall + rotating ± + grain + signal-color cursor + scroll progress + side rail). It's loud the wrong way.
 
-The common thread: **opinionated typography + one violent accent color + scroll = the show**. They don't decorate; they perform.
+## Direction shift: "Confident Editorial" (not "loud brutalism")
 
-## Direction: "Editorial Brutalism with ± Choreography"
+Pull back. Make every section commit to ONE gesture. Borrow:
+- **From Obys:** the counter-loader and pitch-black confidence
+- **From Exo Ape:** full-bleed photo hero with oversized type bleeding over it
+- **From Basic:** magazine-style editorial captions (`©`, `Nº`, footnotes) on every section header
+- **From Hello Monday:** tiny "playful counter" widget in nav corner
+- **From Locomotive:** turn the footer into a typographic art piece
+- **From Ueno:** one massive serif sentence per section, generous whitespace
 
-Keep the dark/cream palette (it's strong). Add **one electric accent** (we'll use a hot signal color — choose between Acid Lime `#D6FF3D` or Signal Orange `#FF4A1C` in implementation). Lean harder into Instrument Serif + DM Sans contrast. Make every scroll moment a *moment*.
+## Concrete changes
 
-## What Changes (Section by Section)
+### 1. Hero — Exo Ape × Obys
+- Remove rotating word + minus/plus words + watermark logo + bottom marquee.
+- ONE move: full-bleed editorial photograph (architectural / Mumbai cityscape) as background, with a single oversized sentence bleeding off the bottom: *"We make websites that earn their keep."* — Instrument Serif, 14vw, white over the image.
+- Top-right: tiny live widget — `Mumbai · 14:32 IST · Open for 2 projects` (Hello Monday pattern).
+- Bottom-right: small "Scroll ↓" microcopy. That's it.
 
-### 1. Hero — "Kinetic Manifesto"
-- Replace the static headline with **per-character kinetic typography**: each letter has its own spring delay, slight rotation, and Y-offset on enter.
-- Add a **scroll-reactive headline**: as the user scrolls, the headline letters drift apart, "minus" letters slide left and "plus" letters slide right (literal duality).
-- Add a **continuous marquee strip** at the bottom of hero: `— DESIGN — DEVELOP — REFINE — REPEAT — ±` scrolling infinitely with the accent color.
-- Add a **subtle WebGL/CSS noise grain overlay** (cheap canvas grain, no GPU strain) for that "film-developed" texture.
-- Add **audio-reactive ± symbol** in corner (optional toggle) — purely decorative pulsing.
+### 2. Marquee Wall → Manifesto Page Spread
+Convert the three-line marquee into a STATIC editorial spread (Basic-style):
+- Left column: large `Nº 01 / Manifesto` label
+- Right column: a single 3-sentence paragraph in Instrument Serif 64px about the ± philosophy
+- No motion. The stillness is the statement.
 
-### 2. New Section: "Manifesto Marquee Wall"
-A full-viewport black section between hero and philosophy. Three stacked marquee lines moving at different speeds and directions:
-- Line 1 →: `MINUS THE NOISE • MINUS THE FLUFF • MINUS THE GUESSWORK`
-- Line 2 ←: `PLUS THE CLARITY • PLUS THE CRAFT • PLUS THE RESULTS`
-- Line 3 →: oversized italic serif `± we don't decorate, we engineer ±`
-This becomes the brand's "loudest" moment.
+### 3. Featured Work — Hello Monday list-as-art
+- Already attempted as a list. Refine: each row is JUST the project name in 8vw serif. The image-on-cursor reveal stays but the row should be empty otherwise — no tags, no `−→+`, no metadata visible until hover.
+- On hover: row text shifts horizontally, `Nº 01 — Trots Architects, 2024, Architecture` reveals as small caption beneath.
 
-### 3. Featured Work — "Hover Reveals + Magnetic Cards"
-- Convert the project list into a **vertical link list** (like Hello Monday/Basic): project titles as massive text rows; hovering a row reveals the project preview floating beside the cursor (image follows mouse with lag).
-- On mobile, keep cards but add **scroll-triggered tilt/parallax** so cards feel three-dimensional.
-- Each row has the project name in serif + the `−problem → +result` tag in mono caps.
+### 4. Philosophy Stats — Obys numeric loader treatment
+- Drop the slot-machine + giant rotating ± + animated grid.
+- Replace with: 4 stats centered on black, each number in Instrument Serif 18vw, single line at a time, fading between them on scroll. One number on screen at a time. Massive. Quiet.
 
-### 4. Philosophy Stats — "Counter Slot Machine"
-- Numbers don't just count up — they **slot-machine roll** like an odometer with serif digits.
-- Background gets a faint animated grid that pulses with each number reveal.
-- Add a giant rotating ± mark behind the stats that turns continuously based on scroll position.
+### 5. Services — Editorial index
+- Drop sticky card stack idea. Render as a numbered editorial index:
+  ```
+  Nº 01  ——  Brand Strategy        →
+  Nº 02  ——  Website Design        →
+  Nº 03  ——  Web Development       →
+  Nº 04  ——  Conversion            →
+  ```
+- Each row 12vw tall, hovering reveals 1-line description sliding in from the right. Serif numerals, mono labels.
 
-### 5. Services — "Card Stack Scroll"
-- Convert services into a **sticky scroll-pinned stack**: each service card pins, the next slides up over it. Classic Apple-style choreography but with our minus→plus reveal embedded.
-- Service titles use Instrument Serif italic, oversized, with the accent color underline drawing on enter.
+### 6. Process — keep horizontal scroll, strip decoration
+- Remove giant background numerals overlay. Each panel: just `01` top-left small, big serif title centered, one paragraph below. Whitespace does the work.
 
-### 6. Process — "Horizontal Cinema"
-- The existing horizontal scroll becomes a **proper horizontal scroll-pinned section**: vertical scroll = horizontal motion through the 5 process steps.
-- Each step gets a number that scales massive (`01 02 03`) in the background as you pass through.
+### 7. Testimonials — drop typewriter
+- Typewriter on quotes is gimmicky and slows reading. Use static, oversized italic Instrument Serif quotes (12-16vw), one per viewport, soft fade between them on scroll. Attribution as small caps below.
 
-### 7. Testimonials — "Quote Carousel with Glitch"
-- Big editorial quotes that **type-in character by character** as they enter view.
-- Soft glitch/displacement on the speaker name on hover.
-- Background subtly shifts color tone per testimonial (still within the dark palette).
+### 8. Insights — keep magazine tiles, add captions
+- Add Basic-style metadata to each tile: `Nº 04  ·  Design  ·  6 min  ·  ©2025`. Restrained, footer-style.
 
-### 8. Insights — "Magazine Cover Tiles"
-- Convert from card grid to **asymmetric editorial tiles** (varying sizes), like a print magazine spread.
-- Hover scales the image with a clip-path reveal of the article title.
+### 9. CTA — strip animation, keep duality copy
+- Remove split-reveal scroll animation. Static composition: dark left half with `−` and copy, light right half with `+` and copy, ± mark dead-center. Magnetic button stays.
 
-### 9. CTA — "The Big ± Reveal"
-- The split background gets a **scroll-triggered split animation**: as section enters, the dark/light halves slide apart from center, the ± symbol grows massive, then snaps to position.
-- Button gets a **magnetic effect** (pulls toward cursor on hover).
+### 10. Global cleanup
+- **Remove:** GrainOverlay, ScrollProgress bar, SectionRail dot nav, LoadingScreen countdown, MarqueeWall section. They're noise that competes with content.
+- **Keep:** SmoothScroll (Lenis), CustomCursor (but tone down — drop the rotating ± ring; just dot + small ± text on hover, no acid color).
+- **Replace acid lime accent everywhere** with the cream/dark palette only. The signal color was an Awwwards trope, not us. Color comes from photographs and editorial restraint.
+- **Add a global editorial caption system:** small-caps mono labels (`Nº 0X / Section name · Year`) above every section heading, Basic-style.
+- **Footer redesign (Locomotive-inspired):** turn the footer into a typographic address spread with inline iconography. Big, beautiful, unmistakable.
 
-### 10. Global Additions
-- **Custom cursor**: enhance existing one with magnetic snap to interactive elements + ± symbol that rotates.
-- **Smooth scroll** via Lenis (`@studio-freight/lenis`) for that locomotive-quality feel.
-- **Page transitions**: serif `±` wipe between routes (covers screen briefly with the mark).
-- **Loading screen** (first visit only): countdown from `−100` to `+0` with the ± mark, dismisses to hero.
-- **Scroll progress indicator**: thin accent-colored line at top.
-- **Section index in side rail**: tiny dot navigation on right edge showing scroll position through homepage sections.
+## Files
 
-## Technical Implementation
+**Modify:** `HeroSection.tsx`, `FeaturedWork.tsx`, `PhilosophySection.tsx`, `ServicesSection.tsx`, `ProcessSection.tsx`, `TestimonialsSection.tsx`, `InsightsSection.tsx`, `CTASection.tsx`, `Footer.tsx`, `CustomCursor.tsx`, `pages/Index.tsx`, `index.css`, `tailwind.config.ts`
 
-**New deps**: `@studio-freight/lenis` (smooth scroll), keep framer-motion for everything else. No WebGL libraries needed — all effects via CSS/Canvas2D for performance.
+**Delete from rendering:** `MarqueeWall`, `GrainOverlay`, `ScrollProgress`, `SectionRail`, `LoadingScreen` (keep files for now, just unmount)
 
-**Performance guardrails**:
-- All scroll listeners throttled via `useScroll` from framer-motion (already battle-tested).
-- Marquees use CSS `@keyframes` (already in `index.css` as `logo-scroll`) — no JS.
-- Magnetic cursor uses `requestAnimationFrame` with single rAF loop.
-- Reduced motion media query disables grain, magnetic effects, marquees → static fallback.
-- Mobile (<768px) auto-disables: smooth scroll, magnetic cursor, image-follow-cursor reveals → falls back to current card layout.
+**Add:** `SectionCaption.tsx` (the `Nº 0X / Label / ©Year` editorial header used everywhere)
 
-**Files to create**:
-- `src/components/MarqueeWall.tsx` — new "Manifesto" section
-- `src/components/MagneticButton.tsx` — wraps CTAs
-- `src/components/SmoothScroll.tsx` — Lenis provider
-- `src/components/PageTransition.tsx` — ± wipe
-- `src/components/LoadingScreen.tsx` — first-visit −100→+0
-- `src/components/ScrollProgress.tsx` — top progress bar
-- `src/components/SectionRail.tsx` — side dot nav
-- `src/components/GrainOverlay.tsx` — noise canvas
+**Asset:** generate one full-bleed editorial hero image (Mumbai-architectural, high contrast B&W or moody color)
 
-**Files to modify**:
-- `src/components/HeroSection.tsx` — kinetic letters + scroll drift + bottom marquee
-- `src/components/FeaturedWork.tsx` — link-list + image-follow-cursor (desktop)
-- `src/components/PhilosophySection.tsx` — slot-machine counter + giant rotating ±
-- `src/components/ServicesSection.tsx` — sticky card stack
-- `src/components/ProcessSection.tsx` — horizontal scroll-pinned
-- `src/components/TestimonialsSection.tsx` — typewriter quotes
-- `src/components/InsightsSection.tsx` — magazine tile layout
-- `src/components/CTASection.tsx` — split-reveal + magnetic button
-- `src/components/CustomCursor.tsx` — magnetic snap
-- `src/pages/Index.tsx` — insert MarqueeWall after hero
-- `src/App.tsx` — wrap with SmoothScroll + PageTransition + LoadingScreen
-- `src/index.css` — accent color token, additional keyframes (typewriter, slot, split-reveal, grain)
-- `tailwind.config.ts` — add `accent-signal` color token
+## What stays
+Routing, SEO, content, ± duality concept, DM Sans + Instrument Serif pairing, dark/cream palette, Trots case study, Insights system.
 
-## What Stays the Same
-- Information architecture (same pages, same content blocks)
-- Cream/dark palette base, DM Sans + Instrument Serif typography pairing
-- Existing ± duality content system (services pairs, work tags, testimonial framing)
-- All Trots Architects content & images
-- Routing & SEO
-
-## The Vibe
-Right now the site is *tasteful and quiet*. After this, it's *tasteful and loud* — the kind of site that makes a visitor stop, screen-record a section, and send it to a friend. Editorial enough for premium clients, kinetic enough to win Awwwards.
+## The vibe shift
+From "tasteful and loud" → **"tasteful and certain."** The current site shouts every gesture. The best sites whisper one thing per screen and let the visitor lean in. Confidence reads as luxury; noise reads as desperation.
 
