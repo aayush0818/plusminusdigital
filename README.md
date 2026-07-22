@@ -1,73 +1,85 @@
-# Welcome to your Lovable project
+# PlusMinus Digital
 
-## Project info
+Website for PlusMinus Digital — a web design and digital experience studio building distinctive, high-craft sites for architecture, real estate, interior design, and nonprofit clients.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+**Live site:** [plusminusdigital.in](https://plusminusdigital.in)
 
-## How can I edit this code?
+## Overview
 
-There are several ways of editing your application.
+A fast, motion-forward agency site with custom cursor and smooth-scroll interactions, showcasing selected work as detailed case studies and publishing design/industry insights as articles.
 
-**Use Lovable**
+**Pages**
+- `/` — Home
+- `/work` — Selected work
+- `/work/:slug` — Individual case study
+- `/services` — Services offered
+- `/about` — About the studio
+- `/insights` — Articles and insights
+- `/insights/:slug` — Individual article
+- `/contact` — Contact
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## Tech stack
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Vite** + **React** + **TypeScript**
+- **Tailwind CSS** + **shadcn/ui** for components
+- **Framer Motion** for animation
+- **Lenis** for smooth scrolling
+- **React Router** for routing
+- **TanStack Query** for data fetching
+- **Vitest** + **React Testing Library** for tests
+- Content (case studies, articles) sourced from `src/data`, no backend required
 
-**Use your preferred IDE**
+## Getting started
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Requires Node.js and npm ([install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)).
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+\`\`\`sh
+# Clone the repository
+git clone https://github.com/aayush0818/plusminusdigital.git
+cd plusminusdigital
 
-Follow these steps:
+# Install dependencies
+npm install
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start the dev server
 npm run dev
-```
+\`\`\`
 
-**Edit a file directly in GitHub**
+The app runs at `http://localhost:8080` by default.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Available scripts
 
-**Use GitHub Codespaces**
+| Command | Description |
+|---|---|
+| `npm run dev` | Start the local dev server with hot reload |
+| `npm run build` | Production build, output to `dist/` |
+| `npm run build:dev` | Build in development mode (unminified, for debugging) |
+| `npm run lint` | Run ESLint |
+| `npm run preview` | Preview the production build locally |
+| `npm test` | Run the test suite once |
+| `npm run test:watch` | Run tests in watch mode |
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Project structure
 
-## What technologies are used for this project?
+\`\`\`
+src/
+  components/    # Reusable UI (CustomCursor, SmoothScroll, ScrollToTop, etc.)
+  components/ui/ # shadcn/ui primitives
+  pages/         # Route-level pages
+  data/          # Case study and article content (articles.ts)
+  hooks/         # Custom React hooks
+  lib/           # Shared utilities
+  test/          # Vitest setup and tests
+\`\`\`
 
-This project is built with:
+## Adding content
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Case studies and articles are defined in `src/data/articles.ts` rather than pulled from a CMS or database — add or edit entries there and they'll appear on `/work` or `/insights` automatically via the `:slug` routes.
 
-## How can I deploy this project?
+## Deployment
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+Deployed from the `main` branch, served at [plusminusdigital.in](https://plusminusdigital.in).
 
-## Can I connect a custom domain to my Lovable project?
+## License
 
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Private project — all rights reserved.
